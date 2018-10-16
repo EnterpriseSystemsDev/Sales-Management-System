@@ -1,0 +1,130 @@
+
+
+/* Navbar */
+.admin .navbar{
+    min-height: 33px !important;
+    margin-bottom:0;
+    border-radius:0px;
+
+
+}
+
+.admin .navbar-default {
+    background-color: #e74c3c;
+    border-color: #c0392b;
+}
+.admin .navbar-default .navbar-brand {
+    color: #ecf0f1;
+}
+.admin  .navbar-default .navbar-brand:hover,
+.admin  .navbar-default .navbar-brand:focus {
+    color: #e74c3c;
+}
+.admin  .navbar-default .navbar-text {
+    color: #ecf0f1;
+}
+.admin  .navbar-default .navbar-nav > li > a {
+    color: #ecf0f1;
+}
+.admin  .navbar-default .navbar-nav > li > a:hover,
+.admin  .navbar-default .navbar-nav > li > a:focus {
+    color: #ffbbbc;
+}
+.admin .navbar-default .navbar-nav > .active > a,
+.admin  .navbar-default .navbar-nav > .active > a:hover,
+.admin .navbar-default .navbar-nav > .active > a:focus {
+    color: #ffbbbc;
+    background-color: #c0392b;
+}
+.admin .navbar-default .navbar-nav > .open > a,
+.admin .navbar-default .navbar-nav > .open > a:hover,
+.admin .navbar-default .navbar-nav > .open > a:focus {
+    color: #ffbbbc;
+    background-color: #c0392b;
+}
+.admin .navbar-default .navbar-toggle {
+    border-color: #c0392b;
+}
+.admin .navbar-default .navbar-toggle:hover,
+.admin .navbar-default .navbar-toggle:focus {
+    background-color: #c0392b;
+}
+.admin .navbar-default .navbar-toggle .icon-bar {
+    background-color: #ecf0f1;
+}
+.admin .navbar-default .navbar-collapse,
+.admin .navbar-default .navbar-form {
+    border-color: #ecf0f1;
+}
+.admin .navbar-default .navbar-link {
+    color: #ecf0f1;
+}
+.admin .navbar-default .navbar-link:hover {
+    color: #ffbbbc;
+}
+
+/* Custom */
+.main-color-bg{
+    background-color: #e74c3c !important;
+    border-color: #c0392b !important;
+    color:#ffffff !important;
+}
+
+
+/* Breadcrumb */
+.breadcrumb{
+    background:#c0392b;
+    color:#ffffff;
+    font-size: 16px;
+}
+
+
+
+.dash-box{
+    text-align:center;
+
+}
+
+
+/* Footer */
+/*#footer{
+    position: fixed;
+    margin-top: 50px;
+    background:#333333;
+    color:#ffffff;
+    text-align:center;
+    padding:30px;
+    margin-bottom: 0;
+}*/
+#footer {
+    z-index: 10;
+    position: fixed;
+    padding:40px;
+    bottom: 0;
+    width: 100%;
+    background:#333333;
+    color:#ffffff;
+    text-align: center;
+    height: 80px;
+}
+
+
+@media (max-width: 767px) {
+   .admin .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #ecf0f1;
+    }
+    .admin.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+    .admin.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+        color: #ffbbbc;
+    }
+   .admin .navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+    .admin .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+    .admin .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+        color: #ffbbbc;
+        background-color: #c0392b;
+    }
+}
+/***********************************************/
+.btn-dark{color:#fff;background-color:#343a40;border-color:#343a40}.btn-dark:hover{color:#fff;background-color:#23272b;border-color:#1d2124}.btn-dark.focus,.btn-dark:focus{box-shadow:0 0 0 .2rem rgba(52,58,64,.5)}.btn-dark.disabled,.btn-dark:disabled{color:#fff;background-color:#343a40;border-color:#343a40}.btn-dark:not(:disabled):not(.disabled).active,.btn-dark:not(:disabled):not(.disabled):active,.show>.btn-dark.dropdown-toggle{color:#fff;background-color:#1d2124;border-color:#171a1d}.btn-dark:not(:disabled):not(.disabled).active:focus,.btn-dark:not(:disabled):not(.disabled):active:focus,.show>.btn-dark.dropdown-toggle:focus{box-shadow:0 0 0 .2rem rgba(52,58,64,.5)}
+.btn-info{color:#fff;background-color:#17a2b8;border-color:#17a2b8}.btn-info:hover{color:#fff;background-color:#138496;border-color:#117a8b}.btn-info.focus,.btn-info:focus{box-shadow:0 0 0 .2rem rgba(23,162,184,.5)}.btn-info.disabled,.btn-info:disabled{color:#fff;background-color:#17a2b8;border-color:#17a2b8}.btn-info:not(:disabled):not(.disabled).active,.btn-info:not(:disabled):not(.disabled):active,.show>.btn-info.dropdown-toggle{color:#fff;background-color:#117a8b;border-color:#10707f}
+
