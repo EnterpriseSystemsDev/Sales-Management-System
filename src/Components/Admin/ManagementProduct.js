@@ -1,12 +1,12 @@
 import React from "react";
 import {connect} from 'react-redux'
 import * as actions from '../../actions/index';
-import ThemSP from "./ThemSP";
-import DanhSachSP from "./DanhSachSP";
+import ThemSP from "./AddProduct";
+import DanhSachSP from "./ListProduct";
 import StatusSP from "./Status";
 
 
-class QLSP extends React.Component {
+class ManagementProduct extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -85,7 +85,7 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps) (QLSP);
+export default connect(mapStateToProps,mapDispatchToProps) (ManagementProduct);
 
 
 

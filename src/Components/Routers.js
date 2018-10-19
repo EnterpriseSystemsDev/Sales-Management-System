@@ -5,9 +5,9 @@ import Jordan from "./Products/Jordan";
 import NotFound from "./NotFound";
 import Yeezy from "./Products/Yeezy";
 import Admin from "./Admin/Admin";
-import ThongKe from "./Admin/ThongKe";
+import ThongKe from "./Admin/Statistical";
 import Cart from "./Home/Cart";
-import ChiTietTuyenDung from "./Home/ChiTietTuyenDung";
+import ChiTietTuyenDung from "./Home/RecruitmentDetails";
 
 
 const routes = [

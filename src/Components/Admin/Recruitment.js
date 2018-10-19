@@ -3,7 +3,7 @@ import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
 
 
-class TuyenDung extends React.Component {
+class Recruitment extends React.Component {
     onClear = () =>{
         this.setState({
             id: '',
@@ -79,7 +79,7 @@ const mapDispatchToProps = (dispatch, props) => {
 
 };
 
-export default connect(null,mapDispatchToProps) (TuyenDung);
+export default connect(null,mapDispatchToProps) (Recruitment);
 
 
 

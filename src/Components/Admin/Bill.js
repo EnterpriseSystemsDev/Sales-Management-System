@@ -2,7 +2,7 @@ import React from "react";
 import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
 
-class HoaDon extends React.Component {
+class Bill extends React.Component {
 
     onDelete = () =>{
         this.props.deleteBill(this.props.item.id);
@@ -38,7 +38,7 @@ const mapDispatchToProps = (dispatch, props) => {
 
 };
 
-export default connect(null,mapDispatchToProps)  (HoaDon);
+export default connect(null,mapDispatchToProps)  (Bill);
 
 
 

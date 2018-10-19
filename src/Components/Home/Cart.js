@@ -2,7 +2,7 @@ import React from "react";
 import $ from "jquery"
 import img from "../../hinhanh/logo.png"
 import Header from "./Header";
-import Nav from "./Nav";
+import Navbar from "./Navbar";
 class Cart extends React.Component {
 
     render() {
@@ -10,7 +10,7 @@ class Cart extends React.Component {
             <div>
                 <Header/>
                 <br/><br/><br/>
-                <Nav/>
+                <Navbar/>
             <div className="container">
                 <div className="shopping-cart col-md-11">
                     <div className="column-labels">

@@ -1,12 +1,12 @@
 import React from "react";
 import {connect} from 'react-redux'
 import * as actions from '../../actions/index';
-import SanPham from "./SanPham";
+import SanPham from "./Product";
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
 
 
-class DanhSachSP extends React.Component {
+class ListProduct extends React.Component {
      priceFormatter = (cell, row) =>{
         return '<i class="glyphicon glyphicon-usd"></i> ' + cell;
     };
@@ -115,7 +115,7 @@ const mapDispatchToProps = (dispatch, props) => {
 
 };
 
-export default connect(listProducts,mapDispatchToProps) (DanhSachSP);
+export default connect(listProducts,mapDispatchToProps) (ListProduct);
 
 
 

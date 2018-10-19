@@ -1,6 +1,6 @@
 import React from "react";
 
-class ItemDetail extends React.Component {
+class ItemDetails extends React.Component {
     render() {
 
         return (
@@ -10,4 +10,4 @@ class ItemDetail extends React.Component {
         );
     }
 }
-export default ItemDetail;
+export default ItemDetails;

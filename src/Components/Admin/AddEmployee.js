@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
-class ThemNV extends React.Component {
+class AddEmployee extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -207,7 +207,7 @@ const mapDispatchToProps = (dispatch, props) => {
         },
     }
 };
-export default connect (mapStateToProps,mapDispatchToProps)(ThemNV);
+export default connect (mapStateToProps,mapDispatchToProps)(AddEmployee);
 
 
 

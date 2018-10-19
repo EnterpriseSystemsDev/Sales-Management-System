@@ -1,9 +1,9 @@
 import React from "react";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
-import TuyenDung from "./TuyenDung";
+import TuyenDung from "./Recruitment";
 
-class DanhSachTD extends React.Component {
+class ListRecruitment extends React.Component {
     render() {
         let {Recruitment} = this.props;
         const listTD = Recruitment.map((item, index) => {
@@ -56,7 +56,7 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(DanhSachTD);
+export default connect(mapStateToProps,mapDispatchToProps)(ListRecruitment);
 
 
 

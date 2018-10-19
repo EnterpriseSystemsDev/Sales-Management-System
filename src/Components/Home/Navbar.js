@@ -2,7 +2,7 @@ import React from "react";
 import SearchInfo from "./SearchInfo";
 import  {Link} from 'react-router-dom';
 
-class Nav extends React.Component {
+class Navbar extends React.Component {
 
     render() {
         return (
@@ -25,4 +25,4 @@ class Nav extends React.Component {
 
 }
 
-export default Nav;
+export default Navbar;

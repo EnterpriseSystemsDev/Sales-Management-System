@@ -3,7 +3,7 @@ import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
 
 
-class NhanVien extends React.Component {
+class Employee extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -88,7 +88,7 @@ const mapDispatchToProps = (dispatch, props) => {
 
 };
 
-export default connect(null,mapDispatchToProps) (NhanVien);
+export default connect(null,mapDispatchToProps) (Employee);
 
 
 

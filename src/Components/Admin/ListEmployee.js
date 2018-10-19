@@ -1,8 +1,8 @@
 import React from "react";
 import {connect} from 'react-redux'
-import NhanVien from "./NhanVien";
+import NhanVien from "./Employee";
 //import * as actions from '../../actions/index';
-class DanhSachNV extends React.Component {
+class ListEmployee extends React.Component {
     render() {
         let {Employee} = this.props;
         const listEmployee = Employee.map((item, index) => {
@@ -50,7 +50,7 @@ const ListEmployees = state =>{
     }
 
 };
-export default  connect(ListEmployees,null) (DanhSachNV);
+export default  connect(ListEmployees,null) (ListEmployee);
 
 
 

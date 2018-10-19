@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
-class FormHoaDon extends React.Component {
+class FormBill extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -148,7 +148,7 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps) (FormHoaDon);
+export default connect(mapStateToProps,mapDispatchToProps) (FormBill);
 
 
 

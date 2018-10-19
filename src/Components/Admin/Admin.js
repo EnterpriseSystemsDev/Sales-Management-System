@@ -3,12 +3,12 @@ import './admincss.css'
 import AdHeader from "./AdHeader";
 import Note from "./Note";
 
-import ThongKe from "./ThongKe";
+import ThongKe from "./Statistical";
 import {Link} from "react-router-dom";
-import QLNV from "./QLNV";
-import QLSP from "./QLSP";
-import FormHoaDon from "./FormHoaDon";
-import QLHD from "./QLHD";
+import QLNV from "./ManagementEmployee";
+import QLSP from "./ManagementProduct";
+import FormHoaDon from "./FormBill";
+import QLHD from "./ManagementBill";
 
 
 

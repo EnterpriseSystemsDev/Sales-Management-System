@@ -3,9 +3,9 @@ import img from "../../hinhanh/tuyendung.jpg"
 import {connect} from 'react-redux';
 import  {Link} from 'react-router-dom';
 import * as actions from '../../actions/index';
-import ChiTietTuyenDung from "./ChiTietTuyenDung";
+import ChiTietTuyenDung from "./RecruitmentDetails";
 
-class TuyenDung extends React.Component {
+class Recruitment extends React.Component {
 
     render() {
         let {Recruitment} = this.props;
@@ -58,4 +58,4 @@ const mapStateToProps = state =>{
 
     }
 };
-export default connect(mapStateToProps,null) (TuyenDung);
+export default connect(mapStateToProps,null) (Recruitment);

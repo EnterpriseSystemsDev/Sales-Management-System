@@ -1,13 +1,13 @@
 import React from "react";
-import ThemNV from "./ThemNV";
-import DanhSachNV from "./DanhSachNV";
-import TuyenDung from "./ThemTuyenDung";
-import DanhSachTD from "./DanhSachTD";
+import ThemNV from "./AddEmployee";
+import DanhSachNV from "./ListEmployee";
+import TuyenDung from "./AddRecruitment";
+import DanhSachTD from "./ListRecruitment";
 import {connect} from 'react-redux'
 import * as actions from "../../actions";
 
 
-class QLNV extends React.Component {
+class ManagementEmployee extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -118,7 +118,7 @@ const mapDispatchToProps = (dispatch, props) => {
     };
 
 };
-export default connect(mapStateToProps,mapDispatchToProps)(QLNV);
+export default connect(mapStateToProps,mapDispatchToProps)(ManagementEmployee);
 
 
 

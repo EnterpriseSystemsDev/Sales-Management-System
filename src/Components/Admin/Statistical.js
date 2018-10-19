@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux'
 
-class ThongKe extends React.Component {
+class Statistical extends React.Component {
     render() {
         let { Employee,tasks, Recruitment , Bill} = this.props;
 
@@ -54,7 +54,7 @@ const Count = state =>{
     }
 
 };
-export default  connect(Count,null) (ThongKe);
+export default  connect(Count,null) (Statistical);
 
 
 

@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
 import $ from "jquery"
-class ThemSP extends React.Component {
+class AddProduct extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -258,7 +258,7 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps) (ThemSP);
+export default connect(mapStateToProps,mapDispatchToProps) (AddProduct);
 
 
 

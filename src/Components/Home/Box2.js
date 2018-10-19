@@ -1,8 +1,8 @@
 import React from "react";
 import MySlides from "./MySlides";
 import '../../Style.css';
-import ItemsHot from "./items_hot";
-import ItemsSale from "./Items_Sale";
+import ItemsHot from "./ItemsHot";
+import ItemsSale from "./ItemsSale";
 
 
 

@@ -1,8 +1,8 @@
 import React from "react";
 import {connect} from 'react-redux'
-import HoaDon from "./HoaDon";
+import HoaDon from "./Bill";
 
-class QLHD extends React.Component {
+class ManagementBill extends React.Component {
     render() {
         let {Bill} = this.props;
         const listHD = Bill.map((item, index) => {
@@ -49,7 +49,7 @@ const ListEmployees = state =>{
     }
 
 };
-export default  connect(ListEmployees,null) (QLHD);
+export default  connect(ListEmployees,null) (ManagementBill);
 
 
 

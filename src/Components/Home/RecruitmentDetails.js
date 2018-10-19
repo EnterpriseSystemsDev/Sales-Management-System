@@ -3,7 +3,7 @@ import img from "../../hinhanh/tuyendung.jpg"
 import {connect} from 'react-redux';
 import  {Link} from 'react-router-dom';
 
-class ChiTietTuyenDung extends React.Component {
+class RecruitmentDetails extends React.Component {
 
     render() {
         let {item,index} = this.props;
@@ -25,4 +25,4 @@ const mapStateToProps = state =>{
 
     }
 };
-export default connect(mapStateToProps,null) (ChiTietTuyenDung);
+export default connect(mapStateToProps,null) (RecruitmentDetails);

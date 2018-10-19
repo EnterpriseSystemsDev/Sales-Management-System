@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../Home/Header";
-import Nav from "../Home/Nav";
+import Navbar from "../Home/Navbar";
 import Products from "./Products";
 import Footer from "../Home/Footer";
 import {connect} from "react-redux"
@@ -34,7 +34,7 @@ class Yeezy extends React.Component {
             <div>
                 <Header/>
                 <br/><br/><br/>
-                <Nav/>
+                <Navbar/>
                 <br/>
                 <div className="container">
                     <div className="row">

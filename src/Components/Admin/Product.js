@@ -3,7 +3,7 @@ import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
 
 
-class SanPham extends React.Component {
+class Product extends React.Component {
     onClear = () =>{
         this.setState({
             id: '',
@@ -79,7 +79,7 @@ const mapDispatchToProps = (dispatch, props) => {
 
 };
 
-export default connect(null,mapDispatchToProps) (SanPham);
+export default connect(null,mapDispatchToProps) (Product);
 
 
 

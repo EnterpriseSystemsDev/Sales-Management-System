@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import * as actions from '../../actions/index';
 import $ from "jquery";
 
-class UpdateSanPham extends React.Component {
+class UpdateProduct extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -136,7 +136,7 @@ const mapDispatchToProps = (dispatch, props) => {
 
 };
 
-export default connect(listProducts,mapDispatchToProps) (UpdateSanPham);
+export default connect(listProducts,mapDispatchToProps) (UpdateProduct);
 
 
 

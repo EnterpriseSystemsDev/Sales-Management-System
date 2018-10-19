@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
 
-class ThemTuyenDung extends React.Component {
+class AddRecruitment extends React.Component {
     constructor(props){
         super(props);
         this.state = {
@@ -207,7 +207,7 @@ const mapDispatchToProps = (dispatch, props) => {
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps) (ThemTuyenDung);
+export default connect(mapStateToProps,mapDispatchToProps) (AddRecruitment);
 
 
 
