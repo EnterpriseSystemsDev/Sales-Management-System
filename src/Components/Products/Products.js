@@ -1,23 +1,51 @@
 import React from "react";
-import  {Link} from 'react-router-dom'
-import ItemDetails from "../Home/ItemDetails";
-
+import  {Link} from 'react-router-dom';
 
 class Products extends React.Component {
+    ShowProductList = () =>{
+        let giaSale = parseInt(this.props.price - (this.props.price * this.props.sale)/100);
+        if(this.props.isSale === true){
+            return (<div>
+                <span className="post" style={{fontSize:'13px'}}><strike>{this.props.price}$</strike></span>
+                <span className="post" style={{color:'red'}}>{giaSale}$</span>
+            </div>);
+        }
+        else {
+            return <span className="post">{this.props.price}$</span>
+        }
+    };
+
+    ShowSPriceSale = () =>{
+        if (this.props.isHot === true && this.props.isSale === true){
+            return <p style={{padding:'10px',color:'red'}}><span className="glyphicon glyphicon-fire"></span> -{this.props.sale}%</p>
+        }
+
+        else if (this.props.isHot === true){
+            return <p style={{padding:'10px',color:'red'}}><span className="glyphicon glyphicon-fire"></span></p>
+        }
+        else  if(this.props.isSale === true){
+            return (<div>
+                <p style={{padding:'10px',color:'red'}}> -{this.props.sale}%</p>
+            </div>);
+        }
+        else {
+            return <p style={{padding:'10px',color:'red'}}>  Xem chi tiết</p>
+        }
+    };
     render() {
         return (
-        <div>
-                <div  className=" col-lg-3 col-md-4 col-sm-6 col-xs-6 ">
-                    <div className="box7">
-                        <img src={require("../../hinhanh/"+ this.props.image +".png")} alt={this.props.name} />
-                        <ul className="icon1">
-                             <li><a  className="fa fa-search" data-toggle="modal" data-target="#product_view"/> </li>
-                            <li><Link to="/" className="glyphicon glyphicon-shopping-cart" /></li>
-                        </ul>
-                    </div>
-                    <div className="box-content1">
-                        <h3 className="title1">{this.props.name}</h3>
-                        <span className="post1">{this.props.price}$</span>
+                <div  className=" col-md-4 col-sm-6 ">
+                    <div className="box6 ">
+                        {this.ShowSPriceSale()}
+                        <img src={require("../../hinhanh/" + this.props.image + ".png")} alt="imageProduct"/>
+                        <div className="box-content">
+                            <h3 className="title">{this.props.name}</h3>
+                            {this.ShowProductList()}
+                            <ul className="icon">
+                                <li><a  className="fa fa-search" data-toggle="modal" data-target="#product_view"/> </li>
+                                <li><Link to="#b" className="glyphicon glyphicon-shopping-cart"/></li>
+                            </ul>
+                        </div>
                     </div>
                     <div className="modal fade product_view " id="product_view">
                         <div className="modal-dialog">
@@ -61,7 +89,7 @@ class Products extends React.Component {
 
 
          </div>
-        </div>
+
         );
     }
 }

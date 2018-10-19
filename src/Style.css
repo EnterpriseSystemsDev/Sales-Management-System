@@ -1430,10 +1430,10 @@ label {
         -ms-text-fill-color: transparent;
         text-fill-color: transparent;
         background-image: linear-gradient(45deg,
-        #7794ff,
+        #8400ff,
         #66bb66,
         #FF1361,
-        #FFF800
+        #10707f
         );
         animation: .8s shake infinite alternate;
     }

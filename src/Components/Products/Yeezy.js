@@ -26,6 +26,9 @@ class Yeezy extends React.Component {
                         brand = {item.brand}
                         mota ={item.mota}
                         size = {item.size}
+                        sale ={item.Sale}
+                        isSale = {item.isSale}
+                        isHot = {item.isHot}
                     />
                 </div>
             );

@@ -8,6 +8,7 @@ import Admin from "./Admin/Admin";
 import ThongKe from "./Admin/Statistical";
 import Cart from "./Home/Cart";
 import ChiTietTuyenDung from "./Home/RecruitmentDetails";
+import Register from "./Login/Register";
 
 
 const routes = [
@@ -20,6 +21,11 @@ const routes = [
         path: '/Login',
         exact: true,
         main : () => <Login/>
+    },
+    {
+        path: '/dangky',
+        exact: true,
+        main : () => <Register/>
     },
     {
         path: '/Cart',

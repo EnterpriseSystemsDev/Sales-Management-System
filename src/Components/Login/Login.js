@@ -1,7 +1,6 @@
 import React from "react";
 import {Redirect} from "react-router-dom"
 import Header from "../Home/Header";
-import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
 
 
@@ -72,7 +71,7 @@ class Login extends React.Component {
                             <input type="submit" name="btnSubMit" defaultValue="Login" />
 
                         </form>
-                        <Link to="/dangkytaikhoang">
+                        <Link to="/dangky">
                             <span  className="pagenot" >Sign Up</span>
                         </Link>
                     </div>

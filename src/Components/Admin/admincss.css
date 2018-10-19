@@ -1,12 +1,8 @@
-
-
 /* Navbar */
 .admin .navbar{
     min-height: 33px !important;
     margin-bottom:0;
     border-radius:0px;
-
-
 }
 
 .admin .navbar-default {
@@ -70,32 +66,16 @@
     color:#ffffff !important;
 }
 
-
 /* Breadcrumb */
 .breadcrumb{
     background:#c0392b;
     color:#ffffff;
     font-size: 16px;
 }
-
-
-
 .dash-box{
     text-align:center;
 
 }
-
-
-/* Footer */
-/*#footer{
-    position: fixed;
-    margin-top: 50px;
-    background:#333333;
-    color:#ffffff;
-    text-align:center;
-    padding:30px;
-    margin-bottom: 0;
-}*/
 #footer {
     z-index: 10;
     position: fixed;
@@ -107,7 +87,6 @@
     text-align: center;
     height: 80px;
 }
-
 
 @media (max-width: 767px) {
    .admin .navbar-default .navbar-nav .open .dropdown-menu > li > a {

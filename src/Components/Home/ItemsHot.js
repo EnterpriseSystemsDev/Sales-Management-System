@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux'
 import {Link} from "react-router-dom";
+import Products from "../Products/Products";
 class ItemsHot extends React.Component {
 
     render() {
@@ -9,19 +10,19 @@ class ItemsHot extends React.Component {
             if (item.isHot === true ) {
                 return (
                     <div key={index}>
-                        <div className="col-md-4 col-sm-6" >
-                            <div className="box6 ">
-                                <img src={require("../../hinhanh/" + item.hinhanh + ".png")} alt="imageProduct"/>
-                                <div className="box-content">
-                                    <h3 className="title">{item.tensp}</h3>
-                                    <span className="post">{item.gia}</span>
-                                    <ul className="icon">
-                                        <li><a  className="fa fa-search" data-toggle="modal" data-target="#product_view"/> </li>
-                                        <li><Link to="#b" className="glyphicon glyphicon-shopping-cart"/></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        <Products
+                            key ={index}
+                            id ={item.id}
+                            name ={item.tensp}
+                            image ={item.hinhanh}
+                            price = {item.gia}
+                            brand = {item.brand}
+                            mota ={item.mota}
+                            size = {item.size}
+                            sale ={item.Sale}
+                            isSale={item.isSale}
+                            isHot = {item.isHot}
+                        />
                     </div>
                 );
             }
