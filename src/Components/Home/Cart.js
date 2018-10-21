@@ -23,7 +23,7 @@ class Cart extends React.Component {
                     </div>
                     <div className="product">
                         <div className="product-image">
-                            <img src={img} />
+                            <img src={img} alt="aaS" />
                         </div>
                         <div className="product-details">
                             <div className="product-title">Nike Flex Form TR Women's Sneaker</div>
@@ -42,7 +42,7 @@ class Cart extends React.Component {
                     </div>
                     <div className="product">
                         <div className="product-image">
-                            <img src={img} />
+                            <img src={img} alt="aaS" />
                         </div>
                         <div className="product-details">
                             <div className="product-title">ULTRABOOST UNCAGED SHOES</div>
@@ -87,13 +87,11 @@ class Cart extends React.Component {
 }
 $(document).ready(function () {
 
-    /* Set rates + misc */
     var taxRate = 0.05;
     var shippingRate = 0.0;
     var fadeTime = 300;
 
 
-    /* Assign actions */
     $('.product-quantity input').change(function () {
         updateQuantity(this);
     });
@@ -105,7 +103,7 @@ $(document).ready(function () {
 
     /* Recalculate cart */
     function recalculateCart() {
-        var subtotal = 0;
+        let subtotal = 0;
 
         /* Sum up row totals */
         $('.product').each(function () {
@@ -113,9 +111,9 @@ $(document).ready(function () {
         });
 
         /* Calculate totals */
-        var tax = subtotal * taxRate;
-        var shipping = (subtotal > 0 ? shippingRate : 0);
-        var total = subtotal + tax + shipping;
+        let tax = subtotal * taxRate;
+        let shipping = (subtotal > 0 ? shippingRate : 0);
+        let total = subtotal + tax + shipping;
 
         /* Update totals display */
         $('.totals-value').fadeOut(fadeTime, function () {
@@ -123,7 +121,7 @@ $(document).ready(function () {
             $('#cart-tax').html(tax.toFixed(2));
             $('#cart-shipping').html(shipping.toFixed(2));
             $('#cart-total').html(total.toFixed(2));
-            if (total == 0) {
+            if (total === 0) {
                 $('.checkout').fadeOut(fadeTime);
             } else {
                 $('.checkout').fadeIn(fadeTime);
@@ -133,15 +131,13 @@ $(document).ready(function () {
     }
 
 
-    /* Update quantity */
+
     function updateQuantity(quantityInput) {
-        /* Calculate line price */
         var productRow = $(quantityInput).parent().parent();
         var price = parseFloat(productRow.children('.product-price').text());
         var quantity = $(quantityInput).val();
         var linePrice = price * quantity;
 
-        /* Update line price display and recalc cart totals */
         productRow.children('.product-line-price').each(function () {
             $(this).fadeOut(fadeTime, function () {
                 $(this).text(linePrice.toFixed(2));
@@ -152,9 +148,8 @@ $(document).ready(function () {
     }
 
 
-    /* Remove item from cart */
+
     function removeItem(removeButton) {
-        /* Remove row from DOM and recalc cart total */
         var productRow = $(removeButton).parent().parent();
         productRow.slideUp(fadeTime, function () {
             productRow.remove();

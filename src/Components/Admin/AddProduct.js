@@ -95,6 +95,29 @@ class AddProduct extends React.Component {
         }
     }
 
+    // ChooseSize = () =>{
+    //   return (
+    //     for(var i = 35;i < 43; i+1/2){
+    //          <div>
+    //              <option value="">Chọn Giới Tính</option>
+    //              <option value="Nam">Nam</option>
+    //              <option value="Nữ">Nữ</option>
+    //          </div>
+    //       }
+    //       <div>
+    //           <select
+    //               className="form-control"
+    //               name="size"
+    //               required
+    //               value={this.state.size}
+    //               onChange={this.onChange}
+    //           >
+    //
+    //           </select>
+    //      </div>
+    //   );
+    // };
+
     render() {
         //console.log(this.state);
         $(document).ready(function () {
@@ -151,14 +174,28 @@ class AddProduct extends React.Component {
                     </div>
                     <div className="form-group col-md-6">
                         <label>Size:</label>
-                        <input type="text"
-                               className="form-control"
-                               id="input4"
-                               required
-                               name="size"
-                               value={this.state.size}
-                               onChange={this.onChange}
-                        />
+                        {/*<input type="text"*/}
+                               {/*className="form-control"*/}
+                               {/*id="input4"*/}
+                               {/*required*/}
+                               {/*name="size"*/}
+                               {/*value={this.state.size}*/}
+                               {/*onChange={this.onChange}*/}
+                        {/*/>*/}
+                        <select
+                                      className="form-control"
+                                       name="size"
+                                       required
+                                       value={this.state.size}
+                                       onChange={this.onChange}
+                        >
+                            <option defaultValue="0" >Chọn Size:</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                        </select>
                     </div>
                     <div className="form-group col-md-6">
                         <label>Mô Tả:</label>

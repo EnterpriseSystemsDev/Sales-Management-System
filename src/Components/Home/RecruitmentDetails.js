@@ -1,7 +1,5 @@
 import React from "react";
-import img from "../../hinhanh/tuyendung.jpg"
 import {connect} from 'react-redux';
-import  {Link} from 'react-router-dom';
 
 class RecruitmentDetails extends React.Component {
 

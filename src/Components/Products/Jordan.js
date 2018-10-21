@@ -4,18 +4,20 @@ import Navbar from "../Home/Navbar";
 import Products from "./Products";
 import Footer from "../Home/Footer";
 import {connect} from "react-redux";
+import {Route} from "react-router-dom"
 
 
 class Jordan extends React.Component {
 
     render() {
-
-
         let {tasks} = this.props;
+        // let {match} = this.props;
+        // let url = match.url;
+        // //console.log(url);
         const listProducts = tasks.map((item, index) => {
             if(item.brand === 'Jordan')
             return (
-                <div  key ={index} >
+
                     <Products
                         key ={index}
                         id ={item.id}
@@ -28,8 +30,10 @@ class Jordan extends React.Component {
                         sale ={item.Sale}
                         isSale ={item.isSale}
                         isHot ={item.isHot}
+
                     />
-                </div>
+            // {/*<NavLink to={'${url}/${item.brand}'}>*/}
+            //     // </NavLink>
             );
         });
         return (
@@ -43,6 +47,9 @@ class Jordan extends React.Component {
                      <div className="row">
                          {listProducts}
                      </div>
+                </div>
+                <div className="row">
+                   <Route path="products/Jordan:name" component={Products}/>
                 </div>
             </div>
             <br/>

@@ -9,6 +9,7 @@ import ThongKe from "./Admin/Statistical";
 import Cart from "./Home/Cart";
 import ChiTietTuyenDung from "./Home/RecruitmentDetails";
 import Register from "./Login/Register";
+import Products from "./Products/Products";
 
 
 const routes = [
@@ -34,12 +35,12 @@ const routes = [
     },
 
     {
-        path: '/Jordan',
+        path: '/product/Jordan',
         exact: true,
-        main : () => <Jordan/>
+        main : ({match}) => <Jordan match = {match}/>
     },
     {
-        path: '/Yeezy',
+        path: '/product/Yeezy',
         exact: true,
         main : () => <Yeezy/>
     },
@@ -58,7 +59,11 @@ const routes = [
         exact: true,
         main : () => <ChiTietTuyenDung/>
     },
-
+    {
+        path: '/product',
+        exact: true,
+        main : ({match}) => <Products match ={match}/>
+    },
     {
         path: '',
         exact: false,

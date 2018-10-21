@@ -2,46 +2,46 @@ import React from "react";
 import {connect} from 'react-redux'
 import * as actions from '../../actions/index';
 import SanPham from "./Product";
-import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+//import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
 
 
 class ListProduct extends React.Component {
-     priceFormatter = (cell, row) =>{
-        return '<i class="glyphicon glyphicon-usd"></i> ' + cell;
-    };
-     options = () =>{
-        afterDeleteRow: this.onAfterDeleteRow;
-         afterSearch: this.afterSearch;
-         handleConfirmDeleteRow: this.customConfirm
-    };
-     onAfterDeleteRow = (rowKeys) => {
-        alert('The rowkey you drop: ' + rowKeys);
-    };
-     afterSearch = (searchText, result) =>{
-        console.log('Your search text is ' + searchText);
-        console.log('Result is:');
-        for (let i = 0; i < result.length; i++) {
-            console.log('Fruit: ' + result[i].id + ', ' + result[i].name + ', ' + result[i].price);
-        }
-    };
-    customConfirm = (next, dropRowKeys) => {
-        const dropRowKeysStr = dropRowKeys.join(',');
-        if ((`(It's a custom confirm)Are you sure you want to delete ${dropRowKeysStr}?`)) {
-            next();
-        }
-    };
+    //  priceFormatter = (cell, row) =>{
+    //     return '<i class="glyphicon glyphicon-usd"></i> ' + cell;
+    // };
+    //  options = () =>{
+    //      afterDeleteRow: this.onAfterDeleteRow;
+    //      afterSearch: this.afterSearch;
+    //      handleConfirmDeleteRow: this.customConfirm
+    // };
+    //  onAfterDeleteRow = (rowKeys) => {
+    //     alert('The rowkey you drop: ' + rowKeys);
+    // };
+    //  afterSearch = (searchText, result) =>{
+    //     console.log('Your search text is ' + searchText);
+    //     console.log('Result is:');
+    //     for (let i = 0; i < result.length; i++) {
+    //         console.log('Fruit: ' + result[i].id + ', ' + result[i].name + ', ' + result[i].price);
+    //     }
+    // };
+    // customConfirm = (next, dropRowKeys) => {
+    //     const dropRowKeysStr = dropRowKeys.join(',');
+    //     if ((`(It's a custom confirm)Are you sure you want to delete ${dropRowKeysStr}?`)) {
+    //         next();
+    //     }
+    // };
 
     render() {
-        const selectRowProp = {
-            mode: 'checkbox',
-            bgColor: 'pink',
-           // hideSelectColumn: true,  // enable hide selection column.
-            //clickToSelect: true  // you should enable clickToSelect, otherwise, you can't select column.
-        };
-        const cellEditProp = {
-            mode: 'dbclick'
-        };
+        // const selectRowProp = {
+        //     mode: 'checkbox',
+        //     bgColor: 'pink',
+        //    // hideSelectColumn: true,  // enable hide selection column.
+        //     //clickToSelect: true  // you should enable clickToSelect, otherwise, you can't select column.
+        // };
+        // const cellEditProp = {
+        //     mode: 'dbclick'
+        // };
         let {tasks} = this.props;
         const listSP = tasks.map((task, index) => {
             return (

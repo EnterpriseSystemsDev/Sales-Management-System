@@ -75,7 +75,7 @@ $(document).ready(function () {
         var email = $("#email").val();
         var password = $("#pwd").val();
         var cpassword = $("#pwd1").val();
-        if (name == '' || email == '' || password == '' || cpassword == '') {
+        if (name === '' || email === '' || password === '' || cpassword === '') {
             alert("Xin Nhập Đủ Thông Tin");
         } else if ((password.length) < 6) {
             alert("Password Phải dài hơn 6 kí tự");

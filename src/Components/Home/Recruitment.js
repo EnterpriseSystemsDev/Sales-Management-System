@@ -2,8 +2,7 @@ import React from "react";
 import img from "../../hinhanh/tuyendung.jpg"
 import {connect} from 'react-redux';
 import  {Link} from 'react-router-dom';
-import * as actions from '../../actions/index';
-import ChiTietTuyenDung from "./RecruitmentDetails";
+
 
 class Recruitment extends React.Component {
 
@@ -14,7 +13,7 @@ class Recruitment extends React.Component {
 
                     <div className="thumbnail col-md-4"  key={index}>
                         <div className="tuyendung">
-                            <img src={img} />
+                            <img src={img} alt="recruimentImage"/>
                             <div className="box-content">
                                 <h4 style={{color:'white',textAlign:'right',marginTop:'0',
                                     padding:'12px',backgroundColor:'rgba(0, 0, 0, 0.4)',

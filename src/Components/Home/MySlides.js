@@ -3,7 +3,6 @@ import React from "react";
 import myslide from "../../hinhanh/cover1s.jpg";
 import myslide1 from "../../hinhanh/cover2s.jpg";
 import myslide2 from "../../hinhanh/cover3s.jpg";
-import myslide3 from "../../hinhanh/cover4s.jpg";
 
 class MySlides extends React.Component {
 
@@ -14,13 +13,13 @@ class MySlides extends React.Component {
             <div>
                 <div className="container">
                     <div id="myCarousel" className="carousel slide" data-ride="carousel">
-                        {/* Indicators */}
+
                         <ol className="carousel-indicators">
                             <li data-target="#myCarousel" data-slide-to={0} className="active" />
                             <li data-target="#myCarousel" data-slide-to={1} />
                             <li data-target="#myCarousel" data-slide-to={2} />
                         </ol>
-                        {/* Wrapper for slides */}
+
                         <div className="carousel-inner" >
                             <div className="item active" >
                                 <img src={myslide} alt="Los Angeles" style={{width: '100%'}} />
@@ -36,7 +35,7 @@ class MySlides extends React.Component {
                                 <img src={myslide2} alt="New york" style={{width: '100%'}} />
                             </div>
                         </div>
-                        {/* Left and right controls */}
+
                         <a className="left carousel-control" href="#myCarousel" data-slide="prev">
                             <span className="glyphicon glyphicon-chevron-left" />
                             <span className="sr-only">Previous</span>
@@ -54,14 +53,5 @@ class MySlides extends React.Component {
 }
 export default MySlides;
 
-{/*<div className="w3-content w3-display-container active">*/}
-{/*<a href="#yezzy"><img className="mySlides" alt="cover" src={myslide} style={{width: '100%'}}/></a>*/}
-{/*/!*<a href="#yezzy"><img className="mySlides" src={myslide} style={{width: '100%'}}/></a>*/}
-{/*<a href="#yezzy"><img className="mySlides" src={myslide} style={{width: '100%'}}/></a>*/}
-{/*<a href="#yezzy"><img className="mySlides" src={myslide} style={{width: '100%'}}/></a>*/}
-{/*<a href="#yezzy"><img className="mySlides" src={myslide} style={{width: '100%'}}/></a>*!/*/}
-{/*<button className="w3-button w3-button w3-display-left" onClick={plusDivs(-1)}>❮</button>*/}
-{/*<button className="w3-button w3-button w3-display-right" onClick={plusDivs(1)}>❯</button>*/}
-{/*</div>*/}
 
 

@@ -32,21 +32,23 @@ class Products extends React.Component {
             return <p style={{padding:'10px',color:'red'}}>  Xem chi tiết</p>
         }
     };
+
     render() {
+
         return (
                 <div  className=" col-md-4 col-sm-6 ">
-                    <div className="box6 ">
-                        {this.ShowSPriceSale()}
-                        <img src={require("../../hinhanh/" + this.props.image + ".png")} alt="imageProduct"/>
-                        <div className="box-content">
-                            <h3 className="title">{this.props.name}</h3>
-                            {this.ShowProductList()}
-                            <ul className="icon">
-                                <li><a  className="fa fa-search" data-toggle="modal" data-target="#product_view"/> </li>
-                                <li><Link to="#b" className="glyphicon glyphicon-shopping-cart"/></li>
-                            </ul>
+                        <div className="box6 ">
+                            {this.ShowSPriceSale()}
+                            <img src={require("../../hinhanh/" + this.props.image + ".png")} alt="imageProduct"/>
+                            <div className="box-content">
+                                <h3 className="title">{this.props.name}</h3>
+                                {this.ShowProductList()}
+                                <ul className="icon">
+                                    <li><a  className="fa fa-search" data-toggle="modal" data-target="#product_view"/> </li>
+                                    <li><Link to="#b" className="glyphicon glyphicon-shopping-cart"/></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
                     <div className="modal fade product_view " id="product_view">
                         <div className="modal-dialog">
                             <div className="modal-content ">
@@ -68,7 +70,7 @@ class Products extends React.Component {
                                                 <div className="col-md-4 col-sm-6 col-xs-12">
                                                     <label>Size: </label>
                                                     <select className="form-control" name="select">
-                                                        <option value selected>39</option>
+                                                        <option value="39" selected>39</option>
                                                         <option value="black">40</option>
                                                         <option value="white">41</option>
                                                         <option value="gold">42</option>
@@ -86,8 +88,6 @@ class Products extends React.Component {
                             </div>
                         </div>
                     </div>
-
-
          </div>
 
         );

@@ -5,7 +5,7 @@ class Box4 extends  React.Component{
     render(){
         return (
             <div className="container-fluid" style={{ backgroundColor: '#ffffff'}}>
-                <img src={img} alt="Los Angeles" style={{width: '100%'}} />
+                <img src={img} alt="Jordan" style={{width: '100%'}} />
             </div>
         );
 

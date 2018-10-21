@@ -10,6 +10,8 @@
     display: table;
     background-attachment: fixed;
 }
+
+
 @media screen and (max-width: 650px) {
     #box1 {
         height: 40vh;
@@ -1445,4 +1447,9 @@ label {
     15% { transform: skewX(15deg); }
     20% { transform: skewX(0deg); }
     100% { transform: skewX(0deg); }
+}
+
+.custom {
+    font-size: 20px;
+    color: #cc6666;
 }
