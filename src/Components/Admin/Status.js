@@ -2,6 +2,7 @@ import React from "react";
 import {connect} from 'react-redux'
 import * as actions from '../../actions/index';
 import UpdateSanPham from "./UpdateProduct";
+import $ from "jquery";
 
 
 class StatusSP extends React.Component {
@@ -18,6 +19,15 @@ class StatusSP extends React.Component {
 
 
     render() {
+        $(document).ready(function () {
+            $("#someSwitchOptionWarning").click(function () {
+                if ($(this).is(":checked")) {
+                    $("#hidden_fields").show();
+                } else {
+                    $("#hidden_fields").hide();
+                }
+            });
+        });
         let {tasks} = this.props;
         const listSP = tasks.map((task, index) => {
             return (
@@ -41,11 +51,13 @@ class StatusSP extends React.Component {
                         <tr>
                             <th>STT</th>
                             <th>Tên Sản Phẩm</th>
+                            <th>Giá</th>
                             <th>Hãng</th>
                             <th>Size</th>
                             <th>HOT</th>
                             <th>Sale</th>
-                            {/*<th>Hành Động</th>*/}
+                            <th>% Sale</th>
+                            <th>Hành Động</th>
 
                         </tr>
                         {listSP }

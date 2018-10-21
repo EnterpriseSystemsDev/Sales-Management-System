@@ -65,9 +65,10 @@ class AddProduct extends React.Component {
                 size : this.props.editProduct.size,
                 mota : this.props.editProduct.mota,
                 hinhanh : this.props.editProduct.hinhanh,
+                isHot:this.props.editProduct.isHot ,
+                isSale:this.props.editProduct.isSale ,
                 Sale:this.props.editProduct.Sale,
-                isHot:this.props.editProduct.isHot,
-                isSale:this.props.editProduct.isSale,
+
             });
         }
         else {
@@ -94,32 +95,7 @@ class AddProduct extends React.Component {
             this.onClear();
         }
     }
-
-    // ChooseSize = () =>{
-    //   return (
-    //     for(var i = 35;i < 43; i+1/2){
-    //          <div>
-    //              <option value="">Chọn Giới Tính</option>
-    //              <option value="Nam">Nam</option>
-    //              <option value="Nữ">Nữ</option>
-    //          </div>
-    //       }
-    //       <div>
-    //           <select
-    //               className="form-control"
-    //               name="size"
-    //               required
-    //               value={this.state.size}
-    //               onChange={this.onChange}
-    //           >
-    //
-    //           </select>
-    //      </div>
-    //   );
-    // };
-
     render() {
-        //console.log(this.state);
         $(document).ready(function () {
             $("#someSwitchOptionWarning").click(function () {
                 if ($(this).is(":checked")) {
@@ -143,7 +119,7 @@ class AddProduct extends React.Component {
                         <input type="text"
                                className="form-control"
                                id="input1"
-                               required = "cancacnad"
+                               required
                                name="tensp"
                                value={this.state.tensp}
                                onChange={this.onChange}
@@ -174,14 +150,6 @@ class AddProduct extends React.Component {
                     </div>
                     <div className="form-group col-md-6">
                         <label>Size:</label>
-                        {/*<input type="text"*/}
-                               {/*className="form-control"*/}
-                               {/*id="input4"*/}
-                               {/*required*/}
-                               {/*name="size"*/}
-                               {/*value={this.state.size}*/}
-                               {/*onChange={this.onChange}*/}
-                        {/*/>*/}
                         <select
                                       className="form-control"
                                        name="size"
@@ -195,6 +163,7 @@ class AddProduct extends React.Component {
                             <option value="40">40</option>
                             <option value="41">41</option>
                             <option value="42">42</option>
+                            <option value="43">43</option>
                         </select>
                     </div>
                     <div className="form-group col-md-6">

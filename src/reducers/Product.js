@@ -35,7 +35,7 @@ let myReducer = (state= initialState, action) => {
                 mota:  action.task.mota,
                 hinhanh:  action.task.hinhanh,
                 Sale : action.task.Sale ,
-                isHot: action.task.isHot ? action.task.isHot: false,
+                isHot: action.task.isHot ,
                 isSale:action.task.isSale,
             };
                 if(!newTaskProducts.id){
@@ -62,14 +62,14 @@ let myReducer = (state= initialState, action) => {
             localStorage.setItem('tasks', JSON.stringify(state));
              return [...state];
 
-        // case types.UPDATE_STATUS_SALE:
-        //     var id = action.id;
-        //     var index = findIndex(state,id);
-        //     state[index].isSale = !state[index].isSale;
-        //     //Sale : action.task.Sale;
-        //     state.push(newTask);
-        //     localStorage.setItem('tasks', JSON.stringify(state));
-        //     return [...state];
+        case types.UPDATE_STATUS_SALE:
+            var id = action.id;
+            var index = findIndex(state,id);
+            state[index].isSale = !state[index].isSale;
+            //Sale : action.task.Sale;
+            //state.push(tasks);
+            localStorage.setItem('tasks', JSON.stringify(state));
+            return [...state];
 
         default : return state;
     }

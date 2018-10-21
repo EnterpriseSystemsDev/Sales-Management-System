@@ -27,12 +27,13 @@ class UpdateProduct extends React.Component {
             [name] : value
         });
     };
-    UpdateSP = () =>{
+    UpdateSPSale = () =>{
         this.props.onUpdateStatus(this.props.task.id);
 
     };
-    UpdateSPSale = () =>{
+    UpdateSP = () =>{
         this.props.onUpdateStatusSale(this.props.task.id);
+
     };
     render() {
         $(document).ready(function () {
@@ -50,6 +51,7 @@ class UpdateProduct extends React.Component {
             <tr key ={index}>
                 <td>{index + 1}</td>
                 <td>{task.tensp}</td>
+                <td>{task.gia}$</td>
                 <td>{task.brand}</td>
                 <td>{task.size}</td>
                 <td>
@@ -67,37 +69,37 @@ class UpdateProduct extends React.Component {
                         <label htmlFor={task.id} className="label-danger" />
                     </div>
                 </td>
-                {/*<td>*/}
-                    {/*<div className="material-switch pull-left ">*/}
-                        {/*<input*/}
-                            {/*className="aaa"*/}
-                            {/*onClick={this.UpdateSPSale}*/}
-                            {/*id={task.id +1}*/}
-                            {/*name="isSale"*/}
-                            {/*type="checkbox"*/}
-                            {/*value={task.isSale}*/}
-                            {/*onChange={this.onChange}*/}
-                            {/*checked={task.isSale}*/}
-                        {/*/>*/}
-                        {/*<label htmlFor={task.id +1} className="label-warning" />*/}
-                    {/*</div>*/}
-                {/*</td>*/}
-
+                <td>
+                    <div className="material-switch pull-left ">
+                        <input
+                            className="aaa"
+                            onClick={this.UpdateSPSale}
+                            id={task.Sale}
+                            name="isSale"
+                            type="checkbox"
+                            value={task.isSale}
+                            onChange={this.onChange}
+                            checked={task.isSale}
+                        />
+                        <label htmlFor={task.Sale} className="label-warning" />
+                    </div>
+                </td>
+                <td>
+                    <input type="text"
+                           id="hidden_fields"
+                           className="form-control"
+                           name="Sale"
+                           value={this.state.Sale}
+                           onChange={this.onChange}
+                           placeholder="% Sale"
+                    />
+                </td>
                 <td>
                     <button onClick={this.onEdit } type="button" className="btn btn-success">
                         Cập nhật
                     </button>
                 </td>
-                {/*<td>*/}
-                    {/*<input type="text"*/}
-                           {/*id="hidden_fields" style={{display:'none'}}*/}
-                           {/*className="form-control"*/}
-                           {/*name="Sale"*/}
-                           {/*value={task.Sale}*/}
-                           {/*onChange={this.onChange}*/}
-                           {/*placeholder="% Sale"*/}
-                    {/*/>*/}
-                {/*</td>*/}
+
             </tr>
 
 
