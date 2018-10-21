@@ -66,9 +66,7 @@ let myReducer = (state= initialState, action) => {
             var id = action.id;
             var index = findIndex(state,id);
             state[index].isSale = !state[index].isSale;
-            //Sale : action.task.Sale;
-            //state.push(tasks);
-            localStorage.setItem('tasks', JSON.stringify(state));
+             localStorage.setItem('tasks', JSON.stringify(state));
             return [...state];
 
         default : return state;

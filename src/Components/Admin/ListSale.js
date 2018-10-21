@@ -1,16 +1,18 @@
 import React from "react";
 import {connect} from 'react-redux'
 import * as actions from '../../actions/index';
-import UpdateSanPham from "./UpdateProduct";
+import UpdateProductSale from "./UpdateProductSale";
 
-class StatusSP extends React.Component {
+
+class ListSale extends React.Component {
+
 
     render() {
 
         let {tasks} = this.props;
         const listSP = tasks.map((task, index) => {
             return (
-                <UpdateSanPham
+                <UpdateProductSale
                     key = {task.id}
                     index = {index}
                     task = {task}
@@ -19,9 +21,9 @@ class StatusSP extends React.Component {
         });
 
         return (
-            <div className="panel panel-danger">
+            <div className="panel panel-warning">
                 <div className="panel-heading">
-                    <h3 className="panel-title">Thêm Sản Phẩm HOT</h3>
+                    <h3 className="panel-title warning ">Thêm Sản Phẩm Sale</h3>
 
                 </div>
                 <div className="table-responsive">
@@ -33,7 +35,9 @@ class StatusSP extends React.Component {
                             <th>Giá</th>
                             <th>Hãng</th>
                             <th>Size</th>
-                            <th>HOT</th>
+                            <th>Sale</th>
+                            <th>% Sale</th>
+                            <th>Hành Động</th>
                         </tr>
                         {listSP }
                         </tbody>
@@ -55,12 +59,6 @@ const listProducts = state =>{
 };
 const mapDispatchToProps = (dispatch, props) => {
     return{
-        delete_PRODUCT : (id) => {
-            dispatch(actions.deleteProduct(id));
-        },
-        onUpDateForm : () => {
-            dispatch(actions.updateForm());
-        },
 
         onEditProduct: (task) =>{
             dispatch(actions.editProDuct(task));
@@ -70,7 +68,7 @@ const mapDispatchToProps = (dispatch, props) => {
 
 };
 
-export default connect(listProducts,mapDispatchToProps) (StatusSP);
+export default connect(listProducts,mapDispatchToProps) (ListSale);
 
 
 

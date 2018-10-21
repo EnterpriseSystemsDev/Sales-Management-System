@@ -9,6 +9,7 @@ import QLNV from "./ManagementEmployee";
 import QLSP from "./ManagementProduct";
 import FormHoaDon from "./FormBill";
 import QLHD from "./ManagementBill";
+import ListSale from "./ListSale";
 
 
 
@@ -22,6 +23,7 @@ class Admin extends React.Component {
             displayQLSP: false,
             displayFromHoadon: false,
             displayQLDH: false,
+            displaySale: false,
         }
     }
     showTK = () => {
@@ -31,6 +33,7 @@ class Admin extends React.Component {
             displayQLSP: false,
             displayFromHoadon: false,
             displayQLDH: false,
+            displaySale: false,
         });
     };
 
@@ -41,6 +44,7 @@ class Admin extends React.Component {
             displayQLSP: false,
             displayFromHoadon: false,
             displayQLDH: false,
+            displaySale: false,
         });
     };
 
@@ -51,6 +55,7 @@ class Admin extends React.Component {
             displayQLSP: true,
             displayFromHoadon: false,
             displayQLDH: false,
+            displaySale: false,
         });
     };
     showFormHD = () => {
@@ -60,6 +65,7 @@ class Admin extends React.Component {
             displayQLSP: false,
             displayFromHoadon: true,
             displayQLDH: false,
+            displaySale: false,
         });
     };
     showQLHD = () => {
@@ -69,17 +75,29 @@ class Admin extends React.Component {
             displayQLSP: false,
             displayFromHoadon: false,
             displayQLDH: true,
+            displaySale: false,
+        });
+    };
+    showProductSale = () => {
+        this.setState({
+            displayQLNV : false,
+            displayTK : false,
+            displayQLSP: false,
+            displayFromHoadon: false,
+            displayQLDH: false,
+            displaySale: true,
         });
     };
 
 
     render() {
-        let {displayTK,displayQLNV,displayQLSP,displayFromHoadon,displayQLDH} = this.state;
+        let {displayTK,displayQLNV,displayQLSP,displayFromHoadon,displayQLDH, displaySale} = this.state;
         let ShowThongKe = displayTK ? <ThongKe /> : '';
         let ShowQLNV = displayQLNV ? <QLNV/> : '';
         let ShowQLSP = displayQLSP ? <QLSP  /> : '';
         let ShowFormHD = displayFromHoadon ? <FormHoaDon/> : '';
         let ShowQLHD = displayQLDH ? <QLHD/> : '';
+        let ShowProductSale = displaySale ? <ListSale/> : '';
         return (
             <div>
             <div>
@@ -99,6 +117,7 @@ class Admin extends React.Component {
                                     <button onClick={this.showQLNV} className={displayQLNV ? 'list-group-item  active' : 'list-group-item' }><span className="fa fa-users" /> Quản Lý Nhân Viên </button>
                                     <button onClick={this.showFormHD} className={displayFromHoadon ? 'list-group-item  active' : 'list-group-item' }><span className="fa fa-table"  /> Tạo Hóa Đơn </button>
                                     <button onClick={this.showQLHD} className={displayQLDH ? 'list-group-item  active' : 'list-group-item' }><span className="glyphicon glyphicon-list-alt"  /> Quản Lý Đơn Hàng </button>
+                                    <button onClick={this.showProductSale} className={displaySale ? 'list-group-item  active' : 'list-group-item' }><span className="glyphicon glyphicon-tag"  /> Tạo Đợt Sale</button>
 
                                 </div>
                             </div>
@@ -108,6 +127,7 @@ class Admin extends React.Component {
                                 {ShowQLSP}
                                 {ShowFormHD}
                                 {ShowQLHD}
+                                {ShowProductSale}
                             </div>
                         </div>
                     </div>

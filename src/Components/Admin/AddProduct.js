@@ -189,7 +189,7 @@ class AddProduct extends React.Component {
                         />
                     </div>
                     <div className="form-group col-md-6">
-                        <div id="hidden_fields" style={{display:'none'}}>
+                        <div id="hidden_fields" style={{display:'block'}}>
                             <label style={{float:'left',marginRight:'20px'}} >(%): </label>
                             <input type="text"
                                    className="form-control"
@@ -200,32 +200,32 @@ class AddProduct extends React.Component {
                             />
                         </div>
                     </div>
-                    <div className="form-group col-md-6">
-                        <label style={{float:'left',marginRight:'20px'}}>HOT: </label>
-                        <div className="material-switch pull-left ">
-                            <input
-                                id="someSwitchOptionDanger"
-                                name="isHot"
-                                type="checkbox"
-                                value={this.state.isHot}
-                                onChange={this.onChange}
-                            />
-                            <label htmlFor="someSwitchOptionDanger" className="label-danger" />
-                        </div>
-                        <div className=" col-md-6">
-                            <label style={{float:'left',marginRight:'20px'}}>Sale: </label>
-                            <div className="material-switch pull-left ">
-                                <input
-                                    id="someSwitchOptionWarning"
-                                    name="isSale"
-                                    type="checkbox"
-                                    value={this.state.isSale}
-                                    onChange={this.onChange}
-                                />
-                                <label htmlFor="someSwitchOptionWarning" className="label-warning" />
-                            </div>
-                        </div>
-                    </div>
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label style={{float:'left',marginRight:'20px'}}>HOT: </label>*/}
+                        {/*<div className="material-switch pull-left ">*/}
+                            {/*<input*/}
+                                {/*id="someSwitchOptionDanger"*/}
+                                {/*name="isHot"*/}
+                                {/*type="checkbox"*/}
+                                {/*value={this.state.isHot}*/}
+                                {/*onChange={this.onChange}*/}
+                            {/*/>*/}
+                            {/*<label htmlFor="someSwitchOptionDanger" className="label-danger" />*/}
+                        {/*</div>*/}
+                        {/*<div className=" col-md-6">*/}
+                            {/*<label style={{float:'left',marginRight:'20px'}}>Sale: </label>*/}
+                            {/*<div className="material-switch pull-left ">*/}
+                                {/*<input*/}
+                                    {/*id="someSwitchOptionWarning"*/}
+                                    {/*name="isSale"*/}
+                                    {/*type="checkbox"*/}
+                                    {/*value={this.state.isSale}*/}
+                                    {/*onChange={this.onChange}*/}
+                                {/*/>*/}
+                                {/*<label htmlFor="someSwitchOptionWarning" className="label-warning" />*/}
+                            {/*</div>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
 
 
 

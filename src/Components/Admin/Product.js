@@ -2,7 +2,6 @@ import React from "react";
 import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
 
-
 class Product extends React.Component {
     onClear = () =>{
         this.setState({
