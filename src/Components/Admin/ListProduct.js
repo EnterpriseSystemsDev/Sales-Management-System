@@ -4,9 +4,27 @@ import * as actions from '../../actions/index';
 import SanPham from "./Product";
 //import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 
-
-
 class ListProduct extends React.Component {
+    constructor(props){
+        super(props);
+        this.state ={
+            filterName: '',
+            filterStatus:-1
+        }
+    }
+    onChange = (event) =>{
+        let target = event.target;
+        let name = target.name;
+        let value = target.type === 'checkbox' ? target.checked : target.value;
+        let filter ={
+                name : name === 'filterName' ? value : this.state.filterName,
+                status : name === 'filterStatus' ? value : this.state.filterStatus
+        };
+        this.props.onFilterTable(filter);
+        this.setState({
+           [name] : value
+        });
+    };
     //  priceFormatter = (cell, row) =>{
     //     return '<i class="glyphicon glyphicon-usd"></i> ' + cell;
     // };
@@ -15,9 +33,7 @@ class ListProduct extends React.Component {
     //      afterSearch: this.afterSearch;
     //      handleConfirmDeleteRow: this.customConfirm
     // };
-    //  onAfterDeleteRow = (rowKeys) => {
-    //     alert('The rowkey you drop: ' + rowKeys);
-    // };
+    //
     //  afterSearch = (searchText, result) =>{
     //     console.log('Your search text is ' + searchText);
     //     console.log('Result is:');
@@ -42,7 +58,31 @@ class ListProduct extends React.Component {
         // const cellEditProp = {
         //     mode: 'dbclick'
         // };
-        let {tasks} = this.props;
+        let {tasks,FilterTable} = this.props;
+        if(FilterTable.name){
+            tasks = tasks.filter((task) =>{
+               return (task.tensp.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
+                   task.brand.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
+                   task.gia.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
+                   task.mota.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
+                   task.size.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1);
+            });
+        }
+
+        tasks = tasks.filter((task) =>{
+            if(FilterTable.status === -1){
+                return task;
+            }
+            else if(FilterTable.status === 0){
+                return task.isHot === (FilterTable.status === 0 ? true : false);
+            }
+            else{
+                return task.isSale === (FilterTable.status === 1 ? true : false);
+            }
+        });
+        if(FilterTable.status){
+
+        }
         const listSP = tasks.map((task, index) => {
             return (
                    <SanPham
@@ -59,22 +99,51 @@ class ListProduct extends React.Component {
                 </div>
                 <div className="table-responsive">
                     <table  className="table table-striped  table-hover">
-                        <tbody>
+                        <thead>
                         <tr>
-                            <th>STT</th>
-                            <th>Tên Sản Phẩm</th>
-                            <th>Hãng</th>
-                            <th>Giá</th>
-                            <th>Size</th>
-                            <th>Mô Tả</th>
-                            <th>Hình Ảnh</th>
-                            <th>Hành Động</th>
+                            <td></td>
+                            <td>
+                                <input type="text"
+                                       className="form-control "
+                                       name="filterName"
+                                       onChange={this.onChange}
+                                       value={this.state.filterName}
+                                />
+                            </td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>
+                                <select
+                                    className="form-control"
+                                    name = "filterStatus"
+                                    onChange={this.onChange}
+                                    value={this.state.filterStatus}
+                                >
+                                    <option value={-1}>Tất Cả</option>
+                                    <option value={0}>Hot</option>
+                                    <option value={1}>Sale</option>
+                                </select>
+                            </td>
+
                         </tr>
-                        {listSP }
+                            <tr>
+                                <th>STT</th>
+                                <th>Tên Sản Phẩm</th>
+                                <th>Hãng</th>
+                                <th>Giá</th>
+                                <th>Size</th>
+                                <th>Mô Tả</th>
+                                <th>Hình Ảnh</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {listSP }
                         </tbody>
                     </table>
                 </div>
-                {/*<BootstrapTable pagination data={tasks} condensed={true} bordered={ false} search={ true } multiColumnSearch={ true } cellEdit={ cellEditProp } deleteRow={ true } selectRow={ selectRowProp } options={this.options } striped={true} hover={true}>*/}
+                {/*<BootstrapTable pagination data={tasks} condensed={true} bordered={ false} search={ true } multiColumnSearch={ true } striped={true} hover={true}>*/}
                     {/*<TableHeaderColumn width='200' dataField="id" columnTitle hidden isKey={true} dataAlign="center" dataSort={true}>ID</TableHeaderColumn>*/}
                     {/*<TableHeaderColumn width='200' dataField="tensp" columnTitle   dataAlign="center" dataSort={true}>Tên Sản Phẩm</TableHeaderColumn>*/}
                     {/*<TableHeaderColumn width='200' dataField="brand" columnTitle dataSort={true} dataAlign='center'>Hãng</TableHeaderColumn>*/}
@@ -91,11 +160,11 @@ class ListProduct extends React.Component {
     }
 }
 
-const listProducts = state =>{
+const mapStateToProps = state =>{
         return {
             tasks : state.tasks,
-            editProduct : state.editProduct
-            // editProduct : state.editProduct
+            editProduct : state.editProduct,
+            FilterTable : state.FilterTable,
         }
 
 };
@@ -111,11 +180,14 @@ const mapDispatchToProps = (dispatch, props) => {
          onEditProduct: (task) =>{
             dispatch(actions.editProDuct(task));
          },
+        onFilterTable: (filter) =>{
+            dispatch(actions.filterTable(filter));
+        },
     };
 
 };
 
-export default connect(listProducts,mapDispatchToProps) (ListProduct);
+export default connect(mapStateToProps,mapDispatchToProps) (ListProduct);
 
 
 

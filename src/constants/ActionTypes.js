@@ -29,3 +29,5 @@ export const ADD_FROM_BILL = 'ADD_FROM_BILL';
 export const DELETE_BILL = 'DELETE_BILL';
 export const UPDATE_STATUS = 'UPDATE_STATUS';
 export const UPDATE_STATUS_SALE = 'UPDATE_STATUS_SALE';
+
+export const FILTER_TABLE = 'FILTER_TABLE';

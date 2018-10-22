@@ -155,3 +155,10 @@ export const updateStatusSale = (id) => {
         id : id
     }
 };
+
+export const filterTable = (filter) => {
+    return {
+        type : types.FILTER_TABLE,
+        filter : filter
+    }
+};

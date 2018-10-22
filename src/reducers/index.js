@@ -8,7 +8,7 @@ import editProduct from './EditProduct';
 import EditEmployee from './EditEmployee';
 import EditRecruitment from "./EditRecruitment";
 import FormEmployee from "./FormEmployee";
-
+import FilterTable from "./FilterTable";
 const myReducer = combineReducers({
     tasks : tasks,
     displayForm: displayForm,
@@ -19,6 +19,6 @@ const myReducer = combineReducers({
     EditRecruitment: EditRecruitment,
     Bill: Bill,
     FormEmployee: FormEmployee,
-
+    FilterTable: FilterTable,
 });
 export default myReducer;
