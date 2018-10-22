@@ -9,7 +9,9 @@ class ListProduct extends React.Component {
         super(props);
         this.state ={
             filterName: '',
-            filterStatus:-1
+            filterStatus:-1,
+            sortBy : 'name',
+            sortValue: 1
         }
     }
     onChange = (event) =>{
@@ -23,6 +25,12 @@ class ListProduct extends React.Component {
         this.props.onFilterTable(filter);
         this.setState({
            [name] : value
+        });
+    };
+    onClick = (sortBy, sortValue) =>{
+        this.props.onSortProduct({
+            by: sortBy,
+            value: sortValue
         });
     };
     //  priceFormatter = (cell, row) =>{
@@ -58,7 +66,7 @@ class ListProduct extends React.Component {
         // const cellEditProp = {
         //     mode: 'dbclick'
         // };
-        let {tasks,FilterTable} = this.props;
+        let {tasks,FilterTable,SortTable} = this.props;
         if(FilterTable.name){
             tasks = tasks.filter((task) =>{
                return (task.tensp.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
@@ -80,9 +88,31 @@ class ListProduct extends React.Component {
                 return task.isSale === (FilterTable.status === 1 ? true : false);
             }
         });
-        if(FilterTable.status){
 
+        if(SortTable.by === 'name'){
+            tasks.sort((a,b) =>{
+                if(a.tensp > b.tensp){
+                    return SortTable.value;
+                }
+                else if(a.tensp < b.tensp){
+                    return -SortTable.value;
+                }else {
+                    return 0;
+                }
+            })
+        }else {
+            tasks.sort((a,b) =>{
+                if(a.gia > b.gia){
+                    return SortTable.value;
+                }
+                else if(a.gia < b.gia){
+                    return -SortTable.value;
+                }else {
+                    return 0;
+                }
+            })
         }
+
         const listSP = tasks.map((task, index) => {
             return (
                    <SanPham
@@ -108,6 +138,7 @@ class ListProduct extends React.Component {
                                        name="filterName"
                                        onChange={this.onChange}
                                        value={this.state.filterName}
+                                       placeholder="nhập sản phẩm cần tìm"
                                 />
                             </td>
                             <td></td>
@@ -125,7 +156,54 @@ class ListProduct extends React.Component {
                                     <option value={1}>Sale</option>
                                 </select>
                             </td>
+                            <td></td>
+                            <td>
+                                <div className="dropdown">
+                                    <button className="btn btn-dark dropdown-toggle"
+                                            id="dropdownMenu1"
+                                            type="button"
+                                            data-toggle = "dropdown"
+                                            aria-haspopup="true"
+                                            aria-expanded="true"
+                                    >
+                                    Sắp Xếp
+                                    </button>
+                                    <ul className="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                        <li onClick={() => this.onClick('name',1)}>
+                                           <a role="button"
+                                              className = "sort_selected"
 
+                                           >
+                                                <span className="fa fa-sort-alpha-asc pr-5">
+                                                    Tên A - Z
+                                                </span>
+                                           </a>
+                                        </li>
+                                        <li onClick={() => this.onClick('name', -1)}>
+                                            <a role="button" className = "sort_selected">
+                                                <span className="fa fa-sort-alpha-desc pr-5">
+                                                    Tên Z - A
+                                                </span>
+                                            </a>
+                                        </li>
+                                        <li role="separator" className="divider">
+
+                                        </li>
+                                        <li onClick={() => this.onClick('status',-1)}>
+                                            <a role="button">
+                                                Giá Giảm Dần
+                                            </a>
+                                        </li>
+                                        <li  onClick={() => this.onClick('status',1)}>
+                                            <a role="button"
+                                               className = "sort_selected"
+                                            >
+                                                Giá Tăng Dần
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
                         </tr>
                             <tr>
                                 <th>STT</th>
@@ -165,6 +243,7 @@ const mapStateToProps = state =>{
             tasks : state.tasks,
             editProduct : state.editProduct,
             FilterTable : state.FilterTable,
+            SortTable: state.SortTable,
         }
 
 };
@@ -182,6 +261,9 @@ const mapDispatchToProps = (dispatch, props) => {
          },
         onFilterTable: (filter) =>{
             dispatch(actions.filterTable(filter));
+        },
+        onSortProduct: (sort) =>{
+            dispatch(actions.sortProduct(sort));
         },
     };
 

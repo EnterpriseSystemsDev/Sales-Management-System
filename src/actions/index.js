@@ -162,3 +162,16 @@ export const filterTable = (filter) => {
         filter : filter
     }
 };
+
+export const searchProduct = (keyword) => {
+    return {
+        type : types.SEARCH_PRODUCT,
+        keyword : keyword
+    }
+};
+export const sortProduct = (sort) => {
+    return {
+        type : types.SORT_PRODUCT,
+        sort : sort
+    }
+};

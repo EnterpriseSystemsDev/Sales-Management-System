@@ -3,7 +3,7 @@ import  {Link} from 'react-router-dom';
 
 class Products extends React.Component {
     ShowProductList = () =>{
-        let giaSale = parseInt(this.props.price - (this.props.price * this.props.sale)/100);
+        let giaSale = parseInt(this.props.price - (this.props.price * this.props.sale)/100, 10);
         if(this.props.isSale === true){
             return (<div>
                 <span className="post" style={{fontSize:'13px'}}><strike>{this.props.price}$</strike></span>

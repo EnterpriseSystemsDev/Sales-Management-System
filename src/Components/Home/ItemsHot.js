@@ -4,7 +4,16 @@ import Products from "../Products/Products";
 class ItemsHot extends React.Component {
 
     render() {
-        let {tasks} =this.props;
+        let {tasks} = this.props;
+        // if(keyword){
+        //     tasks = tasks.filter((task) =>{
+        //         return (task.tensp.toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ||
+        //             task.brand.toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ||
+        //             task.gia.toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ||
+        //             task.mota.toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ||
+        //             task.size.toLowerCase().indexOf(keyword.toLowerCase()) !== -1);
+        //     });
+        // }
         const listItemsHOT = tasks.map((item, index)  => {
             if (item.isHot === true ) {
                 return (
@@ -41,6 +50,8 @@ class ItemsHot extends React.Component {
 const listProducts = state =>{
     return {
         tasks : state.tasks,
+        keyword: state.keyword,
+        //FilterTable:state.FilterTable,
     }
 
 };
