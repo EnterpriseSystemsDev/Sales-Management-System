@@ -5,8 +5,9 @@ import {connect} from 'react-redux';
 class AdHeader extends React.Component {
 
     render() {
+        let {ChangeTheme} = this.props;
         return (
-            <nav className="admin navbar navbar-default">
+            <nav className={ChangeTheme ? 'admin navbar navbar-inverse' : 'admin navbar navbar-default'}>
                 <div className="container">
                     <div className="navbar-header">
                         <button type="button" className="navbar-toggle " data-toggle="collapse" data-target="#myNavbar">
@@ -22,7 +23,8 @@ class AdHeader extends React.Component {
                     <div  className="collapse navbar-collapse" id="myNavbar">
                         <ul className="nav navbar-nav navbar-right ">
                                 <li><a>Welcome, username </a></li>
-                                <li><a >Logout</a></li>
+                                <li><a >Logout <span className="glyphicon glyphicon-log-out" ></span></a></li>
+
                         </ul>
                     </div>
                 </div>
@@ -34,6 +36,7 @@ class AdHeader extends React.Component {
 const listProducts = state =>{
     return {
         user : state.user,
+        ChangeTheme: state.ChangeTheme,
         // task : state.task,
         // editProduct : state.editProduct
     }

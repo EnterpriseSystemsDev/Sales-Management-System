@@ -1,5 +1,11 @@
 import * as types from "../constants/ActionTypes";
 
+export  const  changeTheme = () => {
+    return{
+        type: types.CHANGE_THEME
+    }
+};
+
 export const ListAll = () => {
     return {
         type : types.LIST_ALL

@@ -76,16 +76,15 @@ class ListProduct extends React.Component {
                    task.size.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1);
             });
         }
-
         tasks = tasks.filter((task) =>{
             if(FilterTable.status === -1){
                 return task;
             }
             else if(FilterTable.status === 0){
-                return task.isHot === (FilterTable.status === 0 ? true : false);
+                return task.isHot ;
             }
             else{
-                return task.isSale === (FilterTable.status === 1 ? true : false);
+                return task.isSale;
             }
         });
 
@@ -156,7 +155,7 @@ class ListProduct extends React.Component {
                                     <option value={1}>Sale</option>
                                 </select>
                             </td>
-                            <td></td>
+
                             <td>
                                 <div className="dropdown">
                                     <button className="btn btn-dark dropdown-toggle"
@@ -175,14 +174,14 @@ class ListProduct extends React.Component {
 
                                            >
                                                 <span className="fa fa-sort-alpha-asc pr-5">
-                                                    Tên A - Z
+                                                     Tên A - Z  <span className={(SortTable.by === 'name' && SortTable.value === 1) ?'fa fa-check' :''}/>
                                                 </span>
                                            </a>
                                         </li>
                                         <li onClick={() => this.onClick('name', -1)}>
                                             <a role="button" className = "sort_selected">
                                                 <span className="fa fa-sort-alpha-desc pr-5">
-                                                    Tên Z - A
+                                                     Tên Z - A  <span className={(SortTable.by === 'name' && SortTable.value === -1) ?'fa fa-check' :''}/>
                                                 </span>
                                             </a>
                                         </li>
@@ -190,15 +189,15 @@ class ListProduct extends React.Component {
 
                                         </li>
                                         <li onClick={() => this.onClick('status',-1)}>
-                                            <a role="button">
-                                                Giá Giảm Dần
+                                            <a role="button" >
+                                                Giá Giảm Dần  <span className={(SortTable.by === 'status' && SortTable.value === -1) ?'fa fa-check' :''}/>
                                             </a>
                                         </li>
                                         <li  onClick={() => this.onClick('status',1)}>
                                             <a role="button"
                                                className = "sort_selected"
                                             >
-                                                Giá Tăng Dần
+                                                 Giá Tăng Dần  <span className={(SortTable.by === 'status' && SortTable.value === 1) ?'fa fa-check' :''}/>
                                             </a>
                                         </li>
                                     </ul>

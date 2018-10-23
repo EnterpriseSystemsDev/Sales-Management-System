@@ -11,6 +11,7 @@ import FormEmployee from "./FormEmployee";
 import FilterTable from "./FilterTable";
 import SearchProduct from "./SearchProduct";
 import SortTable from "./SortTable";
+import ChangeTheme from "./ChangeTheme"
 const myReducer = combineReducers({
     tasks : tasks,
     displayForm: displayForm,
@@ -23,6 +24,8 @@ const myReducer = combineReducers({
     FormEmployee: FormEmployee,
     FilterTable: FilterTable,
     SearchProduct: SearchProduct,
-    SortTable: SortTable
+    SortTable: SortTable,
+    ChangeTheme:ChangeTheme
+
 });
 export default myReducer;

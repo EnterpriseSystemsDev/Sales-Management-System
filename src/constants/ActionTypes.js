@@ -1,3 +1,5 @@
+export const CHANGE_THEME = 'CHANGE_THEME';
+
 export const LIST_ALL = 'LIST_ALL';
 
 export const LIST_EMPLOYEES = 'LIST_EMPLOYEES';
