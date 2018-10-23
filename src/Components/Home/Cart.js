@@ -4,7 +4,9 @@ import img from "../../hinhanh/logo.png"
 import Header from "./Header";
 import Navbar from "./Navbar";
 class Cart extends React.Component {
-
+    componentDidMount(){
+        document.title = "Giỏ Hàng"
+    }
     render() {
         return (
             <div>

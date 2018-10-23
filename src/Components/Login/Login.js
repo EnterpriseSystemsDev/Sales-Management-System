@@ -32,11 +32,10 @@ class Login extends React.Component {
          }
      };
 
-
+    componentDidMount(){
+        document.title = "Đăng Nhập"
+    }
     render() {
-
-
-
         let {txtUserName,txtPassWord} = this.state;
         let loggedInUser = localStorage.getItem('user');
         if(loggedInUser !== null){

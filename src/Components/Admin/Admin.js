@@ -90,7 +90,9 @@ class Admin extends React.Component {
             displaySale: true,
         });
     };
-
+    componentDidMount(){
+        document.title = "Admin Page"
+    }
 
     render() {
         let {displayTK,displayQLNV,displayQLSP,displayFromHoadon,displayQLDH, displaySale} = this.state;

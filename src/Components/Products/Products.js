@@ -54,8 +54,8 @@ class Products extends React.Component {
                             <div className="modal-content ">
                                 <div className="modal-header">
                                     <a href="#" data-dismiss="modal" className="class pull-right"><span className="glyphicon glyphicon-remove" /></a>
-                                    <h3 className="modal-title">Brand : {this.props.brand}</h3>
-                                    <p>ID: {this.props.id} </p>
+                                    <h3 className="modal-title">{this.props.brand} : {this.props.name}</h3>
+                                    {/*<p>ID: {this.props.id} </p>*/}
                                 </div>
                                 <div className="modal-body">
                                     <div className="row">
@@ -71,10 +71,10 @@ class Products extends React.Component {
                                                     <label>Size: </label>
                                                     <select className="form-control" name="select">
                                                         <option value="39" selected>39</option>
-                                                        <option value="black">40</option>
-                                                        <option value="white">41</option>
-                                                        <option value="gold">42</option>
-                                                        <option value="rose gold">43</option>
+                                                        <option value="40">40</option>
+                                                        <option value="41">41</option>
+                                                        <option value="42">42</option>
+                                                        <option value="43">43</option>
                                                     </select>
                                                 </div>
                                                 <div style={{textAlign: 'center'}} className="col-md-4 col-sm-6 col-xs-12">

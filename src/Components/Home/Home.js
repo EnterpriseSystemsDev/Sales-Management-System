@@ -10,7 +10,9 @@ import TuyenDung from "./Recruitment";
 import Box4 from "./Box4";
 
 class Home extends  React.Component{
-
+    componentDidMount(){
+        document.title = "FootCare"
+    }
     render(){
         return (
             <div>

@@ -8,7 +8,9 @@ import {connect} from "react-redux"
 
 class Yeezy extends React.Component {
 
-
+    componentDidMount(){
+        document.title = "Yeezy"
+    }
     render() {
 
 

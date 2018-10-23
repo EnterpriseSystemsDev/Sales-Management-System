@@ -8,7 +8,9 @@ import {Route} from "react-router-dom"
 
 
 class Jordan extends React.Component {
-
+    componentDidMount(){
+        document.title = "Jordan"
+    }
     render() {
         let {tasks} = this.props;
         // let {match} = this.props;

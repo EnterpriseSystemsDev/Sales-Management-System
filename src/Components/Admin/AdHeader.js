@@ -17,13 +17,13 @@ class AdHeader extends React.Component {
                         </button>
                         <Link to="/" className="navbar-brand ">
                             <img src={img} style={{width: 30, height: 30, float: 'left'}} alt="logo" />
-                            <span style={{marginLeft: 5}}>FootCare.com</span>
+                            <span className="text-brand" style={{marginLeft: 5}}>FootCare.com</span>
                         </Link>
                     </div>
                     <div  className="collapse navbar-collapse" id="myNavbar">
                         <ul className="nav navbar-nav navbar-right ">
                                 <li><a>Welcome, username </a></li>
-                                <li><a >Logout <span className="glyphicon glyphicon-log-out" ></span></a></li>
+                                <li><a >Logout <span className="glyphicon glyphicon-log-out"/></a></li>
 
                         </ul>
                     </div>

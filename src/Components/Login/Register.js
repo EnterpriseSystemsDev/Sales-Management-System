@@ -4,6 +4,10 @@ import Header from "../Home/Header";
 import $ from "jquery"
 class Register extends React.Component {
 
+    componentDidMount(){
+        document.title = "Đăng Ký"
+    }
+
     render() {
         return (
             <div className="body">
