@@ -105,6 +105,7 @@ class Admin extends React.Component {
         let ShowProductSale = displaySale ? <ListSale/> : '';
         return (
             <div className={ChangeTheme === true ? 'background' : ''}>
+
                 <div >
                     <AdHeader/>
                     <Note/>
@@ -137,6 +138,7 @@ class Admin extends React.Component {
                         </div>
                     </section>
                 </div>
+
                 <br/><br/><br/> <br/><br/><br/><br/><br/><br/> <br/><br/>
                 <footer id="footer">
                     <p> FooterCare Marketplace </p>
@@ -144,7 +146,9 @@ class Admin extends React.Component {
             </div>
         );
     }
+
 }
+
 const listProducts = state =>{
     return {
         displayForm: state.displayForm,

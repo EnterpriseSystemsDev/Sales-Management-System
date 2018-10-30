@@ -1,6 +1,7 @@
 import React from "react";
 import  {Link} from 'react-router-dom';
-
+import * as actions from "../../actions";
+import connect from "react-redux/es/connect/connect";
 class Products extends React.Component {
     ShowProductList = () =>{
         let giaSale = parseInt(this.props.price - (this.props.price * this.props.sale)/100, 10);
@@ -32,12 +33,14 @@ class Products extends React.Component {
             return <p style={{padding:'10px',color:'red'}}>  Xem chi tiết</p>
         }
     };
-
+    onAddToCart = () =>{
+        this.props.onAddToCart();
+    };
     render() {
 
         return (
                 <div  className=" col-md-4 col-sm-6 ">
-                        <div className="box6 ">
+                        <div className="box6  ">
                             {this.ShowSPriceSale()}
                             <img src={require("../../hinhanh/" + this.props.image + ".png")} alt="imageProduct"/>
                             <div className="box-content">
@@ -93,4 +96,19 @@ class Products extends React.Component {
         );
     }
 }
-export default Products;
+const mapStateToProps = state => {
+    return {
+        Cart : state.Cart,
+    }
+
+};
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        onAddToCart : (item) =>{
+            dispatch(actions.addToCart(item));
+        }
+    }
+
+};
+export default connect(mapStateToProps,mapDispatchToProps)(Products);

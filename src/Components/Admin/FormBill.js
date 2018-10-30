@@ -82,14 +82,22 @@ class FormBill extends React.Component {
                         />
                     </div>
                     <div className="form-group col-md-6">
-                        <label htmlFor="usr">Size:</label>
-                        <input type="text"
-                               className="form-control"
-                               name="size"
-                               required
-                               value={this.state.size}
-                               onChange={this.onChange}
-                        />
+                        <label>Size:</label>
+                        <select
+                            className="form-control"
+                            name="size"
+                            required
+                            value={this.state.size}
+                            onChange={this.onChange}
+                        >
+                            <option defaultValue="0" >Chọn Size:</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                        </select>
                     </div>
 
                     <div className="form-group col-md-6">

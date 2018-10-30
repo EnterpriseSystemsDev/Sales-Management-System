@@ -1,10 +1,28 @@
 .background{
     background-color: #171a1d !important;
     height: auto;
+    -webkit-animation: pulse 3s ;
+}
+@keyframes pulse {
+    0% {
+        background-color: #eeeeee;
+    }
+    100% {
+        background-color: #171a1d;
+    }
 }
 .background1{
     background-color: #eeeeee  !important;
     height: auto;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .text-brand{
@@ -26,6 +44,7 @@
     min-height: 33px !important;
     margin-bottom:0;
     border-radius:0px;
+
 }
 
 .navbar-default{
@@ -86,7 +105,14 @@
 }
 
 
-
+@keyframes pulse1 {
+    0% {
+        background-color: #e74c3c;
+    }
+    100% {
+        background-color: #FF7F00;
+    }
+}
 /* Custom */
 .main-color-bg1{
     background-color: #e74c3c !important;
@@ -97,6 +123,7 @@
     background-color: #FF7F00 !important;
     border-color: #eeeeee !important;
     color:#030005 !important;
+    -webkit-animation: pulse1 2.5s ;
 }
 .active1{
     background-color:#343a40;

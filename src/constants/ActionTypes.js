@@ -2,6 +2,9 @@ export const CHANGE_THEME = 'CHANGE_THEME';
 
 export const LIST_ALL = 'LIST_ALL';
 
+export const LIST_CART = 'LIST_CART';
+export const ADD_TO_CART = 'ADD_TO_CART';
+
 export const LIST_EMPLOYEES = 'LIST_EMPLOYEES';
 export const ADD_EMPLOYEE = 'ADD_EMPLOYEE';
 export const EDIT_EMPLOYEE = 'EDIT_EMPLOYEE';

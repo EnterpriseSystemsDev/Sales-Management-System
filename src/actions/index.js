@@ -11,6 +11,17 @@ export const ListAll = () => {
         type : types.LIST_ALL
     }
 };
+export const addToCart = (item) => {
+    return {
+        type : types.ADD_TO_CART,
+        item
+    }
+};
+export const listCart = () => {
+    return {
+        type : types.LIST_CART
+    }
+};
 export const ListEmployees = () => {
     return {
         type : types.LIST_EMPLOYEES

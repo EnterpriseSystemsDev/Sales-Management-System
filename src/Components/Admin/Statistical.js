@@ -1,10 +1,15 @@
 import React from "react";
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
 
 class Statistical extends React.Component {
     render() {
-        let { Employee,tasks, Recruitment , Bill} = this.props;
-
+        let {Employee,tasks, Recruitment , Bill} = this.props;
+        const countHot = tasks.map((item, index)  => {
+            return item.isHot;
+        });
+        const countSale = tasks.map((item, index)  => {
+            return item.isSale;
+        });
         return (
             <div>
                 <div className="panel panel-default ">
@@ -34,6 +39,18 @@ class Statistical extends React.Component {
                             <div className="well dash-box">
                                 <h2><span className="glyphicon glyphicon-briefcase"  /> {Recruitment.length}</h2>
                                 <h4>Tuyển Dụng</h4>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="well dash-box">
+                                <h2><span className="glyphicon glyphicon-fire"  /> {countHot.filter(Boolean).length}</h2>
+                                <h4>Sản Phẩm HOT</h4>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="well dash-box">
+                                <h2><span className="fa fa-tags"  /> {countSale.filter(Boolean).length}</h2>
+                                <h4>Sản Phẩm Sale</h4>
                             </div>
                         </div>
                     </div>
