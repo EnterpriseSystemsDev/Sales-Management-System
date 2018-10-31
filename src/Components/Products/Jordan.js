@@ -32,7 +32,7 @@ class Jordan extends React.Component {
                         sale ={item.Sale}
                         isSale ={item.isSale}
                         isHot ={item.isHot}
-
+                        item ={item}
                     />
             // {/*<NavLink to={'${url}/${item.brand}'}>*/}
             //     // </NavLink>

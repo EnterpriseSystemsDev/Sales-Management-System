@@ -50,6 +50,11 @@ const routes = [
         main : () => <Admin/>
     },
     {
+        path: '/Cart',
+        exact: true,
+        main : () => <Cart/>
+    },
+    {
         path: '/QLNV',
         exact: true,
         main : () => <ThongKe/>

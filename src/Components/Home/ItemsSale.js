@@ -22,6 +22,7 @@ class ItemsSale extends React.Component {
                             sale ={item.Sale}
                             isSale={item.isSale}
                             isHot = {item.isHot}
+                            item ={item}
                         />
                     </div>
                 );

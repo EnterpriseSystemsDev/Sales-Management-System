@@ -25,7 +25,7 @@ class Note extends React.Component {
                             }else{
                                 data.name = data.name;
                             }
-                            //console.log(data.name);
+                            //console.log(data);
                             //console.log(val.icon);<img src={require("../../hinhanh/" + this.props.image + ".png")} alt="imageProduct"/>
                             //console.log(data.main.temp);<img src ={require('../../hinhanh/weather" + val.icon +".png')}/>" + "<br/>
                             //console.log(val.main); <img src ={require('../../hinhanh/weather/01n.png')}/>
@@ -36,7 +36,6 @@ class Note extends React.Component {
                                 data.name + " "
                                 + data.main.temp + '&deg;C'
                                 +" "
-
                             );
                         });
                     });
@@ -63,7 +62,7 @@ class Note extends React.Component {
                 <div className="container">
                     <ol className={ChangeTheme===true ? 'breadcrumb main-color-bg':'breadcrumb main-color-bg1' }>
                         <li>Một Ngày Làm Việc Vui Vẻ </li>
-                        <span id="data" style={{marginLeft:'30%'}}> </span>
+                        <span  id="data" style={{marginLeft:'30%'}}> </span>
                         <div className="material-switch pull-right ">
                             <span className="fa fa-gears" style={{marginRight:'10px'}}/>
                             <input

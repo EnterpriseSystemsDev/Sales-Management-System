@@ -33,14 +33,15 @@ class Products extends React.Component {
             return <p style={{padding:'10px',color:'red'}}>  Xem chi tiết</p>
         }
     };
-    onAddToCart = () =>{
-        this.props.onAddToCart();
+    onAddToCart = (item) =>{
+        this.props.onAddToCart(item);
     };
     render() {
-
+        let {Cart,item} = this.props;
+        //console.log(Cart);
         return (
-                <div  className=" col-md-4 col-sm-6 ">
-                        <div className="box6  ">
+                <div  className=" col-md-4 col-sm-6 animatedParent animateOnce">
+                        <div className="box6 animated bounceInUp slowest ">
                             {this.ShowSPriceSale()}
                             <img src={require("../../hinhanh/" + this.props.image + ".png")} alt="imageProduct"/>
                             <div className="box-content">
@@ -48,7 +49,7 @@ class Products extends React.Component {
                                 {this.ShowProductList()}
                                 <ul className="icon">
                                     <li><a  className="fa fa-search" data-toggle="modal" data-target="#product_view"/> </li>
-                                    <li><Link to="#b" className="glyphicon glyphicon-shopping-cart"/></li>
+                                    <li><Link to="/Cart" onClick={() => this.onAddToCart(item)} className="glyphicon glyphicon-shopping-cart"/></li>
                                 </ul>
                             </div>
                         </div>
