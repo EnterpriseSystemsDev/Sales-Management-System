@@ -1,13 +1,13 @@
 import React from "react";
-import $ from "jquery"
+import $ from "jquery";
 import Header from "./Header";
 import Navbar from "./Navbar";
-//import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
 import CartItems from "./CartItems";
-import Products from "../Products/Products";
+
 class Cart extends React.Component {
-    componentDidMount(){
+
+    componentWillMount(){
         document.title = "Giỏ Hàng";
         $(document).ready(function () {
             var taxRate = 0.05;
@@ -25,11 +25,9 @@ class Cart extends React.Component {
             function recalculateCart() {
                 let subtotal = 0;
 
-
                 $('.product').each(function () {
                     subtotal += parseFloat($(this).children('.product-line-price').text());
                 });
-
 
                 let tax = subtotal * taxRate;
                 let shipping = (subtotal > 0 ? shippingRate : 0);
@@ -77,6 +75,18 @@ class Cart extends React.Component {
     checkOut = () =>{
       alert('Mua hàng thành công');
     };
+
+    buttonCheckOut = () =>{
+        let {Cart} = this.props;
+        if(Cart.length === 0){
+            return  <h3>Chưa có Sản Phẩm Trong Giỏ Hàng</h3>
+        }
+        else {
+            return <button className="checkout" onClick={this.checkOut}>Thanh Toán</button>
+        }
+
+    };
+
     render() {
         let {Cart} = this.props;
         console.log(Cart);
@@ -125,16 +135,13 @@ class Cart extends React.Component {
                             <label>Thuế (5%)</label>
                             <div className="totals-value" id="cart-tax"> </div>
                         </div>
-                        {/* <div className="totals-item">
-                            <label>Shipping</label>
-                            <div className="totals-value" id="cart-shipping">15.00</div>
-                        </div>*/}
                         <div className="totals-item totals-item-total">
                             <label>Tổng Tiền</label>
                             <div className="totals-value" id="cart-total"></div>
                         </div>
                     </div>
-                    <button className="checkout" onClick={this.checkOut}>Thanh Toán</button>
+                    {/*<button className="checkout" onClick={this.checkOut}>Thanh Toán</button>*/}
+                    {this.buttonCheckOut()}
                     <br/><br/>
                 </div>
             </div>

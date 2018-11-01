@@ -2,37 +2,43 @@ import React from "react";
 import img from "../../hinhanh/logo.png"
 
 class CartItems extends React.Component {
-    componentDidMount() {
-        if (this.props.item  !== null) {
-            this.setState({
-                id: this.props.item.id,
-                tensp: this.props.item.tensp,
-                brand: this.props.item.brand,
-                gia: this.props.item.gia,
-                size: this.props.item.size,
-                mota: this.props.item.mota,
-                hinhanh: this.props.item.hinhanh,
-                isHot: this.props.item.isHot,
-                isSale: this.props.item.isSale,
-                Sale: this.props.item.Sale,
 
-            });
+    PriceProduct = () =>{
+        let {item} = this.props;
+        let giaSale = parseInt(item.item.gia - (item.item.gia * item.item.Sale)/100, 10);
+        if(item.item.isSale === true){
+            return <div className="product-price">{giaSale}</div>
+        }
+        else {
+            return <div className="product-price">{item.item.gia}</div>
+        }
+    };
+    total = () =>{
+        let {item} = this.props;
+        let giaSale = parseInt(item.item.gia - (item.item.gia * item.item.Sale)/100, 10);
+        if(item.item.isSale === true){
+            return  <div className="product-line-price">{giaSale}</div>
+        }
+        else {
+            return <div className="product-line-price">{item.item.gia}</div>
         }
     };
     render() {
         let {item} = this.props;
-        console.log(this.props.item.name);
         return (
             <div>
                 <div className="product">
                     <div className="product-image">
-                        <img src={img} alt="image" />
+
+                        <img src={require("../../hinhanh/" + item.item.hinhanh + ".png")} alt="imageProduct"/>
                     </div>
                     <div className="product-details">
-                        <div className="product-title">{this.tensp}</div>
-                        <p className="product-description"> {this.props.mota}</p>
+                        <div className="product-title">{item.item.tensp}</div>
+                        <p className="product-description"> {item.item.mota}</p>
+                        <p className="product-description">{item.item.size}</p>
                     </div>
-                    <div className="product-price">{this.props.price}</div>
+
+                    {this.PriceProduct()}
                     <div className="product-quantity">
                         <input type="number" defaultValue={1} min={1} />
                     </div>
@@ -41,7 +47,7 @@ class CartItems extends React.Component {
                             <span className="glyphicon glyphicon-trash" > Xóa</span>
                         </button>
                     </div>
-                    <div className="product-line-price">{this.props.price}</div>
+                    {this.total()}
                 </div>
             </div>
         );

@@ -1,17 +1,10 @@
 import * as types from './../constants/ActionTypes'
-
-//let data = JSON.parse(localStorage.getItem('Bill'));
-//let initialState = data ? data : [];
-
-let initialState = [
-
-
-    ];
+let data = JSON.parse(localStorage.getItem('Cart'));
+let initialState = data ? data : [];
 let myReducer = (state= initialState, action) => {
     let {item} = action;
     switch (action.type) {
         case types.ADD_TO_CART:
-            console.log(action);
             state.push({
                item
             });
