@@ -37,15 +37,14 @@ class Products extends React.Component {
         this.props.onAddToCart(item);
     };
     render() {
-        let {Cart,item} = this.props;
-        //console.log(Cart);
+        let {item} = this.props;
         return (
                 <div  className=" col-md-4 col-sm-6 animatedParent animateOnce">
                         <div className="box6 animated bounceInUp slowest ">
                             {this.ShowSPriceSale()}
-                            <img src={require("../../hinhanh/" + this.props.image + ".png")} alt="imageProduct"/>
+                            <img src={require("../../hinhanh/" + item.hinhanh + ".png")} alt="imageProduct"/>
                             <div className="box-content">
-                                <h3 className="title">{this.props.name}</h3>
+                                <h3 className="title">{item.tensp}</h3>
                                 {this.ShowProductList()}
                                 <ul className="icon">
                                     <li><a  className="fa fa-search" data-toggle="modal" data-target="#product_view"/> </li>
@@ -57,9 +56,7 @@ class Products extends React.Component {
                         <div className="modal-dialog">
                             <div className="modal-content ">
                                 <div className="modal-header">
-                                    <a href="#" data-dismiss="modal" className="class pull-right"><span className="glyphicon glyphicon-remove" /></a>
-                                    <h3 className="modal-title">{this.props.brand} : {this.props.name}</h3>
-                                    {/*<p>ID: {this.props.id} </p>*/}
+                                    <h3 className="modal-title">{item.brand} : {item.tensp}</h3>
                                 </div>
                                 <div className="modal-body">
                                     <div className="row">
@@ -68,7 +65,7 @@ class Products extends React.Component {
                                         </div>
                                         <div className="col-md-6 product_content">
                                             <h2>{this.props.name}</h2>
-                                            <p><b>Mô tả:</b> {this.props.mota}</p>
+                                            <p><b>Mô tả:</b> {item.mota}</p>
                                             <h3 className="cost"><span className="glyphicon glyphicon-usd" /> {this.props.price}</h3>
                                             <div className="row">
                                                 <div className="col-md-4 col-sm-6 col-xs-12">
@@ -82,7 +79,7 @@ class Products extends React.Component {
                                                     </select>
                                                 </div>
                                                 <div style={{textAlign: 'center'}} className="col-md-4 col-sm-6 col-xs-12">
-                                                    <button type="button" className="btn btn-primary"><span className="glyphicon glyphicon-shopping-cart" /> Add To Cart</button>
+                                                    <Link to="/Cart" onClick={() => this.onAddToCart(item)} className="btn btn-primary"> Add To Cart</Link>
                                                 </div>
                                             </div>
                                         </div>

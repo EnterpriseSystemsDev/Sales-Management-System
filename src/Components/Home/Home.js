@@ -8,10 +8,11 @@ import Footer from "./Footer";
 import Navbar from "./Navbar";
 import TuyenDung from "./Recruitment";
 import Box4 from "./Box4";
+import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
 class Home extends  React.Component{
     componentDidMount(){
-        document.title = "FootCare"
+        document.title = "FootCare";
     }
     render(){
         return (
@@ -25,6 +26,7 @@ class Home extends  React.Component{
                 <Box4/>
                 <TuyenDung/>
                 <Footer/>
+                <ScrollToTop/>
             </div>
         );
 

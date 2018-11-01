@@ -30,7 +30,23 @@
     }
 }
 
+/************Back To Top *****************/
+#back-top {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+}
 
+#back-top span {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-bottom: 7px;
+    background: url(http://northernvoice.ca/northern-voice.png) center no-repeat;
+    background-size: 40px 40px;
+    opacity: 0.6;
+}
+/*****************************/
 
 .navbar-inverse {
     background-color: rgba(0, 0, 0, 0.7);

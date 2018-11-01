@@ -79,7 +79,7 @@ class Cart extends React.Component {
     buttonCheckOut = () =>{
         let {Cart} = this.props;
         if(Cart.length === 0){
-            return  <h3>Chưa có Sản Phẩm Trong Giỏ Hàng</h3>
+            return  <h3 >Chưa có Sản Phẩm Trong Giỏ Hàng</h3>
         }
         else {
             return <button className="checkout" onClick={this.checkOut}>Thanh Toán</button>
@@ -89,7 +89,6 @@ class Cart extends React.Component {
 
     render() {
         let {Cart} = this.props;
-        console.log(Cart);
         const listCart = Cart.map((item, index)  => {
                 return (
                     <div key={index}>
@@ -137,10 +136,9 @@ class Cart extends React.Component {
                         </div>
                         <div className="totals-item totals-item-total">
                             <label>Tổng Tiền</label>
-                            <div className="totals-value" id="cart-total"></div>
+                            <div className="totals-value" id="cart-total"> </div>
                         </div>
                     </div>
-                    {/*<button className="checkout" onClick={this.checkOut}>Thanh Toán</button>*/}
                     {this.buttonCheckOut()}
                     <br/><br/>
                 </div>

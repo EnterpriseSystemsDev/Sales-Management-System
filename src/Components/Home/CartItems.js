@@ -35,7 +35,7 @@ class CartItems extends React.Component {
                     <div className="product-details">
                         <div className="product-title">{item.item.tensp}</div>
                         <p className="product-description"> {item.item.mota}</p>
-                        <p className="product-description">{item.item.size}</p>
+                        <p className="product-description">Size :{item.item.size}</p>
                     </div>
 
                     {this.PriceProduct()}

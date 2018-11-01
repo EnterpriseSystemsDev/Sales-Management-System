@@ -13,13 +13,10 @@ class Jordan extends React.Component {
     }
     render() {
         let {tasks} = this.props;
-        // let {match} = this.props;
-        // let url = match.url;
-        // //console.log(url);
+
         const listProducts = tasks.map((item, index) => {
             if(item.brand === 'Jordan')
             return (
-
                     <Products
                         key ={index}
                         id ={item.id}
@@ -34,8 +31,6 @@ class Jordan extends React.Component {
                         isHot ={item.isHot}
                         item ={item}
                     />
-            // {/*<NavLink to={'${url}/${item.brand}'}>*/}
-            //     // </NavLink>
             );
         });
         return (
