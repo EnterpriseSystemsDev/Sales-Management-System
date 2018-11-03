@@ -38,11 +38,14 @@ class Products extends React.Component {
     };
     render() {
         let {item} = this.props;
+
+        let img = item.hinhanh.slice(12);
+        console.log(img);
         return (
                 <div  className=" col-md-4 col-sm-6 animatedParent animateOnce">
                         <div className="box6 animated bounceInUp slowest ">
                             {this.ShowSPriceSale()}
-                            <img src={require("../../hinhanh/" + item.hinhanh + ".png")} alt="imageProduct"/>
+                            <img src={require("../../hinhanh/" + img)} alt="imageProduct"/>
                             <div className="box-content">
                                 <h3 className="title">{item.tensp}</h3>
                                 {this.ShowProductList()}
@@ -61,7 +64,7 @@ class Products extends React.Component {
                                 <div className="modal-body">
                                     <div className="row">
                                         <div className="col-md-9 product_img thumbnail">
-                                            <img src={require("../../hinhanh/"+ this.props.image +".png")} alt={this.props.name} />
+                                            <img src={require("../../hinhanh/"+ img)} alt={this.props.name} />
                                         </div>
                                         <div className="col-md-6 product_content">
                                             <h2>{this.props.name}</h2>

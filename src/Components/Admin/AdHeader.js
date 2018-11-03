@@ -1,8 +1,16 @@
 import React from "react";
 import img from "../../hinhanh/logo.png";
-import {Link} from "react-router-dom";
+import {Link,Redirect} from "react-router-dom";
 import {connect} from 'react-redux';
 class AdHeader extends React.Component {
+
+    logOut = (e) =>{
+        let {history} = this.props;
+        e.preventDefault();
+        console.log(history);
+       return <Redirect to = "/"/>
+
+    };
 
     render() {
         let {ChangeTheme} = this.props;
@@ -23,8 +31,7 @@ class AdHeader extends React.Component {
                     <div  className="collapse navbar-collapse" id="myNavbar">
                         <ul className="nav navbar-nav navbar-right ">
                                 <li><a>Welcome, username </a></li>
-                                <li><a >Logout <span className="glyphicon glyphicon-log-out"/></a></li>
-
+                                <li onClick={this.logOut}><a >Logout <span className="glyphicon glyphicon-log-out"/></a></li>
                         </ul>
                     </div>
                 </div>

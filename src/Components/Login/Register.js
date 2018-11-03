@@ -5,7 +5,33 @@ import $ from "jquery"
 class Register extends React.Component {
 
     componentDidMount(){
-        document.title = "Đăng Ký"
+        document.title = "Đăng Ký";
+        $(document).ready(function () {
+            $("#register").click(function () {
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var password = $("#pwd").val();
+                var cpassword = $("#pwd1").val();
+                if (name === '' || email === '' || password === '' || cpassword === '') {
+                    alert("Xin Nhập Đủ Thông Tin");
+                } else if ((password.length) < 6) {
+                    alert("Password Phải dài hơn 6 kí tự");
+                } else if (!(password).match(cpassword)) {
+                    alert("Nhập Lại Password Không đúng");
+                } else {
+                    $.post("url đang kí", {
+                        name1: name,
+                        email1: email,
+                        password1: password
+                    }, function (data) {
+                        if (data == 'Đăng ký thành công') {
+                            $("form")[0].reset();
+                        }
+                        alert(data);
+                    });
+                }
+            });
+        });
     }
 
     render() {
@@ -73,30 +99,5 @@ class Register extends React.Component {
         );
     }
 }
-$(document).ready(function () {
-    $("#register").click(function () {
-        var name = $("#name").val();
-        var email = $("#email").val();
-        var password = $("#pwd").val();
-        var cpassword = $("#pwd1").val();
-        if (name === '' || email === '' || password === '' || cpassword === '') {
-            alert("Xin Nhập Đủ Thông Tin");
-        } else if ((password.length) < 6) {
-            alert("Password Phải dài hơn 6 kí tự");
-        } else if (!(password).match(cpassword)) {
-            alert("Nhập Lại Password Không đúng");
-        } else {
-            $.post("url đang kí", {
-                name1: name,
-                email1: email,
-                password1: password
-            }, function (data) {
-                if (data == 'Đăng ký thành công') {
-                    $("form")[0].reset();
-                }
-                alert(data);
-            });
-        }
-    });
-});
+
 export default Register;

@@ -25,12 +25,12 @@ class CartItems extends React.Component {
     };
     render() {
         let {item} = this.props;
+        let img = item.item.hinhanh.slice(12);
         return (
             <div>
                 <div className="product">
                     <div className="product-image">
-
-                        <img src={require("../../hinhanh/" + item.item.hinhanh + ".png")} alt="imageProduct"/>
+                        <img src={require("../../hinhanh/" + img)} alt="imageProduct"/>
                     </div>
                     <div className="product-details">
                         <div className="product-title">{item.item.tensp}</div>

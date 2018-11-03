@@ -34,6 +34,7 @@ class Product extends React.Component {
 
     render() {
         let {task , index} = this.props;
+        let img = task.hinhanh.slice(12);
             return (
                 <tr key ={index}>
                     <td>{index + 1}</td>
@@ -42,7 +43,7 @@ class Product extends React.Component {
                     <td>{task.gia}</td>
                     <td>{task.size}</td>
                     <td>{task.mota}</td>
-                    <td>{task.hinhanh}</td>
+                    <td>{img}</td>
                     <td>
                         <button onClick={this.onEdit } type="button" className="btn btn-warning">
                             Sửa

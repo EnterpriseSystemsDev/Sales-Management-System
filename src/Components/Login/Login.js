@@ -13,7 +13,7 @@ class Login extends React.Component {
          };
 
      }
-     onChage = (e) =>{
+     onChange = (e) =>{
          let target = e.target;
          let name = target.name;
          let value = target.type === 'checkbox' ? target.checked : target.value;
@@ -39,7 +39,7 @@ class Login extends React.Component {
         let {txtUserName,txtPassWord} = this.state;
         let loggedInUser = localStorage.getItem('user');
         if(loggedInUser !== null){
-            return <Redirect to='/Admin'/>
+            return <Redirect to ='/Admin'/>
         }
         return (
 
@@ -54,7 +54,7 @@ class Login extends React.Component {
                                        required
                                        name="txtUserName"
                                        value={txtUserName}
-                                       onChange={this.onChage}
+                                       onChange={this.onChange}
                                 />
                                 <label>UserName</label>
                             </div>
@@ -63,7 +63,7 @@ class Login extends React.Component {
                                        required
                                        name="txtPassWord"
                                        value={txtPassWord}
-                                       onChange={this.onChage}
+                                       onChange={this.onChange}
                                 />
                                 <label>Password</label>
                             </div>

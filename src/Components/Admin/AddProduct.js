@@ -22,10 +22,20 @@ class AddProduct extends React.Component {
     onChange = (event) =>{
         let target = event.target;
         let name = target.name;
-        let value = target.type === 'checkbox' ? target.checked : target.value;
+        let value;
+        if(target.type === 'checkbox'){
+            value = target.checked;
+        }
+        else if (target.type === 'file' && event.target.files[0]){
+            value  = target.value;
+        }
+        else {
+            value = target.value;
+        }
         this.setState({
-            [name] : value
+            [name] : value,
         });
+        //console.log(this.state);
     };
 
     onClear = () =>{
@@ -64,7 +74,7 @@ class AddProduct extends React.Component {
                 gia : this.props.editProduct.gia,
                 size : this.props.editProduct.size,
                 mota : this.props.editProduct.mota,
-                hinhanh : this.props.editProduct.hinhanh,
+                //hinhanh : this.props.editProduct.hinhanh.getTime(),
                 isHot:this.props.editProduct.isHot ,
                 isSale:this.props.editProduct.isSale ,
                 Sale:this.props.editProduct.Sale,
@@ -85,7 +95,7 @@ class AddProduct extends React.Component {
                 gia : nextProps.editProduct.gia,
                 size : nextProps.editProduct.size,
                 mota : nextProps.editProduct.mota,
-                hinhanh : nextProps.editProduct.hinhanh,
+                //hinhanh : nextProps.editProduct.hinhanh.getTime(),
                 Sale:nextProps.editProduct.Sale,
                 isHot:nextProps.editProduct.isHot,
                 isSale:nextProps.editProduct.isSale,
@@ -179,10 +189,10 @@ class AddProduct extends React.Component {
                     </div>
                     <div className="form-group col-md-6">
                         <label>Hình Ảnh:</label>
-                        <input type="text"
+                        <input type="file"
                                className="form-control"
                                id="input6"
-                               required
+                               //required
                                name="hinhanh"
                                value={this.state.hinhanh}
                                onChange={this.onChange}

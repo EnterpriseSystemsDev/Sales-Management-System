@@ -47,7 +47,7 @@ const routes = [
     {
         path: '/Admin',
         exact: true,
-        main : () => <Admin/>
+        main : ({history}) => <Admin history = {history}/>
     },
     {
         path: '/Cart',
