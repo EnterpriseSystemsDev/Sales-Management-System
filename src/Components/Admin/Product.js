@@ -15,21 +15,20 @@ class Product extends React.Component {
             Sale:'',
             isHot:false,
             isSale:false,
-
         });
     };
     closeForm = () =>{
         this.props.closeForm();
     };
     onEdit = () =>{
-        this.props.onUpDateForm();
-        this.props.onEditProduct(this.props.task);
+        this.props.openFormEditVersion();
+        this.props.onEditVersion(this.props.task);
         this.onClear();
 
 
     };
     onDelete = () =>{
-      this.props.onDeleteProduct(this.props.task.id);
+      this.props.onDeleteVersion(this.props.task.id);
     };
 
     render() {
@@ -38,11 +37,10 @@ class Product extends React.Component {
             return (
                 <tr key ={index}>
                     <td>{index + 1}</td>
-                    <td>{task.tensp}</td>
-                    <td>{task.brand}</td>
+                    <td>{task.nameProduct}</td>
+                    <td>{task.version}</td>
                     <td>{task.gia}</td>
                     <td>{task.size}</td>
-                    <td>{task.mota}</td>
                     <td>{img}</td>
                     <td>
                         <button onClick={this.onEdit } type="button" className="btn btn-warning">
@@ -60,20 +58,22 @@ class Product extends React.Component {
 }
 const mapDispatchToProps = (dispatch, props) => {
     return{
-        onDeleteProduct : (id) => {
-            dispatch(actions.deleteProduct(id));
+        onDeleteVersion : (id) => {
+            dispatch(actions.deleteVersion(id));
         },
         onUpDateForm : () => {
             dispatch(actions.updateForm());
         },
 
-        onEditProduct: (task) =>{
-            dispatch(actions.editProDuct(task));
+        onEditVersion: (version) =>{
+            dispatch(actions.editVersion(version));
         },
         closeForm : () =>{
             dispatch(actions.closeForm())
         },
-
+        openFormEditVersion : () => {
+            dispatch(actions.openFormEditVersion());
+        },
 
     };
 

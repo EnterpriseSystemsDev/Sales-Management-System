@@ -1,7 +1,6 @@
 import React from "react";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
-import $ from "jquery"
 class AddProduct extends React.Component {
     constructor(props){
         super(props);
@@ -9,13 +8,13 @@ class AddProduct extends React.Component {
             id: '',
             tensp : '',
             brand : '',
-            gia : '',
-            size : '',
+            //gia : '',
+            //size : '',
             mota : '',
-            hinhanh : '',
-            Sale:'',
-            isHot:false,
-            isSale:false,
+           // hinhanh : '',
+            //Sale:'',
+            //isHot:false,
+            //isSale:false,
         }
     }
 
@@ -71,13 +70,13 @@ class AddProduct extends React.Component {
                 id: this.props.editProduct.id,
                 tensp : this.props.editProduct.tensp,
                 brand : this.props.editProduct.brand,
-                gia : this.props.editProduct.gia,
-                size : this.props.editProduct.size,
+               // gia : this.props.editProduct.gia,
+               // size : this.props.editProduct.size,
                 mota : this.props.editProduct.mota,
                 //hinhanh : this.props.editProduct.hinhanh.getTime(),
-                isHot:this.props.editProduct.isHot ,
-                isSale:this.props.editProduct.isSale ,
-                Sale:this.props.editProduct.Sale,
+                //isHot:this.props.editProduct.isHot ,
+                //isSale:this.props.editProduct.isSale ,
+               // Sale:this.props.editProduct.Sale,
 
             });
         }
@@ -92,13 +91,13 @@ class AddProduct extends React.Component {
                 id: nextProps.editProduct.id,
                 tensp :nextProps.editProduct.tensp,
                 brand : nextProps.editProduct.brand,
-                gia : nextProps.editProduct.gia,
-                size : nextProps.editProduct.size,
+                //gia : nextProps.editProduct.gia,
+               //size : nextProps.editProduct.size,
                 mota : nextProps.editProduct.mota,
                 //hinhanh : nextProps.editProduct.hinhanh.getTime(),
-                Sale:nextProps.editProduct.Sale,
-                isHot:nextProps.editProduct.isHot,
-                isSale:nextProps.editProduct.isSale,
+                //Sale:nextProps.editProduct.Sale,
+                //isHot:nextProps.editProduct.isHot,
+                //isSale:nextProps.editProduct.isSale,
             });
         }
         else {
@@ -106,15 +105,7 @@ class AddProduct extends React.Component {
         }
     }
     render() {
-        $(document).ready(function () {
-            $("#someSwitchOptionWarning").click(function () {
-                if ($(this).is(":checked")) {
-                    $("#hidden_fields").show();
-                } else {
-                    $("#hidden_fields").hide();
-                }
-            });
-        });
+
         return (
             <div className={!this.state.id ? 'panel panel-success' : 'panel panel-danger'}>
                 <div className="panel-heading">
@@ -135,47 +126,65 @@ class AddProduct extends React.Component {
                                onChange={this.onChange}
                         />
                     </div>
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label>Brand:</label>*/}
+                        {/*<input type="text"*/}
+                               {/*className="form-control"*/}
+                               {/*id="input2"*/}
+                               {/*required*/}
+                               {/*name = "brand"*/}
+                               {/*value = {this.state.brand}*/}
+                               {/*onChange={this.onChange}*/}
+                        {/*/>*/}
+                    {/*</div>*/}
                     <div className="form-group col-md-6">
                         <label>Brand:</label>
-                        <input type="text"
-                               className="form-control"
-                               id="input2"
-                               required
-                               name = "brand"
-                               value = {this.state.brand}
-                               onChange={this.onChange}
-                        />
-                    </div>
-
-                    <div className="form-group col-md-6">
-                        <label>Giá:</label>
-                        <input type="text"
-                               className="form-control"
-                               id="input3"
-                               required
-                               name="gia"
-                               value={this.state.gia}
-                               onChange={this.onChange}
-                        />
-                    </div>
-                    <div className="form-group col-md-6">
-                        <label>Size:</label>
                         <select
-                                      className="form-control"
-                                       name="size"
-                                       required
-                                       value={this.state.size}
-                                       onChange={this.onChange}
+                            className="form-control"
+                            name="brand"
+                            required
+                            value={this.state.brand}
+                            onChange={this.onChange}
                         >
-                            <option defaultValue="0" >Chọn Size:</option>
-                            <option value="38">38</option>
-                            <option value="39">39</option>
-                            <option value="40">40</option>
-                            <option value="41">41</option>
-                            <option value="42">42</option>
-                            <option value="43">43</option>
+                            <option defaultValue="0" >Chọn Brand:</option>
+                            <option value="Jordan">Jordan</option>
+                            <option value="Yeezy">Yeezy</option>
+                            <option value="Nike">Nike</option>
+                            <option value="Adidas">Adidas</option>
+                            <option value="Rick Owens">Rick Owens</option>
+                            <option value="Phụ Kiện">Phụ Kiện</option>
                         </select>
                     </div>
+
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label>Giá:</label>*/}
+                        {/*<input type="text"*/}
+                               {/*className="form-control"*/}
+                               {/*id="input3"*/}
+                               {/*required*/}
+                               {/*name="gia"*/}
+                               {/*value={this.state.gia}*/}
+                               {/*onChange={this.onChange}*/}
+                        {/*/>*/}
+                    {/*</div>*/}
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label>Size:</label>*/}
+                        {/*<select*/}
+                                      {/*className="form-control"*/}
+                                       {/*name="size"*/}
+                                       {/*required*/}
+                                       {/*value={this.state.size}*/}
+                                       {/*onChange={this.onChange}*/}
+                        {/*>*/}
+                            {/*<option defaultValue="0" >Chọn Size:</option>*/}
+                            {/*<option value="38">38</option>*/}
+                            {/*<option value="39">39</option>*/}
+                            {/*<option value="40">40</option>*/}
+                            {/*<option value="41">41</option>*/}
+                            {/*<option value="42">42</option>*/}
+                            {/*<option value="43">43</option>*/}
+                        {/*</select>*/}
+                    {/*</div>*/}
                     <div className="form-group col-md-6">
                         <label>Mô Tả:</label>
                         <textarea
@@ -187,29 +196,29 @@ class AddProduct extends React.Component {
                                   onChange={this.onChange}
                        />
                     </div>
-                    <div className="form-group col-md-6">
-                        <label>Hình Ảnh:</label>
-                        <input type="file"
-                               className="form-control"
-                               id="input6"
-                               //required
-                               name="hinhanh"
-                               value={this.state.hinhanh}
-                               onChange={this.onChange}
-                        />
-                    </div>
-                    <div className="form-group col-md-6">
-                        <div id="hidden_fields" style={{display:'block'}}>
-                            <label style={{float:'left',marginRight:'20px'}} >(%): </label>
-                            <input type="text"
-                                   className="form-control"
-                                   id="hidden_field"
-                                   name="Sale"
-                                   value={this.state.Sale}
-                                   onChange={this.onChange}
-                            />
-                        </div>
-                    </div>
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label>Hình Ảnh:</label>*/}
+                        {/*<input type="file"*/}
+                               {/*className="form-control"*/}
+                               {/*id="input6"*/}
+                               {/*//required*/}
+                               {/*name="hinhanh"*/}
+                               {/*value={this.state.hinhanh}*/}
+                               {/*onChange={this.onChange}*/}
+                        {/*/>*/}
+                    {/*</div>*/}
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<div id="hidden_fields" style={{display:'block'}}>*/}
+                            {/*<label style={{float:'left',marginRight:'20px'}} >(%): </label>*/}
+                            {/*<input type="text"*/}
+                                   {/*className="form-control"*/}
+                                   {/*id="hidden_field"*/}
+                                   {/*name="Sale"*/}
+                                   {/*value={this.state.Sale}*/}
+                                   {/*onChange={this.onChange}*/}
+                            {/*/>*/}
+                        {/*</div>*/}
+                    {/*</div>*/}
                     {/*<div className="form-group col-md-6">*/}
                         {/*<label style={{float:'left',marginRight:'20px'}}>HOT: </label>*/}
                         {/*<div className="material-switch pull-left ">*/}
@@ -244,9 +253,6 @@ class AddProduct extends React.Component {
                     </div>
 
                 </form>
-                <div className="alert alert-danger" style={{textAlign:'center',display:'none'}}>
-                    <span >Danger! Indicates a dangerous or potentially negative action.</span>
-                </div>
             </div>
 
         );

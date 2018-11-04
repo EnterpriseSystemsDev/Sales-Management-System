@@ -24,7 +24,7 @@ class Register extends React.Component {
                         email1: email,
                         password1: password
                     }, function (data) {
-                        if (data == 'Đăng ký thành công') {
+                        if (data === 'Đăng ký thành công') {
                             $("form")[0].reset();
                         }
                         alert(data);

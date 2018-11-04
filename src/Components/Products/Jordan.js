@@ -12,18 +12,18 @@ class Jordan extends React.Component {
         document.title = "Jordan"
     }
     render() {
-        let {tasks} = this.props;
+        let {Version} = this.props;
 
-        const listProducts = tasks.map((item, index) => {
-            if(item.brand === 'Jordan')
+        const listProducts = Version.map((item, index) => {
+            if(item.nameProduct === 'Jordan ')
             return (
                     <Products
                         key ={index}
                         id ={item.id}
-                        name ={item.tensp}
+                        name ={item.version}
                         image ={item.hinhanh}
                         price = {item.gia}
-                        brand = {item.brand}
+                        brand = {item.nameProduct}
                         mota ={item.mota}
                         size = {item.size}
                         sale ={item.Sale}
@@ -57,7 +57,8 @@ class Jordan extends React.Component {
 }
 const listProducts = state =>{
     return {
-        tasks : state.tasks
+        tasks : state.tasks,
+        Version : state.Version,
     }
 };
 export default connect(listProducts,null) (Jordan);

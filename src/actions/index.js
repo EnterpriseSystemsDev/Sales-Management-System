@@ -11,6 +11,19 @@ export const ListAll = () => {
         type : types.LIST_ALL
     }
 };
+
+export const listAllVersion = () => {
+    return {
+        type : types.LIST_ALL_VERSION
+    }
+};
+
+export const deleteVersion = () => {
+    return {
+        type : types.DELETE_VERSION
+    }
+};
+
 export const addToCart = (item) => {
     return {
         type : types.ADD_TO_CART,
@@ -68,7 +81,39 @@ export  const  openForm = () => {
         type: types.OPENFORM
     }
 };
+export  const  openFormHot = () => {
+    return{
+        type: types.OPEN_FORM_HOT
+    }
+};
+export  const  closeFormHot = () => {
+    return{
+        type: types.CLOSE_FORM_HOT
+    }
+};
 
+export  const  openFormStore = () => {
+    return{
+        type: types.OPEN_FORM_STORE
+    }
+};
+export  const  closeFormStore = () => {
+    return{
+        type: types.CLOSE_FORM_STORE
+    }
+};
+
+
+export  const  openFormVersion = () => {
+    return{
+        type: types.OPEN_FORM_VERSION
+    }
+};
+export  const  openFormEditVersion = () => {
+    return{
+        type: types.OPEN_FORM_EDIT_VERSION
+    }
+};
 export  const  openFormRecruitment = () => {
     return{
         type: types.OPEN_FORM_RECRUITMENT
@@ -88,6 +133,11 @@ export  const  openFormWhenEdit = () => {
 export  const  closeForm = () => {
     return{
         type: types.CLOSEFORM
+    }
+};
+export  const  closeFormVersion = () => {
+    return{
+        type: types.CLOSE_FORM_VERSION
     }
 };
 
@@ -123,14 +173,37 @@ export const editProDuct = (task) => {
         task : task
     }
 };
-
-
 export const ADDPRODUCT = (task) => {
     return {
         type : types.ADD_PRODUCT,
         task : task
     }
 };
+export const editVersion = (version) => {
+    return {
+        type : types.EDIT_VERSION,
+        version : version
+    }
+};
+export const addVersion = (version) => {
+    return {
+        type : types.ADD_VERSION,
+        version : version
+    }
+};
+
+export const addProductsInStore = (store) => {
+    return {
+        type : types.ADD_PRODUCT_IN_STORE,
+        store : store
+    }
+};
+export const listProductsInStore = () => {
+    return {
+        type : types.LIST_PRODUCT_IN_STORE
+    }
+};
+
 
 export const deleteProduct = (id) => {
     return {
@@ -165,6 +238,19 @@ export const updateStatus = (id) => {
         id : id
     }
 };
+export const updateStatusVersionHot = (id) => {
+    return {
+        type : types.UPDATE_STATUS_VERSION_HOT,
+        id : id
+    }
+};
+
+export const updateStatusVersionSale = (id) => {
+    return {
+        type : types.UPDATE_STATUS_VERSION_SALE,
+        id : id
+    }
+};
 
 export const updateStatusSale = (id) => {
     return {
@@ -192,3 +278,5 @@ export const sortProduct = (sort) => {
         sort : sort
     }
 };
+
+

@@ -9,10 +9,6 @@ class App extends Component {
             <BrowserRouter>
             <div>
                 <Switch>
-                {/*<Route path="/" exact component={Home}/>
-                <Route path="/Login" component={Login}/>
-                <Route path="/Jordan" component={Jordan}/>
-                    <Route component={NotFound}/>*/}
                     {this.showContent(routes)}
                 </Switch>
             </div>

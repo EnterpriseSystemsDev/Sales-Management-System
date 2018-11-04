@@ -1,23 +1,18 @@
 import React from "react";
+import "./productDetail.css"
+import * as actions from "../../actions";
+import connect from "react-redux/es/connect/connect";
 import Header from "../Home/Header";
 import Navbar from "../Home/Navbar";
-import Products from "./Products";
-import Footer from "../Home/Footer";
-import {connect} from "react-redux"
+import ProductDetailItem from "./ProductDetailItem";
 
 
-class Yeezy extends React.Component {
-
-    componentDidMount(){
-        document.title = "Yeezy"
-    }
+class ProductDetail extends React.Component {
     render() {
         let {Version} = this.props;
         const listProducts = Version.map((item, index) => {
-            if(item.nameProduct === 'Yeezy ')
-            return (
-                <div key ={index}>
-                    <Products
+                return (
+                    <ProductDetailItem
                         key ={index}
                         id ={item.id}
                         name ={item.version}
@@ -31,33 +26,33 @@ class Yeezy extends React.Component {
                         isHot = {item.isHot}
                         item ={item}
                     />
-                </div>
-            );
+                );
         });
         return (
             <div>
                 <Header/>
                 <br/><br/><br/>
                 <Navbar/>
-                <br/>
-                <div className="container">
-                    <div className="row">
-                        <div className="row">
-                            {listProducts}
-                        </div>
-                    </div>
-                </div>
-                <br/>
-                <Footer/>
+                {listProducts}
             </div>
+
         );
     }
 }
-
-const listProducts = state =>{
+const mapStateToProps = state => {
     return {
-        tasks : state.tasks,
+        Cart : state.Cart,
         Version : state.Version
     }
+
 };
-export default connect(listProducts,null)(Yeezy);
+
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        onAddToCart : (item) =>{
+            dispatch(actions.addToCart(item));
+        }
+    }
+
+};
+export default connect(mapStateToProps,mapDispatchToProps)(ProductDetail);

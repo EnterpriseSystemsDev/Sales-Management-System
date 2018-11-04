@@ -38,16 +38,18 @@ class Products extends React.Component {
     };
     render() {
         let {item} = this.props;
-
         let img = item.hinhanh.slice(12);
-        console.log(img);
         return (
+
                 <div  className=" col-md-4 col-sm-6 animatedParent animateOnce">
+
                         <div className="box6 animated bounceInUp slowest ">
                             {this.ShowSPriceSale()}
+                            <Link to="/product/Detail">
                             <img src={require("../../hinhanh/" + img)} alt="imageProduct"/>
+                            </Link>
                             <div className="box-content">
-                                <h3 className="title">{item.tensp}</h3>
+                                <h3 className="title">{item.version}</h3>
                                 {this.ShowProductList()}
                                 <ul className="icon">
                                     <li><a  className="fa fa-search" data-toggle="modal" data-target="#product_view"/> </li>
@@ -59,7 +61,7 @@ class Products extends React.Component {
                         <div className="modal-dialog">
                             <div className="modal-content ">
                                 <div className="modal-header">
-                                    <h3 className="modal-title">{item.brand} : {item.tensp}</h3>
+                                    <h3 className="modal-title">{item.nameProduct} : {item.version}</h3>
                                 </div>
                                 <div className="modal-body">
                                     <div className="row">
@@ -74,16 +76,20 @@ class Products extends React.Component {
                                                 <div className="col-md-4 col-sm-6 col-xs-12">
                                                     <label>Size: </label>
                                                     <select className="form-control" name="select">
-                                                        <option value="39" selected>39</option>
+                                                        <option defaultValue="0" >Chọn Size</option>
+                                                        <option value="39" >39</option>
                                                         <option value="40">40</option>
                                                         <option value="41">41</option>
                                                         <option value="42">42</option>
                                                         <option value="43">43</option>
                                                     </select>
                                                 </div>
+
                                                 <div style={{textAlign: 'center'}} className="col-md-4 col-sm-6 col-xs-12">
-                                                    <Link to="/Cart" onClick={() => this.onAddToCart(item)} className="btn btn-primary"> Add To Cart</Link>
+                                                    <button onClick={() => this.onAddToCart(item)} className="btn btn-primary"><Link to="/Cart">
+                                                        Add To Cart  </Link> </button>
                                                 </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -92,7 +98,7 @@ class Products extends React.Component {
                             </div>
                         </div>
                     </div>
-         </div>
+                 </div>
 
         );
     }

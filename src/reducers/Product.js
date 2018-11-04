@@ -29,14 +29,15 @@ let myReducer = (state= initialState, action) => {
             let newTaskProducts = {
                 id: action.task.id,
                 tensp: action.task.tensp,
+                //version:action.task.version,
                 brand: action.task.brand,
-                gia:  action.task.gia,
-                size:  action.task.size,
+                //gia:  action.task.gia,
+                //size:  action.task.size,
                 mota:  action.task.mota,
-                hinhanh:  action.task.hinhanh,
-                Sale : action.task.Sale ,
-                isHot: action.task.isHot ,
-                isSale:action.task.isSale,
+               // hinhanh:  action.task.hinhanh,
+                //Sale : action.task.Sale ,
+                //isHot: action.task.isHot ,
+                //isSale:action.task.isSale,
             };
                 if(!newTaskProducts.id){
                     newTaskProducts.id = randomID();
@@ -53,20 +54,6 @@ let myReducer = (state= initialState, action) => {
             let index = findIndex(state,id);
             state.splice(index, 1);
             localStorage.setItem('tasks', JSON.stringify(state));
-            return [...state];
-
-        case types.UPDATE_STATUS:
-            var id = action.id;
-            var index = findIndex(state,id);
-            state[index].isHot = !state[index].isHot;
-            localStorage.setItem('tasks', JSON.stringify(state));
-             return [...state];
-
-        case types.UPDATE_STATUS_SALE:
-            var id = action.id;
-            var index = findIndex(state,id);
-            state[index].isSale = !state[index].isSale;
-             localStorage.setItem('tasks', JSON.stringify(state));
             return [...state];
 
         default : return state;

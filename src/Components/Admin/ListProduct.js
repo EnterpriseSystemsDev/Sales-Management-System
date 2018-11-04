@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from 'react-redux'
 import * as actions from '../../actions/index';
 import SanPham from "./Product";
-//import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import axios from "axios";
 
 class ListProduct extends React.Component {
     constructor(props){
@@ -11,9 +11,21 @@ class ListProduct extends React.Component {
             filterName: '',
             filterStatus:-1,
             sortBy : 'name',
-            sortValue: 1
+            sortValue: 1,
         }
     }
+
+    // componentDidMount(){
+    //     axios.get('http://5bdc5e5b433b4f0013e6e0c4.mockapi.io/api/products')
+    //         .then(res => {
+    //             const products = res.data;
+    //             // console.log(products);
+    //             this.setState({
+    //                 products
+    //             });
+    //         })
+    // }
+
     onChange = (event) =>{
         let target = event.target;
         let name = target.name;
@@ -33,50 +45,20 @@ class ListProduct extends React.Component {
             value: sortValue
         });
     };
-    //  priceFormatter = (cell, row) =>{
-    //     return '<i class="glyphicon glyphicon-usd"></i> ' + cell;
-    // };
-    //  options = () =>{
-    //      afterDeleteRow: this.onAfterDeleteRow;
-    //      afterSearch: this.afterSearch;
-    //      handleConfirmDeleteRow: this.customConfirm
-    // };
-    //
-    //  afterSearch = (searchText, result) =>{
-    //     console.log('Your search text is ' + searchText);
-    //     console.log('Result is:');
-    //     for (let i = 0; i < result.length; i++) {
-    //         console.log('Fruit: ' + result[i].id + ', ' + result[i].name + ', ' + result[i].price);
-    //     }
-    // };
-    // customConfirm = (next, dropRowKeys) => {
-    //     const dropRowKeysStr = dropRowKeys.join(',');
-    //     if ((`(It's a custom confirm)Are you sure you want to delete ${dropRowKeysStr}?`)) {
-    //         next();
-    //     }
-    // };
+
 
     render() {
-        // const selectRowProp = {
-        //     mode: 'checkbox',
-        //     bgColor: 'pink',
-        //    // hideSelectColumn: true,  // enable hide selection column.
-        //     //clickToSelect: true  // you should enable clickToSelect, otherwise, you can't select column.
-        // };
-        // const cellEditProp = {
-        //     mode: 'dbclick'
-        // };
-        let {tasks,FilterTable,SortTable} = this.props;
+        let {Version,FilterTable,SortTable} = this.props;
         if(FilterTable.name){
-            tasks = tasks.filter((task) =>{
-               return (task.tensp.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
-                   task.brand.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
+            Version = Version.filter((task) =>{
+               return (task.version.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
+                   task.nameProduct.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
                    task.gia.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
                    task.mota.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
                    task.size.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1);
             });
         }
-        tasks = tasks.filter((task) =>{
+        Version = Version.filter((task) =>{
             if(FilterTable.status === -1){
                 return task;
             }
@@ -89,18 +71,18 @@ class ListProduct extends React.Component {
         });
 
         if(SortTable.by === 'name'){
-            tasks.sort((a,b) =>{
-                if(a.tensp > b.tensp){
+            Version.sort((a,b) =>{
+                if(a.version > b.version){
                     return SortTable.value;
                 }
-                else if(a.tensp < b.tensp){
+                else if(a.version < b.version){
                     return -SortTable.value;
                 }else {
                     return 0;
                 }
             })
         }else {
-            tasks.sort((a,b) =>{
+            Version.sort((a,b) =>{
                 if(a.gia > b.gia){
                     return SortTable.value;
                 }
@@ -111,20 +93,19 @@ class ListProduct extends React.Component {
                 }
             })
         }
-
-        const listSP = tasks.map((task, index) => {
+        const listSP = Version.map((task, index) => {
             return (
-                   <SanPham
+                <SanPham
                     key = {task.id}
                     index = {index}
                     task = {task}
-                   />
+                />
             );
         });
         return (
             <div className="panel panel-default">
                 <div className="panel-heading">
-                    <h3 className="panel-title">Danh Sách Sản phẩm</h3>
+                    <h3 className="panel-title">Danh Sách Version</h3>
                 </div>
                 <div className="table-responsive">
                     <table  className="table table-striped  table-hover">
@@ -140,9 +121,9 @@ class ListProduct extends React.Component {
                                        placeholder="nhập sản phẩm cần tìm"
                                 />
                             </td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td> </td>
+                            <td> </td>
+                            <td> </td>
                             <td>
                                 <select
                                     className="form-control"
@@ -207,10 +188,10 @@ class ListProduct extends React.Component {
                             <tr>
                                 <th>STT</th>
                                 <th>Tên Sản Phẩm</th>
-                                <th>Hãng</th>
+                                <th>Tên Version</th>
                                 <th>Giá</th>
                                 <th>Size</th>
-                                <th>Mô Tả</th>
+
                                 <th>Hình Ảnh</th>
                                 <th>Hành Động</th>
                             </tr>
@@ -220,17 +201,6 @@ class ListProduct extends React.Component {
                         </tbody>
                     </table>
                 </div>
-                {/*<BootstrapTable pagination data={tasks} condensed={true} bordered={ false} search={ true } multiColumnSearch={ true } striped={true} hover={true}>*/}
-                    {/*<TableHeaderColumn width='200' dataField="id" columnTitle hidden isKey={true} dataAlign="center" dataSort={true}>ID</TableHeaderColumn>*/}
-                    {/*<TableHeaderColumn width='200' dataField="tensp" columnTitle   dataAlign="center" dataSort={true}>Tên Sản Phẩm</TableHeaderColumn>*/}
-                    {/*<TableHeaderColumn width='200' dataField="brand" columnTitle dataSort={true} dataAlign='center'>Hãng</TableHeaderColumn>*/}
-                    {/*<TableHeaderColumn width='200' dataField="gia" dataSort={true} dataAlign='center' dataFormat={this.priceFormatter}>Giá</TableHeaderColumn>*/}
-                    {/*<TableHeaderColumn width='200' dataField="size" dataSort={true} dataAlign='center'>Size</TableHeaderColumn>*/}
-                    {/*<TableHeaderColumn width='200' dataField="mota" dataSort={true} dataAlign='center'>Mô Tả</TableHeaderColumn>*/}
-                    {/*<TableHeaderColumn width='200' dataField="isHot" dataSort={true} dataAlign='center'>Hot</TableHeaderColumn>*/}
-                    {/*<TableHeaderColumn width='200' dataField="isSale" dataSort={true} dataAlign='center'>Sale</TableHeaderColumn>*/}
-                    {/*<TableHeaderColumn width='200' dataField="Sale" dataSort={true} dataAlign='center'>% Sale</TableHeaderColumn>*/}
-                {/*</BootstrapTable>*/}
             </div>
 
         );
@@ -240,6 +210,7 @@ class ListProduct extends React.Component {
 const mapStateToProps = state =>{
         return {
             tasks : state.tasks,
+            Version: state.Version,
             editProduct : state.editProduct,
             FilterTable : state.FilterTable,
             SortTable: state.SortTable,

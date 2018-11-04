@@ -7,8 +7,8 @@ class StatusSP extends React.Component {
 
     render() {
 
-        let {tasks} = this.props;
-        const listSP = tasks.map((task, index) => {
+        let {Version} = this.props;
+        const listSP = Version.map((task, index) => {
             return (
                 <UpdateSanPham
                     key = {task.id}
@@ -49,7 +49,7 @@ const listProducts = state =>{
     return {
         tasks : state.tasks,
         displayForm: state.displayForm,
-        // editProduct : state.editProduct
+        Version : state.Version,
     }
 
 };

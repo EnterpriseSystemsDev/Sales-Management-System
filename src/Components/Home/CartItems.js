@@ -1,5 +1,4 @@
 import React from "react";
-import img from "../../hinhanh/logo.png"
 
 class CartItems extends React.Component {
 

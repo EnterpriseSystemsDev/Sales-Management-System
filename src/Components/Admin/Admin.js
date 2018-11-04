@@ -2,7 +2,6 @@ import React from "react";
 import './admincss.css'
 import AdHeader from "./AdHeader";
 import Note from "./Note";
-
 import ThongKe from "./Statistical";
 import {Link} from "react-router-dom";
 import QLNV from "./ManagementEmployee";

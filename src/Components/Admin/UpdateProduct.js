@@ -1,15 +1,14 @@
 import React from "react";
 import {connect} from 'react-redux'
 import * as actions from '../../actions/index';
-import $ from "jquery";
 
 class UpdateProduct extends React.Component {
     constructor(props){
         super(props);
         this.state = {
             id: '',
-            tensp : '',
-            brand : '',
+            version : '',
+            nameProduct : '',
             gia : '',
             size : '',
             mota : '',
@@ -28,28 +27,18 @@ class UpdateProduct extends React.Component {
         });
     };
     UpdateSP = () =>{
-        this.props.onUpdateStatus(this.props.task.id);
-
+        this.props.onUpdateStatusVersionHot(this.props.task.id);
     };
 
     render() {
-        $(document).ready(function () {
-            $(".aaa").click(function () {
-                if ($(this).is(":checked")) {
-                    $("#hidden_fields").show();
-                } else {
-                    $("#hidden_fields").hide();
-                }
-            });
-        });
         let {task , index} = this.props;
         return (
 
             <tr key ={index}>
                 <td>{index + 1}</td>
-                <td>{task.tensp}</td>
+                <td>{task.version}</td>
                 <td>{task.gia}$</td>
-                <td>{task.brand}</td>
+                <td>{task.nameProduct}</td>
                 <td>{task.size}</td>
                 <td>
 
@@ -125,12 +114,10 @@ const mapDispatchToProps = (dispatch, props) => {
         onEditProduct: (task) =>{
             dispatch(actions.editProDuct(task));
         },
-        onUpdateStatus: (id) =>{
-            dispatch(actions.updateStatus(id));
+        onUpdateStatusVersionHot: (id) =>{
+            dispatch(actions.updateStatusVersionHot(id));
         },
-        onUpdateStatusSale: (id) =>{
-            dispatch(actions.updateStatusSale(id));
-        },
+
     };
 
 };

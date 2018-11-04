@@ -4,27 +4,18 @@ import Products from "../Products/Products";
 class ItemsHot extends React.Component {
 
     render() {
-        let {tasks} = this.props;
-        // if(keyword){
-        //     tasks = tasks.filter((task) =>{
-        //         return (task.tensp.toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ||
-        //             task.brand.toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ||
-        //             task.gia.toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ||
-        //             task.mota.toLowerCase().indexOf(keyword.toLowerCase()) !== -1 ||
-        //             task.size.toLowerCase().indexOf(keyword.toLowerCase()) !== -1);
-        //     });
-        // }
-        const listItemsHOT = tasks.map((item, index)  => {
+        let {Version} = this.props;
+        const listItemsHOT = Version.map((item, index)  => {
             if (item.isHot === true ) {
                 return (
                     <div key={index}>
                         <Products
                             key ={index}
                             id ={item.id}
-                            name ={item.tensp}
+                            name ={item.version}
                             image ={item.hinhanh}
                             price = {item.gia}
-                            brand = {item.brand}
+                            brand = {item.nameProduct}
                             mota ={item.mota}
                             size = {item.size}
                             sale ={item.Sale}
@@ -34,25 +25,34 @@ class ItemsHot extends React.Component {
                         />
                     </div>
                 );
-            }
 
+            }
         });
-        return (
-            <div className="row">
-                <div className="panel-body" style={{fontFamily: 'sans-serif'}}>
-                    <h1 className="w3-text">Sản Phẩm HOT</h1>
-                    <hr/>
-                </div>
-                {listItemsHOT}
-            </div>
-        );
+        for (let i = 0 ; i < Version.length; i ++){
+            if(Version[i].isHot > 0){
+                return (
+                    <div className="row">
+                        <div className="panel-body" style={{fontFamily: 'sans-serif'}}>
+                            <h1 className="w3-text">Sản Phẩm HOT</h1>
+                            <hr/>
+                        </div>
+                        {listItemsHOT}
+                    </div>
+                );
+            }
+            else {
+                return ''
+            }
+        }
+
+
     }
 }
 const listProducts = state =>{
     return {
         tasks : state.tasks,
         keyword: state.keyword,
-        //FilterTable:state.FilterTable,
+        Version: state.Version,
     }
 
 };

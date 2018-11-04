@@ -12,10 +12,18 @@ import FilterTable from "./FilterTable";
 import SearchProduct from "./SearchProduct";
 import SortTable from "./SortTable";
 import ChangeTheme from "./ChangeTheme";
-import Cart from "./Cart"
+import Cart from "./Cart";
+import Version from "./Version";
+import EditVersion from "./EditVersion";
+import Store from "./Store";
+import DisplayFormVersion from "./DisplayFormVersion";
+import DisplayFormHot from "./DisplayFormHot";
+import DisplayFormStore from "./DisplayFormStore"
+
 const myReducer = combineReducers({
     tasks : tasks,
     displayForm: displayForm,
+    DisplayFormVersion,
     editProduct: editProduct,
     Employee: Employee,
     EditEmployee : EditEmployee,
@@ -28,6 +36,12 @@ const myReducer = combineReducers({
     SortTable: SortTable,
     ChangeTheme:ChangeTheme,
     Cart: Cart,
+    Version: Version,
+    EditVersion :EditVersion,
+    Store: Store,
+    DisplayFormHot,
+    DisplayFormStore,
+
 
 });
 export default myReducer;

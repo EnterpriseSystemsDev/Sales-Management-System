@@ -10,6 +10,7 @@ import Cart from "./Home/Cart";
 import ChiTietTuyenDung from "./Home/RecruitmentDetails";
 import Register from "./Login/Register";
 import Products from "./Products/Products";
+import ProductDetail from "./Products/ProductDetail";
 
 
 const routes = [
@@ -53,6 +54,11 @@ const routes = [
         path: '/Cart',
         exact: true,
         main : () => <Cart/>
+    },
+    {
+        path: '/product/Detail',
+        exact: true,
+        main : () => <ProductDetail/>
     },
     {
         path: '/QLNV',

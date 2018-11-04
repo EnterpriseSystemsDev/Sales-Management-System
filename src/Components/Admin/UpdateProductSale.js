@@ -7,13 +7,13 @@ class UpdateProductSale extends React.Component {
         super(props);
         this.state = {
             id: '',
-            tensp : '',
-            brand : '',
             gia : '',
             size : '',
             mota : '',
             hinhanh : '',
             Sale:'',
+            version:'',
+            nameProduct:'',
             isHot:false,
             isSale:false,
         }
@@ -21,13 +21,13 @@ class UpdateProductSale extends React.Component {
     onClear = () =>{
         this.setState({
             id: '',
-            tensp : '',
-            brand : '',
             gia : '',
             size : '',
             mota : '',
             hinhanh : '',
             Sale:'',
+            version:'',
+            nameProduct:'',
             isHot:false,
             isSale:false,
 
@@ -37,34 +37,34 @@ class UpdateProductSale extends React.Component {
         let target = event.target;
         let name = target.name;
         let value = target.type === 'checkbox' ? target.checked : target.value;
-        console.log(value);
         this.setState({
             [name] : value
         });
     };
     onSubmit = (event) =>{
         event.preventDefault();
-        this.props.addProduct(this.state);
-        console.log(this.state);
-
+        this.props.addVersion(this.state);
     };
     onEdit = () =>{
-        this.props.onEditProduct(this.props.task);
-        console.log(this.props.task);
+        this.props.onEditVersion(this.props.task);
+        this.onClear();
+
+
     };
+
     componentWillMount(){
-        if(this.props.editProduct && this.props.editProduct.id !== null){
+        if(this.props.EditVersion && this.props.EditVersion.id !== null){
             this.setState({
-                id: this.props.editProduct.id,
-                tensp : this.props.editProduct.tensp,
-                brand : this.props.editProduct.brand,
-                gia : this.props.editProduct.gia,
-                size : this.props.editProduct.size,
-                mota : this.props.editProduct.mota,
-                hinhanh : this.props.editProduct.hinhanh,
-                isHot:this.props.editProduct.isHot ,
-                isSale:this.props.editProduct.isSale ,
-                Sale:this.props.editProduct.Sale,
+                id: this.props.EditVersion.id,
+                 version : this.props.EditVersion.version,
+                 nameProduct : this.props.EditVersion.nameProduct,
+                 gia : this.props.EditVersion.gia,
+                 size : this.props.EditVersion.size,
+                 mota : this.props.EditVersion.mota,
+                 hinhanh : this.props.EditVersion.hinhanh,
+                isHot:this.props.EditVersion.isHot ,
+                isSale:this.props.EditVersion.isSale ,
+                Sale:this.props.EditVersion.Sale,
 
             });
         }
@@ -74,18 +74,18 @@ class UpdateProductSale extends React.Component {
     };
 
     componentWillReceiveProps(nextProps){
-        if(nextProps && nextProps.editProduct){
+        if(nextProps && nextProps.EditVersion){
             this.setState({
-                id: nextProps.editProduct.id,
-                tensp :nextProps.editProduct.tensp,
-                brand : nextProps.editProduct.brand,
-                gia : nextProps.editProduct.gia,
-                size : nextProps.editProduct.size,
-                mota : nextProps.editProduct.mota,
-                hinhanh : nextProps.editProduct.hinhanh,
-                Sale:nextProps.editProduct.Sale,
-                isHot:nextProps.editProduct.isHot,
-                isSale:nextProps.editProduct.isSale,
+                id: nextProps.EditVersion.id,
+                 version :nextProps.EditVersion.version,
+                 nameProduct : nextProps.EditVersion.nameProduct,
+                 gia : nextProps.EditVersion.gia,
+                 size : nextProps.EditVersion.size,
+                 mota : nextProps.EditVersion.mota,
+                 hinhanh : nextProps.EditVersion.hinhanh,
+                Sale:nextProps.EditVersion.Sale,
+                isHot:nextProps.EditVersion.isHot,
+                isSale:nextProps.EditVersion.isSale,
             });
         }
         else {
@@ -93,19 +93,21 @@ class UpdateProductSale extends React.Component {
         }
     }
     UpdateSP = () =>{
-        this.props.onUpdateStatusSale(this.props.task.id);
+        this.props.onUpdateStatusVersionSale(this.props.task.id);
     };
 
     render() {
         let {task , index} = this.props;
         return (
+
             <tr key ={index}>
                 <td>{index + 1}</td>
-                <td>{task.tensp}</td>
+                <td>{task.version}</td>
                 <td>{task.gia}$</td>
-                <td>{task.brand}</td>
+                <td>{task.nameProduct}</td>
                 <td>{task.size}</td>
                 <td>
+
                     <div className="material-switch pull-left ">
                         <input
                             className="aaa"
@@ -113,7 +115,7 @@ class UpdateProductSale extends React.Component {
                             id={task.id}
                             name="isSale"
                             type="checkbox"
-                           // onChange={this.onChange}
+                            onChange={this.onChange}
                             checked={task.isSale}
                         />
                     <label htmlFor={task.id} className="label-warning" />
@@ -121,20 +123,23 @@ class UpdateProductSale extends React.Component {
                 </td>
 
                 <td>
-                    <input type="text"
-                           className="form-control"
-                           id="hidden_field"
-                           name="Sale"
-                           value={this.state.Sale}
-                           onChange={this.onChange}
-                           placeholder={task.Sale}
-                    />
-                </td>
+                    <form onSubmit={this.onSubmit}>
+                        <input type="text"
+                               className="form-control"
+                               id={task.id}
+                               name="Sale"
+                               value={this.state.Sale}
+                               onChange={this.onChange}
+                               placeholder={task.Sale}
+                        />
 
-                <td>
-                    <button onClick={this.onEdit} type="submit" className="btn btn-success">
-                        Cập nhật
-                    </button>
+                        <button onClick={this.onEdit } type="button" className="btn btn-warning">
+                            Sửa
+                        </button>
+                        <button type="submit" className="btn btn-success">
+                            Cập nhật
+                        </button>
+                    </form>
                 </td>
 
             </tr>
@@ -147,7 +152,8 @@ class UpdateProductSale extends React.Component {
 const listProducts = state =>{
     return {
         tasks : state.tasks,
-        editProduct : state.editProduct
+        editProduct : state.editProduct,
+        EditVersion : state.EditVersion,
     }
 
 };
@@ -159,8 +165,14 @@ const mapDispatchToProps = (dispatch, props) => {
         onEditProduct: (task) =>{
             dispatch(actions.editProDuct(task));
         },
-        onUpdateStatusSale: (id) =>{
-            dispatch(actions.updateStatusSale(id));
+        onUpdateStatusVersionSale: (id) =>{
+            dispatch(actions.updateStatusVersionSale(id));
+        },
+        addVersion : (version) =>{
+            dispatch(actions.addVersion(version))
+        },
+        onEditVersion: (version) =>{
+            dispatch(actions.editVersion(version));
         },
     };
 

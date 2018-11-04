@@ -8,11 +8,11 @@ class Statistical extends React.Component {
       }
     };
     render() {
-        let {Employee,tasks, Recruitment , Bill} = this.props;
-        const countHot = tasks.map((item, index)  => {
+        let {Employee,tasks, Recruitment , Bill,Version} = this.props;
+        const countHot = Version.map((item, index)  => {
             return item.isHot;
         });
-        const countSale = tasks.map((item, index)  => {
+        const countSale = Version.map((item, index)  => {
             return item.isSale;
         });
         return (
@@ -36,7 +36,7 @@ class Statistical extends React.Component {
                         </div>
                         <div className="col-md-3 animated bounceIn slowest">
                             <div className="well dash-box">
-                                <h2><span className="glyphicon glyphicon-shopping-cart" /> {tasks.length}</h2>
+                                <h2><span className="glyphicon glyphicon-shopping-cart" /> {Version.length}</h2>
                                 <h4>Sản Phẩm</h4>
                             </div>
                         </div>
@@ -72,6 +72,7 @@ const Count = state =>{
         tasks : state.tasks,
         Recruitment : state.Recruitment,
         Bill : state.Bill,
+        Version: state.Version,
 
     }
 
