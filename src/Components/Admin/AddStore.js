@@ -31,7 +31,6 @@ class AddStore extends React.Component {
         this.setState({
             [name] : value,
         });
-        console.log(this.state);
     };
 
     onClear = () =>{
@@ -51,12 +50,23 @@ class AddStore extends React.Component {
     };
     onSubmit = (event) =>{
         event.preventDefault();
-        this.props.addProductInStore(this.state);
+        let store = {
+            id : this.state.id,
+            nameProduct : this.state.nameProduct,
+            size : this.state.size,
+            soluong : this.state.soluong,
+            store : this.state.store,
+            version: this.state.version,
+        };
+        this.props.addProductInStore(store);
         //xoa data
         this.onClear();
         this.closeForm();
     };
 
+    componentDidMount() {
+        this.props.listProductAllStore();
+    }
 
     render() {
         let {tasks} = this.props;
@@ -67,6 +77,7 @@ class AddStore extends React.Component {
         });
 
         let {Version} = this.props;
+        //console.log(Version);
         const store = Version.map((task, index) => {
             return (
                 <option key={index} value={task.version}>
@@ -183,10 +194,13 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = (dispatch, props) => {
     return {
         addProductInStore : (store) => {
-            dispatch(actions.addProductsInStore(store))
+            dispatch(actions.addProductsInStoreRequest(store))
         },
         closeForm : () =>{
             dispatch(actions.closeForm())
+        },
+        listProductAllStore : () =>{
+            dispatch(actions.listAllProductRequest());
         }
     }
 };

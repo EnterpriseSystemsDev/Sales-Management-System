@@ -1,6 +1,7 @@
 import React from "react";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
+import callApi from "../../utils/apiCall";
 class Version extends React.Component {
     constructor(props){
         super(props);
@@ -15,6 +16,7 @@ class Version extends React.Component {
             nameProduct:'',
             isHot:false,
             isSale:false,
+            tasks: []
         }
     }
 
@@ -34,15 +36,13 @@ class Version extends React.Component {
         this.setState({
             [name] : value,
         });
-        console.log(this.state);
     };
 
     onClear = () =>{
         this.setState({
             id: '',
-            tensp : '',
             version:'',
-            brand : '',
+            nameProduct : '',
             gia : '',
             size : '',
             mota : '',
@@ -50,16 +50,37 @@ class Version extends React.Component {
             Sale:'',
             isHot:false,
             isSale:false,
-
         });
     };
 
     closeForm = () =>{
         this.props.closeForm();
     };
+
     onSubmit = (event) =>{
         event.preventDefault();
-        this.props.addVersion(this.state);
+        let version = {
+            id : this.state.id,
+            version:this.state.version,
+            nameProduct : this.state.nameProduct,
+            Sale : this.state.Sale,
+            gia : this.state.gia,
+            size : this.state.size,
+            mota : this.state.mota,
+            hinhanh : this.state.hinhanh,
+            isHot: this.state.isHot,
+            isSale : this.state.isSale,
+        };
+        if(this.state.id){
+           this.props.onUpdateVersion(version);
+            this.onClear();
+            this.closeForm();
+        }else {
+            this.props.addVersion(version);
+            this.onClear();
+            this.closeForm();
+        }
+
         this.onClear();
         this.closeForm();
     };
@@ -73,7 +94,7 @@ class Version extends React.Component {
                 gia : this.props.EditVersion.gia,
                 size : this.props.EditVersion.size,
                 mota : this.props.EditVersion.mota,
-                //hinhanh : this.props.editProduct.hinhanh.getTime(),
+                hinhanh : this.props.editProduct.hinhanh,
                 isHot:this.props.EditVersion.isHot ,
                 isSale:this.props.EditVersion.isSale ,
                 Sale:this.props.EditVersion.Sale,
@@ -94,7 +115,7 @@ class Version extends React.Component {
                 gia : nextProps.EditVersion.gia,
                 size : nextProps.EditVersion.size,
                 mota : nextProps.EditVersion.mota,
-                //hinhanh : nextProps.editProduct.hinhanh.getTime(),
+                hinhanh : nextProps.editProduct.hinhanh,
                 Sale:nextProps.EditVersion.Sale,
                 isHot:nextProps.EditVersion.isHot,
                 isSale:nextProps.EditVersion.isSale,
@@ -105,9 +126,18 @@ class Version extends React.Component {
         }
     };
 
+    componentDidMount(){
+        callApi('products', 'GET', null).then(res =>{
+            this.setState ({
+                tasks : res.data,
+            });
+           // console.log(res.data)
+        });
+
+    }
 
     render() {
-        let {tasks} = this.props;
+        let {tasks} = this.state;
         const option = tasks.map((task, index) => {
             return (
                 <option key={index} value={task.tensp}> {task.tensp}</option>
@@ -198,18 +228,6 @@ class Version extends React.Component {
                                onChange={this.onChange}
                         />
                     </div>
-                    {/*<div className="form-group col-md-6">*/}
-                        {/*<div id="hidden_fields" style={{display:'block'}}>*/}
-                            {/*<label style={{float:'left',marginRight:'20px'}} >(%): </label>*/}
-                            {/*<input type="text"*/}
-                                   {/*className="form-control"*/}
-                                   {/*id="hidden_field"*/}
-                                   {/*name="Sale"*/}
-                                   {/*value={this.state.Sale}*/}
-                                   {/*onChange={this.onChange}*/}
-                            {/*/>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
 
                     <div className="form-group col-md-6">
                         <button id="btnCheck" type="submit" className="btn btn-success "> Lưu </button>
@@ -234,18 +252,22 @@ const mapStateToProps = state =>{
         displayForm:state.displayForm,
         EditVersion : state.EditVersion,
 
+
     }
 };
 const mapDispatchToProps = (dispatch, props) => {
     return {
         addProduct : (task) => {
-            dispatch(actions.ADDPRODUCT(task))
+            dispatch(actions.addProduct(task))
         },
         addVersion : (version) =>{
-            dispatch(actions.addVersion(version))
+            dispatch(actions.addVersionRequest(version))
         },
         closeForm : () =>{
             dispatch(actions.closeForm())
+        },
+        onUpdateVersion : (version) =>{
+            dispatch(actions.updateVersionRequest(version))
         }
     }
 };

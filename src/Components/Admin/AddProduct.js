@@ -58,8 +58,15 @@ class AddProduct extends React.Component {
     };
     onSubmit = (event) =>{
         event.preventDefault();
-        this.props.addProduct(this.state);
-        //xoa data
+        let products = {
+            brand : this.state.brand,
+            tensp : this.state.tensp,
+            mota: this.state.mota,
+
+        };
+         this.props.onAddProducts(products);
+        // //this.props.addProduct(this.state);
+        // //xoa data
         this.onClear();
         this.closeForm();
     };
@@ -126,17 +133,7 @@ class AddProduct extends React.Component {
                                onChange={this.onChange}
                         />
                     </div>
-                    {/*<div className="form-group col-md-6">*/}
-                        {/*<label>Brand:</label>*/}
-                        {/*<input type="text"*/}
-                               {/*className="form-control"*/}
-                               {/*id="input2"*/}
-                               {/*required*/}
-                               {/*name = "brand"*/}
-                               {/*value = {this.state.brand}*/}
-                               {/*onChange={this.onChange}*/}
-                        {/*/>*/}
-                    {/*</div>*/}
+
                     <div className="form-group col-md-6">
                         <label>Brand:</label>
                         <select
@@ -156,35 +153,6 @@ class AddProduct extends React.Component {
                         </select>
                     </div>
 
-                    {/*<div className="form-group col-md-6">*/}
-                        {/*<label>Giá:</label>*/}
-                        {/*<input type="text"*/}
-                               {/*className="form-control"*/}
-                               {/*id="input3"*/}
-                               {/*required*/}
-                               {/*name="gia"*/}
-                               {/*value={this.state.gia}*/}
-                               {/*onChange={this.onChange}*/}
-                        {/*/>*/}
-                    {/*</div>*/}
-                    {/*<div className="form-group col-md-6">*/}
-                        {/*<label>Size:</label>*/}
-                        {/*<select*/}
-                                      {/*className="form-control"*/}
-                                       {/*name="size"*/}
-                                       {/*required*/}
-                                       {/*value={this.state.size}*/}
-                                       {/*onChange={this.onChange}*/}
-                        {/*>*/}
-                            {/*<option defaultValue="0" >Chọn Size:</option>*/}
-                            {/*<option value="38">38</option>*/}
-                            {/*<option value="39">39</option>*/}
-                            {/*<option value="40">40</option>*/}
-                            {/*<option value="41">41</option>*/}
-                            {/*<option value="42">42</option>*/}
-                            {/*<option value="43">43</option>*/}
-                        {/*</select>*/}
-                    {/*</div>*/}
                     <div className="form-group col-md-6">
                         <label>Mô Tả:</label>
                         <textarea
@@ -196,65 +164,12 @@ class AddProduct extends React.Component {
                                   onChange={this.onChange}
                        />
                     </div>
-                    {/*<div className="form-group col-md-6">*/}
-                        {/*<label>Hình Ảnh:</label>*/}
-                        {/*<input type="file"*/}
-                               {/*className="form-control"*/}
-                               {/*id="input6"*/}
-                               {/*//required*/}
-                               {/*name="hinhanh"*/}
-                               {/*value={this.state.hinhanh}*/}
-                               {/*onChange={this.onChange}*/}
-                        {/*/>*/}
-                    {/*</div>*/}
-                    {/*<div className="form-group col-md-6">*/}
-                        {/*<div id="hidden_fields" style={{display:'block'}}>*/}
-                            {/*<label style={{float:'left',marginRight:'20px'}} >(%): </label>*/}
-                            {/*<input type="text"*/}
-                                   {/*className="form-control"*/}
-                                   {/*id="hidden_field"*/}
-                                   {/*name="Sale"*/}
-                                   {/*value={this.state.Sale}*/}
-                                   {/*onChange={this.onChange}*/}
-                            {/*/>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-                    {/*<div className="form-group col-md-6">*/}
-                        {/*<label style={{float:'left',marginRight:'20px'}}>HOT: </label>*/}
-                        {/*<div className="material-switch pull-left ">*/}
-                            {/*<input*/}
-                                {/*id="someSwitchOptionDanger"*/}
-                                {/*name="isHot"*/}
-                                {/*type="checkbox"*/}
-                                {/*value={this.state.isHot}*/}
-                                {/*onChange={this.onChange}*/}
-                            {/*/>*/}
-                            {/*<label htmlFor="someSwitchOptionDanger" className="label-danger" />*/}
-                        {/*</div>*/}
-                        {/*<div className=" col-md-6">*/}
-                            {/*<label style={{float:'left',marginRight:'20px'}}>Sale: </label>*/}
-                            {/*<div className="material-switch pull-left ">*/}
-                                {/*<input*/}
-                                    {/*id="someSwitchOptionWarning"*/}
-                                    {/*name="isSale"*/}
-                                    {/*type="checkbox"*/}
-                                    {/*value={this.state.isSale}*/}
-                                    {/*onChange={this.onChange}*/}
-                                {/*/>*/}
-                                {/*<label htmlFor="someSwitchOptionWarning" className="label-warning" />*/}
-                            {/*</div>*/}
-                        {/*</div>*/}
-                    {/*</div>*/}
-
-
-
                     <div className="form-group col-md-6">
                         <button id="btnCheck" type="submit" className="btn btn-success "> Lưu </button>
                     </div>
 
                 </form>
             </div>
-
         );
 
     }
@@ -272,11 +187,14 @@ const mapStateToProps = state =>{
 const mapDispatchToProps = (dispatch, props) => {
     return {
         addProduct : (task) => {
-            dispatch(actions.ADDPRODUCT(task))
-    },
+            dispatch(actions.addProduct(task))
+        },
         closeForm : () =>{
             dispatch(actions.closeForm())
-        }
+        },
+        onAddProducts : (task) =>{
+            dispatch(actions.addProductRequest(task))
+        },
     }
 };
 

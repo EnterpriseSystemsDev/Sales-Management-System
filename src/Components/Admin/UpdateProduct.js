@@ -25,10 +25,15 @@ class UpdateProduct extends React.Component {
         this.setState({
             [name] : value
         });
+
     };
+
     UpdateSP = () =>{
-        this.props.onUpdateStatusVersionHot(this.props.task.id);
+        this.props.onUpdateStatusVersionHot(this.props.task);
+       // console.log(this.props.task.isHot);
     };
+
+
 
     render() {
         let {task , index} = this.props;
@@ -55,40 +60,7 @@ class UpdateProduct extends React.Component {
                         <label htmlFor={task.id} className="label-danger" />
                     </div>
                 </td>
-                {/*<td>*/}
-                    {/*<div className="material-switch pull-left ">*/}
-                        {/*<input*/}
-                            {/*className="aaa"*/}
-                            {/*onClick={this.UpdateSPSale}*/}
-                            {/*id={task.id+1 }*/}
-                            {/*name="isSale"*/}
-                            {/*type="checkbox"*/}
-                            {/*value={task.isSale}*/}
-                            {/*onChange={this.onChange}*/}
-                            {/*checked={task.isSale}*/}
-                        {/*/>*/}
-                        {/*<label htmlFor={task.id+1} className="label-warning" />*/}
-                    {/*</div>*/}
-                {/*</td>*/}
-
-                {/*<td>*/}
-                    {/*<button onClick={this.onEdit } type="button" className="btn btn-success">*/}
-                        {/*Cập nhật*/}
-                    {/*</button>*/}
-                {/*</td>*/}
-                {/*<td>*/}
-                    {/*<input type="text"*/}
-                           {/*id="hidden_fields" style={{display:'none'}}*/}
-                           {/*className="form-control"*/}
-                           {/*name="Sale"*/}
-                           {/*value={task.Sale}*/}
-                           {/*onChange={this.onChange}*/}
-                           {/*placeholder="% Sale"*/}
-                    {/*/>*/}
-                {/*</td>*/}
             </tr>
-
-
         );
 
 
@@ -98,7 +70,8 @@ const listProducts = state =>{
     return {
         tasks : state.tasks,
         displayForm: state.displayForm,
-        editProduct : state.editProduct
+        editProduct : state.editProduct,
+        Version: state.Version,
     }
 
 };
@@ -114,8 +87,11 @@ const mapDispatchToProps = (dispatch, props) => {
         onEditProduct: (task) =>{
             dispatch(actions.editProDuct(task));
         },
-        onUpdateStatusVersionHot: (id) =>{
-            dispatch(actions.updateStatusVersionHot(id));
+        // onUpdateStatusVersionHot: (id) =>{
+        //     dispatch(actions.updateStatusVersionHot(id));
+        // },
+        onUpdateStatusVersionHot: (task) =>{
+            dispatch(actions.updateStatusVersionHotRequest(task));
         },
 
     };

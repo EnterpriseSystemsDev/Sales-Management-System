@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from 'react-redux';
+import * as actions from "../../actions";
 
 class Statistical extends React.Component {
     componentWillMount() {
@@ -7,6 +8,9 @@ class Statistical extends React.Component {
           return 'animated bounceIn slowest' ;
       }
     };
+    componentDidMount(){
+        this.props.listAllVersion();
+    }
     render() {
         let {Employee,tasks, Recruitment , Bill,Version} = this.props;
         const countHot = Version.map((item, index)  => {
@@ -66,7 +70,7 @@ class Statistical extends React.Component {
         );
     }
 }
-const Count = state =>{
+const mapStateToProps = state =>{
     return {
         Employee: state.Employee,
         tasks : state.tasks,
@@ -77,7 +81,34 @@ const Count = state =>{
     }
 
 };
-export default  connect(Count,null) (Statistical);
+const mapDispatchToProps = (dispatch, props) => {
+    return{
+        delete_PRODUCT : (id) => {
+            dispatch(actions.deleteProduct(id));
+        },
+        onUpDateForm : () => {
+            dispatch(actions.updateForm());
+        },
+
+        onEditProduct: (task) =>{
+            dispatch(actions.editProDuct(task));
+        },
+        onFilterTable: (filter) =>{
+            dispatch(actions.filterTable(filter));
+        },
+        onSortProduct: (sort) =>{
+            dispatch(actions.sortProduct(sort));
+        },
+        listAllVersion : () =>{
+            dispatch(actions.listAllVersionRequest());
+        },
+
+
+    };
+
+};
+
+export default connect(mapStateToProps,mapDispatchToProps) (Statistical);
 
 
 

@@ -3,7 +3,13 @@ import {connect} from 'react-redux'
 import * as actions from '../../actions/index';
 import UpdateSanPham from "./UpdateProduct";
 
+
 class StatusSP extends React.Component {
+
+    componentDidMount(){
+        this.props.listAllVersion();
+    }
+
 
     render() {
 
@@ -65,6 +71,10 @@ const mapDispatchToProps = (dispatch, props) => {
         onEditProduct: (task) =>{
             dispatch(actions.editProDuct(task));
         },
+        listAllVersion : () =>{
+            dispatch(actions.listAllVersionRequest())
+        }
+
 
     };
 

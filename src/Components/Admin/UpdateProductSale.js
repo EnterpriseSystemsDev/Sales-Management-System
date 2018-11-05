@@ -160,7 +160,7 @@ const listProducts = state =>{
 const mapDispatchToProps = (dispatch, props) => {
     return{
         addProduct : (task) => {
-            dispatch(actions.ADDPRODUCT(task))
+            dispatch(actions.addProduct(task))
         },
         onEditProduct: (task) =>{
             dispatch(actions.editProDuct(task));

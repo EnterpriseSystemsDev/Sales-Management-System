@@ -2,7 +2,8 @@ import React from "react";
 import {connect} from 'react-redux'
 import * as actions from '../../actions/index';
 import SanPham from "./Product";
-import axios from "axios";
+
+
 
 class ListProduct extends React.Component {
     constructor(props){
@@ -12,19 +13,13 @@ class ListProduct extends React.Component {
             filterStatus:-1,
             sortBy : 'name',
             sortValue: 1,
+            Version: [],
         }
     }
 
-    // componentDidMount(){
-    //     axios.get('http://5bdc5e5b433b4f0013e6e0c4.mockapi.io/api/products')
-    //         .then(res => {
-    //             const products = res.data;
-    //             // console.log(products);
-    //             this.setState({
-    //                 products
-    //             });
-    //         })
-    // }
+    componentDidMount(){
+        this.props.listAllVersion();
+     }
 
     onChange = (event) =>{
         let target = event.target;
@@ -48,7 +43,9 @@ class ListProduct extends React.Component {
 
 
     render() {
-        let {Version,FilterTable,SortTable} = this.props;
+
+      // let {Version} = this.state;
+        let {FilterTable,SortTable,Version} = this.props;
         if(FilterTable.name){
             Version = Version.filter((task) =>{
                return (task.version.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
@@ -93,6 +90,7 @@ class ListProduct extends React.Component {
                 }
             })
         }
+
         const listSP = Version.map((task, index) => {
             return (
                 <SanPham
@@ -214,6 +212,7 @@ const mapStateToProps = state =>{
             editProduct : state.editProduct,
             FilterTable : state.FilterTable,
             SortTable: state.SortTable,
+            DisplayFormVersion : state.DisplayFormVersion,
         }
 
 };
@@ -235,6 +234,11 @@ const mapDispatchToProps = (dispatch, props) => {
         onSortProduct: (sort) =>{
             dispatch(actions.sortProduct(sort));
         },
+        listAllVersion : () =>{
+            dispatch(actions.listAllVersionRequest());
+        },
+
+
     };
 
 };

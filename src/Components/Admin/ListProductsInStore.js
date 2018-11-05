@@ -4,6 +4,9 @@ import * as actions from '../../actions/index';
 
 class ListProductsInStore extends React.Component {
 
+componentDidMount(){
+    this.props.onListStore();
+}
 
     render() {
         let {Store} = this.props;
@@ -71,6 +74,9 @@ const mapDispatchToProps = (dispatch, props) => {
         onSortProduct: (sort) =>{
             dispatch(actions.sortProduct(sort));
         },
+        onListStore : () =>{
+            dispatch(actions.listProductsInStoreRequest());
+        }
     };
 
 };

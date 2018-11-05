@@ -2,6 +2,7 @@ import React from "react";
 import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
 
+
 class Product extends React.Component {
     onClear = () =>{
         this.setState({
@@ -22,13 +23,22 @@ class Product extends React.Component {
     };
     onEdit = () =>{
         this.props.openFormEditVersion();
+        //console.log(this.props.task.id);
         this.props.onEditVersion(this.props.task);
+        //console.log(task.id);
+        ///this.props.onUpdateVersion(version);
         this.onClear();
 
 
     };
-    onDelete = () =>{
-      this.props.onDeleteVersion(this.props.task.id);
+
+    onDelete = (id) =>{
+        if(confirm('Bạn Muốn Xóa sản phẩm ?')){  //eslint-disable-line
+            this.props.onDeleteVersion(id);
+        }
+
+        //console.log(this.props.onDeleteVersion(id));
+        //console.log(id);
     };
 
     render() {
@@ -39,14 +49,14 @@ class Product extends React.Component {
                     <td>{index + 1}</td>
                     <td>{task.nameProduct}</td>
                     <td>{task.version}</td>
-                    <td>{task.gia}</td>
+                    <td>{task.gia}$</td>
                     <td>{task.size}</td>
                     <td>{img}</td>
                     <td>
-                        <button onClick={this.onEdit } type="button" className="btn btn-warning">
+                        <button onClick={() => this.onEdit(task.id)} type="button" className="btn btn-warning">
                             Sửa
                         </button>
-                        <button onClick={this.onDelete } type="button" className="btn btn-danger" style={{marginLeft: 10}}>
+                        <button onClick={() =>this.onDelete(task.id) } type="button" className="btn btn-danger" style={{marginLeft: 10}}>
                             Xóa
                         </button>
                     </td>
@@ -59,7 +69,7 @@ class Product extends React.Component {
 const mapDispatchToProps = (dispatch, props) => {
     return{
         onDeleteVersion : (id) => {
-            dispatch(actions.deleteVersion(id));
+            dispatch(actions.deleteVersionRequest(id));
         },
         onUpDateForm : () => {
             dispatch(actions.updateForm());
@@ -74,6 +84,7 @@ const mapDispatchToProps = (dispatch, props) => {
         openFormEditVersion : () => {
             dispatch(actions.openFormEditVersion());
         },
+
 
     };
 

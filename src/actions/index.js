@@ -1,4 +1,5 @@
 import * as types from "../constants/ActionTypes";
+import callApi from "../utils/apiCall";
 
 export  const  changeTheme = () => {
     return{
@@ -6,21 +7,32 @@ export  const  changeTheme = () => {
     }
 };
 
-export const ListAll = () => {
+export const listAllVersion = (version) => {
     return {
-        type : types.LIST_ALL
+        type : types.LIST_ALL_VERSION,
+        version
+    }
+};
+export const listAllVersionRequest = () => {
+    return (dispatch) =>{
+        return callApi('versions','GET',null).then(res =>{
+            dispatch(listAllVersion(res.data))
+        })
     }
 };
 
-export const listAllVersion = () => {
+
+export const deleteVersion = (id) => {
     return {
-        type : types.LIST_ALL_VERSION
+        type : types.DELETE_VERSION,
+        id
     }
 };
-
-export const deleteVersion = () => {
-    return {
-        type : types.DELETE_VERSION
+export const deleteVersionRequest = (id) => {
+    return (dispatch) =>{
+        return callApi('versions/'+ id,'DELETE',null).then(res =>{
+            dispatch(deleteVersion(id));
+        })
     }
 };
 
@@ -157,15 +169,42 @@ export  const  updateFormRecruitment = () => {
     }
 };
 
-
-
 export const deleteEmployee = (id) => {
     return {
         type : types.DELETE_EMPLOYEE,
         id : id
     }
 };
+/*****************/
 
+export const addProduct = (task) => {
+    return {
+        type : types.ADD_PRODUCT,
+        task : task
+    }
+};
+export const addProductRequest = (task) => {
+    return (dispatch) =>{
+       return callApi('products', 'POST', task).then(res =>{
+           dispatch(addProduct(res.data))
+       });
+    };
+};
+
+export const listAllProduct = (tasks) => {
+    return {
+        type : types.LIST_ALL,
+        tasks
+    }
+};
+export const listAllProductRequest = () => {
+    return (dispatch) =>{
+        return callApi('products','GET',null).then(res =>{
+            dispatch(listAllProduct(res.data))
+        })
+    }
+};
+/*****************/
 
 export const editProDuct = (task) => {
     return {
@@ -173,23 +212,42 @@ export const editProDuct = (task) => {
         task : task
     }
 };
-export const ADDPRODUCT = (task) => {
-    return {
-        type : types.ADD_PRODUCT,
-        task : task
-    }
-};
+
 export const editVersion = (version) => {
     return {
         type : types.EDIT_VERSION,
         version : version
     }
 };
+export const updateVersion = (version) => {
+    return {
+        type : types.UPDATE_VERSION,
+        version: version
+    }
+};
+export const updateVersionRequest = (version) => {
+    return (dispatch) =>{
+        callApi('versions/'+version.id,'PUT', version).then(res =>{
+            dispatch(updateVersion(res.data));
+        })
+    }
+};
+
+
+
 export const addVersion = (version) => {
     return {
         type : types.ADD_VERSION,
         version : version
     }
+};
+
+export const addVersionRequest = (version) => {
+   return (dispatch) => {
+       return callApi('versions','POST',version).then(res =>{
+            dispatch(addVersion(res.data))
+       })
+   }
 };
 
 export const addProductsInStore = (store) => {
@@ -198,12 +256,27 @@ export const addProductsInStore = (store) => {
         store : store
     }
 };
-export const listProductsInStore = () => {
-    return {
-        type : types.LIST_PRODUCT_IN_STORE
+export const addProductsInStoreRequest = (store) => {
+    return (dispatch) =>{
+        return callApi('store','POST',store).then(res =>{
+            dispatch(addProductsInStore(res.data));
+        })
     }
 };
-
+export const listProductsInStore = (store) => {
+    return {
+        type : types.LIST_PRODUCT_IN_STORE,
+        store
+    }
+};
+export const listProductsInStoreRequest = () => {
+    return (dispatch) =>{
+        return callApi('store','GET',null).then(res =>{
+            dispatch(listProductsInStore(res.data))
+            //console.log(res)
+        })
+    }
+};
 
 export const deleteProduct = (id) => {
     return {
@@ -238,11 +311,24 @@ export const updateStatus = (id) => {
         id : id
     }
 };
-export const updateStatusVersionHot = (id) => {
+
+
+export const updateStatusVersionHot = (task) => {
     return {
         type : types.UPDATE_STATUS_VERSION_HOT,
-        id : id
+        task : task
     }
+};
+
+
+export const updateStatusVersionHotRequest = (task) => {
+   return (dispatch) =>{
+       callApi('versions/'+task.id, 'PUT' , task).then(res =>{
+           dispatch(updateStatusVersionHot(res.data));
+          // console.log(!res.data.isHot)
+       });
+
+   }
 };
 
 export const updateStatusVersionSale = (id) => {
