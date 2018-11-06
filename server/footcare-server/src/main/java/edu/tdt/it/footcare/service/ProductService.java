@@ -33,6 +33,7 @@ public class ProductService {
 
     public ProductResponse createProductResponse(Product pro) {
         ProductResponse response = new ProductResponse();
+        response.setId(pro.getId());
         response.setDescription(pro.getDescription());
         response.setName(pro.getName());
         response.setVersions(productVersionService.mapVersionsToResponses(pro.getVersions()));

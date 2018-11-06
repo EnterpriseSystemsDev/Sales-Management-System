@@ -5,6 +5,8 @@ import lombok.Data;
 @Data
 public class ProductWrapperResponse {
 
+    private long productVersionId;
+
     private String name;
 
     private int count;

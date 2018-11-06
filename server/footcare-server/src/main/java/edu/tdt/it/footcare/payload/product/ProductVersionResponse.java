@@ -6,6 +6,7 @@ import java.util.List;
 
 @Data
 public class ProductVersionResponse {
+    private long productVersionId;
     private String versionName;
     private double price;
     private double currentPrice;

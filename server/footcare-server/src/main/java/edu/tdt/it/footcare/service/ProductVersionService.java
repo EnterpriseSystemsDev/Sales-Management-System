@@ -42,6 +42,7 @@ public class ProductVersionService {
 
     public ProductVersionResponse createVersionResponse(ProductVersion productVersion) {
         ProductVersionResponse response = new ProductVersionResponse();
+        response.setProductVersionId(productVersion.getId());
         response.setVersionName(productVersion.getVersionName());
         response.setImages(productVersion.getImages());
         response.setPrice(productVersion.getPrice());

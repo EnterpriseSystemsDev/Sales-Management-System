@@ -7,6 +7,8 @@ import java.util.List;
 @Data
 public class ProductResponse {
 
+    private long id;
+
     private String name;
 
     private List<ProductVersionResponse> versions;
