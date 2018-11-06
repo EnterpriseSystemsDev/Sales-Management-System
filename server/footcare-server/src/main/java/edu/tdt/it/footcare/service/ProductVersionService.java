@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductVersionService {
@@ -23,6 +24,10 @@ public class ProductVersionService {
         this.productWrapperService = productWrapperService;
     }
 
+    public List<ProductVersion> getAll() {
+        return productVersionRepository.findAll();
+    }
+
     public List<ProductVersion> allVersionsOf(long productId) {
         return productVersionRepository.findAllByProduct_Id(productId);
     }
@@ -35,12 +40,17 @@ public class ProductVersionService {
         return productVersionRepository.findById(id);
     }
 
-    public ProductVersionResponse createResponse(ProductVersion productVersion) {
+    public ProductVersionResponse createVersionResponse(ProductVersion productVersion) {
         ProductVersionResponse response = new ProductVersionResponse();
+        response.setVersionName(productVersion.getVersionName());
         response.setImages(productVersion.getImages());
         response.setPrice(productVersion.getPrice());
         response.setCurrentPrice(currentPriceOf(productVersion));
         return response;
+    }
+
+    public List<ProductVersionResponse> mapVersionsToResponses(List<ProductVersion> versions) {
+        return versions.stream().map(this::createVersionResponse).collect(Collectors.toList());
     }
 
     private double currentPriceOf(ProductVersion productVersion) {

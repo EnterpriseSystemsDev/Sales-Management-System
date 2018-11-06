@@ -33,6 +33,6 @@ public class ProductVersion extends DateAudit {
     private List<String> images;
 
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false, cascade = CascadeType.MERGE)
     private Product product;
 }

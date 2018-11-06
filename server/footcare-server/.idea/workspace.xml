@@ -2,154 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="624b6ffe-f03a-432e-8835-89d6947f15a3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/TransactionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/footcare_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/footcare_war_exploded.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/VersionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footcare.iml" beforeDir="false" afterPath="$PROJECT_DIR$/footcare.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/SpringJpaWildflyApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/FootCareStoreApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/security/CurrentUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/security/CurrentUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/security/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/security/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/security/authentication/role/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/security/authentication/role/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/security/authentication/user/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/security/authentication/user/Account.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/security/authentication/user/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/security/authentication/user/UserPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/AuthController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/AuthController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/ProductController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/bill/Bill.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/bill/Bill.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/bill/BillRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/bill/BillRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/brand/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/brand/Brand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/cart/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/cart/Cart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/cart/CartRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/cart/CartRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/history/TransactionHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/transaction/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/history/TransactionHistoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/transaction/TransactionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/CustomerRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/Employee.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/Employee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/EmployeeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/EmployeeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/Manager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/PersonService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/ProductController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/ProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/type/ProductType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/type/ProductTypeRepository.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductInSelling.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductInSelling.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductInStock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductInStock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/promotion/PromotionEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/promotion/PromotionEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/promotion/PromotionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/promotion/PromotionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/store/Store.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/store/Store.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/store/StoreRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/store/StoreRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/JwtAuthResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/auth/JwtAuthResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/LoginRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/auth/LoginRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/RegisterRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/auth/RegisterRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/AccountDetailsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/AccountDetailsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/util/AppConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/util/AppConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/SpringJpaWildflyApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/audit/AuditorAwareImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/audit/AuditorAwareImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/security/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/security/JwtAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/security/JwtTokenProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/security/JwtTokenProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/security/authentication/role/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/security/authentication/role/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/security/authentication/user/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/security/authentication/user/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/security/authentication/user/UserPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/config/security/authentication/user/UserPrincipal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/bill/Bill.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/bill/Bill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/bill/BillRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/bill/BillRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/brand/Brand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/brand/Brand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/cart/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/cart/Cart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/cart/CartRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/cart/CartRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/history/TransactionHistory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/history/TransactionHistoryRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/CustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/EmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/EmployeeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/Manager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/PersonService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/person/PersonService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/ProductInSellingRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/ProductInStockRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/ProductRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/ProductVersionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/type/ProductType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/type/ProductTypeRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/version/ProductVersion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/version/ProductVersion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/version/ProductVersionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/version/ProductVersionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/wrapper/ProductInSelling.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/wrapper/ProductInSelling.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/wrapper/ProductInStock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/wrapper/ProductInStock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/wrapper/ProductWrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/product/wrapper/ProductWrapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/promotion/PromotionEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/promotion/PromotionEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/promotion/PromotionProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/promotion/PromotionProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/promotion/PromotionProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/promotion/PromotionProductRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/promotion/PromotionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/promotion/PromotionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/store/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/store/Store.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/store/StoreRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/domain/store/StoreRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/payload/JwtAuthResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/payload/LoginRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/payload/RegisterRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/service/AccountDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/service/AccountDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/util/AppConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/edu/tdt/it/footcare/util/AppConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/SpringJpaWildflyApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/SecurityConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/SecurityConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/audit/AuditorAwareImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/audit/AuditorAwareImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/security/JwtAuthenticationFilter.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/security/JwtAuthenticationFilter.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/security/JwtTokenProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/security/JwtTokenProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/security/authentication/role/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/security/authentication/role/Role.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/security/authentication/user/Account.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/security/authentication/user/Account.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/security/authentication/user/UserPrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/config/security/authentication/user/UserPrincipal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/controller/AuthController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/controller/AuthController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/controller/ProductController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/controller/ProductController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/bill/Bill.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/bill/Bill.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/bill/BillRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/bill/BillRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/brand/Brand.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/brand/Brand.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/cart/Cart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/cart/Cart.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/cart/CartRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/cart/CartRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/history/TransactionHistory.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/history/TransactionHistoryRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/Customer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/CustomerRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/Employee.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/Employee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/EmployeeRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/EmployeeRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/Manager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/Manager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/Person.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/Person.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/PersonService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/person/PersonService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/Product.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/Product.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/ProductInSellingRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/ProductInStockRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/ProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/ProductRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/ProductVersionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/type/ProductType.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/type/ProductTypeRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/version/ProductVersion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/version/ProductVersion.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/version/ProductVersionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/version/ProductVersionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/wrapper/ProductInSelling.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/wrapper/ProductInSelling.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/wrapper/ProductInStock.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/wrapper/ProductInStock.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/wrapper/ProductWrapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/product/wrapper/ProductWrapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/promotion/PromotionEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/promotion/PromotionEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/promotion/PromotionProduct.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/promotion/PromotionProduct.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/promotion/PromotionProductRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/promotion/PromotionProductRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/promotion/PromotionRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/promotion/PromotionRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/store/Store.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/store/Store.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/store/StoreRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/domain/store/StoreRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/payload/JwtAuthResponse.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/payload/LoginRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/payload/RegisterRequest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/service/AccountDetailsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/service/AccountDetailsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/util/AppConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/footcare/WEB-INF/classes/edu/tdt/it/footcare/util/AppConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductVersionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductVersionService.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -188,10 +49,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="class" value="15" />
+          <entry key="class" value="16" />
           <entry key="fxml" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="1020" />
+          <entry key="java" value="1038" />
           <entry key="mvnw" value="1" />
           <entry key="properties" value="8" />
           <entry key="xml" value="8" />
@@ -199,9 +60,9 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="15" />
+          <entry key="CLASS" value="16" />
           <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="1020" />
+          <entry key="JAVA" value="1038" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="8" />
           <entry key="XML" value="9" />
@@ -211,7 +72,7 @@
         <counts>
           <entry key="class" value="1" />
           <entry key="dummy" value="44" />
-          <entry key="java" value="35766" />
+          <entry key="java" value="37089" />
           <entry key="properties" value="12" />
           <entry key="xml" value="2" />
         </counts>
@@ -219,7 +80,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="35750" />
+          <entry key="JAVA" value="37073" />
           <entry key="PLAIN_TEXT" value="44" />
           <entry key="Properties" value="12" />
           <entry key="Spring Data QL" value="16" />
@@ -229,20 +90,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/util/DataSeeder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="92" column="38" lean-forward="true" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -264,15 +112,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/CustomerRepository.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/OfflineRegisterRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductVersionResponse.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/cart/Cart.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductInSelling.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/transaction/Transaction.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/transaction/TransactionRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/SecurityConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/Person.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/transaction/OnlineBillRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/transaction/OfflineBillRequest.java" />
@@ -288,7 +132,6 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/AuthService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/AuthController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/CartController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/ProductController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/StoreController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/ReportRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/EmployeeStaticResponse.java" />
@@ -309,12 +152,17 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/EmployeeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ManagerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/brand/Brand.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersion.java" />
-        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductVersionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/util/DataSeeder.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/TransactionController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/FootCareStoreApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersionRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/VersionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductVersionService.java" />
       </list>
     </option>
   </component>
@@ -332,19 +180,19 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1439" />
     <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="828" />
+    <option name="width" value="1920" />
+    <option name="height" value="1008" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
@@ -386,6 +234,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="footcare" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="footcare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="footcare-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="footcare" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -395,7 +252,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="footcare" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="footcare" type="b2602c69:ProjectViewProjectNode" />
@@ -404,23 +261,48 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="footcare" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="product" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="footcare" type="b2602c69:ProjectViewProjectNode" />
               <item name="footcare-server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="footcare" type="462c0819:PsiDirectoryNode" />
+              <item name="domain" type="462c0819:PsiDirectoryNode" />
+              <item name="product" type="462c0819:PsiDirectoryNode" />
+              <item name="wrapper" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="footcare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="footcare-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="footcare" type="462c0819:PsiDirectoryNode" />
+              <item name="payload" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="footcare" type="b2602c69:ProjectViewProjectNode" />
+              <item name="footcare-server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="footcare" type="462c0819:PsiDirectoryNode" />
+              <item name="payload" type="462c0819:PsiDirectoryNode" />
+              <item name="product" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="bran&#9;PSI&#9;JAVA://edu.tdt.it.footcare.domain.brand.Brand&#10;Store&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/store/Store.java&#10;employ&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/service/EmployeeService.java&#10;Manager&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/person/Manager.java&#10;tran&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/controller/TransactionController.java&#10;Bill&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/bill/Bill.java&#10;DateAu&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/config/audit/DateAudit.java&#10;StoreRe&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/store/StoreRepository.java&#10;Transac&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/controller/TransactionController.java&#10;Emplo&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/service/EmployeeService.java&#10;AuthC&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/controller/AuthController.java&#10;auth&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/controller/AuthController.java&#10;mapRequests&#9;PSI&#9;JAVA://edu.tdt.it.footcare.service.ProductWrapperService#mapRequestsToWrapper&#10;Employee&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/person/Employee.java&#10;makeOrder&#9;PSI&#9;JAVA://edu.tdt.it.footcare.service.CustomerService#makeOrder&#10;pers&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/person/PersonService.java&#10;calculateTo&#9;PSI&#9;JAVA://edu.tdt.it.footcare.service.ProductWrapperService#calculateTotalMoney&#10;resourcenotfound&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/exception/ResourceNotFoundException.java" />
+    <property name="SearchEverywhereHistoryKey" value="product&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/service/ProductVersionService.java&#10;bran&#9;PSI&#9;JAVA://edu.tdt.it.footcare.domain.brand.Brand&#10;Store&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/store/Store.java&#10;employ&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/service/EmployeeService.java&#10;Manager&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/person/Manager.java&#10;tran&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/controller/TransactionController.java&#10;Bill&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/bill/Bill.java&#10;DateAu&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/config/audit/DateAudit.java&#10;StoreRe&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/store/StoreRepository.java&#10;Transac&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/controller/TransactionController.java&#10;Emplo&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/service/EmployeeService.java&#10;AuthC&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/controller/AuthController.java&#10;auth&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/controller/AuthController.java&#10;mapRequests&#9;PSI&#9;JAVA://edu.tdt.it.footcare.service.ProductWrapperService#mapRequestsToWrapper&#10;Employee&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/person/Employee.java&#10;makeOrder&#9;PSI&#9;JAVA://edu.tdt.it.footcare.service.CustomerService#makeOrder&#10;pers&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/person/PersonService.java&#10;calculateTo&#9;PSI&#9;JAVA://edu.tdt.it.footcare.service.ProductWrapperService#calculateTotalMoney&#10;resourcenotfound&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/exception/ResourceNotFoundException.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -473,7 +355,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127101000" />
+    <option name="totallyTimeSpent" value="128957000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -485,9 +367,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="828" extended-state="6" />
+    <frame x="1439" y="23" width="1920" height="1008" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19599427" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19116081" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -503,7 +385,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="9" weight="0.32922733" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49840257" visible="true" weight="0.25277779" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49840257" visible="true" weight="0.27444443" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50159746" side_tool="true" weight="0.25555557" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -523,58 +405,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductInStockRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="20" column="116" lean-forward="true" selection-start-line="20" selection-start-column="116" selection-end-line="20" selection-end-column="116" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/PersonService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/PromotionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/StoreService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/transaction/TransactionRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/StockService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/PromotionEventController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -582,42 +412,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/ProductController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#774#775#0" expanded="true" />
-            <element signature="e#847#848#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/CartController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/AuthController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/ReportRequest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/ReportRequest.java" />
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/stream/Stream.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -627,8 +422,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductWrapperResponse.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
+        <state relative-caret-position="189">
+          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -674,10 +469,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
-          <folding>
-            <element signature="e#245#246#0" expanded="true" />
-            <element signature="e#268#269#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -716,13 +507,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/DateTimeFormatConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/DateTimeFormatConfig.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/SecurityConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -779,10 +564,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="140">
           <caret line="649" column="20" selection-start-line="649" selection-start-column="20" selection-end-line="649" selection-end-column="20" />
-          <folding>
-            <element signature="e#23984#23985#0" expanded="true" />
-            <element signature="e#24041#24042#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -790,10 +571,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="271" column="31" selection-start-line="271" selection-start-column="31" selection-end-line="271" selection-end-column="31" />
-          <folding>
-            <element signature="e#11014#11015#0" expanded="true" />
-            <element signature="e#11069#11070#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -835,44 +612,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/EmployeeService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="82" column="51" lean-forward="true" selection-start-line="82" selection-start-column="51" selection-end-line="82" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/AuthService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="914">
           <caret line="51" column="14" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -880,17 +623,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
           <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductVersionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
-          <folding>
-            <element signature="e#1853#1854#0" expanded="true" />
-            <element signature="e#1906#1907#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -905,10 +637,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
           <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#761#762#0" expanded="true" />
-            <element signature="e#836#837#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -916,9 +644,123 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
           <caret line="92" column="38" lean-forward="true" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/CartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="28" column="53" lean-forward="true" selection-start-line="28" selection-start-column="53" selection-end-line="28" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/AuthController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="37" column="58" lean-forward="true" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/transaction/CartResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="12" column="31" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/transaction/AddToCartRequest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="18" lean-forward="true" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.10.RELEASE/spring-web-5.0.10.RELEASE.jar!/org/springframework/http/ResponseEntity.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/EmployeeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="37" column="59" lean-forward="true" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/VersionController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="237">
+          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="26" column="5" lean-forward="true" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersionRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="9" column="44" lean-forward="true" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="417">
+          <caret line="35" column="31" lean-forward="true" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductVersionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="426">
+          <caret line="45" column="55" lean-forward="true" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
         </state>
       </provider>
     </entry>

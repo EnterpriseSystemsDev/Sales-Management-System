@@ -6,9 +6,11 @@ import java.util.List;
 
 @Data
 public class ProductResponse {
+
     private String name;
 
-    private List<ProductWrapperResponse> versions;
+    private List<ProductVersionResponse> versions;
 
     private String description;
+
 }

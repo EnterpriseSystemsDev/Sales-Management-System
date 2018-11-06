@@ -25,10 +25,11 @@ public class Product {
     @Size
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.EAGER, optional = false, cascade = CascadeType.MERGE)
     private Brand brand;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "product", cascade = CascadeType.MERGE)
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     private List<ProductVersion> versions;
 }
