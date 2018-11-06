@@ -7,47 +7,48 @@ import SanPham from "../Admin/Product";
 
 
 class Login extends React.Component {
-     constructor(props) {
-         super(props);
-         this.state = {
-             txtUserName : '',
-             txtPassWord: '',
-             username: [],
-             password: [],
-         };
+    constructor(props) {
+        super(props);
+        this.state = {
+            txtUserName: '',
+            txtPassWord: '',
+            username: [],
+            password: [],
+        };
 
-     }
-     onChange = (e) =>{
-         let target = e.target;
-         let name = target.name;
-         let value = target.type === 'checkbox' ? target.checked : target.value;
-         this.setState({
-            [name] : value
-         });
-     };
+    }
 
-     onLogin = (e) =>{
-         e.preventDefault();
-         let {txtUserName,txtPassWord} = this.state;
-         if(txtUserName === this.state.username && txtPassWord === this.state.password){
-             localStorage.setItem('user', JSON.stringify({
-                 username : txtUserName,
-                 password : txtPassWord
-             }));
-         }
-     };
+    onChange = (e) => {
+        let target = e.target;
+        let name = target.name;
+        let value = target.type === 'checkbox' ? target.checked : target.value;
+        this.setState({
+            [name]: value
+        });
+    };
+
+    onLogin = (e) => {
+        e.preventDefault();
+        let {txtUserName, txtPassWord} = this.state;
+        if (txtUserName === this.state.username && txtPassWord === this.state.password) {
+            localStorage.setItem('user', JSON.stringify({
+                username: txtUserName,
+                password: txtPassWord
+            }));
+        }
+    };
 
     componentDidMount() {
         document.title = "Đăng Nhập";
         callApi('users', 'GET', null).then(res => {
             const test = res.data;
             const listSP = test.map((task, index) => {
-                   return(
-                       this.setState ({
-                           username :task.username,
-                           password: task.password
-                       })
-                   )
+                return (
+                    this.setState({
+                        username: task.username,
+                        password: task.password
+                    })
+                )
             });
         })
     }
@@ -56,17 +57,17 @@ class Login extends React.Component {
         console.log(this.state);
         let {location} = this.props;
         console.log(location);
-        let {txtUserName,txtPassWord} = this.state;
+        let {txtUserName, txtPassWord} = this.state;
         let loggedInUser = localStorage.getItem('user');
-        if(loggedInUser !== null){
+        if (loggedInUser !== null) {
 
             // return <Redirect to ='/Admin'/>
-            return <Redirect from = "/Login" to ={{
-                    pathname : '/Admin',
-                    state : {
-                        from : location
-                    }
+            return <Redirect from="/Login" to={{
+                pathname: '/Admin',
+                state: {
+                    from: location
                 }
+            }
             }/>
         }
         return (
@@ -95,15 +96,15 @@ class Login extends React.Component {
                                 />
                                 <label>Password</label>
                             </div>
-                            <input type="submit" name="btnSubMit" defaultValue="Login" />
+                            <input type="submit" name="btnSubMit" defaultValue="Login"/>
 
                         </form>
                         <Link to="/dangky">
-                            <span  className="pagenot" >Sign Up</span>
+                            <span className="pagenot">Sign Up</span>
                         </Link>
                     </div>
 
-                 </div>
+                </div>
             </div>
         );
     }

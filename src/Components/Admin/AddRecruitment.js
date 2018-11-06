@@ -14,7 +14,6 @@ class AddRecruitment extends React.Component {
             thoiGian: '',
             deadLine:  '',
             moTaTD:  '',
-
         }
     }
     onChange = (event) =>{

@@ -49,7 +49,6 @@ class AddProduct extends React.Component {
             Sale:'',
             isHot:false,
             isSale:false,
-
         });
     };
 
@@ -62,7 +61,6 @@ class AddProduct extends React.Component {
             brand : this.state.brand,
             tensp : this.state.tensp,
             mota: this.state.mota,
-
         };
          this.props.onAddProducts(products);
         // //this.props.addProduct(this.state);
@@ -84,7 +82,6 @@ class AddProduct extends React.Component {
                 //isHot:this.props.editProduct.isHot ,
                 //isSale:this.props.editProduct.isSale ,
                // Sale:this.props.editProduct.Sale,
-
             });
         }
         else {
