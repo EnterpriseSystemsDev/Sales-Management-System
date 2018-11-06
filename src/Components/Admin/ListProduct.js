@@ -46,13 +46,14 @@ class ListProduct extends React.Component {
 
       // let {Version} = this.state;
         let {FilterTable,SortTable,Version} = this.props;
+        console.log(Version);
         if(FilterTable.name){
             Version = Version.filter((task) =>{
-               return (task.version.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
-                   task.nameProduct.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
-                   task.gia.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
-                   task.mota.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
-                   task.size.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1);
+               return (task.versionName.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
+                   // task.nameProduct.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
+                   // task.gia.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
+                   task.description.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 )
+                   // task.size.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1);
             });
         }
         Version = Version.filter((task) =>{
@@ -60,19 +61,19 @@ class ListProduct extends React.Component {
                 return task;
             }
             else if(FilterTable.status === 0){
-                return task.isHot ;
+                return task.hot ;
             }
             else{
-                return task.isSale;
+                return task.onSaleOff;
             }
         });
 
         if(SortTable.by === 'name'){
             Version.sort((a,b) =>{
-                if(a.version > b.version){
+                if(a.versionName > b.versionName){
                     return SortTable.value;
                 }
-                else if(a.version < b.version){
+                else if(a.versionName < b.versionName){
                     return -SortTable.value;
                 }else {
                     return 0;
@@ -80,10 +81,10 @@ class ListProduct extends React.Component {
             })
         }else {
             Version.sort((a,b) =>{
-                if(a.gia > b.gia){
+                if(a.price > b.price){
                     return SortTable.value;
                 }
-                else if(a.gia < b.gia){
+                else if(a.price < b.price){
                     return -SortTable.value;
                 }else {
                     return 0;
@@ -119,8 +120,8 @@ class ListProduct extends React.Component {
                                        placeholder="nhập sản phẩm cần tìm"
                                 />
                             </td>
-                            <td> </td>
-                            <td> </td>
+                            {/*<td> </td>*/}
+                            {/*<td> </td>*/}
                             <td> </td>
                             <td>
                                 <select
@@ -186,11 +187,10 @@ class ListProduct extends React.Component {
                             <tr>
                                 <th>STT</th>
                                 <th>Tên Sản Phẩm</th>
-                                <th>Tên Version</th>
+                                <th>Mô Tả</th>
                                 <th>Giá</th>
-                                <th>Size</th>
-
-                                <th>Hình Ảnh</th>
+                                {/*<th>Size</th>*/}
+                                {/*<th>Hình Ảnh</th>*/}
                                 <th>Hành Động</th>
                             </tr>
                         </thead>

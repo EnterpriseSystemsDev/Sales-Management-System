@@ -4,7 +4,7 @@ export default function callApi(endpoin,method = 'GET', body) {
     //console.log(endpoin);
     return axios({
         method : method,
-        url : 'http://5bdc5e5b433b4f0013e6e0c4.mockapi.io/api/'+ endpoin,
+        url : 'http://localhost:8080/footcare/api/'+ endpoin,
         data: body
     }).catch(err => {
         console.log(err);

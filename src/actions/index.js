@@ -15,8 +15,9 @@ export const listAllVersion = (version) => {
 };
 export const listAllVersionRequest = () => {
     return (dispatch) =>{
-        return callApi('versions','GET',null).then(res =>{
-            dispatch(listAllVersion(res.data))
+        return callApi('productVersions','GET',null).then(res =>{
+            dispatch(listAllVersion(res.data));
+           // console.log(res.data);
         })
     }
 };
@@ -30,9 +31,10 @@ export const deleteVersion = (id) => {
 };
 export const deleteVersionRequest = (id) => {
     return (dispatch) =>{
-        return callApi('versions/'+ id,'DELETE',null).then(res =>{
+        return callApi('productVersions/'+ id,'DELETE',null).then(res =>{
             dispatch(deleteVersion(id));
-        })
+        });
+        //console.log(id);
     }
 };
 
@@ -185,8 +187,9 @@ export const addProduct = (task) => {
 };
 export const addProductRequest = (task) => {
     return (dispatch) =>{
-       return callApi('products', 'POST', task).then(res =>{
-           dispatch(addProduct(res.data))
+       return callApi('brands', 'POST', task).then(res =>{
+          // dispatch(addProduct(res.data))
+           console.log(task)
        });
     };
 };
@@ -199,8 +202,9 @@ export const listAllProduct = (tasks) => {
 };
 export const listAllProductRequest = () => {
     return (dispatch) =>{
-        return callApi('products','GET',null).then(res =>{
-            dispatch(listAllProduct(res.data))
+        return callApi('brands','GET',null).then(res =>{
+            dispatch(listAllProduct(res.data._embedded.brands));
+           // console.log(res);
         })
     }
 };

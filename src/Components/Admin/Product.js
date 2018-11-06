@@ -38,20 +38,20 @@ class Product extends React.Component {
 
     render() {
         let {task , index} = this.props;
-        let img = task.hinhanh.slice(12);
+        //let img = task.hinhanh.slice(12);
             return (
-                <tr key ={index}>
+                <tr >
                     <td>{index + 1}</td>
-                    <td>{task.nameProduct}</td>
-                    <td>{task.version}</td>
-                    <td>{task.gia}$</td>
-                    <td>{task.size}</td>
-                    <td>{img}</td>
+                    <td>{task.versionName}</td>
+                    <td>{task.description}</td>
+                    <td>{task.price}$</td>
+                    {/*<td>{task.size}</td>*/}
+                    {/*<td>{img}</td>*/}
                     <td>
-                        <button onClick={() => this.onEdit(task.id)} type="button" className="btn btn-warning">
+                        <button onClick={() => this.onEdit(task.productVersionId)} type="button" className="btn btn-warning">
                             Sửa
                         </button>
-                        <button onClick={() =>this.onDelete(task.id) } type="button" className="btn btn-danger" style={{marginLeft: 10}}>
+                        <button onClick={() =>this.onDelete(task.productVersionId) } type="button" className="btn btn-danger" style={{marginLeft: 10}}>
                             Xóa
                         </button>
                     </td>

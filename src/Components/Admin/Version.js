@@ -6,17 +6,17 @@ class Version extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            id: '',
-            gia : '',
-            size : '',
-            mota : '',
-            hinhanh : '',
-            Sale:'',
-            version:'',
-            nameProduct:'',
-            isHot:false,
-            isSale:false,
-            tasks: []
+            productVersionId: '',
+            versionName : '',
+            price : '',
+            currentPrice : '',
+            images : '',
+            // Sale:'',
+            // version:'',
+            // nameProduct:'',
+            // isHot:false,
+            // isSale:false,
+            // tasks: []
         }
     }
 
@@ -127,11 +127,11 @@ class Version extends React.Component {
     };
 
     componentDidMount(){
-        callApi('products', 'GET', null).then(res =>{
+        callApi('brands', 'GET', null).then(res =>{
             this.setState ({
-                tasks : res.data,
+                tasks : res.data._embedded.brands,
             });
-           // console.log(res.data)
+            console.log(res.data._embedded.brands);
         });
 
     }
@@ -140,7 +140,7 @@ class Version extends React.Component {
         let {tasks} = this.state;
         const option = tasks.map((task, index) => {
             return (
-                <option key={index} value={task.tensp}> {task.tensp}</option>
+                <option key={index} value={task.name}> {task.name}</option>
             );
         });
         return (

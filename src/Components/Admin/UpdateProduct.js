@@ -77,8 +77,8 @@ class UpdateProduct extends React.Component {
 
             <tr key ={index}>
                 <td>{index + 1}</td>
-                <td>{task.version}</td>
-                <td>{task.gia}$</td>
+                <td>{task.versionName}</td>
+                <td>{task.price}$</td>
                 <td>{task.nameProduct}</td>
                 <td>{task.size}</td>
                 <td>
@@ -89,9 +89,9 @@ class UpdateProduct extends React.Component {
                             id={task.id}
                             name="isHOT"
                             type="checkbox"
-                            value={task.isHot}
+                            value={task.hot}
                             onChange={this.onChange}
-                            checked={task.isHot}
+                            checked={task.hot}
                         />
                         <label htmlFor={task.id} className="label-danger" />
                     </div>

@@ -8,13 +8,8 @@ class AddProduct extends React.Component {
             id: '',
             tensp : '',
             brand : '',
-            //gia : '',
-            //size : '',
             mota : '',
-           // hinhanh : '',
-            //Sale:'',
-            //isHot:false,
-            //isSale:false,
+
         }
     }
 
@@ -34,7 +29,6 @@ class AddProduct extends React.Component {
         this.setState({
             [name] : value,
         });
-        //console.log(this.state);
     };
 
     onClear = () =>{
@@ -58,12 +52,12 @@ class AddProduct extends React.Component {
     };
     onSubmit = (event) =>{
         event.preventDefault();
-        let products = {
+        let products = [{
             brand : this.state.brand,
             tensp : this.state.tensp,
             mota: this.state.mota,
 
-        };
+        }];
          this.props.onAddProducts(products);
         // //this.props.addProduct(this.state);
         // //xoa data
