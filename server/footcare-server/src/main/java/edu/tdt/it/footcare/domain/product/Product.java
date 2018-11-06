@@ -1,12 +1,14 @@
 package edu.tdt.it.footcare.domain.product;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import edu.tdt.it.footcare.domain.brand.Brand;
-import edu.tdt.it.footcare.domain.product.type.ProductType;
 import edu.tdt.it.footcare.domain.product.version.ProductVersion;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.BatchSize;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
@@ -20,15 +22,13 @@ public class Product {
 
     private String name;
 
+    @Size
     private String description;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false, cascade = CascadeType.MERGE)
     private Brand brand;
 
-    @OneToMany(mappedBy = "product")
+    @JsonIgnore
+    @OneToMany(mappedBy = "product", cascade = CascadeType.MERGE)
     private List<ProductVersion> versions;
-
-    @ManyToOne
-    private ProductType type;
-
 }

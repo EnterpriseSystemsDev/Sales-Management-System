@@ -10,6 +10,7 @@ import java.util.List;
 @Entity
 @Data
 @NoArgsConstructor
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = {"name"}))
 public class Brand {
 
     @Id
@@ -18,7 +19,7 @@ public class Brand {
 
     private String name;
 
-    @OneToMany(mappedBy = "brand")
+    @OneToMany(mappedBy = "brand", cascade = CascadeType.MERGE)
     private List<Product> products;
 
     @ElementCollection

@@ -1,0 +1,7 @@
+{
+    "base_url": "localhost:8080/footcare/api",
+    "api": [
+        "/products",
+        "/products/{id}/versions"
+    ]
+}

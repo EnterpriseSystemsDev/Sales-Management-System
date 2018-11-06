@@ -1,28 +1,29 @@
 package edu.tdt.it.footcare.controller;
 
-import edu.tdt.it.footcare.config.security.CurrentUser;
-import edu.tdt.it.footcare.config.security.authentication.user.UserPrincipal;
-import edu.tdt.it.footcare.domain.product.Product;
-import edu.tdt.it.footcare.util.AppConstants;
-import lombok.AllArgsConstructor;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import edu.tdt.it.footcare.service.ProductService;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/transactions")
-@AllArgsConstructor(onConstructor = @__(@Autowired))
+@RequestMapping("/api/products")
+@Setter(onMethod = @__(@Autowired))
 public class ProductController {
 
-    private static final Logger logger = LoggerFactory.getLogger(ProductController.class);
+    private ProductService productService;
 
-    @PostMapping("/buy")
-    public ResponseEntity<?> getAllProducts(@CurrentUser UserPrincipal currentUser,
-                                            @RequestParam(value = "page", defaultValue = AppConstants.DEFAULT_PAGE_NUMBER) int page,
-                                            @RequestParam(value = "size", defaultValue = AppConstants.DEFAULT_PAGE_SIZE) int size) {
-        return ResponseEntity.ok(currentUser);
+    @GetMapping
+    public ResponseEntity<?> getAllProducts() {
+        return ResponseEntity.ok(productService.getAllProducts());
+    }
+
+    @GetMapping("/api/products/{productId}")
+    public ResponseEntity<?> getProduct(@PathVariable long productId) {
+        return ResponseEntity.ok(productService.getProduct(productId));
     }
 
 }

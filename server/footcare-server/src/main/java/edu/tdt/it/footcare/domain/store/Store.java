@@ -1,7 +1,8 @@
 package edu.tdt.it.footcare.domain.store;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import edu.tdt.it.footcare.domain.person.Employee;
-import edu.tdt.it.footcare.domain.product.wrapper.ProductInStock;
+import edu.tdt.it.footcare.domain.person.Manager;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,11 +20,8 @@ public class Store {
 
     private String address;
 
-    @OneToMany(mappedBy = "store")
-    private List<Employee> employees;
-
-    @OneToMany(mappedBy = "store")
-    private List<ProductInStock> products;
-
+    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.MERGE)
+    private Manager manager;
 }
 

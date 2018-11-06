@@ -2,6 +2,8 @@ package edu.tdt.it.footcare.config.security.authentication.role;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.NaturalId;
 
 import javax.persistence.*;
@@ -9,7 +11,8 @@ import javax.validation.constraints.NotBlank;
 
 @EqualsAndHashCode(of = "name")
 @Entity
-@Data
+@Getter
+@Setter
 public class Role {
 
     @Id
@@ -21,4 +24,9 @@ public class Role {
     @Enumerated(EnumType.STRING)
     private RoleName name;
 
+    public Role() {}
+
+    public Role(RoleName name) {
+        this.name = name;
+    }
 }

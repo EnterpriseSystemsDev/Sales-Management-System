@@ -1,20 +1,26 @@
 package edu.tdt.it.footcare.domain.product.wrapper;
 
+import edu.tdt.it.footcare.config.audit.UserDateAudit;
 import edu.tdt.it.footcare.domain.product.version.ProductVersion;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
+@EqualsAndHashCode(of = {"productVersion", "size"}, callSuper = false)
 @MappedSuperclass
-public abstract class ProductWrapper {
+@Getter
+@Setter
+public abstract class ProductWrapper extends UserDateAudit {
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     protected ProductVersion productVersion;
 
-    protected int size;
+    protected double size;
 
     protected int count;
-
-    protected String image;
 
 }

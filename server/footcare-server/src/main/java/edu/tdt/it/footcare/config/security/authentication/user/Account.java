@@ -8,7 +8,10 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -37,22 +40,14 @@ public class Account {
     @NaturalId
     protected String email;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany
     @JoinTable(
             name = "account_role",
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    protected List<Role> roles;
+    protected Set<Role> roles = new HashSet<>();
 
     public Account() {
-    }
-
-    public Account(Account account) {
-        id = account.getId();
-        username = account.getUsername();
-        password = account.getPassword();
-        email = account.getEmail();
-        roles = account.getRoles();
     }
 }
 

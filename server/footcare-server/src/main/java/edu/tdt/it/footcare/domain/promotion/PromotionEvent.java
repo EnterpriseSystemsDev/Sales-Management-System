@@ -7,7 +7,6 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-@SuppressWarnings("WeakerAccess")
 @Data
 @Entity
 @NoArgsConstructor
@@ -22,7 +21,7 @@ public class PromotionEvent {
     private LocalDate endDate;
 
     @ManyToMany
-    @JoinTable(name = "promotion_event_product",inverseJoinColumns = @JoinColumn(name = "product_version_id"))
+    @JoinTable(name = "promotion_event_product", inverseJoinColumns = @JoinColumn(name = "product_version_id"))
     private List<PromotionProduct> products;
 
 }
