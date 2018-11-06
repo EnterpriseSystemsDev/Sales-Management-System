@@ -2,9 +2,8 @@ import React from "react";
 import {Redirect} from "react-router-dom"
 import Header from "../Home/Header";
 import {Link} from "react-router-dom";
-import callApi from "../../utils/apiCall";
-import SanPham from "../Admin/Product";
-
+import {login} from "../../utils/apiCall";
+import {ACCESS_TOKEN, API_BASE_URL} from "../constants";
 
 class Login extends React.Component {
     constructor(props) {
@@ -14,8 +13,8 @@ class Login extends React.Component {
             txtPassWord: '',
             username: [],
             password: [],
+            message: ''
         };
-
     }
 
     onChange = (e) => {
@@ -27,9 +26,28 @@ class Login extends React.Component {
         });
     };
 
-    onLogin = (e) => {
+    handleSubmit = (e) => {
         e.preventDefault();
         let {txtUserName, txtPassWord} = this.state;
+
+        const loginRequest = {
+            'usernameOrEmail': txtUserName,
+            'password': txtPassWord
+        };
+
+        login(loginRequest)
+            .then(res => {
+                localStorage.setItem(ACCESS_TOKEN, res.accessToken);
+                this.props.history.push('/');
+            })
+            .catch(err => {
+                if (err.status === 401) {
+                    this.setState({message: 'Sai tai khoan hoac mat khau'});
+                } else {
+                    this.setState({message: 'Co gi do sai sai'});
+                }
+            });
+
         if (txtUserName === this.state.username && txtPassWord === this.state.password) {
             localStorage.setItem('user', JSON.stringify({
                 username: txtUserName,
@@ -40,17 +58,17 @@ class Login extends React.Component {
 
     componentDidMount() {
         document.title = "Đăng Nhập";
-        callApi('users', 'GET', null).then(res => {
-            const test = res.data;
-            const listSP = test.map((task, index) => {
-                return (
-                    this.setState({
-                        username: task.username,
-                        password: task.password
-                    })
-                )
-            });
-        })
+        // callApi('users', 'GET', null).then(res => {
+        //     const test = res.data;
+        //     const listSP = test.map((task, index) => {
+        //         return (
+        //             this.setState({
+        //                 username: task.username,
+        //                 password: task.password
+        //             })
+        //         )
+        //     });
+        // })
     }
 
     render() {
@@ -71,13 +89,12 @@ class Login extends React.Component {
             }/>
         }
         return (
-
             <div>
                 <Header/>
                 <div className="container-fluid lg">
                     <div className="box">
                         <h2>Sign In</h2>
-                        <form onSubmit={this.onLogin}>
+                        <form onSubmit={this.handleSubmit}>
                             <div className="inputBox">
                                 <input type="text"
                                        required
