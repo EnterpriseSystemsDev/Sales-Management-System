@@ -1,25 +1,20 @@
 import React from "react";
 import {connect} from 'react-redux'
 import * as actions from '../../actions/index';
-import UpdateSanPham from "./UpdateSanPham";
+import UpdateSanPham from "./UpdateProduct";
 
 
 class StatusSP extends React.Component {
 
-
-    onChange = (event) =>{
-        let target = event.target;
-        let name = target.name;
-        let value = target.type === 'checkbox' ? target.checked : target.value;
-        this.setState({
-            [name] : value
-        });
-    };
+    componentDidMount(){
+        this.props.listAllVersion();
+    }
 
 
     render() {
-        let {tasks} = this.props;
-        const listSP = tasks.map((task, index) => {
+
+        let {Version} = this.props;
+        const listSP = Version.map((task, index) => {
             return (
                 <UpdateSanPham
                     key = {task.id}
@@ -30,9 +25,9 @@ class StatusSP extends React.Component {
         });
 
         return (
-            <div className="panel panel-default">
+            <div className="panel panel-danger">
                 <div className="panel-heading">
-                    <h3 className="panel-title">Thay Đổi Trạng Thái Sản Phẩm</h3>
+                    <h3 className="panel-title">Thêm Sản Phẩm HOT</h3>
 
                 </div>
                 <div className="table-responsive">
@@ -41,12 +36,10 @@ class StatusSP extends React.Component {
                         <tr>
                             <th>STT</th>
                             <th>Tên Sản Phẩm</th>
+                            <th>Giá</th>
                             <th>Hãng</th>
                             <th>Size</th>
                             <th>HOT</th>
-                            <th>Sale</th>
-                            {/*<th>Hành Động</th>*/}
-
                         </tr>
                         {listSP }
                         </tbody>
@@ -62,7 +55,7 @@ const listProducts = state =>{
     return {
         tasks : state.tasks,
         displayForm: state.displayForm,
-        // editProduct : state.editProduct
+        Version : state.Version,
     }
 
 };
@@ -78,9 +71,11 @@ const mapDispatchToProps = (dispatch, props) => {
         onEditProduct: (task) =>{
             dispatch(actions.editProDuct(task));
         },
-        // onUpdateStatus: (id) =>{
-        //   dispatch(actions.updateStatus(id));
-        // },
+        listAllVersion : () =>{
+            dispatch(actions.listAllVersionRequest())
+        }
+
+
     };
 
 };

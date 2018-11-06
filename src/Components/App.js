@@ -9,19 +9,15 @@ class App extends Component {
             <BrowserRouter>
             <div>
                 <Switch>
-                {/*<Route path="/" exact component={Home}/>
-                <Route path="/Login" component={Login}/>
-                <Route path="/Jordan" component={Jordan}/>
-                    <Route component={NotFound}/>*/}
-                    {this.showConten(routes)}
+                    {this.showContent(routes)}
                 </Switch>
             </div>
             </BrowserRouter>
         );
     }
 
-showConten = (routes) =>{
-    var result =null;
+showContent = (routes) =>{
+    let result =null;
     if(routes.length > 0){
         result=routes.map((route,index)  => {
             return (

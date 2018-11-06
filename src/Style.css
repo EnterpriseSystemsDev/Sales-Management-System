@@ -2,14 +2,24 @@
     margin: 0;
     padding: 0;
 }
-
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
 #box1 {
     height: 80vh;
     width: 100%;
     background-size: cover;
     display: table;
     background-attachment: fixed;
+
 }
+
+
 @media screen and (max-width: 650px) {
     #box1 {
         height: 40vh;
@@ -20,7 +30,23 @@
     }
 }
 
+/************Back To Top *****************/
+#back-top {
+    position: fixed;
+    bottom: 0;
+    right: 20px;
+}
 
+#back-top span {
+    width: 40px;
+    height: 40px;
+    display: block;
+    margin-bottom: 7px;
+    background: url(http://northernvoice.ca/northern-voice.png) center no-repeat;
+    background-size: 40px 40px;
+    opacity: 0.6;
+}
+/*****************************/
 
 .navbar-inverse {
     background-color: rgba(0, 0, 0, 0.7);
@@ -48,7 +74,6 @@ video {
     height: auto;
     z-index: -100;
     transform: translateX(-50%) translateY(-50%);
-
     background-size: cover;
     transition: 1s opacity;
 }
@@ -73,15 +98,10 @@ video {
     text-shadow: 0 0 100px rgba(255,255,255,1);
     background: url(./hinhanh/coverRo.jpg) repeat-y;
     -webkit-background-clip: text;
-
-
     /* Animate Background Image */
-
     -webkit-text-fill-color: transparent;
     -webkit-animation: aitf 15s linear infinite;
-
     /* Activate hardware acceleration for smoother animations */
-
     -webkit-transform: translate3d(0,0,0);
     -webkit-backface-visibility: hidden;
 
@@ -91,7 +111,6 @@ video {
     100% { background-position: 100% 50%; }
 }
 
-
 #box3 {
     height: auto;
     width: 100%;
@@ -99,9 +118,9 @@ video {
     background-size: cover;
     display: table;
     background-attachment: fixed;
+    -webkit-animation: fadein 2s ;
 }
 /*Hình W ở clip*/
-
     #box3 ul {
         position: absolute;
         top: 50%;
@@ -194,8 +213,6 @@ video {
 }
 
 /*---------------------------------------------------*/
-
-
 .navbar {
     background: rgba(0, 0, 0, 0.9);
     padding-top: 6px;
@@ -204,8 +221,6 @@ video {
     box-shadow: 0px 2px 2px rgba(0,0,0,0.2);
 }
 
-
-   
 /*  Footer */
 
 footer .row {
@@ -240,10 +255,6 @@ footer div {
     .footer-distributed .footer-left {
         width: 35%;
     }
-
-
-
-
 
     /* Footer Center */
 
@@ -331,7 +342,6 @@ footer div {
         }
 
 
-
 @media (max-width: 880px) {
 
     .footer-distributed {
@@ -351,7 +361,6 @@ footer div {
                 margin-left: 0;
             }
 }
-
 
 /*IconCart*/
 /* Global settings */
@@ -387,7 +396,6 @@ footer div {
     text-align: right;
 }
 
-/* This is used as the traditional .clearfix class */
 .group:before, .shopping-cart:before, .column-labels:before, .product:before, .totals-item:before,
 .group:after,
 .shopping-cart:after,
@@ -406,15 +414,10 @@ footer div {
     zoom: 1;
 }
 
-    /* Apply clearfix in a few places */
-    /* Apply dollar signs */
+
     .product .product-price:before, .product .product-line-price:before, .totals-value:before {
         content: '$';
     }
-
-
-
-
 
 label {
     color: #aaa;
@@ -526,12 +529,6 @@ label {
         padding-top: 20px;
         border-top: 1px solid #eee;
     }
-
-    /*
-    .navbar {
-        display: none;
-    }
-        */
 
     .column-labels {
         display: none;
@@ -733,7 +730,7 @@ label {
     }
 }
 
-/****asdasdasdasda*/
+/***************reponsive**************/
 .fixme{
     background-color:  #ffffff;
     z-index: 1;
@@ -749,8 +746,6 @@ label {
 #search1{
     display: none;
 }
-
-
 
 @media screen and (max-width: 768px){
     .toggle {
@@ -781,7 +776,6 @@ label {
         display: none;
 
     }
-
 }
 
 @media screen and (max-width:480px) {
@@ -913,7 +907,6 @@ label {
     background-color: #03a9f4;
 }
 
-
 /*--------Products**********/
 
 .box7 .title1, .box7 img, .box7:after {
@@ -934,6 +927,7 @@ label {
     border-radius: 10px;
     height: 200px;
     padding: 3%;
+
 }
 
 .box7:after {
@@ -998,8 +992,6 @@ label {
     transform: translateX(50px);
     transition: all .35s ease 0s;
 }
-
-
 
 .box7 .icon1 {
     display: inline-block;
@@ -1075,9 +1067,8 @@ label {
 
 /*********************** CSS Tuyen Dung*****************/
 
-
 .tuyendung {
-    position: relative
+    position: relative;
 }
 
 .tuyendung img {
@@ -1175,10 +1166,6 @@ label {
     text-align:center;
     margin-left:15px;
 }
-
-
-
-
 
 @media only screen and (max-width:990px) {
     .tuyendung {
@@ -1430,10 +1417,10 @@ label {
         -ms-text-fill-color: transparent;
         text-fill-color: transparent;
         background-image: linear-gradient(45deg,
-        #7794ff,
+        #8400ff,
         #66bb66,
         #FF1361,
-        #FFF800
+        #10707f
         );
         animation: .8s shake infinite alternate;
     }
@@ -1445,4 +1432,9 @@ label {
     15% { transform: skewX(15deg); }
     20% { transform: skewX(0deg); }
     100% { transform: skewX(0deg); }
+}
+
+.custom {
+    font-size: 20px;
+    color: #cc6666;
 }
