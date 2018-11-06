@@ -1,8 +1,9 @@
 import React from "react";
 import {Redirect} from "react-router-dom"
 import Header from "../Home/Header";
-import {connect} from 'react-redux';
 import {Link} from "react-router-dom";
+import callApi from "../../utils/apiCall";
+import SanPham from "../Admin/Product";
 
 
 class Login extends React.Component {
@@ -11,10 +12,12 @@ class Login extends React.Component {
          this.state = {
              txtUserName : '',
              txtPassWord: '',
+             username: [],
+             password: [],
          };
 
      }
-     onChage = (e) =>{
+     onChange = (e) =>{
          let target = e.target;
          let name = target.name;
          let value = target.type === 'checkbox' ? target.checked : target.value;
@@ -22,10 +25,11 @@ class Login extends React.Component {
             [name] : value
          });
      };
+
      onLogin = (e) =>{
          e.preventDefault();
          let {txtUserName,txtPassWord} = this.state;
-         if(txtUserName === 'admin' && txtPassWord ==='admin'){
+         if(txtUserName === this.state.username && txtPassWord === this.state.password){
              localStorage.setItem('user', JSON.stringify({
                  username : txtUserName,
                  password : txtPassWord
@@ -33,15 +37,37 @@ class Login extends React.Component {
          }
      };
 
+    componentDidMount() {
+        document.title = "Đăng Nhập";
+        callApi('users', 'GET', null).then(res => {
+            const test = res.data;
+            const listSP = test.map((task, index) => {
+                   return(
+                       this.setState ({
+                           username :task.username,
+                           password: task.password
+                       })
+                   )
+            });
+        })
+    }
 
     render() {
-
-
-
+        console.log(this.state);
+        let {location} = this.props;
+        console.log(location);
         let {txtUserName,txtPassWord} = this.state;
         let loggedInUser = localStorage.getItem('user');
         if(loggedInUser !== null){
-            return <Redirect to='/Admin'/>
+
+            // return <Redirect to ='/Admin'/>
+            return <Redirect from = "/Login" to ={{
+                    pathname : '/Admin',
+                    state : {
+                        from : location
+                    }
+                }
+            }/>
         }
         return (
 
@@ -56,7 +82,7 @@ class Login extends React.Component {
                                        required
                                        name="txtUserName"
                                        value={txtUserName}
-                                       onChange={this.onChage}
+                                       onChange={this.onChange}
                                 />
                                 <label>UserName</label>
                             </div>
@@ -65,14 +91,14 @@ class Login extends React.Component {
                                        required
                                        name="txtPassWord"
                                        value={txtPassWord}
-                                       onChange={this.onChage}
+                                       onChange={this.onChange}
                                 />
                                 <label>Password</label>
                             </div>
                             <input type="submit" name="btnSubMit" defaultValue="Login" />
 
                         </form>
-                        <Link to="/dangkytaikhoang">
+                        <Link to="/dangky">
                             <span  className="pagenot" >Sign Up</span>
                         </Link>
                     </div>

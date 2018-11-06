@@ -1,8 +1,50 @@
 import * as types from "../constants/ActionTypes";
+import callApi from "../utils/apiCall";
 
-export const ListAll = () => {
+export  const  changeTheme = () => {
+    return{
+        type: types.CHANGE_THEME
+    }
+};
+
+export const listAllVersion = (version) => {
     return {
-        type : types.LIST_ALL
+        type : types.LIST_ALL_VERSION,
+        version
+    }
+};
+export const listAllVersionRequest = () => {
+    return (dispatch) =>{
+        return callApi('versions','GET',null).then(res =>{
+            dispatch(listAllVersion(res.data))
+        })
+    }
+};
+
+
+export const deleteVersion = (id) => {
+    return {
+        type : types.DELETE_VERSION,
+        id
+    }
+};
+export const deleteVersionRequest = (id) => {
+    return (dispatch) =>{
+        return callApi('versions/'+ id,'DELETE',null).then(res =>{
+            dispatch(deleteVersion(id));
+        })
+    }
+};
+
+export const addToCart = (item) => {
+    return {
+        type : types.ADD_TO_CART,
+        item
+    }
+};
+export const listCart = () => {
+    return {
+        type : types.LIST_CART
     }
 };
 export const ListEmployees = () => {
@@ -51,7 +93,39 @@ export  const  openForm = () => {
         type: types.OPENFORM
     }
 };
+export  const  openFormHot = () => {
+    return{
+        type: types.OPEN_FORM_HOT
+    }
+};
+export  const  closeFormHot = () => {
+    return{
+        type: types.CLOSE_FORM_HOT
+    }
+};
 
+export  const  openFormStore = () => {
+    return{
+        type: types.OPEN_FORM_STORE
+    }
+};
+export  const  closeFormStore = () => {
+    return{
+        type: types.CLOSE_FORM_STORE
+    }
+};
+
+
+export  const  openFormVersion = () => {
+    return{
+        type: types.OPEN_FORM_VERSION
+    }
+};
+export  const  openFormEditVersion = () => {
+    return{
+        type: types.OPEN_FORM_EDIT_VERSION
+    }
+};
 export  const  openFormRecruitment = () => {
     return{
         type: types.OPEN_FORM_RECRUITMENT
@@ -73,6 +147,11 @@ export  const  closeForm = () => {
         type: types.CLOSEFORM
     }
 };
+export  const  closeFormVersion = () => {
+    return{
+        type: types.CLOSE_FORM_VERSION
+    }
+};
 
 export  const  updateForm = () => {
     return{
@@ -90,15 +169,42 @@ export  const  updateFormRecruitment = () => {
     }
 };
 
-
-
 export const deleteEmployee = (id) => {
     return {
         type : types.DELETE_EMPLOYEE,
         id : id
     }
 };
+/*****************/
 
+export const addProduct = (task) => {
+    return {
+        type : types.ADD_PRODUCT,
+        task : task
+    }
+};
+export const addProductRequest = (task) => {
+    return (dispatch) =>{
+       return callApi('products', 'POST', task).then(res =>{
+           dispatch(addProduct(res.data))
+       });
+    };
+};
+
+export const listAllProduct = (tasks) => {
+    return {
+        type : types.LIST_ALL,
+        tasks
+    }
+};
+export const listAllProductRequest = () => {
+    return (dispatch) =>{
+        return callApi('products','GET',null).then(res =>{
+            dispatch(listAllProduct(res.data))
+        })
+    }
+};
+/*****************/
 
 export const editProDuct = (task) => {
     return {
@@ -107,11 +213,68 @@ export const editProDuct = (task) => {
     }
 };
 
-
-export const ADDPRODUCT = (task) => {
+export const editVersion = (version) => {
     return {
-        type : types.ADD_PRODUCT,
-        task : task
+        type : types.EDIT_VERSION,
+        version : version
+    }
+};
+export const updateVersion = (version) => {
+    return {
+        type : types.UPDATE_VERSION,
+        version: version
+    }
+};
+export const updateVersionRequest = (version) => {
+    return (dispatch) =>{
+        callApi('versions/'+version.id,'PUT', version).then(res =>{
+            dispatch(updateVersion(res.data));
+        })
+    }
+};
+
+
+
+export const addVersion = (version) => {
+    return {
+        type : types.ADD_VERSION,
+        version : version
+    }
+};
+
+export const addVersionRequest = (version) => {
+   return (dispatch) => {
+       return callApi('versions','POST',version).then(res =>{
+            dispatch(addVersion(res.data))
+       })
+   }
+};
+
+export const addProductsInStore = (store) => {
+    return {
+        type : types.ADD_PRODUCT_IN_STORE,
+        store : store
+    }
+};
+export const addProductsInStoreRequest = (store) => {
+    return (dispatch) =>{
+        return callApi('store','POST',store).then(res =>{
+            dispatch(addProductsInStore(res.data));
+        })
+    }
+};
+export const listProductsInStore = (store) => {
+    return {
+        type : types.LIST_PRODUCT_IN_STORE,
+        store
+    }
+};
+export const listProductsInStoreRequest = () => {
+    return (dispatch) =>{
+        return callApi('store','GET',null).then(res =>{
+            dispatch(listProductsInStore(res.data))
+            //console.log(res)
+        })
     }
 };
 
@@ -149,9 +312,64 @@ export const updateStatus = (id) => {
     }
 };
 
+
+export const updateStatusVersionHot = (task) => {
+    return {
+        type : types.UPDATE_STATUS_VERSION_HOT,
+        task : task
+    }
+};
+
+
+export const updateStatusVersionHotRequest = (task) => {
+   return (dispatch) =>{
+       callApi('versions/'+task.id, 'PUT' , task).then(res =>{
+           console.log(task);
+           return dispatch(updateStatusVersionHot(res.data));
+
+       });
+
+   }
+};
+
+export const updateStatusVersionSale = (version) => {
+    return {
+        type : types.UPDATE_STATUS_VERSION_SALE,
+        version : version
+    }
+};
+export const updateStatusVersionSaleRequest = (version) => {
+    return dispatch =>{
+        return callApi('versions/'+version.id,'PUT',version).then(res =>{
+            dispatch(updateStatusVersionSale(res.data))
+        })
+    }
+};
 export const updateStatusSale = (id) => {
     return {
         type : types.UPDATE_STATUS_SALE,
         id : id
     }
 };
+
+export const filterTable = (filter) => {
+    return {
+        type : types.FILTER_TABLE,
+        filter : filter
+    }
+};
+
+export const searchProduct = (keyword) => {
+    return {
+        type : types.SEARCH_PRODUCT,
+        keyword : keyword
+    }
+};
+export const sortProduct = (sort) => {
+    return {
+        type : types.SORT_PRODUCT,
+        sort : sort
+    }
+};
+
+

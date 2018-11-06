@@ -5,9 +5,12 @@ import Jordan from "./Products/Jordan";
 import NotFound from "./NotFound";
 import Yeezy from "./Products/Yeezy";
 import Admin from "./Admin/Admin";
-import ThongKe from "./Admin/ThongKe";
+import ThongKe from "./Admin/Statistical";
 import Cart from "./Home/Cart";
-import ChiTietTuyenDung from "./Home/ChiTietTuyenDung";
+import ChiTietTuyenDung from "./Home/RecruitmentDetails";
+import Register from "./Login/Register";
+import Products from "./Products/Products";
+import ProductDetail from "./Products/ProductDetail";
 
 
 const routes = [
@@ -19,7 +22,12 @@ const routes = [
     {
         path: '/Login',
         exact: true,
-        main : () => <Login/>
+        main : ({location}) => <Login location = {location}/>
+    },
+    {
+        path: '/dangky',
+        exact: true,
+        main : () => <Register/>
     },
     {
         path: '/Cart',
@@ -28,19 +36,29 @@ const routes = [
     },
 
     {
-        path: '/Jordan',
+        path: '/product/Jordan',
         exact: true,
-        main : () => <Jordan/>
+        main : ({match}) => <Jordan match = {match}/>
     },
     {
-        path: '/Yeezy',
+        path: '/product/Yeezy',
         exact: true,
         main : () => <Yeezy/>
     },
     {
         path: '/Admin',
         exact: true,
-        main : () => <Admin/>
+        main : ({history,match}) => <Admin match={match} history = {history}/>
+    },
+    {
+        path: '/Cart',
+        exact: true,
+        main : () => <Cart/>
+    },
+    {
+        path: '/product/Detail',
+        exact: true,
+        main : ({match,history}) => <ProductDetail history ={history} match ={match}/>
     },
     {
         path: '/QLNV',
@@ -52,7 +70,11 @@ const routes = [
         exact: true,
         main : () => <ChiTietTuyenDung/>
     },
-
+    {
+        path: '/product',
+        exact: true,
+        main : ({match}) => <Products match ={match}/>
+    },
     {
         path: '',
         exact: false,
