@@ -6,9 +6,7 @@ import UpdateProductSale from "./UpdateProductSale";
 
 class ListSale extends React.Component {
 
-
     render() {
-
         let {Version} = this.props;
         const listSP = Version.map((task, index) => {
             return (

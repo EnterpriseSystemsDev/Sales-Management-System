@@ -23,13 +23,8 @@ class Product extends React.Component {
     };
     onEdit = () =>{
         this.props.openFormEditVersion();
-        //console.log(this.props.task.id);
         this.props.onEditVersion(this.props.task);
-        //console.log(task.id);
-        ///this.props.onUpdateVersion(version);
         this.onClear();
-
-
     };
 
     onDelete = (id) =>{

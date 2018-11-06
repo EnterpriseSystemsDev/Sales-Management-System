@@ -10,6 +10,20 @@ import ListProductsInStore from "./ListProductsInStore";
 
 
 class ManagementProduct extends React.Component {
+    onClear = () =>{
+        this.setState({
+            id: '',
+            version:'',
+            nameProduct : '',
+            gia : '',
+            size : '',
+            mota : '',
+            hinhanh : '',
+            Sale:'',
+            isHot:false,
+            isSale:false,
+        });
+    };
 
     Status = () =>{
         this.props.openFormHot();

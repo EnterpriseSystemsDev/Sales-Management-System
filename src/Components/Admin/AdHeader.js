@@ -5,15 +5,14 @@ import {connect} from 'react-redux';
 class AdHeader extends React.Component {
 
     logOut = (e) =>{
-        let {history} = this.props;
         e.preventDefault();
-        console.log(history);
-       return <Redirect to = "/"/>
-
+        localStorage.removeItem('user');
+        return <Redirect to ="/"/>
     };
 
     render() {
         let {ChangeTheme} = this.props;
+        //console.log(match);
         return (
             <nav className={ChangeTheme ? 'admin navbar navbar-inverse' : 'admin navbar navbar-default'}>
                 <div className="container">

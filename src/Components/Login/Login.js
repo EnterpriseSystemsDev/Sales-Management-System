@@ -2,6 +2,8 @@ import React from "react";
 import {Redirect} from "react-router-dom"
 import Header from "../Home/Header";
 import {Link} from "react-router-dom";
+import callApi from "../../utils/apiCall";
+import SanPham from "../Admin/Product";
 
 
 class Login extends React.Component {
@@ -10,6 +12,8 @@ class Login extends React.Component {
          this.state = {
              txtUserName : '',
              txtPassWord: '',
+             username: [],
+             password: [],
          };
 
      }
@@ -21,10 +25,11 @@ class Login extends React.Component {
             [name] : value
          });
      };
+
      onLogin = (e) =>{
          e.preventDefault();
          let {txtUserName,txtPassWord} = this.state;
-         if(txtUserName === 'admin' && txtPassWord ==='admin'){
+         if(txtUserName === this.state.username && txtPassWord === this.state.password){
              localStorage.setItem('user', JSON.stringify({
                  username : txtUserName,
                  password : txtPassWord
@@ -32,14 +37,37 @@ class Login extends React.Component {
          }
      };
 
-    componentDidMount(){
-        document.title = "Đăng Nhập"
+    componentDidMount() {
+        document.title = "Đăng Nhập";
+        callApi('users', 'GET', null).then(res => {
+            const test = res.data;
+            const listSP = test.map((task, index) => {
+                   return(
+                       this.setState ({
+                           username :task.username,
+                           password: task.password
+                       })
+                   )
+            });
+        })
     }
+
     render() {
+        console.log(this.state);
+        let {location} = this.props;
+        console.log(location);
         let {txtUserName,txtPassWord} = this.state;
         let loggedInUser = localStorage.getItem('user');
         if(loggedInUser !== null){
-            return <Redirect to ='/Admin'/>
+
+            // return <Redirect to ='/Admin'/>
+            return <Redirect from = "/Login" to ={{
+                    pathname : '/Admin',
+                    state : {
+                        from : location
+                    }
+                }
+            }/>
         }
         return (
 

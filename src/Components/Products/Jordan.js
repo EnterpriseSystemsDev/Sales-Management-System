@@ -5,15 +5,18 @@ import Products from "./Products";
 import Footer from "../Home/Footer";
 import {connect} from "react-redux";
 import {Route} from "react-router-dom"
+import * as actions from "../../actions";
 
 
 class Jordan extends React.Component {
+
     componentDidMount(){
-        document.title = "Jordan"
+        document.title = "Jordan";
+        this.props.listAllVersion();
     }
     render() {
         let {Version} = this.props;
-
+        console.log(Version);
         const listProducts = Version.map((item, index) => {
             if(item.nameProduct === 'Jordan ')
             return (
@@ -61,4 +64,12 @@ const listProducts = state =>{
         Version : state.Version,
     }
 };
-export default connect(listProducts,null) (Jordan);
+const mapDispatchToProps = (dispatch, props) => {
+    return{
+        listAllVersion : () =>{
+            dispatch(actions.listAllVersionRequest());
+        },
+    };
+
+};
+export default connect(listProducts,mapDispatchToProps) (Jordan);

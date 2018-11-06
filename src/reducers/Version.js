@@ -44,16 +44,15 @@ let myReducer = (state= initialState, action) => {
 
 
         case types.UPDATE_STATUS_VERSION_HOT:
-            var {task} = action;
-            //console.log(task);
+            var {task,id} = action;
             var index = findIndex(state,task.id);
             state[index].isHot = !state[index].isHot;
-
             return [...state];
 
         case types.UPDATE_STATUS_VERSION_SALE:
             var id = action.id;
-            var index = findIndex(state,id);
+            var {version} = action;
+            var index = findIndex(state,version.id);
             state[index].isSale = !state[index].isSale;
 
             return [...state];

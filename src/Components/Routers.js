@@ -22,7 +22,7 @@ const routes = [
     {
         path: '/Login',
         exact: true,
-        main : () => <Login/>
+        main : ({location}) => <Login location = {location}/>
     },
     {
         path: '/dangky',
@@ -48,7 +48,7 @@ const routes = [
     {
         path: '/Admin',
         exact: true,
-        main : ({history}) => <Admin history = {history}/>
+        main : ({history,match}) => <Admin match={match} history = {history}/>
     },
     {
         path: '/Cart',
@@ -58,7 +58,7 @@ const routes = [
     {
         path: '/product/Detail',
         exact: true,
-        main : () => <ProductDetail/>
+        main : ({match,history}) => <ProductDetail history ={history} match ={match}/>
     },
     {
         path: '/QLNV',

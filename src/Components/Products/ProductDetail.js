@@ -8,7 +8,10 @@ import ProductDetailItem from "./ProductDetailItem";
 
 
 class ProductDetail extends React.Component {
+
     render() {
+        let {match,history} = this.props;
+        console.log(match.url)
         let {Version} = this.props;
         const listProducts = Version.map((item, index) => {
                 return (

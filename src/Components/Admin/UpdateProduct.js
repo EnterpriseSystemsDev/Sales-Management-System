@@ -30,9 +30,45 @@ class UpdateProduct extends React.Component {
 
     UpdateSP = () =>{
         this.props.onUpdateStatusVersionHot(this.props.task);
-       // console.log(this.props.task.isHot);
+        console.log(this.props.task.isHot);
     };
 
+    componentWillMount(){
+        if(this.props.EditVersion && this.props.EditVersion.id !== null){
+            this.setState({
+                id: this.props.EditVersion.id,
+                version : this.props.EditVersion.version,
+                nameProduct : this.props.EditVersion.nameProduct,
+                gia : this.props.EditVersion.gia,
+                size : this.props.EditVersion.size,
+                mota : this.props.EditVersion.mota,
+                hinhanh : this.props.EditVersion.hinhanh,
+                isHot:this.props.EditVersion.isHot ,
+                isSale:this.props.EditVersion.isSale ,
+                Sale:this.props.EditVersion.Sale,
+
+            });
+        }
+
+    };
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps && nextProps.EditVersion){
+            this.setState({
+                id: nextProps.EditVersion.id,
+                version :nextProps.EditVersion.version,
+                nameProduct : nextProps.EditVersion.nameProduct,
+                gia : nextProps.EditVersion.gia,
+                size : nextProps.EditVersion.size,
+                mota : nextProps.EditVersion.mota,
+                hinhanh : nextProps.EditVersion.hinhanh,
+                Sale:nextProps.EditVersion.Sale,
+                isHot:nextProps.EditVersion.isHot,
+                isSale:nextProps.EditVersion.isSale,
+            });
+        }
+
+    }
 
 
     render() {

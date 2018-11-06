@@ -324,20 +324,27 @@ export const updateStatusVersionHot = (task) => {
 export const updateStatusVersionHotRequest = (task) => {
    return (dispatch) =>{
        callApi('versions/'+task.id, 'PUT' , task).then(res =>{
-           dispatch(updateStatusVersionHot(res.data));
-          // console.log(!res.data.isHot)
+           console.log(task);
+           return dispatch(updateStatusVersionHot(res.data));
+
        });
 
    }
 };
 
-export const updateStatusVersionSale = (id) => {
+export const updateStatusVersionSale = (version) => {
     return {
         type : types.UPDATE_STATUS_VERSION_SALE,
-        id : id
+        version : version
     }
 };
-
+export const updateStatusVersionSaleRequest = (version) => {
+    return dispatch =>{
+        return callApi('versions/'+version.id,'PUT',version).then(res =>{
+            dispatch(updateStatusVersionSale(res.data))
+        })
+    }
+};
 export const updateStatusSale = (id) => {
     return {
         type : types.UPDATE_STATUS_SALE,

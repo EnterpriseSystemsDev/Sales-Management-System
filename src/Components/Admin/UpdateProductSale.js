@@ -43,13 +43,29 @@ class UpdateProductSale extends React.Component {
     };
     onSubmit = (event) =>{
         event.preventDefault();
-        this.props.addVersion(this.state);
+        let sale = {
+            id : this.state.id,
+            version:this.state.version,
+            nameProduct : this.state.nameProduct,
+            Sale : this.state.Sale,
+            gia : this.state.gia,
+            size : this.state.size,
+            mota : this.state.mota,
+            hinhanh : this.state.hinhanh,
+            isHot: this.state.isHot,
+            isSale : this.state.isSale,
+        };
+       //console.log(this.state.id);
+        if(this.state.id){
+            this.props.onUpdateVersionSale(sale);
+            //this.onClear();
+            //this.closeForm();
+        }
+       // this.props.addVersion(this.state);
     };
     onEdit = () =>{
         this.props.onEditVersion(this.props.task);
         this.onClear();
-
-
     };
 
     componentWillMount(){
@@ -93,7 +109,27 @@ class UpdateProductSale extends React.Component {
         }
     }
     UpdateSP = () =>{
-        this.props.onUpdateStatusVersionSale(this.props.task.id);
+        this.props.onUpdateStatusVersionSale(this.props.task);
+        let sale = {
+            id : this.state.id,
+            version:this.state.version,
+            nameProduct : this.state.nameProduct,
+            Sale : this.state.Sale,
+            gia : this.state.gia,
+            size : this.state.size,
+            mota : this.state.mota,
+            hinhanh : this.state.hinhanh,
+            isHot: this.state.isHot,
+            isSale : this.state.isSale,
+        };
+
+
+        //console.log(this.state.id);
+        if(this.state.id){
+            this.props.onUpdateVersionSale(sale);
+            //this.onClear();
+            //this.closeForm();
+        }
     };
 
     render() {
@@ -133,7 +169,7 @@ class UpdateProductSale extends React.Component {
                                placeholder={task.Sale}
                         />
 
-                        <button onClick={this.onEdit } type="button" className="btn btn-warning">
+                        <button onClick={() => this.onEdit(task) } type="button" className="btn btn-warning">
                             Sửa
                         </button>
                         <button type="submit" className="btn btn-success">
@@ -174,6 +210,9 @@ const mapDispatchToProps = (dispatch, props) => {
         onEditVersion: (version) =>{
             dispatch(actions.editVersion(version));
         },
+        onUpdateVersionSale : (version) =>{
+            dispatch(actions.updateStatusVersionSaleRequest(version))
+        }
     };
 
 };

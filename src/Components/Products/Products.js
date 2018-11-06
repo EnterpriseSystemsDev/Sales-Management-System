@@ -46,7 +46,7 @@ class Products extends React.Component {
                         <div className="box6 animated bounceInUp slowest ">
                             {this.ShowSPriceSale()}
                             <Link to="/product/Detail">
-                            <img src={require("../../hinhanh/" + img)} alt="imageProduct"/>
+                                <img src={require("../../hinhanh/" + img)} alt="imageProduct"/>
                             </Link>
                             <div className="box-content">
                                 <h3 className="title">{item.version}</h3>

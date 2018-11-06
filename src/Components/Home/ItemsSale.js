@@ -45,7 +45,7 @@ class ItemsSale extends React.Component {
                 return ''
             }
         }
-
+        return ''
     }
 }
 const listProducts = state =>{

@@ -1,8 +1,12 @@
 import React from "react";
 import {connect} from 'react-redux'
 import Products from "../Products/Products";
+import * as actions from "../../actions";
 class ItemsHot extends React.Component {
 
+    componentDidMount(){
+        this.props.listAllVersion();
+    }
     render() {
         let {Version} = this.props;
         const listItemsHOT = Version.map((item, index)  => {
@@ -44,9 +48,9 @@ class ItemsHot extends React.Component {
                 return ''
             }
         }
-
-
+        return '';
     }
+
 }
 const listProducts = state =>{
     return {
@@ -56,9 +60,16 @@ const listProducts = state =>{
     }
 
 };
+const mapDispatchToProps = (dispatch, props) => {
+    return{
+        listAllVersion : () =>{
+            dispatch(actions.listAllVersionRequest());
+        },
+    };
 
+};
 
-export default connect(listProducts,null)  (ItemsHot);
+export default connect(listProducts,mapDispatchToProps)  (ItemsHot);
 
 
 
