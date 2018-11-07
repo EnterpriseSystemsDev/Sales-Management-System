@@ -31,6 +31,7 @@ public class Product extends DateAudit {
     @ManyToOne(optional = false, cascade = CascadeType.MERGE)
     private Brand brand;
 
+    @JsonIgnore
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> images;
 }

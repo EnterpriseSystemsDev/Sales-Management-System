@@ -8,7 +8,7 @@ import javax.validation.constraints.NotNull;
 public class CreatePromotionProductRequest {
 
     @NotNull
-    private long versionId;
+    private long productId;
 
     private double size = 0;
 

@@ -21,11 +21,9 @@ public class Brand {
     private String name;
 
     @JsonIgnore
-    @OneToMany(mappedBy = "brand", cascade = CascadeType.MERGE)
+    @OneToMany(mappedBy = "brand", fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     private List<Product> products;
 
-    @JsonIgnore
-    @ElementCollection
-    private List<String> images;
+    private String image;
 
 }

@@ -9,6 +9,7 @@ import edu.tdt.it.footcare.domain.product.wrapper.ProductInSelling;
 import edu.tdt.it.footcare.domain.transaction.Transaction;
 import edu.tdt.it.footcare.domain.transaction.TransactionRepository;
 import edu.tdt.it.footcare.domain.transaction.TransactionResult;
+import edu.tdt.it.footcare.domain.transaction.TransactionType;
 import edu.tdt.it.footcare.exception.AppException;
 import edu.tdt.it.footcare.payload.transaction.BillResponse;
 import edu.tdt.it.footcare.payload.transaction.OfflineBillRequest;
@@ -81,6 +82,9 @@ public class TransactionController {
             return ResponseEntity.badRequest().body("Giao dịch không tồn tại");
         }
         Transaction transaction = transactionRepository.findById(transactionId);
+        if (transaction.getTransactionResult() == TransactionResult.OKAY) {
+            throw new AppException("Giao dich da duoc xuat bill");
+        }
         Customer customer = customerService.findByAccountId(transaction.getCreatedBy())
                 .orElseThrow(() -> new AppException("Giao dịch đã được xuất bill tại cửa hàng"));
         Bill bill = employeeService.makeBill(currentUser, transaction, customer, Optional.empty());
@@ -101,7 +105,9 @@ public class TransactionController {
             customer = customerService.createCustomerAccountFrom(request);
         }
         List<ProductInSelling> products = productWrapperService.saveWrappersFromRequests(request.getProducts());
+
         Transaction transaction = customerService.makeOrder(products);
+
         Bill bill = employeeService.makeBill(currentUser, transaction, customer, Optional.of(request.getCustomerMoney()));
 
         transaction.setTransactionResult(TransactionResult.OKAY);

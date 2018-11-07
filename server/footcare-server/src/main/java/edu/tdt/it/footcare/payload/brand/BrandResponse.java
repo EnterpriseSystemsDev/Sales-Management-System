@@ -12,5 +12,5 @@ public class BrandResponse {
 
     private List<ProductResponse> products;
 
-    private List<String> images;
+    private String image;
 }

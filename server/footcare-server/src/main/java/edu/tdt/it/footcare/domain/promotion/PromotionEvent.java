@@ -22,7 +22,7 @@ public class PromotionEvent {
     private LocalDate endDate;
 
     @JsonIgnore
-    @ManyToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(name = "promotion_event_product", inverseJoinColumns = @JoinColumn(name = "product_version_id"))
     private List<PromotionProduct> products;
 

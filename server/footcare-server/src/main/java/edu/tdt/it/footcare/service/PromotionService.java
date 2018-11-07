@@ -51,7 +51,7 @@ public class PromotionService {
         promotionProduct.setSize(request.getSize());
         promotionProduct.setOffPercent(request.getOffPercent());
         promotionProduct.setCount(request.getCount());
-        promotionProduct.setProduct(productService.findById(request.getVersionId()));
+        promotionProduct.setProduct(productService.findById(request.getProductId()));
         return promotionProductRepository.save(promotionProduct);
     }
 

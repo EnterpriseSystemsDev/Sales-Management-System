@@ -34,7 +34,7 @@ public class BrandService {
     public Brand createBrand(AddBrandRequest request) {
         Brand brand = new Brand();
         brand.setName(request.getName());
-        brand.setImages(request.getImages());
+        brand.setImage(request.getImage());
         return save(brand);
     }
 
@@ -42,7 +42,7 @@ public class BrandService {
         BrandResponse response = new BrandResponse();
         response.setName(brand.getName());
         response.setId(brand.getId());
-        response.setImages(brand.getImages());
+        response.setImage(brand.getImage());
         if (brand.getProducts() != null) {
             List<ProductResponse> responses = productService.mapProductsToResponses(brand.getProducts());
             response.setProducts(responses);

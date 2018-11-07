@@ -13,5 +13,5 @@ public class AddBrandRequest {
     @NotNull
     private String name;
 
-    private List<String> images;
+    private String image;
 }
