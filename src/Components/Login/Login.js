@@ -13,8 +13,8 @@ class Login extends React.Component {
          this.state = {
              txtUserName : '',
              txtPassWord: '',
-             username: [],
-             password: [],
+             // username: [],
+             // password: [],
          };
 
      }
@@ -53,11 +53,12 @@ class Login extends React.Component {
         // })
         axios.get('http://5bdc5e5b433b4f0013e6e0c4.mockapi.io/api/users').then(res =>{
             const users = res.data.map((user, index) =>{
-                this.setState({
-                    username: user.username,
-                    password: user.password
+                 this.setState({
+                         username: user.username,
+                         password: user.password
                 })
             })
+
         })
     }
 
