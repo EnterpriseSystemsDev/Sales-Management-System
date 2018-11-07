@@ -38,7 +38,7 @@ public class ProductWrapperService {
     public List<ProductWrapperResponse> mapWrapperToResponse(List<ProductInSelling> products) {
         return products.stream().map(product -> {
             ProductWrapperResponse response = new ProductWrapperResponse();
-            response.setProductId(product.getId());
+            response.setProductId(product.getProduct().getId());
             response.setCount(product.getCount());
             response.setName(product.getProduct().getName());
             response.setSize(product.getSize());

@@ -6,8 +6,8 @@ import edu.tdt.it.footcare.domain.bill.BillRepository;
 import edu.tdt.it.footcare.domain.person.Customer;
 import edu.tdt.it.footcare.domain.person.Employee;
 import edu.tdt.it.footcare.domain.person.EmployeeRepository;
+import edu.tdt.it.footcare.domain.product.wrapper.ProductInSelling;
 import edu.tdt.it.footcare.domain.store.Store;
-import edu.tdt.it.footcare.domain.transaction.Transaction;
 import edu.tdt.it.footcare.exception.AppException;
 import edu.tdt.it.footcare.payload.transaction.BillResponse;
 import lombok.Setter;
@@ -40,8 +40,8 @@ public class EmployeeService {
     }
 
     @SuppressWarnings("OptionalUsedAsFieldOrParameterType")
-    public Bill makeBill(UserPrincipal currentUser, Transaction transaction, Customer customer, Optional<Double> pCustomerMoney) {
-        double totalMoney = productWrapperService.calculateTotalMoney(transaction.getProducts());
+    public Bill makeBill(UserPrincipal currentUser, List<ProductInSelling> products, Customer customer, Optional<Double> pCustomerMoney) {
+        double totalMoney = productWrapperService.calculateTotalMoney(products);
         double customerMoney = pCustomerMoney.orElse(totalMoney);
         Bill bill = new Bill();
         Store store = employeeRepository
@@ -49,12 +49,12 @@ public class EmployeeService {
                 .orElseThrow(() -> new AppException("Tai khoan khong ton tai"))
                 .getStore();
         bill.setCustomer(customer);
-        bill.setProducts(transaction.getProducts());
+        bill.setProducts(products);
         bill.setTotalMoney(totalMoney);
         bill.setMoneyOfCustomer(customerMoney);
         bill.setChange(customerMoney - totalMoney);
         bill.setStore(store);
-        stockService.notifyProductChanges(store.getId(), transaction.getProducts(), false);
+        stockService.notifyProductChanges(store.getId(), products, false);
         return billRepository.save(bill);
     }
 

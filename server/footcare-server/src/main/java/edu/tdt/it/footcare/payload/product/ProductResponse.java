@@ -6,6 +6,7 @@ import java.util.List;
 
 @Data
 public class ProductResponse {
+    private String description;
     private long productId;
     private String name;
     private double price;

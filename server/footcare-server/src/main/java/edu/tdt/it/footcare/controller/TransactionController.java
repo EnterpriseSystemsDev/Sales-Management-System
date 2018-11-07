@@ -70,7 +70,7 @@ public class TransactionController {
         // make an order and delete products in cart
         Transaction transaction = customerService.makeOrder(cart.getProducts());
         TransactionResponse response = customerService.createTransactionResponse(transaction);
-        cartService.clearCart(cart);
+//        cartService.clearCart(cart);
         return ResponseEntity.ok(response);
     }
 
@@ -83,11 +83,11 @@ public class TransactionController {
         }
         Transaction transaction = transactionRepository.findById(transactionId);
         if (transaction.getTransactionResult() == TransactionResult.OKAY) {
-            throw new AppException("Giao dich da duoc xuat bill");
+            return ResponseEntity.badRequest().body("Giao dich da duoc xuat bill");
         }
         Customer customer = customerService.findByAccountId(transaction.getCreatedBy())
                 .orElseThrow(() -> new AppException("Giao dịch đã được xuất bill tại cửa hàng"));
-        Bill bill = employeeService.makeBill(currentUser, transaction, customer, Optional.empty());
+        Bill bill = employeeService.makeBill(currentUser, transaction.getProducts(), customer, Optional.empty());
 
         transaction.setTransactionResult(TransactionResult.OKAY);
         transactionRepository.save(transaction);
@@ -108,7 +108,7 @@ public class TransactionController {
 
         Transaction transaction = customerService.makeOrder(products);
 
-        Bill bill = employeeService.makeBill(currentUser, transaction, customer, Optional.of(request.getCustomerMoney()));
+        Bill bill = employeeService.makeBill(currentUser, transaction.getProducts(), customer, Optional.of(request.getCustomerMoney()));
 
         transaction.setTransactionResult(TransactionResult.OKAY);
         transactionRepository.save(transaction);
