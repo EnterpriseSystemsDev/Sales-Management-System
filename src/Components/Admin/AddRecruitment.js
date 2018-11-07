@@ -3,43 +3,44 @@ import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
 
 class AddRecruitment extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             id: '',
             tieuDe: '',
             viTriTD: '',
-            luongTD:  '',
-            soLuong:  '',
+            luongTD: '',
+            soLuong: '',
             thoiGian: '',
-            deadLine:  '',
-            moTaTD:  '',
+            deadLine: '',
+            moTaTD: '',
         }
     }
-    onChange = (event) =>{
+
+    onChange = (event) => {
         //ep true false tại đây
         this.setState({
-            [event.target.name] : event.target.value
+            [event.target.name]: event.target.value
         });
     };
 
-    onClear = () =>{
+    onClear = () => {
         this.setState({
             id: '',
             tieuDe: '',
             viTriTD: '',
-            luongTD:  '',
-            soLuong:  '',
+            luongTD: '',
+            soLuong: '',
             thoiGian: '',
-            deadLine:  '',
-            moTaTD:  '',
+            deadLine: '',
+            moTaTD: '',
 
         });
     };
-    closeForm = () =>{
+    closeForm = () => {
         this.props.closeForm();
     };
-    onSubmit = (event) =>{
+    onSubmit = (event) => {
         event.preventDefault();
         this.props.ADDRecruitment(this.state);
         //xoa data
@@ -47,17 +48,17 @@ class AddRecruitment extends React.Component {
         this.props.closeFormRecruitment();
     };
 
-    componentWillMount(){
-        if(this.props.EditRecruitment && this.props.EditRecruitment.id !== null){
+    componentWillMount() {
+        if (this.props.EditRecruitment && this.props.EditRecruitment.id !== null) {
             this.setState({
                 id: this.props.EditRecruitment.id,
                 tieuDe: this.props.EditRecruitment.tieuDe,
                 viTriTD: this.props.EditRecruitment.viTriTD,
-                luongTD:  this.props.EditRecruitment.luongTD,
-                soLuong:  this.props.EditRecruitment.soLuong,
+                luongTD: this.props.EditRecruitment.luongTD,
+                soLuong: this.props.EditRecruitment.soLuong,
                 thoiGian: this.props.EditRecruitment.thoiGian,
-                deadLine:  this.props.EditRecruitment.deadLine,
-                moTaTD:  this.props.EditRecruitment.moTaTD,
+                deadLine: this.props.EditRecruitment.deadLine,
+                moTaTD: this.props.EditRecruitment.moTaTD,
 
             });
         }
@@ -66,23 +67,24 @@ class AddRecruitment extends React.Component {
         }
     };
 
-    componentWillReceiveProps(nextProps){
-        if(nextProps && nextProps.EditRecruitment){
+    componentWillReceiveProps(nextProps) {
+        if (nextProps && nextProps.EditRecruitment) {
             this.setState({
                 id: nextProps.EditRecruitment.id,
                 tieuDe: nextProps.EditRecruitment.tieuDe,
                 viTriTD: nextProps.EditRecruitment.viTriTD,
-                luongTD:  nextProps.EditRecruitment.luongTD,
-                soLuong:  nextProps.EditRecruitment.soLuong,
+                luongTD: nextProps.EditRecruitment.luongTD,
+                soLuong: nextProps.EditRecruitment.soLuong,
                 thoiGian: nextProps.EditRecruitment.thoiGian,
-                deadLine:  nextProps.EditRecruitment.deadLine,
-                moTaTD:  nextProps.EditRecruitment.moTaTD,
+                deadLine: nextProps.EditRecruitment.deadLine,
+                moTaTD: nextProps.EditRecruitment.moTaTD,
             });
         }
         else {
             this.onClear();
         }
     }
+
     render() {
         return (
             <div className="panel panel-info">
@@ -185,28 +187,29 @@ class AddRecruitment extends React.Component {
         );
     }
 }
-const mapStateToProps = state =>{
+
+const mapStateToProps = state => {
     return {
-        Recruitment : state.Recruitment,
-        EditRecruitment : state.EditRecruitment,
+        Recruitment: state.Recruitment,
+        EditRecruitment: state.EditRecruitment,
 
     }
 };
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        ADDRecruitment : (task) => {
+        ADDRecruitment: (task) => {
             dispatch(actions.addRecruitment(task))
         },
-        closeForm : () =>{
+        closeForm: () => {
             dispatch(actions.closeForm())
         },
-        closeFormRecruitment : () =>{
+        closeFormRecruitment: () => {
             dispatch(actions.closeFormRecruitment())
         },
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps) (AddRecruitment);
+export default connect(mapStateToProps, mapDispatchToProps)(AddRecruitment);
 
 
 

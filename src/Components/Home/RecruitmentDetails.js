@@ -4,23 +4,23 @@ import {connect} from 'react-redux';
 class RecruitmentDetails extends React.Component {
 
     render() {
-        let {item,index} = this.props;
+        let {item, index} = this.props;
 
-            return (
-                <div key={index}>
-                    {item.luongTD}
-                    {item.viTriTD}
-                </div>
-            );
+        return (
+            <div key={index}>
+                {item.luongTD}
+                {item.viTriTD}
+            </div>
+        );
 
 
     }
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return {
-        Recruitment : state.Recruitment,
+        Recruitment: state.Recruitment,
 
     }
 };
-export default connect(mapStateToProps,null) (RecruitmentDetails);
+export default connect(mapStateToProps, null)(RecruitmentDetails);

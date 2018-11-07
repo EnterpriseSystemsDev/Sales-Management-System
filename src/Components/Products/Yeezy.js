@@ -8,31 +8,32 @@ import {connect} from "react-redux"
 
 class Yeezy extends React.Component {
 
-    componentDidMount(){
+    componentDidMount() {
         document.title = "Yeezy"
     }
+
     render() {
         let {Version} = this.props;
         const listProducts = Version.map((item, index) => {
-            if(item.nameProduct === 'Yeezy ')
-            return (
-                <div key ={index}>
-                    <Products
-                        key ={index}
-                        id ={item.id}
-                        name ={item.version}
-                        image ={item.hinhanh}
-                        price = {item.gia}
-                        brand = {item.nameProduct}
-                        mota ={item.mota}
-                        size = {item.size}
-                        sale ={item.Sale}
-                        isSale = {item.isSale}
-                        isHot = {item.isHot}
-                        item ={item}
-                    />
-                </div>
-            );
+            if (item.nameProduct === 'Yeezy ')
+                return (
+                    <div key={index}>
+                        <Products
+                            key={index}
+                            id={item.id}
+                            name={item.version}
+                            image={item.hinhanh}
+                            price={item.gia}
+                            brand={item.nameProduct}
+                            mota={item.mota}
+                            size={item.size}
+                            sale={item.Sale}
+                            isSale={item.isSale}
+                            isHot={item.isHot}
+                            item={item}
+                        />
+                    </div>
+                );
         });
         return (
             <div>
@@ -54,10 +55,10 @@ class Yeezy extends React.Component {
     }
 }
 
-const listProducts = state =>{
+const listProducts = state => {
     return {
-        tasks : state.tasks,
-        Version : state.Version
+        tasks: state.tasks,
+        Version: state.Version
     }
 };
-export default connect(listProducts,null)(Yeezy);
+export default connect(listProducts, null)(Yeezy);

@@ -11,9 +11,9 @@ class ListSale extends React.Component {
         const listSP = Version.map((task, index) => {
             return (
                 <UpdateProductSale
-                    key = {task.id}
-                    index = {index}
-                    task = {task}
+                    key={task.id}
+                    index={index}
+                    task={task}
                 />
             );
         });
@@ -36,7 +36,7 @@ class ListSale extends React.Component {
                             <th>Sale</th>
                             <th>% Sale</th>
                         </tr>
-                        {listSP }
+                        {listSP}
                         </tbody>
                     </table>
                 </div>
@@ -46,18 +46,18 @@ class ListSale extends React.Component {
     }
 }
 
-const listProducts = state =>{
+const listProducts = state => {
     return {
-        tasks : state.tasks,
+        tasks: state.tasks,
         displayForm: state.displayForm,
         Version: state.Version,
     }
 
 };
 const mapDispatchToProps = (dispatch, props) => {
-    return{
+    return {
 
-        onEditProduct: (task) =>{
+        onEditProduct: (task) => {
             dispatch(actions.editProDuct(task));
         },
 
@@ -65,7 +65,7 @@ const mapDispatchToProps = (dispatch, props) => {
 
 };
 
-export default connect(listProducts,mapDispatchToProps) (ListSale);
+export default connect(listProducts, mapDispatchToProps)(ListSale);
 
 
 

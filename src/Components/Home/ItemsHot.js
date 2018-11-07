@@ -2,38 +2,40 @@ import React from "react";
 import {connect} from 'react-redux'
 import Products from "../Products/Products";
 import * as actions from "../../actions";
+
 class ItemsHot extends React.Component {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.listAllVersion();
     }
+
     render() {
         let {Version} = this.props;
-        const listItemsHOT = Version.map((item, index)  => {
-            if (item.isHot === true ) {
+        const listItemsHOT = Version.map((item, index) => {
+            if (item.isHot === true) {
                 return (
                     <div key={index}>
                         <Products
-                            key ={index}
-                            id ={item.id}
-                            name ={item.version}
-                            image ={item.hinhanh}
-                            price = {item.gia}
-                            brand = {item.nameProduct}
-                            mota ={item.mota}
-                            size = {item.size}
-                            sale ={item.Sale}
+                            key={index}
+                            id={item.id}
+                            name={item.version}
+                            image={item.hinhanh}
+                            price={item.gia}
+                            brand={item.nameProduct}
+                            mota={item.mota}
+                            size={item.size}
+                            sale={item.Sale}
                             isSale={item.isSale}
-                            isHot = {item.isHot}
-                            item ={item}
+                            isHot={item.isHot}
+                            item={item}
                         />
                     </div>
                 );
 
             }
         });
-        for (let i = 0 ; i < Version.length; i ++){
-            if(Version[i].isHot > 0){
+        for (let i = 0; i < Version.length; i++) {
+            if (Version[i].isHot > 0) {
                 return (
                     <div className="row">
                         <div className="panel-body" style={{fontFamily: 'sans-serif'}}>
@@ -52,24 +54,25 @@ class ItemsHot extends React.Component {
     }
 
 }
-const listProducts = state =>{
+
+const listProducts = state => {
     return {
-        tasks : state.tasks,
+        tasks: state.tasks,
         keyword: state.keyword,
         Version: state.Version,
     }
 
 };
 const mapDispatchToProps = (dispatch, props) => {
-    return{
-        listAllVersion : () =>{
+    return {
+        listAllVersion: () => {
             dispatch(actions.listAllVersionRequest());
         },
     };
 
 };
 
-export default connect(listProducts,mapDispatchToProps)  (ItemsHot);
+export default connect(listProducts, mapDispatchToProps)(ItemsHot);
 
 
 

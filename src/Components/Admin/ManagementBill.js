@@ -8,11 +8,11 @@ class ManagementBill extends React.Component {
         const listHD = Bill.map((item, index) => {
             return (
 
-                    <HoaDon
-                        key = {item.id}
-                        index = {index}
-                        item = {item}
-                    />
+                <HoaDon
+                    key={item.id}
+                    index={index}
+                    item={item}
+                />
 
             );
         });
@@ -43,13 +43,14 @@ class ManagementBill extends React.Component {
         );
     }
 }
-const ListEmployees = state =>{
+
+const ListEmployees = state => {
     return {
-        Bill : state.Bill,
+        Bill: state.Bill,
     }
 
 };
-export default  connect(ListEmployees,null) (ManagementBill);
+export default connect(ListEmployees, null)(ManagementBill);
 
 
 

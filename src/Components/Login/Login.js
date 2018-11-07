@@ -1,9 +1,8 @@
 import React from "react";
-import {Redirect} from "react-router-dom"
+import {Link, Redirect} from "react-router-dom"
 import Header from "../Home/Header";
-import {Link} from "react-router-dom";
 import {login} from "../../utils/apiCall";
-import {ACCESS_TOKEN, API_BASE_URL} from "../constants";
+import {ACCESS_TOKEN} from "../constants";
 
 class Login extends React.Component {
     constructor(props) {
@@ -76,17 +75,9 @@ class Login extends React.Component {
         let {location} = this.props;
         console.log(location);
         let {txtUserName, txtPassWord} = this.state;
-        let loggedInUser = localStorage.getItem('user');
+        let loggedInUser = localStorage.getItem(ACCESS_TOKEN);
         if (loggedInUser !== null) {
-
-            // return <Redirect to ='/Admin'/>
-            return <Redirect from="/Login" to={{
-                pathname: '/Admin',
-                state: {
-                    from: location
-                }
-            }
-            }/>
+            return <Redirect to='/Admin'/>
         }
         return (
             <div>

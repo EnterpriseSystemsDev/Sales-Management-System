@@ -1,10 +1,10 @@
 import React from 'react';
 import '../../Style.css';
-import $ from  "jquery";
+import $ from "jquery";
 
-class ScrollToTop extends  React.Component{
-    componentDidMount(){
-        $(document).ready(function(){
+class ScrollToTop extends React.Component {
+    componentDidMount() {
+        $(document).ready(function () {
 
             $("#back-top").hide();
 
@@ -27,7 +27,8 @@ class ScrollToTop extends  React.Component{
 
         });
     }
-    render(){
+
+    render() {
         return (
             <div>
                 <p id="back-top"><a href="#" title="Back to top" className="scrollup"><span></span></a></p>

@@ -8,11 +8,11 @@ class ListRecruitment extends React.Component {
         let {Recruitment} = this.props;
         const listTD = Recruitment.map((item, index) => {
             return (
-              <TuyenDung
-              key = {item.id}
-              index={index}
-              item = {item}
-              />
+                <TuyenDung
+                    key={item.id}
+                    index={index}
+                    item={item}
+                />
             );
         });
         return (
@@ -42,21 +42,22 @@ class ListRecruitment extends React.Component {
         );
     }
 }
-const mapStateToProps = state =>{
+
+const mapStateToProps = state => {
     return {
-        Recruitment : state.Recruitment,
+        Recruitment: state.Recruitment,
 
     }
 };
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        ADDRecruitment : (task) => {
+        ADDRecruitment: (task) => {
             dispatch(actions.addRecruitment(task))
         }
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(ListRecruitment);
+export default connect(mapStateToProps, mapDispatchToProps)(ListRecruitment);
 
 
 

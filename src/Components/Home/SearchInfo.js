@@ -6,18 +6,20 @@ import connect from "react-redux/es/connect/connect";
 class SearchInfo extends React.Component {
     constructor(props) {
         super(props);
-        this.state ={
+        this.state = {
             keyword: '',
         }
     }
-    onChange = (event) =>{
-      this.setState({
-         keyword : event.target.value
-      });
+
+    onChange = (event) => {
+        this.setState({
+            keyword: event.target.value
+        });
     };
-    SearchInfo = () =>{
+    SearchInfo = () => {
         this.props.onSearchProduct(this.state.keyword);
     };
+
     render() {
         return (
             <div id="jordan" className="navbar-left col-md-7 ">
@@ -46,20 +48,21 @@ class SearchInfo extends React.Component {
         );
     }
 }
-const mapStateToProps = state =>{
+
+const mapStateToProps = state => {
     return {}
 
 };
 const mapDispatchToProps = (dispatch, props) => {
-    return{
-        onFilterTable: (filter) =>{
+    return {
+        onFilterTable: (filter) => {
             dispatch(actions.filterTable(filter));
         },
-        onSearchProduct : (keyword) =>{
+        onSearchProduct: (keyword) => {
             dispatch(actions.searchProduct(keyword));
         }
     };
 
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(SearchInfo);
+export default connect(mapStateToProps, mapDispatchToProps)(SearchInfo);

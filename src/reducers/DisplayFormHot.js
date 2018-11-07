@@ -1,4 +1,5 @@
 import * as types from './../constants/ActionTypes'
+
 let initialState = false;
 let myReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -7,7 +8,8 @@ let myReducer = (state = initialState, action) => {
         case types.CLOSE_FORM_HOT:
             return false;
 
-        default : return state;
+        default :
+            return state;
     }
 };
 export default myReducer;

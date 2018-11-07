@@ -4,9 +4,9 @@ import * as actions from '../../actions/index';
 
 class ListProductsInStore extends React.Component {
 
-componentDidMount(){
-    this.props.onListStore();
-}
+    componentDidMount() {
+        this.props.onListStore();
+    }
 
     render() {
         let {Store} = this.props;
@@ -28,7 +28,7 @@ componentDidMount(){
                     <h3 className="panel-title">Danh Sách Sản Phẩm Trong Store</h3>
                 </div>
                 <div className="table-responsive">
-                    <table  className="table table-striped  table-hover">
+                    <table className="table table-striped  table-hover">
                         <thead>
                         <tr>
                             <th>STT</th>
@@ -40,7 +40,7 @@ componentDidMount(){
                         </tr>
                         </thead>
                         <tbody>
-                        {listSP }
+                        {listSP}
                         </tbody>
                     </table>
                 </div>
@@ -50,38 +50,38 @@ componentDidMount(){
     }
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return {
         Store: state.Store,
     }
 
 };
 const mapDispatchToProps = (dispatch, props) => {
-    return{
-        delete_PRODUCT : (id) => {
+    return {
+        delete_PRODUCT: (id) => {
             dispatch(actions.deleteProduct(id));
         },
-        onUpDateForm : () => {
+        onUpDateForm: () => {
             dispatch(actions.updateForm());
         },
 
-        onEditProduct: (task) =>{
+        onEditProduct: (task) => {
             dispatch(actions.editProDuct(task));
         },
-        onFilterTable: (filter) =>{
+        onFilterTable: (filter) => {
             dispatch(actions.filterTable(filter));
         },
-        onSortProduct: (sort) =>{
+        onSortProduct: (sort) => {
             dispatch(actions.sortProduct(sort));
         },
-        onListStore : () =>{
+        onListStore: () => {
             dispatch(actions.listProductsInStoreRequest());
         }
     };
 
 };
 
-export default connect(mapStateToProps,mapDispatchToProps) (ListProductsInStore);
+export default connect(mapStateToProps, mapDispatchToProps)(ListProductsInStore);
 
 
 

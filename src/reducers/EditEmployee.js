@@ -1,14 +1,15 @@
 import * as types from './../constants/ActionTypes'
+
 let initialState = {
-    id : '',
+    id: '',
     hoTen: '',
-    gioiTinh:'',
-    namSinh:  '',
-    queQuan:  '',
+    gioiTinh: '',
+    namSinh: '',
+    queQuan: '',
     viTri: '',
-    luong:  '',
-    userName:  '',
-    passWord:  '',
+    luong: '',
+    userName: '',
+    passWord: '',
 };
 let myReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -16,7 +17,8 @@ let myReducer = (state = initialState, action) => {
             //console.log(action);
             return action.task;
 
-        default: return state;
+        default:
+            return state;
     }
 };
 export default myReducer;

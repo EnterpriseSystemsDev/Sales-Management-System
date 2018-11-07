@@ -1,4 +1,5 @@
 import * as types from './../constants/ActionTypes'
+
 let initialState = false;
 let myReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -16,7 +17,8 @@ let myReducer = (state = initialState, action) => {
         //     //return !state;
         //     console.log(state);
 
-        default : return state;
+        default :
+            return state;
     }
 };
 export default myReducer;

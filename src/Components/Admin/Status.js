@@ -6,7 +6,7 @@ import UpdateSanPham from "./UpdateProduct";
 
 class StatusSP extends React.Component {
 
-    componentDidMount(){
+    componentDidMount() {
         this.props.listAllVersion();
     }
 
@@ -17,9 +17,9 @@ class StatusSP extends React.Component {
         const listSP = Version.map((task, index) => {
             return (
                 <UpdateSanPham
-                    key = {task.id}
-                    index = {index}
-                    task = {task}
+                    key={task.id}
+                    index={index}
+                    task={task}
                 />
             );
         });
@@ -41,7 +41,7 @@ class StatusSP extends React.Component {
                             <th>Size</th>
                             <th>HOT</th>
                         </tr>
-                        {listSP }
+                        {listSP}
                         </tbody>
                     </table>
                 </div>
@@ -51,27 +51,27 @@ class StatusSP extends React.Component {
     }
 }
 
-const listProducts = state =>{
+const listProducts = state => {
     return {
-        tasks : state.tasks,
+        tasks: state.tasks,
         displayForm: state.displayForm,
-        Version : state.Version,
+        Version: state.Version,
     }
 
 };
 const mapDispatchToProps = (dispatch, props) => {
-    return{
-        delete_PRODUCT : (id) => {
+    return {
+        delete_PRODUCT: (id) => {
             dispatch(actions.deleteProduct(id));
         },
-        onUpDateForm : () => {
+        onUpDateForm: () => {
             dispatch(actions.updateForm());
         },
 
-        onEditProduct: (task) =>{
+        onEditProduct: (task) => {
             dispatch(actions.editProDuct(task));
         },
-        listAllVersion : () =>{
+        listAllVersion: () => {
             dispatch(actions.listAllVersionRequest())
         }
 
@@ -80,7 +80,7 @@ const mapDispatchToProps = (dispatch, props) => {
 
 };
 
-export default connect(listProducts,mapDispatchToProps) (StatusSP);
+export default connect(listProducts, mapDispatchToProps)(StatusSP);
 
 
 

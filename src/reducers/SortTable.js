@@ -1,6 +1,7 @@
 import * as types from './../constants/ActionTypes'
+
 let initialState = {
-    by : 'name',
+    by: 'name',
     value: 1
 };
 let myReducer = (state = initialState, action) => {
@@ -10,7 +11,8 @@ let myReducer = (state = initialState, action) => {
                 by: action.sort.by,
                 value: action.sort.value,
             };
-        default: return state;
+        default:
+            return state;
     }
 };
 export default myReducer;

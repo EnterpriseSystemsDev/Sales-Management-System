@@ -1,13 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_TEST_SOURCES" value="false" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="90136cd2-ebd9-4c95-9cfc-f3267d12854f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/server/footcare-server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/footcare-server/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/AdHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/AdHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/AddEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/AddEmployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/AddProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/AddProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/AddRecruitment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/AddRecruitment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/AddStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/AddStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Bill.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Bill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Employee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/FormBill.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/FormBill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/ListEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/ListEmployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/ListProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/ListProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/ListProductsInStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/ListProductsInStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/ListRecruitment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/ListRecruitment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/ListSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/ListSale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/ManagementBill.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/ManagementBill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/ManagementEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/ManagementEmployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/ManagementProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/ManagementProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Note.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Note.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Recruitment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Recruitment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Statistical.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Statistical.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Status.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Status.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/UpdateProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/UpdateProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/UpdateProductSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/UpdateProductSale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/Version.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/Version.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Admin/admincss.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Admin/admincss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Box1.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Box1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Box2.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Box2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Box3.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Box3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Box4.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Box4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/CartItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/CartItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/IconCart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/IconCart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/IconLogin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/IconLogin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Item.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/ItemDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/ItemDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/ItemsHot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/ItemsHot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/ItemsSale.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/ItemsSale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Logo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/MySlides.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/MySlides.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Home/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Recruitment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Recruitment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/RecruitmentDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/RecruitmentDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/SearchInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/SearchInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Login/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Login/Register.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Login/Register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Login/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Login/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/NotFound.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/NotFound.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Products/Jordan.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Products/Jordan.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Products/ProductDetailItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Products/ProductDetailItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Products/Products.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Products/Products.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Products/Yeezy.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Products/Yeezy.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Products/productDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Products/productDetail.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Routers.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Routers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/ScrollToTop/ScrollToTop.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/ScrollToTop/ScrollToTop.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/actions/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/constants/ActionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/constants/ActionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/Bill.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/Bill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/Cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/ChangeTheme.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/ChangeTheme.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/DisplayForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/DisplayForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/DisplayFormHot.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/DisplayFormHot.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/DisplayFormStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/DisplayFormStore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/DisplayFormVersion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/DisplayFormVersion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/EditEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/EditEmployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/EditProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/EditProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/EditRecruitment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/EditRecruitment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/EditVersion.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/EditVersion.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/Employee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/Employee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/FilterTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/FilterTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/FormEmployee.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/FormEmployee.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/Product.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/Product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/Recruitment.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/Recruitment.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/SearchProduct.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/SearchProduct.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/SortTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/SortTable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/Store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/Store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/Version.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/Version.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/registerServiceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/registerServiceWorker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/apiCall.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/apiCall.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -181,30 +265,32 @@
     <session id="1777382385">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
           <entry key="project.open.time.5" value="1" />
           <entry key="project.opened" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="js" value="25" />
+          <entry key="js" value="37" />
           <entry key="ts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JavaScript" value="25" />
+          <entry key="JavaScript" value="36" />
+          <entry key="PLAIN_TEXT" value="1" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="js" value="466" />
+          <entry key="js" value="529" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JavaScript" value="466" />
+          <entry key="JavaScript" value="529" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -215,20 +301,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Components/Login/Login.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -268,9 +341,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/Components/Login/Register.js" />
         <option value="$PROJECT_DIR$/src/Components/Home/CartItems.js" />
-        <option value="$PROJECT_DIR$/src/Components/Products/Yeezy.js" />
         <option value="$PROJECT_DIR$/src/reducers/EditVersion.js" />
         <option value="$PROJECT_DIR$/src/reducers/DisplayFormVersion.js" />
         <option value="$PROJECT_DIR$/src/reducers/DisplayFormHot.js" />
@@ -278,7 +349,6 @@
         <option value="$PROJECT_DIR$/src/reducers/index.js" />
         <option value="$PROJECT_DIR$/src/Components/Products/productDetail..css" />
         <option value="$PROJECT_DIR$/src/Components/Products/productDetail.css" />
-        <option value="$PROJECT_DIR$/src/Components/Products/ProductDetailItem.js" />
         <option value="$PROJECT_DIR$/public/animate.js" />
         <option value="$PROJECT_DIR$/src/constants/Config.js" />
         <option value="$PROJECT_DIR$/src/Components/utils/apiCall.js" />
@@ -297,12 +367,10 @@
         <option value="$PROJECT_DIR$/src/actions/user.actions.js" />
         <option value="$PROJECT_DIR$/src/Components/Admin/ListSale.js" />
         <option value="$PROJECT_DIR$/src/Components/Admin/Product.js" />
-        <option value="$PROJECT_DIR$/src/Components/Admin/UpdateProductSale.js" />
         <option value="$PROJECT_DIR$/src/reducers/Version.js" />
         <option value="$PROJECT_DIR$/src/Components/Admin/UpdateProduct.js" />
         <option value="$PROJECT_DIR$/src/Components/Home/ItemsSale.js" />
         <option value="$PROJECT_DIR$/src/Components/Home/ItemsHot.js" />
-        <option value="$PROJECT_DIR$/src/Components/Products/Jordan.js" />
         <option value="$PROJECT_DIR$/src/Components/Admin/ManagementProduct.js" />
         <option value="$PROJECT_DIR$/src/Components/Admin/Version.js" />
         <option value="$PROJECT_DIR$/src/Components/App.js" />
@@ -313,12 +381,17 @@
         <option value="$PROJECT_DIR$/src/Components/Admin/AddRecruitment.js" />
         <option value="$PROJECT_DIR$/src/Components/Admin/AddProduct.js" />
         <option value="$PROJECT_DIR$/src/Components/constants.js" />
-        <option value="$PROJECT_DIR$/src/utils/apiCall.js" />
         <option value="$PROJECT_DIR$/src/actions/index.js" />
         <option value="$PROJECT_DIR$/src/Components/Products/Products.js" />
         <option value="$PROJECT_DIR$/src/Components/Home/Navbar.js" />
         <option value="$PROJECT_DIR$/src/Components/Routers.js" />
+        <option value="$PROJECT_DIR$/src/Components/Home/Cart.js" />
+        <option value="$PROJECT_DIR$/src/utils/apiCall.js" />
         <option value="$PROJECT_DIR$/src/Components/Login/Login.js" />
+        <option value="$PROJECT_DIR$/src/Components/Products/Yeezy.js" />
+        <option value="$PROJECT_DIR$/src/Components/Products/ProductDetailItem.js" />
+        <option value="$PROJECT_DIR$/src/Components/Products/Jordan.js" />
+        <option value="$PROJECT_DIR$/src/Components/Admin/UpdateProductSale.js" />
       </list>
     </option>
   </component>
@@ -329,6 +402,11 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="JsbtTreeLayoutManager">
+    <layout place="tools.popupnpm">
+      <scroll-view-position x="0" y="0" />
+    </layout>
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
@@ -362,25 +440,6 @@
               <item name="Sales-Management-System" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Sales-Management-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sales-Management-System" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sales-Management-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sales-Management-System" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="Components" type="462c0819:PsiDirectoryNode" />
-              <item name="Home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Sales-Management-System" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Sales-Management-System" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -394,23 +453,24 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.general" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\GitHub\Sales-Management-System\src" />
-      <recent name="D:\GitHub\Sales-Management-System\src\reducers" />
-      <recent name="D:\GitHub\Sales-Management-System\src\Components" />
-      <recent name="D:\GitHub\Sales-Management-System\src\constants" />
-      <recent name="D:\GitHub\Sales-Management-System\src\actions" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\GitHub\Sales-Management-System\src" />
       <recent name="D:\GitHub\Sales-Management-System\public" />
       <recent name="D:\ahjhj\src\Components\Home" />
       <recent name="D:\ahjhj\src\Components" />
       <recent name="D:\ahjhj\src" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\GitHub\Sales-Management-System\src" />
+      <recent name="D:\GitHub\Sales-Management-System\src\reducers" />
+      <recent name="D:\GitHub\Sales-Management-System\src\Components" />
+      <recent name="D:\GitHub\Sales-Management-System\src\constants" />
+      <recent name="D:\GitHub\Sales-Management-System\src\actions" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -513,17 +573,16 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="553777000" />
+    <option name="totallyTimeSpent" value="555018000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1440" y="23" width="1920" height="1008" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13744076" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="TypeScript" />
+      <window_info anchor="bottom" id="Inspection Results" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3288889" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3299566" />
@@ -534,7 +593,8 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.26444444" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.26444444" />
+      <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -547,16 +607,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/actions/user.constants.js" />
-    <entry file="file://$PROJECT_DIR$/src/_helpers/store.js" />
-    <entry file="file://$PROJECT_DIR$/src/_helpers/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/reducers/Bill.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="51" lean-forward="true" selection-start-column="23" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/PrivateRoute.jsx" />
     <entry file="file://$PROJECT_DIR$/src/actions/alert.actions.js" />
     <entry file="file://$PROJECT_DIR$/src/reducers/alert.reducer.js" />
@@ -581,13 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
           <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Admin/UpdateProductSale.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="131" column="9" lean-forward="true" selection-start-line="112" selection-start-column="8" selection-end-line="131" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -616,13 +659,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="303">
           <caret line="69" column="2" lean-forward="true" selection-start-line="62" selection-end-line="69" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Products/Jordan.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="20" column="44" selection-start-line="20" selection-start-column="44" selection-end-line="20" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -674,13 +710,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Admin/ListProduct.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="34" column="11" lean-forward="true" selection-start-line="32" selection-start-column="8" selection-end-line="34" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="42">
@@ -702,13 +731,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="625">
           <caret line="47" column="5" lean-forward="true" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Products/ProductDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -795,30 +817,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/apiCall.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="19" column="35" lean-forward="true" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/actions/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
           <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Products/Products.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="71" column="112" lean-forward="true" selection-start-line="71" selection-start-column="112" selection-end-line="71" selection-end-column="112" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -839,10 +841,104 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Home/Cart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="24" column="40" lean-forward="true" selection-start-line="24" selection-start-column="40" selection-end-line="24" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/apiCall.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="44" column="27" lean-forward="true" selection-start-line="44" selection-start-column="27" selection-end-line="44" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Admin/Status.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-908">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Login/Login.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="40" column="45" selection-start-line="40" selection-start-column="45" selection-end-line="40" selection-end-column="45" />
+        <state relative-caret-position="218">
+          <caret line="51" column="57" lean-forward="true" selection-start-line="51" selection-start-column="57" selection-end-line="51" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Admin/ListProduct.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="240" lean-forward="true" selection-start-line="240" selection-end-line="240" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Products/ProductDetail.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Products/Yeezy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="58" column="12" lean-forward="true" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Products/Products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="71" column="112" selection-start-line="71" selection-start-column="112" selection-end-line="71" selection-end-column="112" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Products/ProductDetailItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Products/Jordan.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="51" column="41" selection-start-line="51" selection-start-column="41" selection-end-line="51" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Admin/UpdateProductSale.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="185" lean-forward="true" selection-start-line="185" selection-end-line="185" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>

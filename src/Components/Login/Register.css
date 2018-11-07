@@ -6,17 +6,18 @@
     background-size: cover;
     height: 810px;
 
-
 }
+
 .register {
     width: 55%;
     height: auto;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     margin: auto;
     margin-top: 130px;
     color: floralwhite;
 }
+
 .notnull {
     color: crimson;
 }

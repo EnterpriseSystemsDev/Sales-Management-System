@@ -1,61 +1,64 @@
 import React from "react";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
+
 class AddEmployee extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            id:'',
-            hoTen:'',
+            id: '',
+            hoTen: '',
             gioiTinh: '',
             namSinh: '',
-            queQuan:  '',
-            viTri:'',
-            luong:'',
-            userName:'',
+            queQuan: '',
+            viTri: '',
+            luong: '',
+            userName: '',
             passWord: ''
         }
     }
-    onChange = (event) =>{
+
+    onChange = (event) => {
         //ep true false tại đây
         this.setState({
-            [event.target.name] : event.target.value
+            [event.target.name]: event.target.value
         });
     };
-    closeForm = () =>{
+    closeForm = () => {
         this.props.closeForm();
     };
-    onSubmit = (event) =>{
+    onSubmit = (event) => {
         event.preventDefault();
         this.props.addemployee(this.state);
         //xoa data
         this.onClear();
         this.closeForm();
     };
-    onClear = () =>{
+    onClear = () => {
         this.setState({
-            hoTen:'',
+            hoTen: '',
             gioiTinh: '',
             namSinh: '',
-            queQuan:  '',
-            viTri:'',
-            luong:'',
-            userName:'',
+            queQuan: '',
+            viTri: '',
+            luong: '',
+            userName: '',
             passWord: ''
         });
     };
-    componentWillMount(){
-        if(this.props.EditEmployee && this.props.EditEmployee.id !== null){
+
+    componentWillMount() {
+        if (this.props.EditEmployee && this.props.EditEmployee.id !== null) {
             this.setState({
                 id: this.props.EditEmployee.id,
                 hoTen: this.props.EditEmployee.hoTen,
                 gioiTinh: this.props.EditEmployee.gioiTinh,
-                namSinh:  this.props.EditEmployee.namSinh,
-                queQuan:  this.props.EditEmployee.queQuan,
+                namSinh: this.props.EditEmployee.namSinh,
+                queQuan: this.props.EditEmployee.queQuan,
                 viTri: this.props.EditEmployee.viTri,
-                luong:  this.props.EditEmployee.luong,
-                userName:  this.props.EditEmployee.userName,
-                passWord:  this.props.EditEmployee.passWord,
+                luong: this.props.EditEmployee.luong,
+                userName: this.props.EditEmployee.userName,
+                passWord: this.props.EditEmployee.passWord,
             });
         }
         else {
@@ -63,24 +66,25 @@ class AddEmployee extends React.Component {
         }
     };
 
-    componentWillReceiveProps(nextProps){
-        if(nextProps && nextProps.EditEmployee){
+    componentWillReceiveProps(nextProps) {
+        if (nextProps && nextProps.EditEmployee) {
             this.setState({
                 id: nextProps.EditEmployee.id,
                 hoTen: nextProps.EditEmployee.hoTen,
                 gioiTinh: nextProps.EditEmployee.gioiTinh,
-                namSinh:  nextProps.EditEmployee.namSinh,
-                queQuan:  nextProps.EditEmployee.queQuan,
+                namSinh: nextProps.EditEmployee.namSinh,
+                queQuan: nextProps.EditEmployee.queQuan,
                 viTri: nextProps.EditEmployee.viTri,
-                luong:  nextProps.EditEmployee.luong,
-                userName:  nextProps.EditEmployee.userName,
-                passWord:  nextProps.EditEmployee.passWord,
+                luong: nextProps.EditEmployee.luong,
+                userName: nextProps.EditEmployee.userName,
+                passWord: nextProps.EditEmployee.passWord,
             });
         }
         else {
             this.onClear();
         }
     }
+
     render() {
         return (
             <div className="panel panel-success">
@@ -190,24 +194,24 @@ class AddEmployee extends React.Component {
     }
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return {
-        Employee : state.Employee,
+        Employee: state.Employee,
         EditEmployee: state.EditEmployee,
 
     }
 };
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        addemployee : (task) => {
+        addemployee: (task) => {
             dispatch(actions.addEmployee(task))
         },
-        closeForm : () =>{
+        closeForm: () => {
             dispatch(actions.closeForm())
         },
     }
 };
-export default connect (mapStateToProps,mapDispatchToProps)(AddEmployee);
+export default connect(mapStateToProps, mapDispatchToProps)(AddEmployee);
 
 
 

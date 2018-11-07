@@ -2,26 +2,27 @@ import React from "react";
 
 class CartItems extends React.Component {
 
-    PriceProduct = () =>{
+    PriceProduct = () => {
         let {item} = this.props;
-        let giaSale = parseInt(item.item.gia - (item.item.gia * item.item.Sale)/100, 10);
-        if(item.item.isSale === true){
+        let giaSale = parseInt(item.item.gia - (item.item.gia * item.item.Sale) / 100, 10);
+        if (item.item.isSale === true) {
             return <div className="product-price">{giaSale}</div>
         }
         else {
             return <div className="product-price">{item.item.gia}</div>
         }
     };
-    total = () =>{
+    total = () => {
         let {item} = this.props;
-        let giaSale = parseInt(item.item.gia - (item.item.gia * item.item.Sale)/100, 10);
-        if(item.item.isSale === true){
-            return  <div className="product-line-price">{giaSale}</div>
+        let giaSale = parseInt(item.item.gia - (item.item.gia * item.item.Sale) / 100, 10);
+        if (item.item.isSale === true) {
+            return <div className="product-line-price">{giaSale}</div>
         }
         else {
             return <div className="product-line-price">{item.item.gia}</div>
         }
     };
+
     render() {
         let {item} = this.props;
         let img = item.item.hinhanh.slice(12);
@@ -39,11 +40,11 @@ class CartItems extends React.Component {
 
                     {this.PriceProduct()}
                     <div className="product-quantity">
-                        <input type="number" defaultValue={1} min={1} />
+                        <input type="number" defaultValue={1} min={1}/>
                     </div>
                     <div className="product-removal">
                         <button className="remove-product ">
-                            <span className="glyphicon glyphicon-trash" > Xóa</span>
+                            <span className="glyphicon glyphicon-trash"> Xóa</span>
                         </button>
                     </div>
                     {this.total()}
@@ -53,4 +54,4 @@ class CartItems extends React.Component {
     }
 }
 
-export default  CartItems;
+export default CartItems;

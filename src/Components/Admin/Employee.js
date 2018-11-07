@@ -4,50 +4,51 @@ import connect from "react-redux/es/connect/connect";
 
 
 class Employee extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            id:'',
-            hoTen:'',
+            id: '',
+            hoTen: '',
             gioiTinh: '',
             namSinh: '',
-            queQuan:  '',
-            viTri:'',
-            luong:'',
-            userName:'',
+            queQuan: '',
+            viTri: '',
+            luong: '',
+            userName: '',
             passWord: ''
         }
     }
-    onClear = () =>{
+
+    onClear = () => {
         this.setState({
-            id : '',
+            id: '',
             hoTen: '',
             gioiTinh: '',
-            namSinh:  '',
-            queQuan:  '',
-            viTri:'',
-            luong:  '',
-            userName:  '',
-            passWord:  '',
+            namSinh: '',
+            queQuan: '',
+            viTri: '',
+            luong: '',
+            userName: '',
+            passWord: '',
 
         });
     };
-    closeForm = () =>{
+    closeForm = () => {
         this.props.closeForm();
     };
-    onEdit = () =>{
+    onEdit = () => {
         this.props.updateFormEmployee();
         this.props.editEmployees(this.props.item);
         this.onClear();
     };
-    onDelete = () =>{
+    onDelete = () => {
         this.props.deleteEmployee(this.props.item.id);
     };
 
     render() {
-        let {item , index} = this.props;
+        let {item, index} = this.props;
         return (
-            <tr key ={index}>
+            <tr key={index}>
                 <td>{item.hoTen}</td>
                 <td>{item.gioiTinh}</td>
                 <td>{item.namSinh}</td>
@@ -57,10 +58,10 @@ class Employee extends React.Component {
                 <td>{item.userName}</td>
 
                 <td>
-                    <button onClick={this.onEdit } type="button" className="btn btn-warning">
+                    <button onClick={this.onEdit} type="button" className="btn btn-warning">
                         Sửa
                     </button>
-                    <button onClick={this.onDelete } type="button" className="btn btn-danger" style={{marginLeft: 10}}>
+                    <button onClick={this.onDelete} type="button" className="btn btn-danger" style={{marginLeft: 10}}>
                         Xóa
                     </button>
                 </td>
@@ -70,25 +71,26 @@ class Employee extends React.Component {
 
     }
 }
+
 const mapDispatchToProps = (dispatch, props) => {
-    return{
-       editEmployees : (task) =>{
-           dispatch(actions.editEmployee(task))
-       },
-        closeForm : () =>{
+    return {
+        editEmployees: (task) => {
+            dispatch(actions.editEmployee(task))
+        },
+        closeForm: () => {
             dispatch(actions.closeForm())
         },
-        updateFormEmployee : () =>{
+        updateFormEmployee: () => {
             dispatch(actions.updateFormEmployee())
         },
-        deleteEmployee : (id) =>{
-          dispatch(actions.deleteEmployee(id))
+        deleteEmployee: (id) => {
+            dispatch(actions.deleteEmployee(id))
         },
     };
 
 };
 
-export default connect(null,mapDispatchToProps) (Employee);
+export default connect(null, mapDispatchToProps)(Employee);
 
 
 

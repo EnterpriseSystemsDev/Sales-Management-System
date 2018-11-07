@@ -4,14 +4,14 @@ import connect from "react-redux/es/connect/connect";
 
 class Bill extends React.Component {
 
-    onDelete = () =>{
+    onDelete = () => {
         this.props.deleteBill(this.props.item.id);
     };
 
     render() {
-        let {item , index} = this.props;
+        let {item, index} = this.props;
         return (
-            <tr key ={index}>
+            <tr key={index}>
                 <td>{item.tenkh}</td>
                 <td>{item.tensp}</td>
                 <td>{item.gia}</td>
@@ -20,7 +20,7 @@ class Bill extends React.Component {
                 <td>{item.ngayMua}</td>
                 <td>{item.maTichDiem}</td>
                 <td>
-                    <button onClick={this.onDelete } type="button" className="btn btn-danger" style={{marginLeft: 10}}>
+                    <button onClick={this.onDelete} type="button" className="btn btn-danger" style={{marginLeft: 10}}>
                         Xóa
                     </button>
                 </td>
@@ -28,17 +28,18 @@ class Bill extends React.Component {
         );
     }
 }
-const mapDispatchToProps = (dispatch, props) => {
-    return{
 
-        deleteBill : (id) =>{
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+
+        deleteBill: (id) => {
             dispatch(actions.deleteBill(id))
         },
     };
 
 };
 
-export default connect(null,mapDispatchToProps)  (Bill);
+export default connect(null, mapDispatchToProps)(Bill);
 
 
 

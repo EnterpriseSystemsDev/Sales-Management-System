@@ -10,66 +10,68 @@ import * as actions from "../../actions";
 
 class Jordan extends React.Component {
 
-    componentDidMount(){
+    componentDidMount() {
         document.title = "Jordan";
         this.props.listAllVersion();
     }
+
     render() {
         let {Version} = this.props;
         console.log(Version);
         const listProducts = Version.map((item, index) => {
-            if(item.nameProduct === 'Jordan ')
-            return (
+            if (item.nameProduct === 'Jordan ')
+                return (
                     <Products
-                        key ={index}
-                        id ={item.id}
-                        name ={item.version}
-                        image ={item.hinhanh}
-                        price = {item.gia}
-                        brand = {item.nameProduct}
-                        mota ={item.mota}
-                        size = {item.size}
-                        sale ={item.Sale}
-                        isSale ={item.isSale}
-                        isHot ={item.isHot}
-                        item ={item}
+                        key={index}
+                        id={item.id}
+                        name={item.version}
+                        image={item.hinhanh}
+                        price={item.gia}
+                        brand={item.nameProduct}
+                        mota={item.mota}
+                        size={item.size}
+                        sale={item.Sale}
+                        isSale={item.isSale}
+                        isHot={item.isHot}
+                        item={item}
                     />
-            );
+                );
         });
         return (
-        <div>
-            <Header/>
-            <br/><br/><br/>
-            <Navbar/>
-            <br/>
-            <div className="container">
-                 <div className="row">
-                     <div className="row">
-                         {listProducts}
-                     </div>
+            <div>
+                <Header/>
+                <br/><br/><br/>
+                <Navbar/>
+                <br/>
+                <div className="container">
+                    <div className="row">
+                        <div className="row">
+                            {listProducts}
+                        </div>
+                    </div>
+                    <div className="row">
+                        <Route path="products/Jordan:name" component={Products}/>
+                    </div>
                 </div>
-                <div className="row">
-                   <Route path="products/Jordan:name" component={Products}/>
-                </div>
+                <br/>
+                <Footer/>
             </div>
-            <br/>
-            <Footer/>
-        </div>
         );
     }
 }
-const listProducts = state =>{
+
+const listProducts = state => {
     return {
-        tasks : state.tasks,
-        Version : state.Version,
+        tasks: state.tasks,
+        Version: state.Version,
     }
 };
 const mapDispatchToProps = (dispatch, props) => {
-    return{
-        listAllVersion : () =>{
+    return {
+        listAllVersion: () => {
             dispatch(actions.listAllVersionRequest());
         },
     };
 
 };
-export default connect(listProducts,mapDispatchToProps) (Jordan);
+export default connect(listProducts, mapDispatchToProps)(Jordan);
