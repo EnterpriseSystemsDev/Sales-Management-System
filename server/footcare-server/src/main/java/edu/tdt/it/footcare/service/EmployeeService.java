@@ -10,43 +10,22 @@ import edu.tdt.it.footcare.domain.store.Store;
 import edu.tdt.it.footcare.domain.transaction.Transaction;
 import edu.tdt.it.footcare.exception.AppException;
 import edu.tdt.it.footcare.payload.transaction.BillResponse;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
+@Setter(onMethod = @__(@Autowired))
 public class EmployeeService {
 
     private BillRepository billRepository;
     private EmployeeRepository employeeRepository;
     private ProductWrapperService productWrapperService;
     private StockService stockService;
-
-    @Autowired
-    public void setStockService(StockService stockService) {
-        this.stockService = stockService;
-    }
-
-    @Autowired
-    public void setProductWrapperService(ProductWrapperService productWrapperService) {
-        this.productWrapperService = productWrapperService;
-    }
-
-    @Autowired
-    public void setBillRepository(BillRepository billRepository) {
-        this.billRepository = billRepository;
-    }
-
-    @Autowired
-    public void setEmployeeRepository(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
 
     public Optional<Employee> findById(long eId) {
         return employeeRepository.findById(eId);

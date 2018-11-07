@@ -2,7 +2,6 @@ package edu.tdt.it.footcare.controller;
 
 import edu.tdt.it.footcare.domain.person.EmployeeRepository;
 import edu.tdt.it.footcare.domain.store.StoreRepository;
-import lombok.AllArgsConstructor;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +18,7 @@ public class StoreController {
     private StoreRepository storeRepository;
     private EmployeeRepository employeeRepository;
 
-    @PostMapping("/{storeId}/employees")
+    @PostMapping("/addEmployee")
     public ResponseEntity<?> addNewEmployee(@PathVariable long storeId) {
         return ResponseEntity.ok().build();
     }

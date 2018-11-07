@@ -3,34 +3,22 @@ package edu.tdt.it.footcare.service;
 import edu.tdt.it.footcare.config.security.authentication.user.UserPrincipal;
 import edu.tdt.it.footcare.domain.cart.Cart;
 import edu.tdt.it.footcare.domain.cart.CartRepository;
-import edu.tdt.it.footcare.domain.product.version.ProductVersion;
+import edu.tdt.it.footcare.domain.product.Product;
 import edu.tdt.it.footcare.domain.product.wrapper.ProductInSelling;
 import edu.tdt.it.footcare.payload.transaction.AddToCartRequest;
 import edu.tdt.it.footcare.payload.transaction.CartResponse;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@Setter(onMethod = @__(@Autowired))
 public class CartService {
 
     private CartRepository cartRepository;
-    private ProductVersionService productVersionService;
+    private ProductService productService;
     private ProductWrapperService productWrapperService;
 
-    @Autowired
-    public void setProductWrapperService(ProductWrapperService productWrapperService) {
-        this.productWrapperService = productWrapperService;
-    }
-
-    @Autowired
-    public void setProductVersionService(ProductVersionService productVersionService) {
-        this.productVersionService = productVersionService;
-    }
-
-    @Autowired
-    public void setCartRepository(CartRepository cartRepository) {
-        this.cartRepository = cartRepository;
-    }
 
     public Cart getCart(UserPrincipal userPrincipal) {
         return cartRepository.existsByCreatedBy(userPrincipal.getId()) ?
@@ -49,12 +37,12 @@ public class CartService {
 
     public Cart addProduct(UserPrincipal userPrincipal, AddToCartRequest request) {
         Cart cart = getCart(userPrincipal);
-        if (cart.contains(request.getProductVersionId(), request.getSize())) {
-            cart.modifyQuantity(request.getProductVersionId(), request.getSize(), request.getCount());
+        if (cart.contains(request.getProductId(), request.getSize())) {
+            cart.modifyQuantity(request.getProductId(), request.getSize(), request.getCount());
         } else {
-            ProductVersion productVersion = productVersionService.findByVersionId(request.getProductVersionId());
+            Product productVersion = productService.findById(request.getProductId());
             ProductInSelling product = new ProductInSelling();
-            product.setProductVersion(productVersion);
+            product.setProduct(productVersion);
             product.setCount(request.getCount());
             product.setSize(request.getSize());
             cart.getProducts().add(product);

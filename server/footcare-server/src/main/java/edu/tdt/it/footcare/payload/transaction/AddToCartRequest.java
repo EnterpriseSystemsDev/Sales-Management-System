@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 public class AddToCartRequest {
 
     @NotNull
-    private long productVersionId;
+    private long productId;
 
     @NotNull
     private int count;

@@ -3,14 +3,11 @@ package edu.tdt.it.footcare.config.security.authentication.user;
 import edu.tdt.it.footcare.config.security.authentication.role.Role;
 import lombok.Data;
 import org.hibernate.annotations.NaturalId;
-import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 @Entity

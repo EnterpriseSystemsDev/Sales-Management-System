@@ -6,13 +6,9 @@ import java.util.List;
 
 @Data
 public class ProductResponse {
-
-    private long id;
-
+    private long productId;
     private String name;
-
-    private List<ProductVersionResponse> versions;
-
-    private String description;
-
+    private double price;
+    private double currentPrice;
+    private List<String> images;
 }

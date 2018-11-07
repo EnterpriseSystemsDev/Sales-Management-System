@@ -1,44 +1,52 @@
 package edu.tdt.it.footcare.controller;
 
 import edu.tdt.it.footcare.domain.product.Product;
-import edu.tdt.it.footcare.payload.product.ProductResponse;
+import edu.tdt.it.footcare.payload.product.ProductRequest;
 import edu.tdt.it.footcare.service.ProductService;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.ServletRequest;
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/products")
 @Setter(onMethod = @__(@Autowired))
+@RequestMapping("/api/products")
 public class ProductController {
-
     private ProductService productService;
 
     @GetMapping
     public ResponseEntity<?> getAllProducts(ServletRequest request) {
-        List<Product> productList;
+        List<Product> products;
         if (request.getParameterMap().containsKey("brandId")) {
-            productList = productService.getAllProductsOf(Long.parseLong(request.getParameter("brandId")));
+            products = productService.allProductsOf(Long.parseLong(request.getParameter("productId")));
         } else {
-            productList = productService.getAllProducts();
+            products = productService.getAll();
         }
-        List<ProductResponse> responses = productService.mapProductToResponse(productList);
-        return ResponseEntity.ok(responses);
+        return ResponseEntity.ok(productService.mapProductsToResponses(products));
+    }
+
+    @PostMapping
+    @PreAuthorize("hasAnyRole('EMPLOYEE','MANAGER')")
+    public ResponseEntity<?> addProduct(@Valid @RequestBody ProductRequest request) {
+        Product version = productService.addProduct(request);
+        return ResponseEntity.ok(productService.createProductResponse(version));
     }
 
     @GetMapping("/{productId}")
     public ResponseEntity<?> getProduct(@PathVariable long productId) {
-        Product product = productService.getProduct(productId);
-        ProductResponse response = productService.createProductResponse(product);
-        return ResponseEntity.ok(response);
+        Product product = productService.findById(productId);
+        return ResponseEntity.ok(productService.createProductResponse(product));
     }
 
+    @PutMapping("/{productId}")
+    @PreAuthorize("hasAnyRole('EMPLOYEE','MANAGER')")
+    public ResponseEntity<?> updateProduct(@Valid @RequestBody ProductRequest request, @PathVariable long productId) {
+        return ResponseEntity.ok(productService.createProductResponse(productService.updateProduct(request, productId)));
+    }
 
 }

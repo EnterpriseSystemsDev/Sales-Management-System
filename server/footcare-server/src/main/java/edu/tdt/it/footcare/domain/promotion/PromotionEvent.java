@@ -1,5 +1,6 @@
 package edu.tdt.it.footcare.domain.promotion;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,7 +21,8 @@ public class PromotionEvent {
 
     private LocalDate endDate;
 
-    @ManyToMany
+    @JsonIgnore
+    @ManyToMany(cascade = CascadeType.MERGE)
     @JoinTable(name = "promotion_event_product", inverseJoinColumns = @JoinColumn(name = "product_version_id"))
     private List<PromotionProduct> products;
 

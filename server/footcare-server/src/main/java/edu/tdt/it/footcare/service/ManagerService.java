@@ -30,7 +30,6 @@ public class ManagerService {
     private BillRepository billRepository;
     private ProductWrapperService productWrapperService;
     private EmployeeService employeeService;
-    private StoreRepository storeRepository;
 
     private List<Bill> getBillsOfMonth(Store store, Instant startDate, Instant endDate) {
         return billRepository.findBills(store, startDate, endDate);

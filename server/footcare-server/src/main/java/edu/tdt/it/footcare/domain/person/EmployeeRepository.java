@@ -7,5 +7,6 @@ import java.util.Optional;
 
 public interface EmployeeRepository extends CrudRepository<Employee, Long> {
     Optional<Employee> findByAccount_Id(long id);
+
     List<Employee> findByStore_Id(long storeId);
 }

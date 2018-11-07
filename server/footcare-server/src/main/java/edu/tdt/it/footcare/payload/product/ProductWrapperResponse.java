@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class ProductWrapperResponse {
 
-    private long productVersionId;
+    private long productId;
 
     private String name;
 

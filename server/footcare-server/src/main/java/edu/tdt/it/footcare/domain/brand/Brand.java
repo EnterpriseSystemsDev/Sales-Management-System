@@ -1,5 +1,6 @@
 package edu.tdt.it.footcare.domain.brand;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import edu.tdt.it.footcare.domain.product.Product;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,9 +20,11 @@ public class Brand {
 
     private String name;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "brand", cascade = CascadeType.MERGE)
     private List<Product> products;
 
+    @JsonIgnore
     @ElementCollection
     private List<String> images;
 

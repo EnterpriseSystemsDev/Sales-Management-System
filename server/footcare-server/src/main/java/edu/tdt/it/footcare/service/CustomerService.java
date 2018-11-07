@@ -11,6 +11,7 @@ import edu.tdt.it.footcare.domain.transaction.TransactionResult;
 import edu.tdt.it.footcare.domain.transaction.TransactionType;
 import edu.tdt.it.footcare.payload.transaction.OfflineBillRequest;
 import edu.tdt.it.footcare.payload.transaction.TransactionResponse;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,33 +19,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Setter(onMethod = @__(@Autowired))
 public class CustomerService {
 
     private CustomerRepository customerRepository;
     private TransactionRepository transactionRepository;
     private ProductWrapperService productWrapperService;
     private AuthService authService;
-
-    @Autowired
-    public void setAuthService(AuthService authService) {
-        this.authService = authService;
-    }
-
-
-    @Autowired
-    public void setProductWrapperService(ProductWrapperService productWrapperService) {
-        this.productWrapperService = productWrapperService;
-    }
-
-    @Autowired
-    public void setCustomerRepository(CustomerRepository customerRepository) {
-        this.customerRepository = customerRepository;
-    }
-
-    @Autowired
-    public void setTransactionRepository(TransactionRepository transactionRepository) {
-        this.transactionRepository = transactionRepository;
-    }
 
     // system do
     public Customer save(Customer customer) {

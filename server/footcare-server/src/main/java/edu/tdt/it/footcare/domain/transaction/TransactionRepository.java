@@ -8,6 +8,8 @@ import java.util.List;
 @RepositoryRestResource(exported = false)
 public interface TransactionRepository extends CrudRepository<Transaction, Long> {
     Transaction findById(long id);
+
     boolean existsById(Long id);
+
     List<Transaction> findByCreatedBy(long customerId);
 }

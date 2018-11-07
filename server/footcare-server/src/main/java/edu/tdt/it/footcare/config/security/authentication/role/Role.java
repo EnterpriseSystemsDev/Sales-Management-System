@@ -1,6 +1,5 @@
 package edu.tdt.it.footcare.config.security.authentication.role;
 
-import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
@@ -24,7 +23,8 @@ public class Role {
     @Enumerated(EnumType.STRING)
     private RoleName name;
 
-    public Role() {}
+    public Role() {
+    }
 
     public Role(RoleName name) {
         this.name = name;

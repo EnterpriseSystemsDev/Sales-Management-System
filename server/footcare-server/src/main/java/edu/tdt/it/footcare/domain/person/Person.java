@@ -1,7 +1,6 @@
 package edu.tdt.it.footcare.domain.person;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import edu.tdt.it.footcare.config.audit.UserDateAudit;
 import edu.tdt.it.footcare.config.security.authentication.user.Account;
 import lombok.Getter;
 import lombok.Setter;

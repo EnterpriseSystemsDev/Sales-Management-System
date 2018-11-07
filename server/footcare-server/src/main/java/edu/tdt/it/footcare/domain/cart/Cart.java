@@ -31,12 +31,12 @@ public class Cart extends UserDateAudit {
 
     public boolean contains(long versionId, double size) {
         return this.products.stream()
-                .anyMatch(pro -> pro.getProductVersion().getId() == versionId && pro.getSize() == size);
+                .anyMatch(pro -> pro.getProduct().getId() == versionId && pro.getSize() == size);
     }
 
     public void modifyQuantity(long versionId, double size, int newCount) {
         this.products.stream()
-                .filter(pro -> pro.getProductVersion().getId() == versionId && pro.getSize() == size)
+                .filter(pro -> pro.getProduct().getId() == versionId && pro.getSize() == size)
                 .findAny().ifPresent(pro ->
                 pro.setCount(newCount));
     }

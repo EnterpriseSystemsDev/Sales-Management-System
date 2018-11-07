@@ -31,7 +31,7 @@ public class ReportController {
     private ManagerService managerService;
 
     @GetMapping
-    public ResponseEntity<?> doReport(@CurrentUser UserPrincipal user, ServletRequest request) {
+    public ResponseEntity<?> doReport(ServletRequest request) {
 
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM");
         LocalDate time = request.getParameterMap().containsKey("time") ?

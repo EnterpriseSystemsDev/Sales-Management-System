@@ -6,4 +6,5 @@ public interface AppConstants {
     int MAX_PAGE_SIZE = 50;
     double DEFAULT_CUSTOMER_MONEY = -1;
     String TIME_ZONE = "GMT";
+    double DEFAULT_SALE_SIZE = -1;
 }

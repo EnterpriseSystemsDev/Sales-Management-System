@@ -10,7 +10,7 @@ import java.util.List;
 
 @RepositoryRestResource
 public interface PromotionRepository extends CrudRepository<PromotionEvent, Long> {
-    @Query("select case when e.startDate >= :now and e.endDate <= :now then true else false end from PromotionEvent e")
+    @Query("select (count(e) > 0) from PromotionEvent e where e.startDate >= :now and e.endDate <= :now")
     boolean isThereAnySaleEvent(@Param("now") LocalDate now);
 
     @Query("select e from PromotionEvent e where e.startDate >= :now and e.endDate <= :now")

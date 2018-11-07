@@ -8,8 +8,12 @@ import java.util.Optional;
 @RepositoryRestResource(exported = false)
 public interface AccountRepository extends CrudRepository<Account, Long> {
     boolean existsByUsername(String username);
+
     boolean existsByEmail(String email);
+
     Optional<Account> findByEmail(String email);
+
     Optional<Account> findByUsername(String username);
+
     Optional<Account> findByUsernameOrEmail(String username, String email);
 }

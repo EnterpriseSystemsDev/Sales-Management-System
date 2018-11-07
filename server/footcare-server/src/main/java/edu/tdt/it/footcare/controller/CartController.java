@@ -6,7 +6,7 @@ import edu.tdt.it.footcare.domain.cart.Cart;
 import edu.tdt.it.footcare.payload.transaction.AddToCartRequest;
 import edu.tdt.it.footcare.payload.transaction.CartResponse;
 import edu.tdt.it.footcare.service.CartService;
-import edu.tdt.it.footcare.service.ProductVersionService;
+import edu.tdt.it.footcare.service.ProductService;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -21,7 +21,7 @@ import javax.validation.Valid;
 public class CartController {
 
     private CartService cartService;
-    private ProductVersionService productVersionService;
+    private ProductService productService;
 
     @GetMapping
     @PreAuthorize("hasRole('CUSTOMER')")
@@ -35,7 +35,7 @@ public class CartController {
     @PreAuthorize("hasRole('CUSTOMER')")
     public ResponseEntity<?> addProductToCart(@CurrentUser UserPrincipal currentUser,
                                               @Valid @RequestBody AddToCartRequest request) {
-        if (!productVersionService.existsByVersionId(request.getProductVersionId())) {
+        if (!productService.existById(request.getProductId())) {
             return ResponseEntity.badRequest().body("Khong ton tai san pham");
         }
         Cart cart = cartService.addProduct(currentUser, request);
