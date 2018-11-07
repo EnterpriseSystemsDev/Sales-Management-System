@@ -10,4 +10,5 @@ class ItemDetails extends React.Component {
         );
     }
 }
+
 export default ItemDetails;

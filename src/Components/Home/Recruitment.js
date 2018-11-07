@@ -1,7 +1,7 @@
 import React from "react";
 import img from "../../hinhanh/tuyendung.jpg"
 import {connect} from 'react-redux';
-import  {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 class Recruitment extends React.Component {
@@ -11,29 +11,30 @@ class Recruitment extends React.Component {
         const tinTD = Recruitment.map((item, index) => {
             return (
 
-                    <div className="thumbnail col-md-4"  key={index}>
-                        <div className="tuyendung">
-                            <img src={img} alt="recruimentImage"/>
-                            <div className="box-content">
-                                <h4 style={{color:'white',textAlign:'right',marginTop:'0',
-                                    padding:'12px',backgroundColor:'rgba(0, 0, 0, 0.4)',
-                                    fontStyle:'italic',
-                                }}>
-                                    {item.thoiGian}
-                                </h4>
-                                <div className="inner-content">
-                                    <h3 className="title">{item.viTriTD}</h3>
-                                    <span className="post">
+                <div className="thumbnail col-md-4" key={index}>
+                    <div className="tuyendung">
+                        <img src={img} alt="recruimentImage"/>
+                        <div className="box-content">
+                            <h4 style={{
+                                color: 'white', textAlign: 'right', marginTop: '0',
+                                padding: '12px', backgroundColor: 'rgba(0, 0, 0, 0.4)',
+                                fontStyle: 'italic',
+                            }}>
+                                {item.thoiGian}
+                            </h4>
+                            <div className="inner-content">
+                                <h3 className="title">{item.viTriTD}</h3>
+                                <span className="post">
                                     <Link to="ChiTietTuyenDung"
                                           className=" btn btn-dark btn-md"
                                           style={{textAlign: 'center'}}
                                     >Xem Chi Tiết
                                     </Link>
                                 </span>
-                                </div>
                             </div>
                         </div>
                     </div>
+                </div>
             );
         });
         return (
@@ -51,10 +52,10 @@ class Recruitment extends React.Component {
     }
 }
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return {
-        Recruitment : state.Recruitment,
+        Recruitment: state.Recruitment,
 
     }
 };
-export default connect(mapStateToProps,null) (Recruitment);
+export default connect(mapStateToProps, null)(Recruitment);

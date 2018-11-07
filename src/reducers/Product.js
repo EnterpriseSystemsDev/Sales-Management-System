@@ -1,10 +1,10 @@
 import * as types from './../constants/ActionTypes'
 
 
-const findIndex = (tasks, id) =>{
+const findIndex = (tasks, id) => {
     let result = -1;
     tasks.forEach((task, index) => {
-        if(task.id === id){
+        if (task.id === id) {
             result = index;
         }
     });
@@ -12,13 +12,12 @@ const findIndex = (tasks, id) =>{
 };
 
 
+let initialState = [];
 
-let initialState =  [];
-
-let myReducer = (state= initialState, action) => {
+let myReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.LIST_ALL:
-            state =action.tasks;
+            state = action.tasks;
             console.log(state)
             return state;
         case types.ADD_PRODUCT:
@@ -48,12 +47,13 @@ let myReducer = (state= initialState, action) => {
 
         case types.DELETE_PRODUCT:
             let id = action.id;
-            let index = findIndex(state,id);
+            let index = findIndex(state, id);
             state.splice(index, 1);
             //localStorage.setItem('tasks', JSON.stringify(state));
             return [...state];
 
-        default : return state;
+        default :
+            return state;
     }
 };
 export default myReducer;

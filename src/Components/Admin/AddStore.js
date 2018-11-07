@@ -1,61 +1,61 @@
 import React from "react";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
+
 class AddStore extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             id: '',
             store: '',
-            nameProduct:'',
-            version:'',
-            soluong:'',
-            size:'',
-
+            nameProduct: '',
+            version: '',
+            soluong: '',
+            size: '',
         }
     }
 
-    onChange = (event) =>{
+    onChange = (event) => {
         let target = event.target;
         let name = target.name;
         let value;
-        if(target.type === 'checkbox'){
+        if (target.type === 'checkbox') {
             value = target.checked;
         }
-        else if (target.type === 'file' && event.target.files[0]){
-            value  = target.value;
+        else if (target.type === 'file' && event.target.files[0]) {
+            value = target.value;
         }
         else {
             value = target.value;
         }
         this.setState({
-            [name] : value,
+            [name]: value,
         });
     };
 
-    onClear = () =>{
+    onClear = () => {
         this.setState({
             id: '',
             store: '',
-            brand:'',
-            version:'',
-            soluong:'',
-            size:''
+            brand: '',
+            version: '',
+            soluong: '',
+            size: ''
 
         });
     };
 
-    closeForm = () =>{
+    closeForm = () => {
         this.props.closeForm();
     };
-    onSubmit = (event) =>{
+    onSubmit = (event) => {
         event.preventDefault();
         let store = {
-            id : this.state.id,
-            nameProduct : this.state.nameProduct,
-            size : this.state.size,
-            soluong : this.state.soluong,
-            store : this.state.store,
+            id: this.state.id,
+            nameProduct: this.state.nameProduct,
+            size: this.state.size,
+            soluong: this.state.soluong,
+            store: this.state.store,
             version: this.state.version,
         };
         this.props.addProductInStore(store);
@@ -82,14 +82,15 @@ class AddStore extends React.Component {
             return (
                 <option key={index} value={task.version}>
                     {task.version}
-                    </option>
+                </option>
             );
         });
+
         return (
             <div className={!this.state.id ? 'panel panel-success' : 'panel panel-danger'}>
                 <div className="panel-heading">
                     <h2 className="panel-title">
-                        { !this.state.id ? 'Thêm Sản Phẩm Vào Store' : 'Cập Nhật Sản Phẩm'}
+                        {!this.state.id ? 'Thêm Sản Phẩm Vào Store' : 'Cập Nhật Sản Phẩm'}
                     </h2>
                 </div>
 
@@ -103,7 +104,7 @@ class AddStore extends React.Component {
                             value={this.state.store}
                             onChange={this.onChange}
                         >
-                            <option defaultValue="0" >Chọn Store:</option>
+                            <option defaultValue="0">Chọn Store:</option>
                             <option value="Hồ Chí Minh">Tp. Hồ Chí Minh</option>
                             <option value="Hà Nội">Hà Nội</option>
                         </select>
@@ -118,7 +119,7 @@ class AddStore extends React.Component {
                             value={this.state.nameProduct}
                             onChange={this.onChange}
                         >
-                            <option defaultValue="0" >Chọn Sản Phẩm:</option>
+                            <option defaultValue="0">Chọn Sản Phẩm:</option>
                             {option}
                         </select>
                     </div>
@@ -131,7 +132,7 @@ class AddStore extends React.Component {
                             value={this.state.version}
                             onChange={this.onChange}
                         >
-                            <option defaultValue="0" >Chọn Version:</option>
+                            <option defaultValue="0">Chọn Version:</option>
                             {store}
                         </select>
                     </div>
@@ -139,21 +140,21 @@ class AddStore extends React.Component {
 
                     <div className="form-group col-md-6">
                         <label>Size:</label>
-                            <select
-                                className="form-control"
-                                name="size"
-                                required
-                                value={this.state.size}
-                                onChange={this.onChange}
-                            >
-                                <option defaultValue="0" >Chọn Size:</option>
-                                <option value="38">38</option>
-                                <option value="39">39</option>
-                                <option value="40">40</option>
-                                <option value="41">41</option>
-                                <option value="42">42</option>
-                                <option value="43">43</option>
-                            </select>
+                        <select
+                            className="form-control"
+                            name="size"
+                            required
+                            value={this.state.size}
+                            onChange={this.onChange}
+                        >
+                            <option defaultValue="0">Chọn Size:</option>
+                            <option value="38">38</option>
+                            <option value="39">39</option>
+                            <option value="40">40</option>
+                            <option value="41">41</option>
+                            <option value="42">42</option>
+                            <option value="43">43</option>
+                        </select>
                     </div>
                     <div className="form-group col-md-6">
                         <label>Số lượng:</label>
@@ -169,43 +170,41 @@ class AddStore extends React.Component {
                     </div>
 
                     <div className="form-group col-md-6">
-                        <button id="btnCheck" type="submit" className="btn btn-success "> Lưu </button>
+                        <button id="btnCheck" type="submit" className="btn btn-success "> Lưu</button>
                     </div>
 
                 </form>
             </div>
-
         );
-
     }
-
 }
 
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return {
-        tasks : state.tasks,
-        editProduct : state.editProduct,
-        displayForm:state.displayForm,
+        tasks: state.tasks,
+        editProduct: state.editProduct,
+        displayForm: state.displayForm,
         Version: state.Version,
-        Store : state.Store
+        Store: state.Store
     }
 };
+
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        addProductInStore : (store) => {
+        addProductInStore: (store) => {
             dispatch(actions.addProductsInStoreRequest(store))
         },
-        closeForm : () =>{
+        closeForm: () => {
             dispatch(actions.closeForm())
         },
-        listProductAllStore : () =>{
+        listProductAllStore: () => {
             dispatch(actions.listAllProductRequest());
         }
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps) (AddStore);
+export default connect(mapStateToProps, mapDispatchToProps)(AddStore);
 
 
 

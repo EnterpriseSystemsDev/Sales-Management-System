@@ -2,9 +2,10 @@ import React from "react";
 import './Register.css'
 import Header from "../Home/Header";
 import $ from "jquery"
+
 class Register extends React.Component {
 
-    componentDidMount(){
+    componentDidMount() {
         document.title = "Đăng Ký";
         $(document).ready(function () {
             $("#register").click(function () {
@@ -37,64 +38,71 @@ class Register extends React.Component {
     render() {
         return (
             <div className="body">
-            <Header/>
-            <div className="container register">
-                <h2>Đăng ký</h2>
-                <br />
-                <form className="form-horizontal">
-                    <div className="form-group">
-                        <label className="control-label col-sm-3" htmlFor="text">Tên Đăng Nhập<span className="notnull">*</span>:</label>
-                        <div className="col-sm-6">
-                            <input type="text" className="form-control" placeholder="Tên Đăng Nhập" id="name" />
+                <Header/>
+                <div className="container register">
+                    <h2>Đăng ký</h2>
+                    <br/>
+                    <form className="form-horizontal">
+                        <div className="form-group">
+                            <label className="control-label col-sm-3" htmlFor="text">Tên Đăng Nhập<span
+                                className="notnull">*</span>:</label>
+                            <div className="col-sm-6">
+                                <input type="text" className="form-control" placeholder="Tên Đăng Nhập" id="name"/>
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <label className="control-label col-sm-3" htmlFor="email">Email<span className="notnull">*</span>:</label>
-                        <div className="col-sm-6">
-                            <input type="email" className="form-control" placeholder="Nhập email" id="email" />
+                        <div className="form-group">
+                            <label className="control-label col-sm-3" htmlFor="email">Email<span
+                                className="notnull">*</span>:</label>
+                            <div className="col-sm-6">
+                                <input type="email" className="form-control" placeholder="Nhập email" id="email"/>
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <label className="control-label col-sm-3" htmlFor="pwd">Password<span className="notnull">*</span>:</label>
-                        <div className="col-sm-6">
-                            <input type="password" className="form-control" placeholder="Nhập password" id="pwd" />
+                        <div className="form-group">
+                            <label className="control-label col-sm-3" htmlFor="pwd">Password<span
+                                className="notnull">*</span>:</label>
+                            <div className="col-sm-6">
+                                <input type="password" className="form-control" placeholder="Nhập password" id="pwd"/>
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <label className="control-label col-sm-3" htmlFor="pwd">Nhập lại Password<span className="notnull">*</span>:</label>
-                        <div className="col-sm-6">
-                            <input type="password" className="form-control" placeholder="Nhập lại password" id="pwd1" />
+                        <div className="form-group">
+                            <label className="control-label col-sm-3" htmlFor="pwd">Nhập lại Password<span
+                                className="notnull">*</span>:</label>
+                            <div className="col-sm-6">
+                                <input type="password" className="form-control" placeholder="Nhập lại password"
+                                       id="pwd1"/>
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <label className="control-label col-sm-3">Địa chỉ:</label>
-                        <div className="col-sm-6">
-                            <input type="text" className="form-control" placeholder="Nhập Địa chỉ" />
+                        <div className="form-group">
+                            <label className="control-label col-sm-3">Địa chỉ:</label>
+                            <div className="col-sm-6">
+                                <input type="text" className="form-control" placeholder="Nhập Địa chỉ"/>
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <label className="control-label col-sm-3">Số Điện Thoại:</label>
-                        <div className="col-sm-6">
-                            <input type="text" className="form-control" placeholder="Nhập Số Điện Thoại" />
+                        <div className="form-group">
+                            <label className="control-label col-sm-3">Số Điện Thoại:</label>
+                            <div className="col-sm-6">
+                                <input type="text" className="form-control" placeholder="Nhập Số Điện Thoại"/>
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <label className="control-label col-sm-3">Giới Tính:</label>
-                        <div className="col-sm-6">
-                            <select className="form-control">
-                                <option>Chọn Giới Tính</option>
-                                <option>Nam</option>
-                                <option>Nữ</option>
-                            </select>
+                        <div className="form-group">
+                            <label className="control-label col-sm-3">Giới Tính:</label>
+                            <div className="col-sm-6">
+                                <select className="form-control">
+                                    <option>Chọn Giới Tính</option>
+                                    <option>Nam</option>
+                                    <option>Nữ</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group">
-                        <div className="col-sm-offset-7 col-sm-8">
-                            <button id="register" type="submit" className="btn btn-default" style={{marginBottom: '5%'}}>Đăng Ký</button>
+                        <div className="form-group">
+                            <div className="col-sm-offset-7 col-sm-8">
+                                <button id="register" type="submit" className="btn btn-default"
+                                        style={{marginBottom: '5%'}}>Đăng Ký
+                                </button>
+                            </div>
                         </div>
-                    </div>
-                </form>
-            </div>
+                    </form>
+                </div>
             </div>
         );
     }

@@ -1,64 +1,66 @@
 import React from "react";
 import SearchInfo from "./SearchInfo";
-import  {Link, Route} from 'react-router-dom';
+import {Link, Route} from 'react-router-dom';
 
 
-const menus =[
+const menus = [
     {
-        brand : 'Jordan',
-        to :'/product/Jordan',
-        exact : true
+        brand: 'Jordan',
+        to: '/product/Jordan',
+        exact: true
     },
     {
-        brand : 'Yeezy',
-        to :'/product/Yeezy',
-        exact : true
+        brand: 'Yeezy',
+        to: '/product/Yeezy',
+        exact: true
     },
     {
-        brand : 'Nike',
-        to :'/product/Nike',
-        exact : true
+        brand: 'Nike',
+        to: '/product/Nike',
+        exact: true
     },
     {
-        brand : 'Adidas',
-        to :'/product/Adidas',
-        exact : true
+        brand: 'Adidas',
+        to: '/product/Adidas',
+        exact: true
     },
     {
-        brand : 'RickOwens',
-        to :'/product/RickOwens',
-        exact : true
+        brand: 'RickOwens',
+        to: '/product/RickOwens',
+        exact: true
     },
     {
-        brand : 'Phụ Kiện',
-        to :'/product/phukien',
-        exact : true
+        brand: 'Phụ Kiện',
+        to: '/product/phukien',
+        exact: true
     },
 
 ];
 
-    const MenuLink = ({label , to , exact}) =>{
-        return(
-            <Route
-                path ={to}
-                exact = {exact}
-                children = {({match}) =>{
-                    let active = match ? 'custom' : '' ;
-                    return(
-                        <li className={active}>
-                            <Link to={to}>{label}</Link>
-                        </li>
-                    )
-                }}
-            />
-        )
-    };
+const MenuLink = ({label, to, exact}) => {
+    return (
+        <Route
+            path={to}
+            exact={exact}
+            children={({match}) => {
+                let active = match ? 'custom' : '';
+                return (
+                    <li className={active}>
+                        <Link to={to}>{label}</Link>
+                    </li>
+                )
+            }}
+        />
+    )
+};
+
 class Navbar extends React.Component {
 
 
     render() {
         return (
-            <nav  className="fixme container-fluid active" style={{fontFamily: 'sans-serif', width: '100%',zIndex:'100'}}>
+            <nav className="fixme container-fluid active"
+                 style={{fontFamily: 'sans-serif', width: '100%', zIndex: '100'}}>
                 <div className=" navbar-collapse" id="myNavbar">
                     <ul id="jordan3" className="nav navbar-nav active " role="navigation">
                         {/*<li><Link to="/Jordan">Jordan</Link></li>*/}
@@ -82,15 +84,16 @@ class Navbar extends React.Component {
             </nav>
         );
     }
-    showMenu = (menus) =>{
+
+    showMenu = (menus) => {
         let result = null;
-        if(menus.length > 0 ){
-            result = menus.map((menu, index) =>{
-                return(
+        if (menus.length > 0) {
+            result = menus.map((menu, index) => {
+                return (
                     <MenuLink
-                        key = {index}
-                        label = {menu.brand}
-                        to = {menu.to}
+                        key={index}
+                        label={menu.brand}
+                        to={menu.to}
                         exact={menu.exact}
                     />
                 )

@@ -7,7 +7,7 @@ import CartItems from "./CartItems";
 
 class Cart extends React.Component {
 
-    componentWillMount(){
+    componentWillMount() {
         document.title = "Giỏ Hàng";
         $(document).ready(function () {
             var taxRate = 0.05;
@@ -72,14 +72,15 @@ class Cart extends React.Component {
 
         });
     };
-    checkOut = () =>{
-      alert('Mua hàng thành công');
+
+    checkOut = () => {
+        alert('Mua hàng thành công');
     };
 
-    buttonCheckOut = () =>{
+    buttonCheckOut = () => {
         let {Cart} = this.props;
-        if(Cart.length === 0){
-            return  <h3 >Chưa có Sản Phẩm Trong Giỏ Hàng</h3>
+        if (Cart.length === 0) {
+            return <h3>Chưa có Sản Phẩm Trong Giỏ Hàng</h3>
         }
         else {
             return <button className="checkout" onClick={this.checkOut}>Thanh Toán</button>
@@ -89,60 +90,60 @@ class Cart extends React.Component {
 
     render() {
         let {Cart} = this.props;
-        const listCart = Cart.map((item, index)  => {
-                return (
-                    <div key={index}>
-                        <CartItems
-                            key ={index}
-                            id ={item.id}
-                            name ={item.tensp}
-                            image ={item.hinhanh}
-                            price = {item.gia}
-                            brand = {item.brand}
-                            mota ={item.mota}
-                            size = {item.size}
-                            sale ={item.Sale}
-                            isSale = {item.isSale}
-                            isHot = {item.isHot}
-                            item ={item}
-                        />
-                    </div>
-                );
+        const listCart = Cart.map((item, index) => {
+            return (
+                <div key={index}>
+                    <CartItems
+                        key={index}
+                        id={item.id}
+                        name={item.tensp}
+                        image={item.hinhanh}
+                        price={item.gia}
+                        brand={item.brand}
+                        mota={item.mota}
+                        size={item.size}
+                        sale={item.Sale}
+                        isSale={item.isSale}
+                        isHot={item.isHot}
+                        item={item}
+                    />
+                </div>
+            );
         });
         return (
             <div>
                 <Header/>
                 <br/><br/><br/>
                 <Navbar/>
-            <div className="container">
-                <div className="shopping-cart col-md-11">
-                    <div className="column-labels">
-                        <label className="product-image">Image</label>
-                        <label className="product-details">Product</label>
-                        <label className="product-price">Giá</label>
-                        <label className="product-quantity">Số Lượng</label>
-                        <label className="product-removal">Remove</label>
-                        <label className="product-line-price">Tổng</label>
-                    </div>
+                <div className="container">
+                    <div className="shopping-cart col-md-11">
+                        <div className="column-labels">
+                            <label className="product-image">Image</label>
+                            <label className="product-details">Product</label>
+                            <label className="product-price">Giá</label>
+                            <label className="product-quantity">Số Lượng</label>
+                            <label className="product-removal">Remove</label>
+                            <label className="product-line-price">Tổng</label>
+                        </div>
                         {listCart}
-                    <div className="totals">
-                        <div className="totals-item">
-                            <label>Tổng </label>
-                            <div className="totals-value" id="cart-subtotal"> </div>
+                        <div className="totals">
+                            <div className="totals-item">
+                                <label>Tổng </label>
+                                <div className="totals-value" id="cart-subtotal"></div>
+                            </div>
+                            <div className="totals-item">
+                                <label>Thuế (5%)</label>
+                                <div className="totals-value" id="cart-tax"></div>
+                            </div>
+                            <div className="totals-item totals-item-total">
+                                <label>Tổng Tiền</label>
+                                <div className="totals-value" id="cart-total"></div>
+                            </div>
                         </div>
-                        <div className="totals-item">
-                            <label>Thuế (5%)</label>
-                            <div className="totals-value" id="cart-tax"> </div>
-                        </div>
-                        <div className="totals-item totals-item-total">
-                            <label>Tổng Tiền</label>
-                            <div className="totals-value" id="cart-total"> </div>
-                        </div>
+                        {this.buttonCheckOut()}
+                        <br/><br/>
                     </div>
-                    {this.buttonCheckOut()}
-                    <br/><br/>
                 </div>
-            </div>
                 <br/><br/>
             </div>
         );
@@ -151,7 +152,7 @@ class Cart extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        Cart : state.Cart,
+        Cart: state.Cart,
     }
 };
-export default connect(mapStateToProps,null) (Cart);
+export default connect(mapStateToProps, null)(Cart);

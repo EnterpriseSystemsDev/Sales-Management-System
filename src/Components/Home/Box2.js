@@ -7,8 +7,6 @@ import * as actions from "../../actions";
 import connect from "react-redux/es/connect/connect";
 
 
-
-
 class Box2 extends React.Component {
 
     render() {
@@ -28,13 +26,13 @@ class Box2 extends React.Component {
         return (
             <div id="box2" className=" container-fluid">
 
-                <MySlides />
+                <MySlides/>
                 <hr/>
                 <div className="container">
 
-                    <ItemsHot />
+                    <ItemsHot/>
                     <br/>
-                    <ItemsSale />
+                    <ItemsSale/>
                 </div>
                 <br/>
             </div>
@@ -42,24 +40,25 @@ class Box2 extends React.Component {
         );
     }
 }
-const mapStateToProps = state =>{
+
+const mapStateToProps = state => {
     return {
         keyword: state.SearchProduct,
         tasks: state.tasks,
-        FilterTable : state.FilterTable,
+        FilterTable: state.FilterTable,
     }
 
 };
 const mapDispatchToProps = (dispatch, props) => {
-    return{
-        onFilterTable: (filter) =>{
+    return {
+        onFilterTable: (filter) => {
             dispatch(actions.filterTable(filter));
         },
-        onSearchProduct : (keyword) =>{
+        onSearchProduct: (keyword) => {
             dispatch(actions.searchProduct(keyword));
         }
     };
 
 };
 
-export default connect(mapStateToProps,mapDispatchToProps)(Box2) ;
+export default connect(mapStateToProps, mapDispatchToProps)(Box2);

@@ -4,31 +4,31 @@ import connect from "react-redux/es/connect/connect";
 
 
 class Product extends React.Component {
-    onClear = () =>{
+    onClear = () => {
         this.setState({
             id: '',
-            tensp : '',
-            brand : '',
-            gia : '',
-            size : '',
-            mota : '',
-            hinhanh : '',
-            Sale:'',
-            isHot:false,
-            isSale:false,
+            tensp: '',
+            brand: '',
+            gia: '',
+            size: '',
+            mota: '',
+            hinhanh: '',
+            Sale: '',
+            isHot: false,
+            isSale: false,
         });
     };
-    closeForm = () =>{
+    closeForm = () => {
         this.props.closeForm();
     };
-    onEdit = () =>{
+    onEdit = () => {
         this.props.openFormEditVersion();
         this.props.onEditVersion(this.props.task);
         this.onClear();
     };
 
-    onDelete = (id) =>{
-        if(confirm('Bạn Muốn Xóa sản phẩm ?')){  //eslint-disable-line
+    onDelete = (id) => {
+        if (confirm('Bạn Muốn Xóa sản phẩm ?')) {  //eslint-disable-line
             this.props.onDeleteVersion(id);
         }
 
@@ -37,46 +37,48 @@ class Product extends React.Component {
     };
 
     render() {
-        let {task , index} = this.props;
+        let {task, index} = this.props;
         let img = task.hinhanh.slice(12);
-            return (
-                <tr key ={index}>
-                    <td>{index + 1}</td>
-                    <td>{task.nameProduct}</td>
-                    <td>{task.version}</td>
-                    <td>{task.gia}$</td>
-                    <td>{task.size}</td>
-                    <td>{img}</td>
-                    <td>
-                        <button onClick={() => this.onEdit(task.id)} type="button" className="btn btn-warning">
-                            Sửa
-                        </button>
-                        <button onClick={() =>this.onDelete(task.id) } type="button" className="btn btn-danger" style={{marginLeft: 10}}>
-                            Xóa
-                        </button>
-                    </td>
-                </tr>
-            );
+        return (
+            <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{task.nameProduct}</td>
+                <td>{task.version}</td>
+                <td>{task.gia}$</td>
+                <td>{task.size}</td>
+                <td>{img}</td>
+                <td>
+                    <button onClick={() => this.onEdit(task.id)} type="button" className="btn btn-warning">
+                        Sửa
+                    </button>
+                    <button onClick={() => this.onDelete(task.id)} type="button" className="btn btn-danger"
+                            style={{marginLeft: 10}}>
+                        Xóa
+                    </button>
+                </td>
+            </tr>
+        );
 
 
+    }
 }
-}
+
 const mapDispatchToProps = (dispatch, props) => {
-    return{
-        onDeleteVersion : (id) => {
+    return {
+        onDeleteVersion: (id) => {
             dispatch(actions.deleteVersionRequest(id));
         },
-        onUpDateForm : () => {
+        onUpDateForm: () => {
             dispatch(actions.updateForm());
         },
 
-        onEditVersion: (version) =>{
+        onEditVersion: (version) => {
             dispatch(actions.editVersion(version));
         },
-        closeForm : () =>{
+        closeForm: () => {
             dispatch(actions.closeForm())
         },
-        openFormEditVersion : () => {
+        openFormEditVersion: () => {
             dispatch(actions.openFormEditVersion());
         },
 
@@ -85,7 +87,7 @@ const mapDispatchToProps = (dispatch, props) => {
 
 };
 
-export default connect(null,mapDispatchToProps) (Product);
+export default connect(null, mapDispatchToProps)(Product);
 
 
 

@@ -1,41 +1,42 @@
 import React from "react";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
+
 class FormBill extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             tensp: '',
-            gia:'',
+            gia: '',
             size: '',
             tenkh: '',
             diaChi: '',
-            ngayMua:  '',
-            maTichDiem:  '',
+            ngayMua: '',
+            maTichDiem: '',
         }
     }
 
-    onChange = (event) =>{
+    onChange = (event) => {
         //ep true false tại đây
         this.setState({
-            [event.target.name] : event.target.value
+            [event.target.name]: event.target.value
         });
     };
 
-    onClear = () =>{
+    onClear = () => {
         this.setState({
             tensp: '',
-            gia:'',
+            gia: '',
             size: '',
             tenkh: '',
             diaChi: '',
-            ngayMua:  '',
-            maTichDiem:  '',
+            ngayMua: '',
+            maTichDiem: '',
 
         });
     };
 
-    onSubmit = (event) =>{
+    onSubmit = (event) => {
         event.preventDefault();
         this.props.ADDFORMBILL(this.state);
         //xoa data
@@ -90,7 +91,7 @@ class FormBill extends React.Component {
                             value={this.state.size}
                             onChange={this.onChange}
                         >
-                            <option defaultValue="0" >Chọn Size:</option>
+                            <option defaultValue="0">Chọn Size:</option>
                             <option value="38">38</option>
                             <option value="39">39</option>
                             <option value="40">40</option>
@@ -131,8 +132,8 @@ class FormBill extends React.Component {
                         />
                     </div>
                     <div className="form-group col-md-3">
-                       <br/>
-                        <button  type="submit" className="form-control btn btn-info" > Tạo</button>
+                        <br/>
+                        <button type="submit" className="form-control btn btn-info"> Tạo</button>
                     </div>
 
 
@@ -142,21 +143,22 @@ class FormBill extends React.Component {
         );
     }
 }
-const mapStateToProps = state =>{
+
+const mapStateToProps = state => {
     return {
-        Bill : state.Bill,
+        Bill: state.Bill,
 
     }
 };
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        ADDFORMBILL : (task) => {
+        ADDFORMBILL: (task) => {
             dispatch(actions.addFormHD(task))
         }
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps) (FormBill);
+export default connect(mapStateToProps, mapDispatchToProps)(FormBill);
 
 
 

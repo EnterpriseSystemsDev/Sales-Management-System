@@ -8,17 +8,17 @@ import * as actions from "../../actions";
 
 
 class ManagementEmployee extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            id:'',
-            hoTen:'',
+            id: '',
+            hoTen: '',
             gioiTinh: '',
             namSinh: '',
-            queQuan:  '',
-            viTri:'',
-            luong:'',
-            userName:'',
+            queQuan: '',
+            viTri: '',
+            luong: '',
+            userName: '',
             passWord: ''
 
         }
@@ -26,21 +26,21 @@ class ManagementEmployee extends React.Component {
 
     themNV = () => {
         //let {editEmployees} = this.props;
-         // if(editEmployees && editEmployees.id !== ''){
-         //    this.props.openFormWhenEdit();
-         // }else {
-            this.props.openForm();
-            this.props.closeFormRecruitment();
+        // if(editEmployees && editEmployees.id !== ''){
+        //    this.props.openFormWhenEdit();
+        // }else {
+        this.props.openForm();
+        this.props.closeFormRecruitment();
         //}
         this.props.editEmployees({
-            id:'',
-            hoTen:'',
+            id: '',
+            hoTen: '',
             gioiTinh: '',
             namSinh: '',
-            queQuan:  '',
-            viTri:'',
-            luong:'',
-            userName:'',
+            queQuan: '',
+            viTri: '',
+            luong: '',
+            userName: '',
             passWord: ''
         });
     };
@@ -52,35 +52,41 @@ class ManagementEmployee extends React.Component {
             id: '',
             tieuDe: '',
             viTriTD: '',
-            luongTD:  '',
-            soLuong:  '',
+            luongTD: '',
+            soLuong: '',
             thoiGian: '',
-            deadLine:  '',
-            moTaTD:  '',
+            deadLine: '',
+            moTaTD: '',
         });
     };
 
     render() {
-        let {FormEmployee,displayForm} = this.props;
+        let {FormEmployee, displayForm} = this.props;
         let themNV = displayForm ? <ThemNV/> : '';
-        let themTD = FormEmployee === true? <TuyenDung/> : '';
+        let themTD = FormEmployee === true ? <TuyenDung/> : '';
         return (
-                <div>
-                    <div className="btn-group">
-                    <button className="btn btn-success"  style={{marginBottom: '15px',borderRadius: '10px'}} onClick={this.themNV}>Thêm Nhân Viên</button>
-                        <button className="btn btn-info"  style={{marginBottom: '15px',borderRadius: '10px',marginLeft: '5px'}} onClick={this.themTD}>Tuyển Dụng</button>
-                    </div>
-                    <br/>
-                    {themNV}
-                    {themTD}
-                    <DanhSachNV/>
-                    <DanhSachTD/>
+            <div>
+                <div className="btn-group">
+                    <button className="btn btn-success" style={{marginBottom: '15px', borderRadius: '10px'}}
+                            onClick={this.themNV}>Thêm Nhân Viên
+                    </button>
+                    <button className="btn btn-info"
+                            style={{marginBottom: '15px', borderRadius: '10px', marginLeft: '5px'}}
+                            onClick={this.themTD}>Tuyển Dụng
+                    </button>
                 </div>
+                <br/>
+                {themNV}
+                {themTD}
+                <DanhSachNV/>
+                <DanhSachTD/>
+            </div>
         );
     }
 }
-const mapStateToProps = state =>{
-    return{
+
+const mapStateToProps = state => {
+    return {
         displayForm: state.displayForm,
         editProduct: state.editProduct,
         EditEmployee: state.EditEmployee,
@@ -89,36 +95,36 @@ const mapStateToProps = state =>{
 };
 
 const mapDispatchToProps = (dispatch, props) => {
-    return{
-        editEmployees : (task) =>{
+    return {
+        editEmployees: (task) => {
             dispatch(actions.editEmployee(task))
         },
-        editRecruitment : (task) =>{
+        editRecruitment: (task) => {
             dispatch(actions.editRecruitment(task))
         },
 
-        closeForm : () =>{
+        closeForm: () => {
             dispatch(actions.closeForm())
         },
-        openForm : () =>{
+        openForm: () => {
             dispatch(actions.openForm());
         },
-        updateFormEmployee : () =>{
+        updateFormEmployee: () => {
             dispatch(actions.updateFormEmployee())
         },
-        openFormWhenEdit : () =>{
+        openFormWhenEdit: () => {
             dispatch(actions.openFormWhenEdit())
         },
-        openFormRecruitment : () =>{
+        openFormRecruitment: () => {
             dispatch(actions.openFormRecruitment())
         },
-        closeFormRecruitment : () =>{
+        closeFormRecruitment: () => {
             dispatch(actions.closeFormRecruitment())
         },
     };
 
 };
-export default connect(mapStateToProps,mapDispatchToProps)(ManagementEmployee);
+export default connect(mapStateToProps, mapDispatchToProps)(ManagementEmployee);
 
 
 

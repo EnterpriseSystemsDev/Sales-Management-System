@@ -2,80 +2,81 @@ import React from "react";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
 import callApi from "../../utils/apiCall";
+
 class Version extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             id: '',
-            gia : '',
-            size : '',
-            mota : '',
-            hinhanh : '',
-            Sale:'',
-            version:'',
-            nameProduct:'',
-            isHot:false,
-            isSale:false,
+            gia: '',
+            size: '',
+            mota: '',
+            hinhanh: '',
+            Sale: '',
+            version: '',
+            nameProduct: '',
+            isHot: false,
+            isSale: false,
             tasks: []
         }
     }
 
-    onChange = (event) =>{
+    onChange = (event) => {
         let target = event.target;
         let name = target.name;
         let value;
-        if(target.type === 'checkbox'){
+        if (target.type === 'checkbox') {
             value = target.checked;
         }
-        else if (target.type === 'file' && event.target.files[0]){
-            value  = target.value;
+        else if (target.type === 'file' && event.target.files[0]) {
+            value = target.value;
         }
         else {
             value = target.value;
         }
         this.setState({
-            [name] : value,
+            [name]: value,
         });
     };
 
-    onClear = () =>{
+    onClear = () => {
         this.setState({
             id: '',
-            version:'',
-            nameProduct : '',
-            gia : '',
-            size : '',
-            mota : '',
-            hinhanh : '',
-            Sale:'',
-            isHot:false,
-            isSale:false,
+            version: '',
+            nameProduct: '',
+            gia: '',
+            size: '',
+            mota: '',
+            hinhanh: '',
+            Sale: '',
+            isHot: false,
+            isSale: false,
         });
     };
 
-    closeForm = () =>{
+    closeForm = () => {
         this.props.closeForm();
     };
 
-    onSubmit = (event) =>{
+    onSubmit = (event) => {
         event.preventDefault();
         let version = {
-            id : this.state.id,
-            version:this.state.version,
-            nameProduct : this.state.nameProduct,
-            Sale : this.state.Sale,
-            gia : this.state.gia,
-            size : this.state.size,
-            mota : this.state.mota,
-            hinhanh : this.state.hinhanh,
+            id: this.state.id,
+            version: this.state.version,
+            nameProduct: this.state.nameProduct,
+            Sale: this.state.Sale,
+            gia: this.state.gia,
+            size: this.state.size,
+            mota: this.state.mota,
+            hinhanh: this.state.hinhanh,
             isHot: this.state.isHot,
-            isSale : this.state.isSale,
+            isSale: this.state.isSale,
         };
-        if(this.state.id){
-           this.props.onUpdateVersion(version);
+        if (this.state.id) {
+            this.props.onUpdateVersion(version);
             this.onClear();
             this.closeForm();
-        }else {
+        } else {
             this.props.addVersion(version);
             this.onClear();
             this.closeForm();
@@ -85,19 +86,19 @@ class Version extends React.Component {
         this.closeForm();
     };
 
-    componentWillMount(){
-        if(this.props.EditVersion && this.props.EditVersion.id !== null){
+    componentWillMount() {
+        if (this.props.EditVersion && this.props.EditVersion.id !== null) {
             this.setState({
                 id: this.props.EditVersion.id,
-                version : this.props.EditVersion.version,
-                nameProduct : this.props.EditVersion.nameProduct,
-                gia : this.props.EditVersion.gia,
-                size : this.props.EditVersion.size,
-                mota : this.props.EditVersion.mota,
-                hinhanh : this.props.editProduct.hinhanh,
-                isHot:this.props.EditVersion.isHot ,
-                isSale:this.props.EditVersion.isSale ,
-                Sale:this.props.EditVersion.Sale,
+                version: this.props.EditVersion.version,
+                nameProduct: this.props.EditVersion.nameProduct,
+                gia: this.props.EditVersion.gia,
+                size: this.props.EditVersion.size,
+                mota: this.props.EditVersion.mota,
+                hinhanh: this.props.editProduct.hinhanh,
+                isHot: this.props.EditVersion.isHot,
+                isSale: this.props.EditVersion.isSale,
+                Sale: this.props.EditVersion.Sale,
 
             });
         }
@@ -106,19 +107,19 @@ class Version extends React.Component {
         }
     };
 
-    componentWillReceiveProps(nextProps){
-        if(nextProps && nextProps.editProduct){
+    componentWillReceiveProps(nextProps) {
+        if (nextProps && nextProps.editProduct) {
             this.setState({
                 id: nextProps.EditVersion.id,
-                nameProduct :nextProps.EditVersion.nameProduct,
-                version : nextProps.EditVersion.version,
-                gia : nextProps.EditVersion.gia,
-                size : nextProps.EditVersion.size,
-                mota : nextProps.EditVersion.mota,
-                hinhanh : nextProps.editProduct.hinhanh,
-                Sale:nextProps.EditVersion.Sale,
-                isHot:nextProps.EditVersion.isHot,
-                isSale:nextProps.EditVersion.isSale,
+                nameProduct: nextProps.EditVersion.nameProduct,
+                version: nextProps.EditVersion.version,
+                gia: nextProps.EditVersion.gia,
+                size: nextProps.EditVersion.size,
+                mota: nextProps.EditVersion.mota,
+                hinhanh: nextProps.editProduct.hinhanh,
+                Sale: nextProps.EditVersion.Sale,
+                isHot: nextProps.EditVersion.isHot,
+                isSale: nextProps.EditVersion.isSale,
             });
         }
         else {
@@ -126,12 +127,12 @@ class Version extends React.Component {
         }
     };
 
-    componentDidMount(){
-        callApi('products', 'GET', null).then(res =>{
-            this.setState ({
-                tasks : res.data,
+    componentDidMount() {
+        callApi('products', 'GET', null).then(res => {
+            this.setState({
+                tasks: res.data,
             });
-           // console.log(res.data)
+            // console.log(res.data)
         });
 
     }
@@ -147,7 +148,7 @@ class Version extends React.Component {
             <div className={!this.state.id ? 'panel panel-info' : 'panel panel-danger'}>
                 <div className="panel-heading">
                     <h2 className="panel-title">
-                        { !this.state.id ? 'Thêm Version' : 'Cập Nhật Sản Phẩm'}
+                        {!this.state.id ? 'Thêm Version' : 'Cập Nhật Sản Phẩm'}
                     </h2>
                 </div>
 
@@ -172,7 +173,7 @@ class Version extends React.Component {
                             value={this.state.nameProduct}
                             onChange={this.onChange}
                         >
-                            <option defaultValue="0" >Chọn Sản Phẩm:</option>
+                            <option defaultValue="0">Chọn Sản Phẩm:</option>
                             {option}
                         </select>
                     </div>
@@ -197,7 +198,7 @@ class Version extends React.Component {
                             value={this.state.size}
                             onChange={this.onChange}
                         >
-                            <option defaultValue="0" >Chọn Size:</option>
+                            <option defaultValue="0">Chọn Size:</option>
                             <option value="38">38</option>
                             <option value="39">39</option>
                             <option value="40">40</option>
@@ -230,7 +231,7 @@ class Version extends React.Component {
                     </div>
 
                     <div className="form-group col-md-6">
-                        <button id="btnCheck" type="submit" className="btn btn-success "> Lưu </button>
+                        <button id="btnCheck" type="submit" className="btn btn-success "> Lưu</button>
                     </div>
 
                 </form>
@@ -244,35 +245,35 @@ class Version extends React.Component {
 }
 
 
-const mapStateToProps = state =>{
+const mapStateToProps = state => {
     return {
-        tasks : state.tasks,
+        tasks: state.tasks,
         Version: state.Version,
-        editProduct : state.editProduct,
-        displayForm:state.displayForm,
-        EditVersion : state.EditVersion,
+        editProduct: state.editProduct,
+        displayForm: state.displayForm,
+        EditVersion: state.EditVersion,
 
 
     }
 };
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        addProduct : (task) => {
+        addProduct: (task) => {
             dispatch(actions.addProduct(task))
         },
-        addVersion : (version) =>{
+        addVersion: (version) => {
             dispatch(actions.addVersionRequest(version))
         },
-        closeForm : () =>{
+        closeForm: () => {
             dispatch(actions.closeForm())
         },
-        onUpdateVersion : (version) =>{
+        onUpdateVersion: (version) => {
             dispatch(actions.updateVersionRequest(version))
         }
     }
 };
 
-export default connect(mapStateToProps,mapDispatchToProps) (Version);
+export default connect(mapStateToProps, mapDispatchToProps)(Version);
 
 
 

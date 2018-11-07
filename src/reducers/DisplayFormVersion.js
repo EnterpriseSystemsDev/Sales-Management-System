@@ -1,4 +1,5 @@
 import * as types from './../constants/ActionTypes'
+
 let initialState = false;
 let myReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -13,7 +14,8 @@ let myReducer = (state = initialState, action) => {
         // case types.UPDATE_FORM_EMPLOYEE:
         //     return true;
 
-        default : return state;
+        default :
+            return state;
     }
 };
 export default myReducer;

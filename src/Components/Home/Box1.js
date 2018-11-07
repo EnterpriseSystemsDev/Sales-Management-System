@@ -17,4 +17,5 @@ class Box1 extends React.Component {
         );
     }
 }
+
 export default Box1;

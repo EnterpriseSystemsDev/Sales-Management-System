@@ -9,10 +9,10 @@ import * as types from './../constants/ActionTypes'
 // };
 
 
-const findIndex = (tasks, id) =>{
+const findIndex = (tasks, id) => {
     let result = -1;
     tasks.forEach((task, index) => {
-        if(task.id === id){
+        if (task.id === id) {
             result = index;
         }
     });
@@ -20,11 +20,11 @@ const findIndex = (tasks, id) =>{
 };
 
 //let data = JSON.parse(localStorage.getItem('store'));
-let initialState =  [];
-let myReducer = (state= initialState, action) => {
+let initialState = [];
+let myReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.LIST_PRODUCT_IN_STORE:
-            state =action.store;
+            state = action.store;
             return state;
 
         case types.ADD_PRODUCT_IN_STORE:
@@ -53,7 +53,8 @@ let myReducer = (state= initialState, action) => {
         //     localStorage.setItem('version', JSON.stringify(state));
         //     return [...state];
 
-        default : return state;
+        default :
+            return state;
     }
 };
 export default myReducer;

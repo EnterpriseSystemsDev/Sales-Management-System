@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="624b6ffe-f03a-432e-8835-89d6947f15a3" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/StockController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/brand/BrandResponse.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductRequest.java" afterDir="false" />
@@ -68,6 +69,11 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/StoreService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/util/AppConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/util/AppConstants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/util/DataSeeder.java" beforeDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/Components/Home/Cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Components/Home/Cart.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../src/Components/Login/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../src/Components/Login/Login.js" afterDir="false" />
+>>>>>>> dev-login
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -109,7 +115,12 @@
           <entry key="class" value="16" />
           <entry key="fxml" value="1" />
           <entry key="iml" value="1" />
+<<<<<<< HEAD
           <entry key="java" value="1299" />
+=======
+          <entry key="java" value="1055" />
+          <entry key="js" value="2" />
+>>>>>>> dev-login
           <entry key="mvnw" value="1" />
           <entry key="properties" value="20" />
           <entry key="xml" value="8" />
@@ -119,7 +130,12 @@
         <counts>
           <entry key="CLASS" value="16" />
           <entry key="IDEA_MODULE" value="1" />
+<<<<<<< HEAD
           <entry key="JAVA" value="1299" />
+=======
+          <entry key="JAVA" value="1055" />
+          <entry key="JavaScript" value="2" />
+>>>>>>> dev-login
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="20" />
           <entry key="XML" value="9" />
@@ -128,18 +144,30 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="1" />
+<<<<<<< HEAD
           <entry key="dummy" value="68" />
           <entry key="java" value="46703" />
           <entry key="properties" value="37" />
+=======
+          <entry key="dummy" value="44" />
+          <entry key="java" value="37232" />
+          <entry key="properties" value="12" />
+>>>>>>> dev-login
           <entry key="xml" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CLASS" value="1" />
+<<<<<<< HEAD
           <entry key="JAVA" value="46687" />
           <entry key="PLAIN_TEXT" value="68" />
           <entry key="Properties" value="37" />
+=======
+          <entry key="JAVA" value="37216" />
+          <entry key="PLAIN_TEXT" value="44" />
+          <entry key="Properties" value="12" />
+>>>>>>> dev-login
           <entry key="Spring Data QL" value="16" />
           <entry key="XML" value="2" />
         </counts>
@@ -147,6 +175,7 @@
     </session>
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/TransactionController.java">
@@ -162,11 +191,23 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
               <caret line="49" column="28" lean-forward="true" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/CartController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="157">
+              <caret line="29" column="69" lean-forward="true" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+>>>>>>> dev-login
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/StockService.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="11">
@@ -175,6 +216,12 @@
                 <element signature="e#1588#1589#0" expanded="true" />
                 <element signature="e#1645#1646#0" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductResponse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+>>>>>>> dev-login
             </state>
           </provider>
         </entry>
@@ -201,6 +248,7 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/AddToStockRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/stock/MoveProductRequets.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/stock/AddToStockRequest.java" />
@@ -214,10 +262,44 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/promotion/PromotionProduct.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/promotion/PromotionEvent.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/BrandController.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductInSelling.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/transaction/Transaction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/transaction/TransactionRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/SecurityConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/Person.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/transaction/OnlineBillRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/transaction/OfflineBillRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductInSellingRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/transaction/BillResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ResponseService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductWrapperService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/CartService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/CustomerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductInStockRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/StockService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/PersonService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/AuthService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/AuthController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/CartController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/StoreController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/ReportRequest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/EmployeeStaticResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/EmployeeStatisticResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/bill/Bill.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/Manager.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/Employee.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/store/Store.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/store/StoreRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/person/EmployeeRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/config/DateTimeFormatConfig.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+>>>>>>> dev-login
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/ReportController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/StoreController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/sale/CreatePromotionProductRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/util/AppConstants.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/PromotionEventController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/Product.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersionRepository.java" />
@@ -252,6 +334,24 @@
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/StockController.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductWrapperService.java" />
         <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/StockService.java" />
+=======
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/EmployeeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ManagerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/brand/Brand.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/util/DataSeeder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/TransactionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/FootCareStoreApplication.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersionRepository.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/VersionController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/version/ProductVersion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/ProductController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductVersionResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductWrapperResponse.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductVersionService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductService.java" />
+>>>>>>> dev-login
       </list>
     </option>
   </component>
@@ -268,7 +368,12 @@
       </MavenImportingSettings>
     </option>
   </component>
+<<<<<<< HEAD
   <component name="ProjectFrameBounds" extendedState="6">
+=======
+  <component name="ProjectFrameBounds">
+    <option name="x" value="1440" />
+>>>>>>> dev-login
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="827" />
@@ -332,6 +437,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="footcare" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="domain" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -368,6 +474,9 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+>>>>>>> dev-login
             </path>
           </expand>
           <select />
@@ -432,7 +541,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="148516000" />
+=======
+    <option name="totallyTimeSpent" value="132167000" />
+>>>>>>> dev-login
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -444,10 +557,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="0" y="23" width="1440" height="827" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19599427" />
+=======
+    <frame x="1440" y="23" width="1920" height="1008" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19116081" />
+>>>>>>> dev-login
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Web" order="2" side_tool="true" />
       <window_info id="Designer" order="3" />
@@ -463,7 +583,11 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Spring" order="9" weight="0.32922733" />
+<<<<<<< HEAD
       <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49840257" visible="true" weight="0.27260083" />
+=======
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49840257" visible="true" weight="0.27444443" />
+>>>>>>> dev-login
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50159746" side_tool="true" weight="0.25555557" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -483,6 +607,7 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="402">
@@ -519,6 +644,12 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/cart/Cart.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/bill/Bill.java">
+>>>>>>> dev-login
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
@@ -723,6 +854,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductResponse.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -731,6 +863,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/PromotionService.java">
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/AuthController.java">
+>>>>>>> dev-login
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="57" column="53" lean-forward="true" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
@@ -776,6 +911,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/StoreService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="63">
@@ -787,11 +923,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductWrapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/Product.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="379">
+          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/BrandController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="38" column="79" lean-forward="true" selection-start-line="38" selection-start-column="79" selection-end-line="39" selection-end-column="77" />
+>>>>>>> dev-login
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/wrapper/ProductInStockRepository.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="227">
           <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
         </state>
@@ -801,21 +958,57 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="111">
           <caret line="31" column="132" selection-start-line="31" selection-start-column="132" selection-end-line="31" selection-end-column="132" />
+=======
+        <state relative-caret-position="168">
+          <caret line="24" column="65" lean-forward="true" selection-start-line="24" selection-start-column="65" selection-end-line="24" selection-end-column="65" />
+>>>>>>> dev-login
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/stock/AddToStockRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="42" lean-forward="true" selection-start-column="42" selection-end-column="42" />
+=======
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/ProductController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="32" column="44" lean-forward="true" selection-start-line="32" selection-start-column="44" selection-end-line="32" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductWrapperResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductVersionService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="44" column="61" lean-forward="true" selection-start-line="44" selection-start-column="61" selection-end-line="44" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+>>>>>>> dev-login
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/store/Store.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="267">
           <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
         </state>
@@ -825,11 +1018,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="39" column="75" lean-forward="true" selection-start-line="39" selection-start-column="75" selection-end-line="39" selection-end-column="75" />
+=======
+        <state relative-caret-position="84">
+          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="41" selection-end-line="7" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/domain/product/ProductRepository.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/Components/Products/Products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
+>>>>>>> dev-login
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/service/CartService.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="315">
           <caret line="54" column="61" selection-start-line="54" selection-start-column="61" selection-end-line="54" selection-end-column="61" />
         </state>
@@ -864,6 +1076,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="49" column="28" lean-forward="true" selection-start-line="49" selection-start-column="28" selection-end-line="49" selection-end-column="28" />
+=======
+        <state relative-caret-position="211">
+          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductVersionResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/payload/product/ProductResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="50" lean-forward="true" selection-start-line="11" selection-start-column="50" selection-end-line="11" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/edu/tdt/it/footcare/controller/CartController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="29" column="69" lean-forward="true" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+>>>>>>> dev-login
         </state>
       </provider>
     </entry>

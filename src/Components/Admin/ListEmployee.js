@@ -1,17 +1,18 @@
 import React from "react";
 import {connect} from 'react-redux'
 import NhanVien from "./Employee";
+
 //import * as actions from '../../actions/index';
 class ListEmployee extends React.Component {
     render() {
         let {Employee} = this.props;
         const listEmployee = Employee.map((item, index) => {
             return (
-                    <NhanVien
-                        key = {item.id}
-                        index = {index}
-                        item = {item}
-                    />
+                <NhanVien
+                    key={item.id}
+                    index={index}
+                    item={item}
+                />
 
 
             );
@@ -24,17 +25,17 @@ class ListEmployee extends React.Component {
                 <div className="table-responsive">
                     <table className="table  table-hover ">
                         <tbody>
-                            <tr >
-                                <th>Họ Tên</th>
-                                <th>Giới Tính</th>
-                                <th>Năm Sinh</th>
-                                {/*<th>Quê Quán</th>*/}
-                                <th>Vị Trí</th>
-                                <th>Lương</th>
-                                <th>UserName</th>
-                                <th>Hành Động</th>
-                            </tr>
-                            {listEmployee}
+                        <tr>
+                            <th>Họ Tên</th>
+                            <th>Giới Tính</th>
+                            <th>Năm Sinh</th>
+                            {/*<th>Quê Quán</th>*/}
+                            <th>Vị Trí</th>
+                            <th>Lương</th>
+                            <th>UserName</th>
+                            <th>Hành Động</th>
+                        </tr>
+                        {listEmployee}
                         </tbody>
                     </table>
                 </div>
@@ -43,14 +44,15 @@ class ListEmployee extends React.Component {
         );
     }
 }
-const ListEmployees = state =>{
+
+const ListEmployees = state => {
     return {
-        Employee : state.Employee,
+        Employee: state.Employee,
 
     }
 
 };
-export default  connect(ListEmployees,null) (ListEmployee);
+export default connect(ListEmployees, null)(ListEmployee);
 
 
 

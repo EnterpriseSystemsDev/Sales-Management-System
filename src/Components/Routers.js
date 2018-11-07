@@ -17,68 +17,68 @@ const routes = [
     {
         path: '/',
         exact: true,
-        main : () => <Home/>
+        main: () => <Home/>
     },
     {
         path: '/Login',
         exact: true,
-        main : ({location}) => <Login location = {location}/>
+        main: ({history, location}) => <Login history={history} location={location}/>
     },
     {
         path: '/dangky',
         exact: true,
-        main : () => <Register/>
+        main: () => <Register/>
     },
     {
         path: '/Cart',
         exact: true,
-        main : () => <Cart/>
+        main: () => <Cart/>
     },
 
     {
         path: '/product/Jordan',
         exact: true,
-        main : ({match}) => <Jordan match = {match}/>
+        main: ({match}) => <Jordan match={match}/>
     },
     {
         path: '/product/Yeezy',
         exact: true,
-        main : () => <Yeezy/>
+        main: () => <Yeezy/>
     },
     {
         path: '/Admin',
         exact: true,
-        main : ({history,match}) => <Admin match={match} history = {history}/>
+        main: ({history, match}) => <Admin match={match} history={history}/>
     },
     {
         path: '/Cart',
         exact: true,
-        main : () => <Cart/>
+        main: () => <Cart/>
     },
     {
         path: '/product/Detail',
         exact: true,
-        main : ({match,history}) => <ProductDetail history ={history} match ={match}/>
+        main: ({match, history}) => <ProductDetail history={history} match={match}/>
     },
     {
         path: '/QLNV',
         exact: true,
-        main : () => <ThongKe/>
+        main: () => <ThongKe/>
     },
     {
         path: '/ChiTietTuyenDung',
         exact: true,
-        main : () => <ChiTietTuyenDung/>
+        main: () => <ChiTietTuyenDung/>
     },
     {
         path: '/product',
         exact: true,
-        main : ({match}) => <Products match ={match}/>
+        main: ({match}) => <Products match={match}/>
     },
     {
         path: '',
         exact: false,
-        main : () => <NotFound/>
+        main: () => <NotFound/>
     },
 
 ];

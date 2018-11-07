@@ -1,5 +1,5 @@
 import React from "react";
-import  { Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class IconLogin extends React.Component {
     /*constructor(props) {
@@ -9,8 +9,9 @@ class IconLogin extends React.Component {
 
     render() {
         return (
-            <li><Link to="/Login"><span className="glyphicon glyphicon-user" />  Login</Link></li>
+            <li><Link to="/Login"><span className="glyphicon glyphicon-user"/> Login</Link></li>
         );
     }
 }
+
 export default IconLogin;

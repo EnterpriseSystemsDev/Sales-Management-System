@@ -4,35 +4,35 @@ import connect from "react-redux/es/connect/connect";
 
 
 class Recruitment extends React.Component {
-    onClear = () =>{
+    onClear = () => {
         this.setState({
             id: '',
             tieuDe: '',
             viTriTD: '',
-            luongTD:  '',
-            soLuong:  '',
+            luongTD: '',
+            soLuong: '',
             thoiGian: '',
-            deadLine:  '',
-            moTaTD:  '',
+            deadLine: '',
+            moTaTD: '',
 
         });
     };
-    closeForm = () =>{
+    closeForm = () => {
         this.props.closeForm();
     };
-    onEdit = () =>{
+    onEdit = () => {
         this.props.upDateFormRecruitment();
         this.props.onEditRecruitment(this.props.item);
         this.onClear();
     };
-    onDelete = () =>{
+    onDelete = () => {
         this.props.onDeleteRecruitment(this.props.item.id);
     };
 
     render() {
-        let {item , index} = this.props;
+        let {item, index} = this.props;
         return (
-            <tr key ={index}>
+            <tr key={index}>
 
                 <td>{item.tieuDe}</td>
                 <td>{item.viTriTD}</td>
@@ -42,10 +42,10 @@ class Recruitment extends React.Component {
                 <td>{item.deadLine}</td>
                 <td>{item.moTaTD}</td>
                 <td>
-                    <button onClick={this.onEdit } type="button" className="btn btn-warning">
+                    <button onClick={this.onEdit} type="button" className="btn btn-warning">
                         Sửa
                     </button>
-                    <button onClick={this.onDelete } type="button" className="btn btn-danger" style={{marginLeft: 10}}>
+                    <button onClick={this.onDelete} type="button" className="btn btn-danger" style={{marginLeft: 10}}>
                         Xóa
                     </button>
                 </td>
@@ -55,22 +55,23 @@ class Recruitment extends React.Component {
 
     }
 }
+
 const mapDispatchToProps = (dispatch, props) => {
-    return{
-        onEditRecruitment : (task) => {
+    return {
+        onEditRecruitment: (task) => {
             dispatch(actions.editRecruitment(task));
         },
-        onUpDateForm : () => {
+        onUpDateForm: () => {
             dispatch(actions.updateForm());
         },
 
-        onDeleteRecruitment: (id) =>{
+        onDeleteRecruitment: (id) => {
             dispatch(actions.deleteRecruitment(id));
         },
-        closeForm : () =>{
+        closeForm: () => {
             dispatch(actions.closeForm())
         },
-        upDateFormRecruitment : () =>{
+        upDateFormRecruitment: () => {
             dispatch(actions.updateFormRecruitment());
         },
 
@@ -79,7 +80,7 @@ const mapDispatchToProps = (dispatch, props) => {
 
 };
 
-export default connect(null,mapDispatchToProps) (Recruitment);
+export default connect(null, mapDispatchToProps)(Recruitment);
 
 
 

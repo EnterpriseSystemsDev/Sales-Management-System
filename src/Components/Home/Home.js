@@ -10,15 +10,16 @@ import TuyenDung from "./Recruitment";
 import Box4 from "./Box4";
 import ScrollToTop from "../ScrollToTop/ScrollToTop";
 
-class Home extends  React.Component{
-    componentDidMount(){
+class Home extends React.Component {
+    componentDidMount() {
         document.title = "FootCare";
     }
-    render(){
+
+    render() {
         return (
             <div>
                 <Header/>
-                <br /><br /><br />
+                <br/><br/><br/>
                 <Box1/>
                 <Navbar/>
                 <Box2/>

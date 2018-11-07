@@ -3,15 +3,16 @@ import {connect} from "react-redux";
 
 
 class ProductDetailItem extends React.Component {
-    componentDidMount(){
+    componentDidMount() {
         document.title = "product Detail"
     }
+
     render() {
-        let {item,Store} = this.props;
+        let {item, Store} = this.props;
         let img = item.hinhanh.slice(12);
         const store = Store.map((item, index) => {
             return (
-              <span key={index}>{item.store}</span>
+                <span key={index}>{item.store}</span>
             );
         });
         return (
@@ -21,18 +22,28 @@ class ProductDetailItem extends React.Component {
                         <div className="wrapper row">
                             <div className="preview col-md-6">
                                 <div className="preview-pic tab-content">
-                                    <div className="tab-pane active" id="pic-1"> <img src={require("../../hinhanh/"+ img)} alt={this.props.name} /></div>
-                                    <div className="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
-                                    <div className="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
-                                    <div className="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252" /></div>
-                                    <div className="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252" /></div>
+                                    <div className="tab-pane active" id="pic-1"><img
+                                        src={require("../../hinhanh/" + img)} alt={this.props.name}/></div>
+                                    <div className="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252"/>
+                                    </div>
+                                    <div className="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252"/>
+                                    </div>
+                                    <div className="tab-pane" id="pic-4"><img src="http://placekitten.com/400/252"/>
+                                    </div>
+                                    <div className="tab-pane" id="pic-5"><img src="http://placekitten.com/400/252"/>
+                                    </div>
                                 </div>
                                 <ul className="preview-thumbnail nav nav-tabs">
-                                    <li className="active"><a data-target="#pic-1" data-toggle="tab"><img src={require("../../hinhanh/"+ img)} alt={this.props.name} /></a></li>
-                                    <li><a data-target="#pic-2" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                                    <li><a data-target="#pic-3" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                                    <li><a data-target="#pic-4" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
-                                    <li><a data-target="#pic-5" data-toggle="tab"><img src="http://placekitten.com/200/126" /></a></li>
+                                    <li className="active"><a data-target="#pic-1" data-toggle="tab"><img
+                                        src={require("../../hinhanh/" + img)} alt={this.props.name}/></a></li>
+                                    <li><a data-target="#pic-2" data-toggle="tab"><img
+                                        src="http://placekitten.com/200/126"/></a></li>
+                                    <li><a data-target="#pic-3" data-toggle="tab"><img
+                                        src="http://placekitten.com/200/126"/></a></li>
+                                    <li><a data-target="#pic-4" data-toggle="tab"><img
+                                        src="http://placekitten.com/200/126"/></a></li>
+                                    <li><a data-target="#pic-5" data-toggle="tab"><img
+                                        src="http://placekitten.com/200/126"/></a></li>
                                 </ul>
                             </div>
                             <div className="details col-md-6">
@@ -57,11 +68,12 @@ class ProductDetailItem extends React.Component {
         );
     }
 }
-const listProducts = state =>{
+
+const listProducts = state => {
     return {
-        tasks : state.tasks,
-        Version : state.Version,
+        tasks: state.tasks,
+        Version: state.Version,
         Store: state.Store,
     }
 };
-export default connect(listProducts,null) (ProductDetailItem);
+export default connect(listProducts, null)(ProductDetailItem);
