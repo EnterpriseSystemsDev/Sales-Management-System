@@ -49,10 +49,10 @@ class ListProduct extends React.Component {
         //console.log(Version);
         if(FilterTable.name){
             Version = Version.filter((task) =>{
-               return (task.versionName.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
-                   // task.nameProduct.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
+               return (task.name.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 )
+                   //task.price.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 )
                    // task.gia.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
-                   task.description.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 )
+                   //task.description.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 )
                    // task.size.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1);
             });
         }
@@ -70,10 +70,10 @@ class ListProduct extends React.Component {
 
         if(SortTable.by === 'name'){
             Version.sort((a,b) =>{
-                if(a.versionName > b.versionName){
+                if(a.name > b.name){
                     return SortTable.value;
                 }
-                else if(a.versionName < b.versionName){
+                else if(a.name < b.name){
                     return -SortTable.value;
                 }else {
                     return 0;
@@ -95,7 +95,7 @@ class ListProduct extends React.Component {
         const listSP = Version.map((task, index) => {
             return (
                 <SanPham
-                    key = {task.id}
+                    key = {task.productId}
                     index = {index}
                     task = {task}
                 />
@@ -187,7 +187,7 @@ class ListProduct extends React.Component {
                             <tr>
                                 <th>STT</th>
                                 <th>Tên Sản Phẩm</th>
-                                <th>Mô Tả</th>
+                                <th>Hình Ảnh</th>
                                 <th>Giá</th>
                                 {/*<th>Size</th>*/}
                                 {/*<th>Hình Ảnh</th>*/}

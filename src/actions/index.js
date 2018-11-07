@@ -15,9 +15,9 @@ export const listAllVersion = (version) => {
 };
 export const listAllVersionRequest = () => {
     return (dispatch) =>{
-        return callApi('productVersions','GET',null).then(res =>{
+        return callApi('products','GET',null).then(res =>{
             dispatch(listAllVersion(res.data));
-           // console.log(res.data);
+           //console.log(res.data);
         })
     }
 };
@@ -188,7 +188,7 @@ export const addProduct = (task) => {
 export const addProductRequest = (task) => {
     return (dispatch) =>{
        return callApi('brands', 'POST', task).then(res =>{
-          // dispatch(addProduct(res.data))
+          //dispatch(addProduct(res.data));
            console.log(task)
        });
     };

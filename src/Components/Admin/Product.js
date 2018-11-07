@@ -42,8 +42,8 @@ class Product extends React.Component {
             return (
                 <tr >
                     <td>{index + 1}</td>
-                    <td>{task.versionName}</td>
-                    <td>{task.description}</td>
+                    <td>{task.name}</td>
+                    <td>{task.images}</td>
                     <td>{task.price}$</td>
                     {/*<td>{task.size}</td>*/}
                     {/*<td>{img}</td>*/}

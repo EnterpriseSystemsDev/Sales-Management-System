@@ -90,6 +90,7 @@ class Login extends React.Component {
                             <div className="inputBox">
                                 <input type="text"
                                        required
+                                       autoComplete="off"
                                        name="txtUserName"
                                        value={txtUserName}
                                        onChange={this.onChange}

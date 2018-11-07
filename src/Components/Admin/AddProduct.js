@@ -52,13 +52,13 @@ class AddProduct extends React.Component {
     };
     onSubmit = (event) =>{
         event.preventDefault();
-        let products = [{
+        let products = {
             brand : this.state.brand,
-            tensp : this.state.tensp,
-            mota: this.state.mota,
+            hinhanh: this.state.hinhanh,
 
-        }];
+        };
          this.props.onAddProducts(products);
+        //console.log(products)
         // //this.props.addProduct(this.state);
         // //xoa data
         this.onClear();
@@ -69,11 +69,11 @@ class AddProduct extends React.Component {
         if(this.props.editProduct && this.props.editProduct.id !== null){
             this.setState({
                 id: this.props.editProduct.id,
-                tensp : this.props.editProduct.tensp,
+               // tensp : this.props.editProduct.tensp,
                 brand : this.props.editProduct.brand,
                // gia : this.props.editProduct.gia,
                // size : this.props.editProduct.size,
-                mota : this.props.editProduct.mota,
+              //  mota : this.props.editProduct.mota,
                 //hinhanh : this.props.editProduct.hinhanh.getTime(),
                 //isHot:this.props.editProduct.isHot ,
                 //isSale:this.props.editProduct.isSale ,
@@ -90,11 +90,11 @@ class AddProduct extends React.Component {
         if(nextProps && nextProps.editProduct){
             this.setState({
                 id: nextProps.editProduct.id,
-                tensp :nextProps.editProduct.tensp,
+                //tensp :nextProps.editProduct.tensp,
                 brand : nextProps.editProduct.brand,
                 //gia : nextProps.editProduct.gia,
                //size : nextProps.editProduct.size,
-                mota : nextProps.editProduct.mota,
+               // mota : nextProps.editProduct.mota,
                 //hinhanh : nextProps.editProduct.hinhanh.getTime(),
                 //Sale:nextProps.editProduct.Sale,
                 //isHot:nextProps.editProduct.isHot,
@@ -116,17 +116,17 @@ class AddProduct extends React.Component {
                 </div>
 
                 <form className="panel-body" onSubmit={this.onSubmit}>
-                    <div className="form-group col-md-6">
-                        <label>Tên Sản Phẩm:</label>
-                        <input type="text"
-                               className="form-control"
-                               id="input1"
-                               required
-                               name="tensp"
-                               value={this.state.tensp}
-                               onChange={this.onChange}
-                        />
-                    </div>
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label>Brand:</label>*/}
+                        {/*<input type="text"*/}
+                               {/*className="form-control"*/}
+                               {/*id="input1"*/}
+                               {/*required*/}
+                               {/*name="tensp"*/}
+                               {/*value={this.state.tensp}*/}
+                               {/*onChange={this.onChange}*/}
+                        {/*/>*/}
+                    {/*</div>*/}
 
                     <div className="form-group col-md-6">
                         <label>Brand:</label>
@@ -146,18 +146,28 @@ class AddProduct extends React.Component {
                             <option value="Phụ Kiện">Phụ Kiện</option>
                         </select>
                     </div>
-
                     <div className="form-group col-md-6">
-                        <label>Mô Tả:</label>
-                        <textarea
-                                  className="form-control"
-                                  name="mota"
-                                  id="input5"
-                                  required
-                                  value={this.state.mota}
-                                  onChange={this.onChange}
-                       />
+                        <label>Hình Ảnh:</label>
+                        <input type="file"
+                               className="form-control"
+                               id="input6"
+                            //required
+                               name="hinhanh"
+                               value={this.state.hinhanh}
+                               onChange={this.onChange}
+                        />
                     </div>
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label>Mô Tả:</label>*/}
+                        {/*<textarea*/}
+                                  {/*className="form-control"*/}
+                                  {/*name="mota"*/}
+                                  {/*id="input5"*/}
+                                  {/*required*/}
+                                  {/*value={this.state.mota}*/}
+                                  {/*onChange={this.onChange}*/}
+                       {/*/>*/}
+                    {/*</div>*/}
                     <div className="form-group col-md-6">
                         <button id="btnCheck" type="submit" className="btn btn-success "> Lưu </button>
                     </div>

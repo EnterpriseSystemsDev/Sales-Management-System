@@ -84,8 +84,8 @@ class ManagementProduct extends React.Component {
         return (
             <div>
                 <div className="btn-group">
-                    <button className="btn btn-success"  style={{marginBottom: '15px',borderRadius: '10px'}} onClick={this.themSP}>Thêm Sản Phẩm</button>
-                    <button className="btn btn-info"  style={{marginBottom: '15px',marginLeft:'10px',borderRadius: '10px'}} onClick={this.Version}>Thêm Version</button>
+                    <button className="btn btn-success"  style={{marginBottom: '15px',borderRadius: '10px'}} onClick={this.themSP}>Thêm Brand</button>
+                    <button className="btn btn-info"  style={{marginBottom: '15px',marginLeft:'10px',borderRadius: '10px'}} onClick={this.Version}>Thêm Sản Phẩm</button>
                     <button className="btn btn-danger"  style={{marginBottom: '15px',marginLeft:'10px',borderRadius: '10px'}} onClick={this.Status}>Thay Đổi Trạng Thái</button>
                     <button className="btn btn-dark"  style={{marginBottom: '15px',marginLeft:'10px',borderRadius: '10px'}} onClick={this.Store}>Thêm Vào Store</button>
                 </div>
