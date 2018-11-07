@@ -46,7 +46,7 @@ class ListProduct extends React.Component {
 
       // let {Version} = this.state;
         let {FilterTable,SortTable,Version} = this.props;
-        console.log(Version);
+        //console.log(Version);
         if(FilterTable.name){
             Version = Version.filter((task) =>{
                return (task.versionName.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||

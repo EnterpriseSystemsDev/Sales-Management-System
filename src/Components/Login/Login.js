@@ -4,6 +4,7 @@ import Header from "../Home/Header";
 import {Link} from "react-router-dom";
 import callApi from "../../utils/apiCall";
 import SanPham from "../Admin/Product";
+import axios from 'axios';
 
 
 class Login extends React.Component {
@@ -27,7 +28,7 @@ class Login extends React.Component {
      };
 
      onLogin = (e) =>{
-         e.preventDefault();
+        // e.preventDefault();
          let {txtUserName,txtPassWord} = this.state;
          if(txtUserName === this.state.username && txtPassWord === this.state.password){
              localStorage.setItem('user', JSON.stringify({
@@ -39,35 +40,43 @@ class Login extends React.Component {
 
     componentDidMount() {
         document.title = "Đăng Nhập";
-        callApi('users', 'GET', null).then(res => {
-            const test = res.data;
-            const listSP = test.map((task, index) => {
-                   return(
-                       this.setState ({
-                           username :task.username,
-                           password: task.password
-                       })
-                   )
-            });
+        // callApi('users', 'GET', null).then(res => {
+        //     const test = res.data;
+        //     const listSP = test.map((task, index) => {
+        //            return(
+        //                this.setState ({
+        //                    username :task.username,
+        //                    password: task.password
+        //                })
+        //            )
+        //     });
+        // })
+        axios.get('http://5bdc5e5b433b4f0013e6e0c4.mockapi.io/api/users').then(res =>{
+            const users = res.data.map((user, index) =>{
+                this.setState({
+                    username: user.username,
+                    password: user.password
+                })
+            })
         })
     }
 
     render() {
         console.log(this.state);
-        let {location} = this.props;
-        console.log(location);
+        let {location,history} = this.props;
+        //console.log(history);
         let {txtUserName,txtPassWord} = this.state;
         let loggedInUser = localStorage.getItem('user');
         if(loggedInUser !== null){
 
-            // return <Redirect to ='/Admin'/>
-            return <Redirect from = "/Login" to ={{
-                    pathname : '/Admin',
-                    state : {
-                        from : location
-                    }
-                }
-            }/>
+            // return <Redirect from = "/Login" to ={{
+            //         pathname : '/Admin',
+            //         state : {
+            //             from : location
+            //         }
+            //     }
+            // }/>
+            history.push('/Admin');
         }
         return (
 

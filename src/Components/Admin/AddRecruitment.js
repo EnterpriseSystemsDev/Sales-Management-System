@@ -149,7 +149,7 @@ class AddRecruitment extends React.Component {
                         >
                             <option value="null">Chọn Hình Thức</option>
                             <option value="FullTime">Full Time</option>
-                            <option value="FartTime">Fart Time</option>
+                            <option value="PartTime">Part Time</option>
                             <option value="Freelance">Freelance</option>
                         </select>
                     </div>

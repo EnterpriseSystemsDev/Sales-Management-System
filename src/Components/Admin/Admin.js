@@ -95,7 +95,7 @@ class Admin extends React.Component {
 
     render() {
         let {displayTK,displayQLNV,displayQLSP,displayFromHoadon,displayQLDH, displaySale} = this.state;
-        let {ChangeTheme} = this.props;
+        let {ChangeTheme,match} = this.props;
         let ShowThongKe = displayTK ? <ThongKe /> : '';
         let ShowQLNV = displayQLNV ? <QLNV/> : '';
         let ShowQLSP = displayQLSP ? <QLSP  /> : '';
@@ -112,7 +112,7 @@ class Admin extends React.Component {
                 <div className={ChangeTheme === true ? 'background' : ''}>
 
                     <div >
-                        <AdHeader/>
+                        <AdHeader history = {this.props.history}/>
                         <Note/>
                         <section id="main">
                             <div className="container ">

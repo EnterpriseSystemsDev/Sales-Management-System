@@ -3,16 +3,26 @@ import img from "../../hinhanh/logo.png";
 import {Link,Redirect} from "react-router-dom";
 import {connect} from 'react-redux';
 class AdHeader extends React.Component {
-
+    constructor(props){
+        super(props);
+        this.state = {
+            history: ''
+        }
+    }
     logOut = (e) =>{
-        e.preventDefault();
+        ///e.preventDefault();
+        // this.setState({
+        //     history : this.props.history
+        // });
         localStorage.removeItem('user');
-        return <Redirect to ="/"/>
+        //return <Redirect to ="/"/>
+
+       this.props.history.push('/');
     };
 
     render() {
-        let {ChangeTheme} = this.props;
-        //console.log(match);
+        let {ChangeTheme,history} = this.props;
+       // console.log(history.push);
         return (
             <nav className={ChangeTheme ? 'admin navbar navbar-inverse' : 'admin navbar navbar-default'}>
                 <div className="container">

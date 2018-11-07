@@ -22,7 +22,7 @@ const routes = [
     {
         path: '/Login',
         exact: true,
-        main : ({location}) => <Login location = {location}/>
+        main : ({location,history}) => <Login history ={history} location = {location}/>
     },
     {
         path: '/dangky',
