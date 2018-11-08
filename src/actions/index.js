@@ -1,5 +1,7 @@
 import * as types from "../constants/ActionTypes";
 import callApi from "../utils/apiCall";
+import callApi1 from "../utils/apiCall";
+import axios from "axios"
 
 export  const  changeTheme = () => {
     return{
@@ -15,12 +17,20 @@ export const listAllVersion = (version) => {
 };
 export const listAllVersionRequest = () => {
     return (dispatch) =>{
-        return callApi('products','GET',null).then(res =>{
+        return callApi1('products','GET',null).then(res =>{
             dispatch(listAllVersion(res.data));
            //console.log(res.data);
         })
     }
 };
+// export const listAllVersionRequest = () => {
+//     return (dispatch) =>{
+//         return callApi('versions','GET',null).then(res =>{
+//             dispatch(listAllVersion(res.data));
+//             //console.log(res);
+//         })
+//     }
+// };
 
 
 export const deleteVersion = (id) => {
@@ -29,9 +39,10 @@ export const deleteVersion = (id) => {
         id
     }
 };
+
 export const deleteVersionRequest = (id) => {
     return (dispatch) =>{
-        return callApi('productVersions/'+ id,'DELETE',null).then(res =>{
+        return callApi('versions/'+ id,'DELETE',null).then(res =>{
             dispatch(deleteVersion(id));
         });
         //console.log(id);
@@ -185,12 +196,18 @@ export const addProduct = (task) => {
         task : task
     }
 };
+// export const addProductRequest = (task) => {
+//     return (dispatch) =>{
+//        return callApi('brands', 'POST', task).then(res =>{
+//           dispatch(addProduct(res.data));
+//        });
+//     };
+// };
 export const addProductRequest = (task) => {
     return (dispatch) =>{
-       return callApi('brands', 'POST', task).then(res =>{
-          //dispatch(addProduct(res.data));
-           console.log(task)
-       });
+        return callApi1('products', 'POST', task).then(res =>{
+            dispatch(addProduct(res.data));
+        });
     };
 };
 
@@ -200,11 +217,17 @@ export const listAllProduct = (tasks) => {
         tasks
     }
 };
+// export const listAllProductRequest = () => {
+//     return (dispatch) =>{
+//         return callApi('brands','GET',null).then(res =>{
+//             dispatch(listAllProduct(res.data));
+//         })
+//     }
+// };
 export const listAllProductRequest = () => {
     return (dispatch) =>{
-        return callApi('brands','GET',null).then(res =>{
-            dispatch(listAllProduct(res.data._embedded.brands));
-           // console.log(res);
+        return callApi('products','GET',null).then(res =>{
+            dispatch(listAllProduct(res.data));
         })
     }
 };
@@ -231,9 +254,10 @@ export const updateVersion = (version) => {
 };
 export const updateVersionRequest = (version) => {
     return (dispatch) =>{
-        callApi('versions/'+version.id,'PUT', version).then(res =>{
-            dispatch(updateVersion(res.data));
-        })
+         callApi('versions/'+version.id,'PUT', version).then(res =>{
+             dispatch(updateVersion(res.data));
+         })
+        console.log(version);
     }
 };
 
@@ -249,9 +273,11 @@ export const addVersion = (version) => {
 export const addVersionRequest = (version) => {
    return (dispatch) => {
        return callApi('versions','POST',version).then(res =>{
-            dispatch(addVersion(res.data))
+          dispatch(addVersion(res.data));
+          // console.log(res)
        })
    }
+    //console.log(version);
 };
 
 export const addProductsInStore = (store) => {
@@ -373,6 +399,18 @@ export const sortProduct = (sort) => {
     return {
         type : types.SORT_PRODUCT,
         sort : sort
+    }
+};
+
+export const getAllUsers = (users) =>{
+    return {
+        type : types.GET_ALL_USERS,
+        users
+    }
+};
+export const removeUser = () => {
+    return {
+        type : types.REMOVE_USER
     }
 };
 

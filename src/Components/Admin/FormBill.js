@@ -50,18 +50,18 @@ class FormBill extends React.Component {
                 </div>
 
                 <form className="panel-body" onSubmit={this.onSubmit}>
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label htmlFor="usr">Tên Khách Hàng:</label>*/}
+                        {/*<input type="text"*/}
+                               {/*required*/}
+                               {/*className="form-control"*/}
+                               {/*name="tenkh"*/}
+                               {/*value={this.state.tenkh}*/}
+                               {/*onChange={this.onChange}*/}
+                        {/*/>*/}
+                    {/*</div>*/}
                     <div className="form-group col-md-6">
-                        <label htmlFor="usr">Tên Khách Hàng:</label>
-                        <input type="text"
-                               required
-                               className="form-control"
-                               name="tenkh"
-                               value={this.state.tenkh}
-                               onChange={this.onChange}
-                        />
-                    </div>
-                    <div className="form-group col-md-6">
-                        <label htmlFor="usr">Tên Sản Phẩm:</label>
+                        <label htmlFor="usr">Mã Sản Phẩm:</label>
                         <input type="text"
                                required
                                className="form-control"
@@ -72,7 +72,7 @@ class FormBill extends React.Component {
                     </div>
 
                     <div className="form-group col-md-6">
-                        <label htmlFor="usr">Giá:</label>
+                        <label htmlFor="usr">Tiền Khách Hàng:</label>
                         <input type="text"
                                className="form-control"
                                name="gia"

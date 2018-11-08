@@ -2,6 +2,7 @@ import React from "react";
 import img from "../../hinhanh/logo.png";
 import {Link,Redirect} from "react-router-dom";
 import {connect} from 'react-redux';
+import * as actions from "../../actions";
 class AdHeader extends React.Component {
     constructor(props){
         super(props);
@@ -15,6 +16,7 @@ class AdHeader extends React.Component {
         //     history : this.props.history
         // });
         localStorage.removeItem('user');
+        this.props.removeUser();
         //return <Redirect to ="/"/>
 
        this.props.history.push('/');
@@ -58,4 +60,11 @@ const listProducts = state =>{
     }
 
 };
-export default connect(listProducts,null)(AdHeader);
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        removeUser : () =>{
+            dispatch(actions.removeUser());
+        }
+    }
+};
+export default connect(listProducts,mapDispatchToProps)(AdHeader);

@@ -3,18 +3,18 @@ import {Redirect} from "react-router-dom"
 import Header from "../Home/Header";
 import {Link} from "react-router-dom";
 import callApi from "../../utils/apiCall";
-import SanPham from "../Admin/Product";
+import $ from "jquery";
 import axios from 'axios';
+import {connect} from "react-redux"
+import * as actions from "../../actions";
 
 
 class Login extends React.Component {
      constructor(props) {
          super(props);
          this.state = {
-             txtUserName : '',
-             txtPassWord: '',
-             // username: [],
-             // password: [],
+             usernameOrEmail : '',
+             password: '',
          };
 
      }
@@ -28,14 +28,36 @@ class Login extends React.Component {
      };
 
      onLogin = (e) =>{
-        // e.preventDefault();
-         let {txtUserName,txtPassWord} = this.state;
-         if(txtUserName === this.state.username && txtPassWord === this.state.password){
-             localStorage.setItem('user', JSON.stringify({
-                 username : txtUserName,
-                 password : txtPassWord
-             }));
-         }
+         e.preventDefault();
+         // if(txtUserName === this.state.username && txtPassWord === this.state.password){
+         //     localStorage.setItem('user', JSON.stringify({
+         //         username : txtUserName,
+         //         password : txtPassWord
+         //     }));
+         // }
+         let login = {
+             usernameOrEmail: this.state.usernameOrEmail,
+             password : this.state.password,
+
+         };
+         // let axiosConfig = {
+         //     headers: {
+         //         'Content-Type': 'application/json;charset=UTF-8',
+         //         "Account-Role": "ROLE_CUSTOMER",
+         //     }
+         // };
+         // callApi('auth/register','POST', register).then(res =>{
+         //     console.log(res);
+         // })
+         axios.post('http://localhost:8080/footcare/api/auth/login', login).then(res =>{
+             console.log("đăng nhập thành công",res);
+             //var user = res.data.accessToken;
+             this.props.getAllUser(res.data);
+         }).catch(err => {
+            console.log(err);
+            //alert('Sai Tài Khoảng Hoặc Mật Khẩu');
+             $('#error').css({"display": "block"})
+         });
      };
 
     componentDidMount() {
@@ -63,20 +85,18 @@ class Login extends React.Component {
     }
 
     render() {
-        console.log(this.state);
-        let {location,history} = this.props;
-        //console.log(history);
-        let {txtUserName,txtPassWord} = this.state;
+       // console.log(this.state);
+        let {location,history,users} = this.props;
+         if(users.accessToken){
+             localStorage.setItem('user', JSON.stringify({
+                user :   users.accessToken
+             }));
+         }
+         // else if(users.accessToken === true){
+         //
+         // }
         let loggedInUser = localStorage.getItem('user');
         if(loggedInUser !== null){
-
-            // return <Redirect from = "/Login" to ={{
-            //         pathname : '/Admin',
-            //         state : {
-            //             from : location
-            //         }
-            //     }
-            // }/>
             history.push('/Admin');
         }
         return (
@@ -91,8 +111,8 @@ class Login extends React.Component {
                                 <input type="text"
                                        required
                                        autoComplete="off"
-                                       name="txtUserName"
-                                       value={txtUserName}
+                                       name="usernameOrEmail"
+                                       value={this.state.usernameOrEmail}
                                        onChange={this.onChange}
                                 />
                                 <label>UserName</label>
@@ -100,8 +120,8 @@ class Login extends React.Component {
                             <div className="inputBox">
                                 <input type="password"
                                        required
-                                       name="txtPassWord"
-                                       value={txtPassWord}
+                                       name="password"
+                                       value={this.state.password}
                                        onChange={this.onChange}
                                 />
                                 <label>Password</label>
@@ -109,6 +129,7 @@ class Login extends React.Component {
                             <input type="submit" name="btnSubMit" defaultValue="Login" />
 
                         </form>
+                        <p id="error" style={{color:'red', display:'none'}}>Sai tài Khoản hoặc mật khẩu</p>
                         <Link to="/dangky">
                             <span  className="pagenot" >Sign Up</span>
                         </Link>
@@ -119,5 +140,27 @@ class Login extends React.Component {
         );
     }
 }
+const mapStateToProps = state =>{
+    return {
+        tasks : state.tasks,
+        editProduct : state.editProduct,
+        displayForm:state.displayForm,
+        users: state.users,
 
-export default Login;
+    }
+};
+const mapDispatchToProps = (dispatch, props) => {
+    return {
+        getAllUser: (users) =>{
+          dispatch(actions.getAllUsers(users))
+        },
+        closeForm : () =>{
+            dispatch(actions.closeForm())
+        },
+        onAddProducts : (task) =>{
+            dispatch(actions.addProductRequest(task))
+        },
+    }
+};
+
+export default connect(mapStateToProps,mapDispatchToProps) (Login);

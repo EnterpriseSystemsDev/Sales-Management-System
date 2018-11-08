@@ -1,21 +1,23 @@
 import React from "react";
 import {connect} from 'react-redux';
 import * as actions from '../../actions/index';
-import callApi from "../../utils/apiCall";
 class Version extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            productVersionId: '',
-            versionName : '',
-            price : '',
-            currentPrice : '',
-            images : '',
-            // Sale:'',
-            // version:'',
-            // nameProduct:'',
-            // isHot:false,
-            // isSale:false,
+            id:'',
+            brandId: '',
+            name:'',
+           price : '',
+            size:'',
+            gia:'',
+            mota : '',
+            hinhanh : '',
+             Sale:'',
+             version:'',
+             nameProduct:'',
+             isHot:false,
+             isSale:false,
             // tasks: []
         }
     }
@@ -61,26 +63,28 @@ class Version extends React.Component {
         event.preventDefault();
         let version = {
             id : this.state.id,
-            version:this.state.version,
-            nameProduct : this.state.nameProduct,
-            Sale : this.state.Sale,
-            gia : this.state.gia,
             size : this.state.size,
-            mota : this.state.mota,
-            hinhanh : this.state.hinhanh,
-            isHot: this.state.isHot,
-            isSale : this.state.isSale,
+            name:this.state.name,
+           // version : this.state.version,
+            price : this.state.price,
+            description : this.state.description,
+            images : this.state.images,
+            Sale: this.state.Sale,
+            isSale: this.state.isSale,
+            isHot: this.state.isHot
+
         };
         if(this.state.id){
            this.props.onUpdateVersion(version);
             this.onClear();
             this.closeForm();
         }else {
-            this.props.addVersion(version);
+            this.props.addVersionProduct(version);
             this.onClear();
             this.closeForm();
         }
-
+        //this.props.addVersionProduct(version);
+        //console.log(version)
         this.onClear();
         this.closeForm();
     };
@@ -127,20 +131,15 @@ class Version extends React.Component {
     };
 
     componentDidMount(){
-        callApi('brands', 'GET', null).then(res =>{
-            this.setState ({
-                tasks : res.data._embedded.brands,
-            });
-            console.log(res.data._embedded.brands);
-        });
-
+        this.props.listAllBrand();
     }
 
     render() {
-        let {tasks} = this.state;
-        const option = tasks.map((task, index) => {
+        let {Product} = this.props;
+        console.log(Product)
+        const option = Product.map((task, index) => {
             return (
-                <option key={index} value={task.name}> {task.name}</option>
+                <option key={index} value={task.brand}> {task.brand}</option>
             );
         });
         return (
@@ -152,8 +151,19 @@ class Version extends React.Component {
                 </div>
 
                 <form className="panel-body" onSubmit={this.onSubmit}>
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label>Tên Sản Phẩm:</label>*/}
+                        {/*<input type="text"*/}
+                               {/*className="form-control"*/}
+                               {/*id="input1"*/}
+                               {/*required*/}
+                               {/*name="name"*/}
+                               {/*value={this.state.name}*/}
+                               {/*onChange={this.onChange}*/}
+                        {/*/>*/}
+                    {/*</div>*/}
                     <div className="form-group col-md-6">
-                        <label>Version:</label>
+                        <label>Tên Sản Phẩm:</label>
                         <input type="text"
                                className="form-control"
                                id="input1"
@@ -163,8 +173,22 @@ class Version extends React.Component {
                                onChange={this.onChange}
                         />
                     </div>
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label>Brand:</label>*/}
+                        {/*<select*/}
+                            {/*className="form-control"*/}
+                            {/*name="nameProduct"*/}
+                            {/*required*/}
+                            {/*value={this.state.nameProduct}*/}
+                            {/*onChange={this.onChange}*/}
+                        {/*>*/}
+                            {/*<option defaultValue="0" >Chọn Brand:</option>*/}
+                            {/*{option}*/}
+                        {/*</select>*/}
+                    {/*</div>*/}
+
                     <div className="form-group col-md-6">
-                        <label>Tên:</label>
+                        <label>Brand:</label>
                         <select
                             className="form-control"
                             name="nameProduct"
@@ -172,11 +196,22 @@ class Version extends React.Component {
                             value={this.state.nameProduct}
                             onChange={this.onChange}
                         >
-                            <option defaultValue="0" >Chọn Sản Phẩm:</option>
+                            <option defaultValue="0" >Chọn Brand:</option>
                             {option}
                         </select>
                     </div>
 
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label>Giá:</label>*/}
+                        {/*<input type="text"*/}
+                               {/*className="form-control"*/}
+                               {/*id="input3"*/}
+                               {/*required*/}
+                               {/*name="price"*/}
+                               {/*value={this.state.price}*/}
+                               {/*onChange={this.onChange}*/}
+                        {/*/>*/}
+                    {/*</div>*/}
                     <div className="form-group col-md-6">
                         <label>Giá:</label>
                         <input type="text"
@@ -188,6 +223,9 @@ class Version extends React.Component {
                                onChange={this.onChange}
                         />
                     </div>
+
+
+
                     <div className="form-group col-md-6">
                         <label>Size:</label>
                         <select
@@ -206,23 +244,49 @@ class Version extends React.Component {
                             <option value="43">43</option>
                         </select>
                     </div>
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label>Mô Tả:</label>*/}
+                        {/*<textarea*/}
+                            {/*className="form-control"*/}
+                            {/*name="description"*/}
+                            {/*id="input5"*/}
+                            {/*required*/}
+                            {/*value={this.state.description}*/}
+                            {/*onChange={this.onChange}*/}
+                        {/*/>*/}
+                    {/*</div>*/}
                     <div className="form-group col-md-6">
                         <label>Mô Tả:</label>
                         <textarea
-                            className="form-control"
-                            name="mota"
-                            id="input5"
-                            required
-                            value={this.state.mota}
-                            onChange={this.onChange}
+                        className="form-control"
+                        name="mota"
+                        id="input5"
+                        required
+                        value={this.state.mota}
+                        onChange={this.onChange}
                         />
                     </div>
+
+
+                    {/*<div className="form-group col-md-6">*/}
+                        {/*<label>Hình Ảnh:</label>*/}
+                        {/*<input type="file"*/}
+                               {/*className="form-control"*/}
+                               {/*id="input6"*/}
+                            {/*//required*/}
+                               {/*multiple="multiple"*/}
+                               {/*name="images"*/}
+                               {/*value={this.state.images}*/}
+                               {/*onChange={this.onChange}*/}
+                        {/*/>*/}
+                    {/*</div>*/}
                     <div className="form-group col-md-6">
                         <label>Hình Ảnh:</label>
                         <input type="file"
                                className="form-control"
                                id="input6"
                             //required
+                               multiple="multiple"
                                name="hinhanh"
                                value={this.state.hinhanh}
                                onChange={this.onChange}
@@ -251,16 +315,16 @@ const mapStateToProps = state =>{
         editProduct : state.editProduct,
         displayForm:state.displayForm,
         EditVersion : state.EditVersion,
-
+        Product : state.Product,
 
     }
 };
 const mapDispatchToProps = (dispatch, props) => {
     return {
-        addProduct : (task) => {
-            dispatch(actions.addProduct(task))
-        },
-        addVersion : (version) =>{
+        // addProduct : (task) => {
+        //     dispatch(actions.addProduct(task))
+        // },
+        addVersionProduct : (version) =>{
             dispatch(actions.addVersionRequest(version))
         },
         closeForm : () =>{
@@ -268,6 +332,9 @@ const mapDispatchToProps = (dispatch, props) => {
         },
         onUpdateVersion : (version) =>{
             dispatch(actions.updateVersionRequest(version))
+        },
+        listAllBrand : () =>{
+            dispatch(actions.listAllProductRequest())
         }
     }
 };

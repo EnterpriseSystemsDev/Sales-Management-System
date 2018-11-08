@@ -9,6 +9,7 @@ class ItemsHot extends React.Component {
     }
     render() {
         let {Version} = this.props;
+
         const listItemsHOT = Version.map((item, index)  => {
             if (item.isHot === true ) {
                 return (
@@ -33,7 +34,7 @@ class ItemsHot extends React.Component {
             }
         });
         for (let i = 0 ; i < Version.length; i ++){
-            if(Version[i].isHot > 0){
+            if(Version[i].isHot >= 0){
                 return (
                     <div className="row">
                         <div className="panel-body" style={{fontFamily: 'sans-serif'}}>

@@ -197,6 +197,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -253,8 +255,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -262,7 +262,7 @@
     <property name="SearchEverywhereHistoryKey" value="product&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/service/ProductVersionService.java&#10;bran&#9;PSI&#9;JAVA://edu.tdt.it.footcare.domain.brand.Brand&#10;Store&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/store/Store.java&#10;employ&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/service/EmployeeService.java&#10;Manager&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/person/Manager.java&#10;tran&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/controller/TransactionController.java&#10;Bill&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/bill/Bill.java&#10;DateAu&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/config/audit/DateAudit.java&#10;StoreRe&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/store/StoreRepository.java&#10;Transac&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/controller/TransactionController.java&#10;Emplo&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/service/EmployeeService.java&#10;AuthC&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/controller/AuthController.java&#10;auth&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/controller/AuthController.java&#10;mapRequests&#9;PSI&#9;JAVA://edu.tdt.it.footcare.service.ProductWrapperService#mapRequestsToWrapper&#10;Employee&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/person/Employee.java&#10;makeOrder&#9;PSI&#9;JAVA://edu.tdt.it.footcare.service.CustomerService#makeOrder&#10;pers&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/domain/person/PersonService.java&#10;calculateTo&#9;PSI&#9;JAVA://edu.tdt.it.footcare.service.ProductWrapperService#calculateTotalMoney&#10;resourcenotfound&#9;FILE&#9;file:///Users/thaotang/Desktop/Sales-Management-System/server/footcare-server/src/main/java/edu/tdt/it/footcare/exception/ResourceNotFoundException.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../fuck/Sales-Management-System/server/footcare-server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Project" />

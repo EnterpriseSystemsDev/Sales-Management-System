@@ -46,14 +46,14 @@ class ListProduct extends React.Component {
 
       // let {Version} = this.state;
         let {FilterTable,SortTable,Version} = this.props;
-        //console.log(Version);
+        console.log(Version);
         if(FilterTable.name){
             Version = Version.filter((task) =>{
-               return (task.name.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 )
+               return (task.version.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
                    //task.price.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 )
                    // task.gia.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 ||
                    //task.description.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1 )
-                   // task.size.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1);
+                    task.size.toLowerCase().indexOf(FilterTable.name.toLowerCase()) !== -1);
             });
         }
         Version = Version.filter((task) =>{
@@ -61,19 +61,19 @@ class ListProduct extends React.Component {
                 return task;
             }
             else if(FilterTable.status === 0){
-                return task.hot ;
+                return task.isHot ;
             }
             else{
-                return task.onSaleOff;
+                return task.isSale;
             }
         });
 
         if(SortTable.by === 'name'){
             Version.sort((a,b) =>{
-                if(a.name > b.name){
+                if(a.nameProduct > b.nameProduct){
                     return SortTable.value;
                 }
-                else if(a.name < b.name){
+                else if(a.nameProduct < b.nameProduct){
                     return -SortTable.value;
                 }else {
                     return 0;
@@ -81,10 +81,10 @@ class ListProduct extends React.Component {
             })
         }else {
             Version.sort((a,b) =>{
-                if(a.price > b.price){
+                if(a.gia > b.gia){
                     return SortTable.value;
                 }
-                else if(a.price < b.price){
+                else if(a.gia < b.gia){
                     return -SortTable.value;
                 }else {
                     return 0;
@@ -187,7 +187,7 @@ class ListProduct extends React.Component {
                             <tr>
                                 <th>STT</th>
                                 <th>Tên Sản Phẩm</th>
-                                <th>Hình Ảnh</th>
+                                {/*<th>Hình Ảnh</th>*/}
                                 <th>Giá</th>
                                 {/*<th>Size</th>*/}
                                 {/*<th>Hình Ảnh</th>*/}

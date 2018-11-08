@@ -19,8 +19,10 @@ import Store from "./Store";
 import DisplayFormVersion from "./DisplayFormVersion";
 import DisplayFormHot from "./DisplayFormHot";
 import DisplayFormStore from "./DisplayFormStore"
-
+import Product from "./Product";
+import users from "./users"
 const myReducer = combineReducers({
+    users: users,
     tasks : tasks,
     displayForm: displayForm,
     DisplayFormVersion,
@@ -41,6 +43,7 @@ const myReducer = combineReducers({
     Store: Store,
     DisplayFormHot,
     DisplayFormStore,
+    Product: Product,
 
 
 });

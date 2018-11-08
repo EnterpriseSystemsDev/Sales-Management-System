@@ -19,8 +19,7 @@ let myReducer = (state= initialState, action) => {
     switch (action.type) {
         case types.LIST_ALL:
             state =action.tasks;
-            console.log(state);
-            return state;
+            return [...state];
         case types.ADD_PRODUCT:
             // let newTaskProducts = {
             //     id: action.task.id,

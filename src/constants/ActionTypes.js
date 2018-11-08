@@ -62,3 +62,6 @@ export const SEARCH_PRODUCT = 'SEARCH_PRODUCT';
 export const SORT_PRODUCT = 'SORT_PRODUCT';
 
 
+export  const GET_ALL_USERS = 'GET_ALL_USERS';
+export const REMOVE_USER = 'REMOVE_USER';
+
