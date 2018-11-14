@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.ServletRequest;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @Setter(onMethod = @__(@Autowired))
@@ -21,7 +22,7 @@ public class ProductController {
 
     @GetMapping
     public ResponseEntity<?> getAllProducts(ServletRequest request) {
-        List<Product> products;
+        Set<Product> products;
         if (request.getParameterMap().containsKey("brandId")) {
             products = productService.allProductsOf(Long.parseLong(request.getParameter("productId")));
         } else {

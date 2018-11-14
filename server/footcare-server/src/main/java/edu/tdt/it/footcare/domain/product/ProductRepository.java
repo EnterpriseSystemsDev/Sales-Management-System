@@ -4,14 +4,16 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 @RepositoryRestResource(exported = false)
 public interface ProductRepository extends CrudRepository<Product, Long> {
-    Product findById(long versionId);
+    Optional<Product> findById(long versionId);
 
-    List<Product> findAll();
+    Set<Product> findAll();
 
-    List<Product> findAllByBrand_Id(long brandId);
+    Set<Product> findAllByBrand_Id(long brandId);
 
     List<Product> findAllByAvailable(boolean available);
 

@@ -4,12 +4,13 @@ import edu.tdt.it.footcare.payload.product.ProductWrapperResponse;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Set;
 
 @Data
 public class CartResponse {
 
     private double totalMoney;
 
-    private List<ProductWrapperResponse> products;
+    private Set<ProductWrapperResponse> products;
 
 }

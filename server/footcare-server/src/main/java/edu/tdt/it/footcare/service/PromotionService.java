@@ -41,7 +41,7 @@ public class PromotionService {
         event.setEndDate(request.getEndDate());
         if (request.getProducts() != null) {
             event.setProducts(request.getProducts()
-                    .stream().map(this::createPromotionProduct).collect(Collectors.toList()));
+                    .stream().map(this::createPromotionProduct).collect(Collectors.toSet()));
         }
         return promotionRepository.save(event);
     }

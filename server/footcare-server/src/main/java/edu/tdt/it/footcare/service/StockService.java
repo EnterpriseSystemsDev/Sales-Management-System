@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -29,7 +30,10 @@ public class StockService {
 
     public boolean isEnoughQuantity(long versionId, double size, int count) {
         return count <= productInStockRepository
-                .numOfProduct(productRepository.findById(versionId), size).orElse(0L);
+                .numOfProduct(
+                        productRepository.findById(versionId).orElseThrow(() -> new AppException("Khong ton tai san pham")),
+                        size
+                ).orElse(0L);
     }
 
     public List<StockResponse> mapStocksToResponses(List<ProductInStock> stocks) {
@@ -52,7 +56,7 @@ public class StockService {
         return productInStockRepository.findByStore_IdAndProduct_IdOrderByProduct_Id(storeId, productId);
     }
 
-    public OrderStatus checkOrder(List<ProductInSelling> products) {
+    public OrderStatus checkForOrder(Set<ProductInSelling> products) {
         boolean orderValid = true;
         StringBuilder message = new StringBuilder();
         for (ProductInSelling productInSelling : products) {
@@ -91,7 +95,7 @@ public class StockService {
         );
     }
 
-    public void notifyProductChanges(long storeId, List<ProductInSelling> products, boolean isIncrease) {
+    public void notifyProductCountChanges(long storeId, Set<ProductInSelling> products, boolean isIncrease) {
         products.forEach(prod -> {
             if (!isProductInStock(storeId, prod.getProduct().getId(), prod.getSize())) {
                 throw new AppException("San pham khong co trong cua hang");

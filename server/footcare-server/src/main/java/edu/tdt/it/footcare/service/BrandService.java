@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -44,7 +45,7 @@ public class BrandService {
         response.setId(brand.getId());
         response.setImage(brand.getImage());
         if (brand.getProducts() != null) {
-            List<ProductResponse> responses = productService.mapProductsToResponses(brand.getProducts());
+            Set<ProductResponse> responses = productService.mapProductsToResponses(brand.getProducts());
             response.setProducts(responses);
         }
         return response;

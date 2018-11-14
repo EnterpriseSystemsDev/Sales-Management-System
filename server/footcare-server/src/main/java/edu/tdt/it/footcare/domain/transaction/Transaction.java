@@ -4,12 +4,16 @@ import edu.tdt.it.footcare.config.audit.UserDateAudit;
 import edu.tdt.it.footcare.domain.product.wrapper.ProductInSelling;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @EqualsAndHashCode(callSuper = false)
-@Data
+@Getter
+@Setter
 @Entity
 public class Transaction extends UserDateAudit {
 
@@ -23,10 +27,11 @@ public class Transaction extends UserDateAudit {
     @Enumerated(EnumType.STRING)
     private TransactionResult transactionResult;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    @JoinTable(name = "transaction_history_product",
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "transaction_product",
+            joinColumns = @JoinColumn(name = "transaction_id"),
             inverseJoinColumns = @JoinColumn(name = "product_in_selling_id"))
-    private List<ProductInSelling> products;
+    private Set<ProductInSelling> products = new HashSet<>();
 
     public Transaction() {
     }

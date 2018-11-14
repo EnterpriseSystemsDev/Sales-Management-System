@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Data
 @Entity
@@ -24,6 +25,6 @@ public class PromotionEvent {
     @JsonIgnore
     @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinTable(name = "promotion_event_product", inverseJoinColumns = @JoinColumn(name = "product_version_id"))
-    private List<PromotionProduct> products;
+    private Set<PromotionProduct> products;
 
 }

@@ -6,8 +6,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+
 
 @Entity
 @Getter
@@ -21,24 +22,16 @@ public class Cart extends UserDateAudit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    @JoinTable(name = "cart_product", inverseJoinColumns = @JoinColumn(name = "product_in_selling_id"))
-    private List<ProductInSelling> products = new ArrayList<>();
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "cart_product",
+            joinColumns = @JoinColumn(name = "cart_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_in_selling_id"))
+    private Set<ProductInSelling> products = new HashSet<>();
 
     public void clear() {
         this.getProducts().clear();
     }
 
-    public boolean contains(long versionId, double size) {
-        return this.products.stream()
-                .anyMatch(pro -> pro.getProduct().getId() == versionId && pro.getSize() == size);
-    }
 
-    public void modifyQuantity(long versionId, double size, int newCount) {
-        this.products.stream()
-                .filter(pro -> pro.getProduct().getId() == versionId && pro.getSize() == size)
-                .findAny().ifPresent(pro ->
-                pro.setCount(newCount));
-    }
 
 }

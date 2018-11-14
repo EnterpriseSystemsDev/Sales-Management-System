@@ -5,6 +5,7 @@ import lombok.Data;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.Set;
 
 @Data
 public class BillResponse {
@@ -21,7 +22,7 @@ public class BillResponse {
 
     private double change;
 
-    private List<ProductWrapperResponse> products;
+    private Set<ProductWrapperResponse> products;
 
     private String storeAddress;
 

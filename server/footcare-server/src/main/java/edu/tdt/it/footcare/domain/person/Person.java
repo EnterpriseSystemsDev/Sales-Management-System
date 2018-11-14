@@ -15,9 +15,6 @@ import javax.persistence.OneToOne;
 @Setter
 public abstract class Person {
 
-    public Person() {
-    }
-
     @JsonIgnore
     @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     private Account account;

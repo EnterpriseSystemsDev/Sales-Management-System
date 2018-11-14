@@ -12,12 +12,14 @@ import edu.tdt.it.footcare.domain.transaction.TransactionType;
 import edu.tdt.it.footcare.payload.transaction.OfflineBillRequest;
 import edu.tdt.it.footcare.payload.transaction.TransactionResponse;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
+@Slf4j
 @Service
 @Setter(onMethod = @__(@Autowired))
 public class CustomerService {
@@ -34,12 +36,12 @@ public class CustomerService {
 
     // when customer go to the store
     // employee check for customer by email, phone, username
-    public Customer findByUsernameOrPhoneOrEmail(String key) {
-        return customerRepository.findByNameOrPhoneOrAccount_Email(key, key, key);
+    public Customer findByKey(String key) {
+        return customerRepository.findByNameOrPhoneOrAccount_EmailOrAccount_Username(key, key, key, key);
     }
 
-    public boolean existsByUsernameOrPhoneOrEmail(String key) {
-        return customerRepository.existsByNameOrPhoneOrAccount_Email(key, key, key);
+    public boolean existsByKey(String key) {
+        return customerRepository.existsByNameOrPhoneOrAccount_EmailOrAccount_Username(key, key, key, key);
     }
 
     public boolean wannaCreateAccount(OfflineBillRequest request) {
@@ -50,8 +52,10 @@ public class CustomerService {
         return customerRepository.findByAccount_Id(customerAccount);
     }
 
-    public Transaction makeOrder(List<ProductInSelling> products) {
+    public Transaction makeOrder(Set<ProductInSelling> products) {
+        log.info("Making order");
         Transaction transaction = new Transaction();
+        log.info(products.size() + " products");
         transaction.setProducts(products);
         transaction.setTransactionType(TransactionType.ORDER);
         transaction.setTransactionResult(TransactionResult.PENDING);
@@ -59,8 +63,8 @@ public class CustomerService {
     }
 
     public Customer getCustomerFromBillRequest(OfflineBillRequest request) {
-        return existsByUsernameOrPhoneOrEmail(request.getCustomerKey()) ?
-                findByUsernameOrPhoneOrEmail(request.getCustomerKey()) : null;
+        return existsByKey(request.getCustomerKey()) ?
+                findByKey(request.getCustomerKey()) : null;
     }
 
     public Customer createCustomerAccountFrom(OfflineBillRequest request) {
@@ -74,6 +78,7 @@ public class CustomerService {
     }
 
     public TransactionResponse createTransactionResponse(Transaction transaction) {
+        log.info("Creating response");
         TransactionResponse response = new TransactionResponse();
         response.setCreatedAt(transaction.getCreatedAt());
         response.setId(transaction.getId());

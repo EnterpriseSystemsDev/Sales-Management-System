@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -22,7 +23,7 @@ public class Brand {
 
     @JsonIgnore
     @OneToMany(mappedBy = "brand", fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
-    private List<Product> products;
+    private Set<Product> products;
 
     private String image;
 

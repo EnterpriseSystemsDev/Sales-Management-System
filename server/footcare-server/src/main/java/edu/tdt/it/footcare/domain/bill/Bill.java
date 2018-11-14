@@ -10,7 +10,8 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @EqualsAndHashCode(callSuper = false)
 @Entity
@@ -27,9 +28,10 @@ public class Bill extends UserDateAudit {
     private double change;
 
     @JsonIgnore
-    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    @JoinTable(name = "bill_product", inverseJoinColumns = @JoinColumn(name = "product_in_selling_id"))
-    private List<ProductInSelling> products;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "bill_product", joinColumns = @JoinColumn(name = "bill_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_in_selling_id"))
+    private Set<ProductInSelling> products = new HashSet<>();
 
     @JsonIgnore
     @ManyToOne

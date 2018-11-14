@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
@@ -19,11 +20,11 @@ public class ProductService {
     private ProductWrapperService productWrapperService;
     private BrandService brandService;
 
-    public List<Product> getAll() {
+    public Set<Product> getAll() {
         return productRepository.findAll();
     }
 
-    public List<Product> allProductsOf(long brandId) {
+    public Set<Product> allProductsOf(long brandId) {
         return productRepository.findAllByBrand_Id(brandId);
     }
 
@@ -55,11 +56,14 @@ public class ProductService {
     }
 
     public Product findById(long id) {
-        return productRepository.findById(id);
+        return productRepository.findById(id).orElseThrow(() -> new AppException("San pham khong ton tai"));
     }
 
     public ProductResponse createProductResponse(Product product) {
         ProductResponse response = new ProductResponse();
+        response.setSaleOff(product.isOnSaleOff());
+        response.setHot(product.isHot());
+        response.setDescription(product.getDescription());
         response.setProductId(product.getId());
         response.setName(product.getName());
         response.setImages(product.getImages());
@@ -68,8 +72,8 @@ public class ProductService {
         return response;
     }
 
-    public List<ProductResponse> mapProductsToResponses(List<Product> products) {
-        return products.stream().map(this::createProductResponse).collect(Collectors.toList());
+    public Set<ProductResponse> mapProductsToResponses(Set<Product> products) {
+        return products.stream().map(this::createProductResponse).collect(Collectors.toSet());
     }
 
     private double currentPriceOf(Product product) {

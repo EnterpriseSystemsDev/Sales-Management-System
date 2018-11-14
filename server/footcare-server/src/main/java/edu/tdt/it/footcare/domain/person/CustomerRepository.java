@@ -7,9 +7,9 @@ import java.util.Optional;
 
 @RepositoryRestResource(exported = false)
 public interface CustomerRepository extends CrudRepository<Customer, Long> {
-    Customer findByNameOrPhoneOrAccount_Email(String keyword, String phone, String email);
+    Customer findByNameOrPhoneOrAccount_EmailOrAccount_Username(String keyword, String phone, String email, String username);
 
-    boolean existsByNameOrPhoneOrAccount_Email(String keyword, String phone, String email);
+    boolean existsByNameOrPhoneOrAccount_EmailOrAccount_Username(String keyword, String phone, String email, String username);
 
     Optional<Customer> findByAccount_Id(long id);
 }

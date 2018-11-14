@@ -1,7 +1,5 @@
 package edu.tdt.it.footcare.controller;
 
-import edu.tdt.it.footcare.config.security.CurrentUser;
-import edu.tdt.it.footcare.config.security.authentication.user.UserPrincipal;
 import edu.tdt.it.footcare.domain.store.Store;
 import edu.tdt.it.footcare.domain.store.StoreRepository;
 import edu.tdt.it.footcare.exception.AppException;
@@ -20,7 +18,6 @@ import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.List;
 
 @Setter(onMethod = @__(@Autowired))
 @RestController
@@ -32,23 +29,18 @@ public class ReportController {
 
     @GetMapping
     public ResponseEntity<?> doReport(ServletRequest request) {
-
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM");
         LocalDate time = request.getParameterMap().containsKey("time") ?
                 YearMonth.parse(request.getParameter("time"), formatter).atEndOfMonth()
-                : LocalDate.now();
-
-        if (request.getParameterMap().containsKey("storeId")) {
-            long storeId = Long.parseLong(request.getParameter("storeId"));
-            Store store = storeRepository.findById(storeId).orElseThrow(() -> new AppException("Khong ton tai cua hang"));
-            ReportResponse report = managerService.doReport(store, time);
-            return ResponseEntity.ok(report);
-        } else {
-            List<ReportResponse> reports = new ArrayList<>();
-            for (Store store : storeRepository.findAll()) {
-                reports.add(managerService.doReport(store, time));
+                : LocalDate.now().withDayOfMonth(LocalDate.now().lengthOfMonth());
+        return ResponseEntity.ok(new ArrayList<ReportResponse>() {{
+            if (request.getParameterMap().containsKey("storeId")) {
+                long storeId = Long.parseLong(request.getParameter("storeId"));
+                Store store = storeRepository.findById(storeId).orElseThrow(() -> new AppException("Khong ton tai cua hang"));
+                add(managerService.doReport(store, time));
+            } else {
+                storeRepository.findAll().forEach(store -> add(managerService.doReport(store, time)));
             }
-            return ResponseEntity.ok(reports);
-        }
+        }});
     }
 }

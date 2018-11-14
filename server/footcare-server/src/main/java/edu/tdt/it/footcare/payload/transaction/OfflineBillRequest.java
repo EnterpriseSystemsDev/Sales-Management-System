@@ -5,17 +5,19 @@ import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Set;
 
 @Data
 public class OfflineBillRequest {
 
+    // means username, email, phone or name
     @NotNull
     private String customerKey;
 
     @NotNull
     private double customerMoney;
 
-    private List<AddToCartRequest> products;
+    private Set<AddToCartRequest> products;
 
     private RegisterRequest registerRequest;
 

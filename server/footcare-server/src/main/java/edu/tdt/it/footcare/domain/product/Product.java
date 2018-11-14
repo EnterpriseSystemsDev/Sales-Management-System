@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -33,5 +34,5 @@ public class Product extends DateAudit {
 
     @JsonIgnore
     @ElementCollection(fetch = FetchType.EAGER)
-    private List<String> images;
+    private Set<String> images;
 }

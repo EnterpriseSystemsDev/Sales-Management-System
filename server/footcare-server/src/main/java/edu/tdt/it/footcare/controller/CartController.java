@@ -38,7 +38,8 @@ public class CartController {
         if (!productService.existById(request.getProductId())) {
             return ResponseEntity.badRequest().body("Khong ton tai san pham");
         }
-        Cart cart = cartService.addProduct(currentUser, request);
+        Cart cart = cartService.getCart(currentUser);
+        cart = cartService.addProduct(cart, request);
         CartResponse cartResponse = cartService.createCartResponse(cart);
         return ResponseEntity.ok(cartResponse);
     }

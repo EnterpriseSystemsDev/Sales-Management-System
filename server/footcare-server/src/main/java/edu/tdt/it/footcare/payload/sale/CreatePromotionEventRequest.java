@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Set;
 
 @Data
 public class CreatePromotionEventRequest {
@@ -15,5 +16,5 @@ public class CreatePromotionEventRequest {
     @NotNull
     private LocalDate endDate;
 
-    private List<CreatePromotionProductRequest> products;
+    private Set<CreatePromotionProductRequest> products;
 }

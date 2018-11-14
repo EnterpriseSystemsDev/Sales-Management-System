@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Set;
 
 @Data
 public class ProductRequest {
@@ -20,6 +21,6 @@ public class ProductRequest {
     @NotNull
     private double price;
 
-    private List<String> images;
+    private Set<String> images;
 
 }

@@ -4,6 +4,7 @@ import lombok.Data;
 
 import java.time.Instant;
 import java.util.List;
+import java.util.Set;
 
 @Data
 public class ReportResponse {
@@ -13,6 +14,6 @@ public class ReportResponse {
     private double totalRevenue;
     private int totalProductSoldCount;
     private String bestSellerVersionName;
-    private List<EmployeeStatisticResponse> employeeStatistics;
+    private Set<EmployeeStatisticResponse> employeeStatistics;
     private String message;
 }

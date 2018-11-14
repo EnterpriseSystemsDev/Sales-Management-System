@@ -4,22 +4,25 @@ import edu.tdt.it.footcare.domain.product.Product;
 import edu.tdt.it.footcare.domain.product.wrapper.ProductInSelling;
 import edu.tdt.it.footcare.domain.product.wrapper.ProductInSellingRepository;
 import edu.tdt.it.footcare.payload.product.ProductWrapperResponse;
-import edu.tdt.it.footcare.payload.transaction.AddToCartRequest;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
+@Slf4j
 @Service
 @Setter(onMethod = @__(@Autowired))
 public class ProductWrapperService {
     private PromotionService promotionService;
-    private ProductService productService;
     private ProductInSellingRepository productInSellingRepository;
 
-    public double calculateTotalMoney(List<ProductInSelling> products) {
+    public double calculateTotalMoney(Set<ProductInSelling> products) {
         return products.stream().map(this::calculateProductMoney).reduce(Double::sum).orElse(0.0);
     }
 
@@ -35,7 +38,7 @@ public class ProductWrapperService {
                 * calculateProductMoney(productInSelling.getProduct());
     }
 
-    public List<ProductWrapperResponse> mapWrapperToResponse(List<ProductInSelling> products) {
+    public Set<ProductWrapperResponse> mapWrapperToResponse(Set<ProductInSelling> products) {
         return products.stream().map(product -> {
             ProductWrapperResponse response = new ProductWrapperResponse();
             response.setProductId(product.getProduct().getId());
@@ -44,17 +47,7 @@ public class ProductWrapperService {
             response.setSize(product.getSize());
             response.setPrice(product.getProduct().getPrice());
             return response;
-        }).collect(Collectors.toList());
-    }
-
-    public List<ProductInSelling> saveWrappersFromRequests(List<AddToCartRequest> requests) {
-        return requests.stream().map(req -> {
-            ProductInSelling product = new ProductInSelling();
-            product.setProduct(productService.findById(req.getProductId()));
-            product.setCount(req.getCount());
-            product.setSize(req.getSize());
-            return productInSellingRepository.save(product);
-        }).collect(Collectors.toList());
+        }).collect(Collectors.toSet());
     }
 
 }
